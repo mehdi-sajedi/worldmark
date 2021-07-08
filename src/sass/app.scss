@@ -29,17 +29,24 @@ body {
   font-size: 14px; // Homepage 14px - Detail Page 16px
   background-color: var(--clr-background);
   color: var(--clr-text);
-  overflow-x: hidden;
   letter-spacing: 0.5px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
+
+a {
+  color: var(--clr-text);
+  text-decoration: none;
+}
+
 
 // HEADER COMPONENT
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--clr-elements);
-  position: relative;
   padding: 1.2rem 0;
 
   &::before {
@@ -131,7 +138,6 @@ body {
 // COUNTRIES COMPONENT
 .countries {
   display: grid;
-  // grid-template-columns: repeat(4, minmax(250px, 1fr));
   grid-template-columns: repeat(4, 1fr);
   gap: 5rem;
   margin-bottom: 5rem;

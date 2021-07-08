@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './sass/app.scss';
 import Header from './components/Header';
 import SearchFilter from './components/SearchFilter';
 import Countries from './components/Countries';
+import CountryDetails from './components/CountryDetails';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState(countries);
   const [isLoading, setIsLoading] = useState(false);
+  const [inputText, setInputText] = useState('');
 
   const toggleDarkMode = () => {
     setDarkMode((prevState) => !prevState);
@@ -33,19 +36,29 @@ function App() {
   }, [fetchCountries]);
 
   return (
-    <main>
-      <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-      <SearchFilter
-        countries={countries}
-        filteredCountries={filteredCountries}
-        setFilteredCountries={setFilteredCountries}
-      />
-      {isLoading ? (
-        <h1 style={{ textAlign: 'center' }}>Loading Countries...</h1>
-      ) : (
-        <Countries filteredCountries={filteredCountries} />
-      )}
-    </main>
+    <BrowserRouter>
+      <main className="container">
+        <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+        <Switch>
+          <Route exact path="/">
+            <SearchFilter
+              countries={countries}
+              setFilteredCountries={setFilteredCountries}
+              inputText={inputText}
+              setInputText={setInputText}
+            />
+            {isLoading ? (
+              <h1 style={{ textAlign: 'center' }}>Loading Countries...</h1>
+            ) : (
+              <Countries filteredCountries={filteredCountries} />
+            )}
+          </Route>
+          <Route path="/details/:country">
+            <CountryDetails />
+          </Route>
+        </Switch>
+      </main>
+    </BrowserRouter>
   );
 }
 
