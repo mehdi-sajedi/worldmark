@@ -6,9 +6,8 @@ import { HiMoon } from 'react-icons/hi';
 
 const Header = ({ toggleDarkMode, darkMode }) => {
   return (
-    // <div className="container">
     <header className="header">
-      <Link to="/">
+      <Link onClick={(e) => console.log(e.target)} to="/">
         <h2 className="header__text">Where in the world?</h2>
       </Link>
       <div className="header__theme-btn" onClick={toggleDarkMode}>
@@ -20,7 +19,6 @@ const Header = ({ toggleDarkMode, darkMode }) => {
         </p>
       </div>
     </header>
-    // </div>
   );
 };
 

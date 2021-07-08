@@ -6,30 +6,51 @@ const SearchFilter = ({
   setFilteredCountries,
   inputText,
   setInputText,
+  dropdown,
+  setDropdown,
 }) => {
+  const handleInputFilter = (countryIdentifier, e) => {
+    console.log(e.target.value);
+    return countryIdentifier
+      .toLowerCase()
+      .includes(e.target.value.toLowerCase().trim());
+  };
+
+  const handleDropdownFilter = (countryRegion) => {
+    if (dropdown === 'all') return true;
+    return countryRegion.toLowerCase() === dropdown;
+  };
+
   const inputFilter = (e) => {
     setInputText(e.target.value);
     setFilteredCountries(
       countries.filter((country) => {
-        return (
-          (country &&
-            country.name
-              .toLowerCase()
-              .includes(e.target.value.toLowerCase().trim())) ||
-          country.alpha2Code
-            .toLowerCase()
-            .includes(e.target.value.toLowerCase().trim()) ||
-          country.alpha3Code
-            .toLowerCase()
-            .includes(e.target.value.toLowerCase().trim())
-        );
+        if (
+          handleInputFilter(country.name, e) &&
+          handleDropdownFilter(country.region)
+        ) {
+          return country;
+        } else if (
+          handleInputFilter(country.alpha2Code, e) &&
+          handleDropdownFilter(country.region)
+        ) {
+          return country;
+        } else if (
+          handleInputFilter(country.alpha3Code, e) &&
+          handleDropdownFilter(country.region)
+        ) {
+          return country;
+        } else return null;
       })
     );
   };
 
-  const dropdownFilter = (e) => {
+  const dropdownFilter = function (e) {
+    console.log(e.target);
     setFilteredCountries(
       countries.filter((country) => {
+        setDropdown(e.target.value);
+        if (e.target.value === 'all') return country;
         return country.region.toLowerCase() === e.target.value && country;
       })
     );
@@ -56,6 +77,7 @@ const SearchFilter = ({
           className="search-filter__dropdown"
           onChange={dropdownFilter}
         >
+          <option value="all">Show All</option>
           <option value="africa">Africa</option>
           <option value="DEFAULT" hidden disabled>
             Filter by Region

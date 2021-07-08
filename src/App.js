@@ -5,13 +5,15 @@ import Header from './components/Header';
 import SearchFilter from './components/SearchFilter';
 import Countries from './components/Countries';
 import CountryDetails from './components/CountryDetails';
+import Loading from './components/utilities/Loading';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [countries, setCountries] = useState([]);
-  const [filteredCountries, setFilteredCountries] = useState(countries);
   const [isLoading, setIsLoading] = useState(false);
+  const [countries, setCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState([]);
   const [inputText, setInputText] = useState('');
+  const [dropdown, setDropdown] = useState('all');
 
   const toggleDarkMode = () => {
     setDarkMode((prevState) => !prevState);
@@ -46,14 +48,16 @@ function App() {
               setFilteredCountries={setFilteredCountries}
               inputText={inputText}
               setInputText={setInputText}
+              dropdown={dropdown}
+              setDropdown={setDropdown}
             />
             {isLoading ? (
-              <h1 style={{ textAlign: 'center' }}>Loading Countries...</h1>
+              <Loading />
             ) : (
               <Countries filteredCountries={filteredCountries} />
             )}
           </Route>
-          <Route path="/details/:country">
+          <Route path="/details/:id">
             <CountryDetails />
           </Route>
         </Switch>
