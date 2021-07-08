@@ -1,0 +1,25 @@
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin extend-background($color) {
+  content: '';
+  background-color: $color;
+  position: absolute;
+  height: 100%;
+  width: 200vw;
+  left: -100vw;
+  z-index: -1;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.weight-600 {
+  font-weight: 600;
+}
