@@ -31,7 +31,7 @@
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 14px; // Homepage 14px - Detail Page 16px
+  font-size: 14px;
   background-color: var(--clr-background);
   color: var(--clr-text);
   letter-spacing: 0.5px;
@@ -42,6 +42,10 @@ body {
 a {
   color: var(--clr-text);
   text-decoration: none;
+}
+
+button {
+  color: var(--clr-text);
 }
 
 // HEADER COMPONENT
@@ -183,22 +187,24 @@ a {
 
 // DETAILS PAGE - BACK BUTTON
 .back-btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 5rem 0;
-  border-radius: var(--border-radius-btn);
-  box-shadow: var(--box-shadow-btn);
+  padding: 8px 30px;
   background-color: var(--clr-elements);
   color: var(--clr-text);
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 30px;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-btn);
+  outline: none;
+  border: none;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 
-    &__arrow {
-      font-size: 22px;
-      margin-right: 8px;
-    }
+  &__arrow {
+    font-size: 22px;
+    margin-right: 8px;
   }
 }
 
@@ -208,6 +214,7 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 10rem;
+  margin-bottom: 3rem;
 
   &__flag {
     width: 100%;
@@ -217,24 +224,34 @@ a {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     &__facts {
       display: flex;
       justify-content: space-between;
       line-height: 1.75;
+      margin-top: 2rem;
     }
 
     &__borders {
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 6rem;
 
       &__item {
-        margin: 0 10px;
         box-shadow: var(--box-shadow);
         border-radius: var(--border-radius);
+        margin: 8px 8px 8px 0;
+
+        &:first-of-type {
+          margin: 8px 8px 8px 15px;
+        }
 
         &__text {
-          padding: 5px;
+          display: inline-block;
+          font-size: 14.5px;
+          padding: 5px 15px;
         }
       }
     }

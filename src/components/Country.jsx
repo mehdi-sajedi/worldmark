@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Country = ({ name, flag, population, region, capital }) => {
+const Country = ({ alpha3Code, name, flag, population, region, capital }) => {
   return (
-    <Link to={`/details/${name.split(' ').join('-')}`}>
+    <Link to={`/details/${alpha3Code}`}>
       <div className="country">
         <img className="country__flag" src={flag} alt={`${name} flag`} />
         <div className="country__info">

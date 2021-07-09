@@ -7,16 +7,25 @@ import Countries from './components/Countries';
 import CountryDetails from './components/CountryDetails';
 import Loading from './components/utilities/Loading';
 
+// TODOS
+// Remove trailing comma from languages
+// Fix select tag dropdown arrow placement or build custom dropdown component
+// Refactor the code from the facts section. Render by loop and maybe convert to list items
+// Make design changes for darkmode
+
+
+const countryCodesToNames = new Map();
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [inputText, setInputText] = useState('');
-  const [dropdown, setDropdown] = useState('all');
+  const [dropdown, setDropdown] = useState('DEFAULT');
 
   const toggleDarkMode = () => {
-    setDarkMode((prevState) => !prevState);
+    setDarkMode((prevMode) => !prevMode);
   };
 
   useEffect(() => {
@@ -24,12 +33,19 @@ function App() {
     !darkMode && document.body.classList.remove('darkmode');
   }, [darkMode]);
 
+  const createCountryKeyPairs = (countries) => {
+    countries.forEach((country) => {
+      countryCodesToNames.set(country.alpha3Code, country.name);
+    });
+  };
+
   const fetchCountries = useCallback(async () => {
     setIsLoading(true);
     const res = await fetch(`https://restcountries.eu/rest/v2/all`);
-    const data = await res.json();
-    setCountries(data);
-    setFilteredCountries(data);
+    const countries = await res.json();
+    setCountries(countries);
+    setFilteredCountries(countries);
+    createCountryKeyPairs(countries);
     setIsLoading(false);
   }, []);
 
@@ -58,7 +74,7 @@ function App() {
             )}
           </Route>
           <Route path="/details/:id">
-            <CountryDetails />
+            <CountryDetails countryCodesToNames={countryCodesToNames} />
           </Route>
         </Switch>
       </main>

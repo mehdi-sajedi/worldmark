@@ -1,20 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import Loading from './utilities/Loading';
-import BackBtn from './BackBtn';
+import BackBtn from './utilities/BackBtn';
 
-const CountryDetails = () => {
+const CountryDetails = ({ countryCodesToNames }) => {
   const { id } = useParams();
   const [country, setCountry] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchCountry = useCallback(async () => {
     setIsLoading(true);
-    const res = await fetch(
-      `https://restcountries.eu/rest/v2/name/${id.replaceAll('-', ' ')}`
-    );
+    const res = await fetch(`https://restcountries.eu/rest/v2/alpha/${id}`);
     const data = await res.json();
-    setCountry(...data);
+    setCountry(data);
     setIsLoading(false);
   }, [id]);
 
@@ -61,13 +60,15 @@ const CountryDetails = () => {
                     <span className="weight-600">Top Level Domain: </span>
                     {country.topLevelDomain}
                   </p>
-                  <p className="details__info__facts__col-2__currencies">
-                    <span className="weight-600">Currencies: </span>
+                  <p className="details__info__facts__col-2__currency">
+                    <span className="weight-600">Currency: </span>
                     {country.currencies[0].name}
                   </p>
                   <p className="details__info__facts__col-2__languages">
                     <span className="weight-600">Languages: </span>
-                    {country.languages[0].name}
+                    {country.languages.map((lang, idx) => (
+                      <span key={idx}>{lang.name}, </span>
+                    ))}
                   </p>
                 </div>
               </div>
@@ -75,7 +76,12 @@ const CountryDetails = () => {
                 <span className="weight-600">Border Countries:</span>
                 {country.borders?.map((item, idx) => (
                   <div className="details__info__borders__item" key={idx}>
-                    <p className="details__info__borders__item__text">{item}</p>
+                    <Link
+                      to={`/details/${item}`}
+                      className="details__info__borders__item__text"
+                    >
+                      {countryCodesToNames.get(item)}
+                    </Link>
                   </div>
                 ))}
               </div>
