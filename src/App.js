@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './sass/app.scss';
-import Header from './components/Header';
-import SearchFilter from './components/SearchFilter';
-import Countries from './components/Countries';
-import CountryDetails from './components/CountryDetails';
-import Loading from './components/utilities/Loading';
+import Header from './components/Utilities/Header';
+import SearchFilter from './components/Home/SearchFilter';
+import Countries from './components/Home/Countries';
+import CountryDetails from './components/DetailsPage/CountryDetails';
+import Loading from './components/Utilities/Loading';
 
 // TODOS
 // Fix select tag dropdown arrow placement or build custom dropdown component
 // Refactor the code from the facts section. Render by loop and maybe convert to list items
-// Make design changes for darkmode
 // Incorporate pagination - don't load all countries on initial render, allow user to load more from button
 // Implement better practice for listening to scroll event
 
@@ -25,19 +24,19 @@ function App() {
   const [dropdown, setDropdown] = useState('DEFAULT');
   // const [showScrollBtn, setShowScrollBtn] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-    localStorage.setItem('darkmode', JSON.stringify(!darkMode));
-  };
+  useEffect(() => {
+    setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
+  }, []);
 
   useEffect(() => {
     darkMode && document.body.classList.add('darkmode');
     !darkMode && document.body.classList.remove('darkmode');
   }, [darkMode]);
 
-  useEffect(() => {
-    setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
-  }, []);
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode) => !prevMode);
+    localStorage.setItem('darkmode', JSON.stringify(!darkMode));
+  };
 
   const createCountryKeyPairs = (countries) => {
     countries.forEach((country) => {
