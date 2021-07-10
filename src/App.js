@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './sass/app.scss';
+import axios from 'axios';
 import Header from './components/Utilities/Header';
 import SearchFilter from './components/Home/SearchFilter';
 import Countries from './components/Home/Countries';
@@ -23,6 +24,8 @@ function App() {
   const [inputText, setInputText] = useState('');
   const [dropdown, setDropdown] = useState('DEFAULT');
   // const [showScrollBtn, setShowScrollBtn] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(20);
 
   useEffect(() => {
     setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
@@ -44,19 +47,24 @@ function App() {
     });
   };
 
-  const fetchCountries = useCallback(async () => {
-    setIsLoading(true);
-    const res = await fetch(`https://restcountries.eu/rest/v2/all`);
-    const countries = await res.json();
-    setCountries(countries);
-    setFilteredCountries(countries);
-    createCountryKeyPairs(countries);
-    setIsLoading(false);
+  useEffect(() => {
+    const fetchCountries = async () => {
+      setIsLoading(true);
+      const res = await axios.get('https://restcountries.eu/rest/v2/all');
+      setCountries(res.data);
+      setFilteredCountries(res.data);
+      createCountryKeyPairs(res.data);
+      setIsLoading(false);
+    };
+    fetchCountries();
   }, []);
 
-  useEffect(() => {
-    fetchCountries();
-  }, [fetchCountries]);
+  const idxOfLastPost = currentPage * postsPerPage;
+  const idxOfFirstPost = idxOfLastPost - postsPerPage;
+  const currentCountries = filteredCountries.slice(
+    idxOfFirstPost,
+    idxOfLastPost
+  );
 
   // const checkScrollPosition = () => {
   //   console.log('runnin');
@@ -89,7 +97,7 @@ function App() {
             {isLoading ? (
               <Loading />
             ) : (
-              <Countries filteredCountries={filteredCountries} />
+              <Countries filteredCountries={currentCountries} />
             )}
           </Route>
           <Route path="/details/:id">
