@@ -10,7 +10,10 @@ const Loading = () => {
     <section
       {...containerProps}
       style={{
-        textAlign: 'center',
+        // textAlign: 'center',
+        position: 'absolute',
+        left: '50%',
+        transform: 'translateX(-50%)',
         marginTop: '3rem',
       }}
     >

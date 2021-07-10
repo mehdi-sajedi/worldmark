@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Loading from '../Utilities/Loading';
-import BackBtn from '../Utilities/BackBtn';
+import BackBtn from './BackBtn';
 import CountryDetailsItem from './CountryDetailsItem';
 
 // const {
@@ -23,9 +24,8 @@ const CountryDetails = ({ countryCodesToNames }) => {
 
   const fetchCountry = useCallback(async () => {
     setIsLoading(true);
-    const res = await fetch(`https://restcountries.eu/rest/v2/alpha/${id}`);
-    const data = await res.json();
-    setCountry(data);
+    const res = await axios.get(`https://restcountries.eu/rest/v2/alpha/${id}`);
+    setCountry(res.data);
     setIsLoading(false);
   }, [id]);
 
@@ -41,7 +41,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
           <Loading />
         ) : (
           <>
-            <img className="details__flag" src={country.flag} alt="flag" />
+            <img className="details__flag" src={country.flag} alt="country flag" />
             <div className="details__info">
               <h1 className="details__info__name">{country.name}</h1>
               <div className="details__info__facts">

@@ -7,12 +7,15 @@ import SearchFilter from './components/Home/SearchFilter';
 import Countries from './components/Home/Countries';
 import CountryDetails from './components/DetailsPage/CountryDetails';
 import Loading from './components/Utilities/Loading';
+import LoadMoreBtn from './components/Home/LoadMoreBtn';
+import NumCountriesDisplayed from './components/Home/NumCountriesDisplayed';
 
 // TODOS
 // Fix select tag dropdown arrow placement or build custom dropdown component
 // Refactor the code from the facts section. Render by loop and maybe convert to list items
-// Incorporate pagination - don't load all countries on initial render, allow user to load more from button
 // Implement better practice for listening to scroll event
+// Add custom favicon
+// Improve accessbility
 
 const countryCodesToNames = new Map();
 
@@ -24,8 +27,7 @@ function App() {
   const [inputText, setInputText] = useState('');
   const [dropdown, setDropdown] = useState('DEFAULT');
   // const [showScrollBtn, setShowScrollBtn] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(20);
+  const [countriesDisplayed, setCountriesDisplayed] = useState(16);
 
   useEffect(() => {
     setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
@@ -59,12 +61,14 @@ function App() {
     fetchCountries();
   }, []);
 
-  const idxOfLastPost = currentPage * postsPerPage;
-  const idxOfFirstPost = idxOfLastPost - postsPerPage;
-  const currentCountries = filteredCountries.slice(
-    idxOfFirstPost,
-    idxOfLastPost
-  );
+  // const idxOfLastPost = currentPage * countriesDisplayed; // 1 * 4 = 4 --- Next load 2 * 4 = 8
+  // const idxOfFirstPost = idxOfLastPost - countriesDisplayed; // 4 - 4 = 0 --- Next load 8 - 4 = 4
+  // const currentCountries = filteredCountries.slice(
+  //   idxOfFirstPost, // 0 --- Next load 4
+  //   idxOfLastPost // 4 --- Next load 8
+  // );
+
+  const currentCountries = filteredCountries.slice(0, countriesDisplayed);
 
   // const checkScrollPosition = () => {
   //   console.log('runnin');
@@ -93,11 +97,21 @@ function App() {
               setInputText={setInputText}
               dropdown={dropdown}
               setDropdown={setDropdown}
+              filteredCountries={filteredCountries}
             />
             {isLoading ? (
               <Loading />
             ) : (
-              <Countries filteredCountries={currentCountries} />
+              <>
+                <Countries filteredCountries={currentCountries} />
+                {currentCountries.length < filteredCountries.length && (
+                  <LoadMoreBtn setCountriesDisplayed={setCountriesDisplayed} />
+                )}
+                <NumCountriesDisplayed
+                  countriesDisplayed={countriesDisplayed}
+                  countries={countries}
+                />
+              </>
             )}
           </Route>
           <Route path="/details/:id">
