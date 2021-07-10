@@ -16,10 +16,30 @@
 }
 
 .container {
-  max-width: 88vw;
+  max-width: 90vw;
   margin: 0 auto;
 }
 
 .weight-600 {
   font-weight: 600;
+}
+
+.scroll-to-top-btn {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  bottom: 40px;
+  right: 1.73%;
+  // background-color: var(--clr-text);
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow);
+  & i {
+    color: var(--clr-text);
+    margin-top: 2px;
+    font-size: 19px;
+    transition: all 0.3s ease;
+  }
 }

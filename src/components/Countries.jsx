@@ -6,13 +6,11 @@ import Country from './Country';
 
 const Countries = ({ filteredCountries }) => {
   return (
-    <div className="container">
-      <section className="countries">
-        {filteredCountries.map((country, idx) => (
-          <Country key={idx} {...country} />
-        ))}
-      </section>
-    </div>
+    <section className="countries">
+      {filteredCountries.map((country, idx) => (
+        <Country key={idx} {...country} />
+      ))}
+    </section>
   );
 };
 

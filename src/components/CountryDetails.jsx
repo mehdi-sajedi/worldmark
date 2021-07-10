@@ -67,7 +67,10 @@ const CountryDetails = ({ countryCodesToNames }) => {
                   <p className="details__info__facts__col-2__languages">
                     <span className="weight-600">Languages: </span>
                     {country.languages.map((lang, idx) => (
-                      <span key={idx}>{lang.name}, </span>
+                      <span key={idx}>
+                        {lang.name}
+                        {idx === country.languages.length - 1 ? '' : ', '}
+                      </span>
                     ))}
                   </p>
                 </div>

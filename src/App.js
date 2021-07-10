@@ -8,11 +8,11 @@ import CountryDetails from './components/CountryDetails';
 import Loading from './components/utilities/Loading';
 
 // TODOS
-// Remove trailing comma from languages
 // Fix select tag dropdown arrow placement or build custom dropdown component
 // Refactor the code from the facts section. Render by loop and maybe convert to list items
 // Make design changes for darkmode
-
+// Incorporate pagination - don't load all countries on initial render, allow user to load more from button
+// Implement better practice for listening to scroll event
 
 const countryCodesToNames = new Map();
 
@@ -23,15 +23,21 @@ function App() {
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [inputText, setInputText] = useState('');
   const [dropdown, setDropdown] = useState('DEFAULT');
+  // const [showScrollBtn, setShowScrollBtn] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
+    localStorage.setItem('darkmode', JSON.stringify(!darkMode));
   };
 
   useEffect(() => {
     darkMode && document.body.classList.add('darkmode');
     !darkMode && document.body.classList.remove('darkmode');
   }, [darkMode]);
+
+  useEffect(() => {
+    setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
+  }, []);
 
   const createCountryKeyPairs = (countries) => {
     countries.forEach((country) => {
@@ -53,12 +59,26 @@ function App() {
     fetchCountries();
   }, [fetchCountries]);
 
+  // const checkScrollPosition = () => {
+  //   console.log('runnin');
+  //   window.pageYOffset >= 1250 &&
+  //     setShowScrollBtn(true) &&
+  //     clearEventListener();
+  // };
+
+  // window.addEventListener('scroll', checkScrollPosition);
+
+  // const clearEventListener = () => {
+  //   window.removeEventListener('scroll', checkScrollPosition);
+  // };
+
   return (
     <BrowserRouter>
       <main className="container">
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Switch>
           <Route exact path="/">
+            {/* {showScrollBtn && <ScrollToTopBtn />} */}
             <SearchFilter
               countries={countries}
               setFilteredCountries={setFilteredCountries}

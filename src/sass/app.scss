@@ -6,11 +6,11 @@
   --clr-text: hsl(200, 15%, 8%);
   --clr-elements: hsl(0, 0%, 100%);
   --clr-input: hsl(0, 0%, 52%);
-  --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   --border-radius: 3px;
   --border-radius-btn: 5px;
-  --box-shadow-btn: rgba(0, 0, 0, 0.24) 3px 3px 8px;
+  --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   --box-shadow-hover: rgba(99, 99, 99, 0.2) 0px 4px 16px 0px;
+  --box-shadow-btn: rgba(0, 0, 0, 0.24) 3px 3px 8px;
 }
 
 .darkmode {
@@ -18,9 +18,8 @@
   --clr-text: hsl(0, 0%, 100%);
   --clr-elements: hsl(209, 23%, 22%);
   --clr-input: hsl(0, 0%, 100%);
-  --box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 3px 0px;
-  --box-shadow-btn: rgba(0, 0, 0, 0.24) 3px 3px 8px;
-  --box-shadow-hover: rgba(99, 99, 99, 0.2) 0px 4px 16px 0px;
+  --box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
+  --box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 16px 0px;
 }
 
 * {
@@ -135,6 +134,7 @@ button {
     outline: none;
     padding: 0.8rem 0.8rem;
     width: 150px;
+    cursor: pointer;
 
     // appearance: none;
     // background: url('../images/chevron-down-outline.svg') no-repeat center right;
