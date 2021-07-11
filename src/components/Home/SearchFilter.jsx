@@ -3,12 +3,44 @@ import { HiSearch } from 'react-icons/hi';
 
 const SearchFilter = ({
   countries,
-  setFilteredCountries,
+  setCurrentCountries,
   inputText,
   setInputText,
   dropdown,
   setDropdown,
 }) => {
+  const inputFilter = (e) => {
+    setInputText(e.target.value);
+    const matches = countries.filter((country) => {
+      return (
+        matchByDropdown(country.region, dropdown) &&
+        matchByInput(
+          country.name,
+          country.alpha2Code,
+          country.alpha3Code,
+          e.target.value
+        )
+      );
+    });
+    setCurrentCountries(matches);
+  };
+
+  const dropdownFilter = (e) => {
+    setDropdown(e.target.value);
+    const matches = countries.filter((country) => {
+      return (
+        matchByDropdown(country.region, e.target.value) &&
+        matchByInput(
+          country.name,
+          country.alpha2Code,
+          country.alpha3Code,
+          inputText
+        )
+      );
+    });
+    setCurrentCountries(matches);
+  };
+
   const matchByCountryIdentifier = (countryIdentifier, val) => {
     return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
   };
@@ -26,38 +58,6 @@ const SearchFilter = ({
     return val === region.toLowerCase();
   };
 
-  const inputFilter = (e) => {
-    setInputText(e.target.value);
-    const matches = countries.filter((country) => {
-      return (
-        matchByDropdown(country.region, dropdown) &&
-        matchByInput(
-          country.name,
-          country.alpha2Code,
-          country.alpha3Code,
-          e.target.value
-        )
-      );
-    });
-    setFilteredCountries(matches);
-  };
-
-  const dropdownFilter = (e) => {
-    setDropdown(e.target.value);
-    const matches = countries.filter((country) => {
-      return (
-        matchByDropdown(country.region, e.target.value) &&
-        matchByInput(
-          country.name,
-          country.alpha2Code,
-          country.alpha3Code,
-          inputText
-        )
-      );
-    });
-    setFilteredCountries(matches);
-  };
-
   return (
     <section className="search-filter">
       <div className="search-filter__input">
@@ -72,7 +72,7 @@ const SearchFilter = ({
           value={inputText}
         />
       </div>
-      <article>
+      <div>
         <select
           className="search-filter__dropdown"
           onChange={dropdownFilter}
@@ -88,7 +88,7 @@ const SearchFilter = ({
           <option value="europe">Europe</option>
           <option value="oceania">Oceania</option>
         </select>
-      </article>
+      </div>
     </section>
   );
 };

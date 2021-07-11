@@ -11,6 +11,7 @@
   --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   --box-shadow-hover: rgba(99, 99, 99, 0.2) 0px 4px 16px 0px;
   --box-shadow-btn: rgba(0, 0, 0, 0.24) 3px 3px 8px;
+  --box-shadow-borders: rgba(200, 200, 200, 0.8) 0px 0px 2px 1px;
 }
 
 .darkmode {
@@ -20,6 +21,7 @@
   --clr-input: hsl(0, 0%, 100%);
   --box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
   --box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 16px 0px;
+  --box-shadow-borders: rgba(0, 0, 0, 0.4) 0px 0px 5px 1px;
 }
 
 * {
@@ -85,7 +87,7 @@ button {
 .search-filter {
   display: flex;
   justify-content: space-between;
-  padding: 3rem 0;
+  margin: 3rem 0 1.5rem;
 
   &__input,
   &__dropdown {
@@ -159,6 +161,7 @@ button {
   box-shadow: var(--box-shadow);
   height: 320px;
   border-radius: var(--border-radius);
+  transition: all 0.4s ease;
 
   &__flag {
     width: 100%;
@@ -189,9 +192,14 @@ button {
   }
 }
 
-.countries-displayed {
-  text-align: center;
+.countries-shown.top {
+  text-align: left;
   margin-bottom: 1.5rem;
+}
+
+.countries-shown.bottom {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 // DETAILS PAGE
@@ -230,7 +238,7 @@ button {
       margin-top: 6rem;
 
       &__item {
-        box-shadow: var(--box-shadow);
+        box-shadow: var(--box-shadow-borders);
         border-radius: var(--border-radius);
         margin: 8px 8px 8px 0;
 

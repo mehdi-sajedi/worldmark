@@ -7,8 +7,8 @@ import SearchFilter from './components/Home/SearchFilter';
 import Countries from './components/Home/Countries';
 import CountryDetails from './components/DetailsPage/CountryDetails';
 import Loading from './components/Utilities/Loading';
-import LoadMoreBtn from './components/Home/LoadMoreBtn';
-import NumCountriesDisplayed from './components/Home/NumCountriesDisplayed';
+import ShowMoreBtn from './components/Home/ShowMoreBtn';
+import NumCountriesShown from './components/Home/NumCountriesShown';
 
 // TODOS
 // Fix select tag dropdown arrow placement or build custom dropdown component
@@ -23,11 +23,11 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [countries, setCountries] = useState([]);
-  const [filteredCountries, setFilteredCountries] = useState([]);
   const [inputText, setInputText] = useState('');
   const [dropdown, setDropdown] = useState('DEFAULT');
   // const [showScrollBtn, setShowScrollBtn] = useState(false);
-  const [countriesDisplayed, setCountriesDisplayed] = useState(16);
+  const [numCountriesShown, setNumCountriesShown] = useState(12);
+  const [currentCountries, setCurrentCountries] = useState([]);
 
   useEffect(() => {
     setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
@@ -54,21 +54,15 @@ function App() {
       setIsLoading(true);
       const res = await axios.get('https://restcountries.eu/rest/v2/all');
       setCountries(res.data);
-      setFilteredCountries(res.data);
       createCountryKeyPairs(res.data);
       setIsLoading(false);
     };
     fetchCountries();
   }, []);
 
-  // const idxOfLastPost = currentPage * countriesDisplayed; // 1 * 4 = 4 --- Next load 2 * 4 = 8
-  // const idxOfFirstPost = idxOfLastPost - countriesDisplayed; // 4 - 4 = 0 --- Next load 8 - 4 = 4
-  // const currentCountries = filteredCountries.slice(
-  //   idxOfFirstPost, // 0 --- Next load 4
-  //   idxOfLastPost // 4 --- Next load 8
-  // );
-
-  const currentCountries = filteredCountries.slice(0, countriesDisplayed);
+  useEffect(() => {
+    setCurrentCountries(countries.slice(0, numCountriesShown));
+  }, [countries, numCountriesShown]);
 
   // const checkScrollPosition = () => {
   //   console.log('runnin');
@@ -92,24 +86,32 @@ function App() {
             {/* {showScrollBtn && <ScrollToTopBtn />} */}
             <SearchFilter
               countries={countries}
-              setFilteredCountries={setFilteredCountries}
+              setCurrentCountries={setCurrentCountries}
               inputText={inputText}
               setInputText={setInputText}
               dropdown={dropdown}
               setDropdown={setDropdown}
-              filteredCountries={filteredCountries}
             />
+
             {isLoading ? (
               <Loading />
             ) : (
               <>
-                <Countries filteredCountries={currentCountries} />
-                {currentCountries.length < filteredCountries.length && (
-                  <LoadMoreBtn setCountriesDisplayed={setCountriesDisplayed} />
-                )}
-                <NumCountriesDisplayed
-                  countriesDisplayed={countriesDisplayed}
+                <NumCountriesShown
+                  currentCountries={currentCountries}
                   countries={countries}
+                  location="top"
+                />
+                <Countries currentCountries={currentCountries} />
+                {currentCountries.length < countries.length &&
+                  inputText === '' &&
+                  dropdown === 'DEFAULT' && (
+                    <ShowMoreBtn setNumCountriesShown={setNumCountriesShown} />
+                  )}
+                <NumCountriesShown
+                  currentCountries={currentCountries}
+                  countries={countries}
+                  location="bottom"
                 />
               </>
             )}
