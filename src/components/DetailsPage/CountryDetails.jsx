@@ -41,7 +41,11 @@ const CountryDetails = ({ countryCodesToNames }) => {
           <Loading />
         ) : (
           <>
-            <img className="details__flag" src={country.flag} alt="country flag" />
+            <img
+              className="details__flag"
+              src={country.flag}
+              alt="country flag"
+            />
             <div className="details__info">
               <h1 className="details__info__name">{country.name}</h1>
               <div className="details__info__facts">
@@ -117,13 +121,10 @@ const CountryDetails = ({ countryCodesToNames }) => {
                     </div>
                   ))
                 ) : (
-                  <div className="details__info__borders__item">
-                    <Link
-                      to={`/details/${country.alpha3Code}`}
-                      className="details__info__borders__item__text"
-                    >
+                  <div className="details__info__borders__item ">
+                    <p className="details__info__borders__item__text cursor-default">
                       None
-                    </Link>
+                    </p>
                   </div>
                 )}
               </div>

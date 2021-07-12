@@ -72,7 +72,26 @@ const SearchFilter = ({
           value={inputText}
         />
       </div>
-      <div>
+
+      <div className="custom-select">
+        <select
+          onChange={dropdownFilter}
+          value={dropdown}
+          className="custom-select__tag"
+        >
+          <option value="DEFAULT" hidden disabled>
+            Filter by Region
+          </option>
+          <option value="all">Show All</option>
+          <option value="africa">Africa</option>
+          <option value="americas">America</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
+        <div className="custom-select__arrow"></div>
+      </div>
+      {/* <div>
         <select
           className="search-filter__dropdown"
           onChange={dropdownFilter}
@@ -88,7 +107,7 @@ const SearchFilter = ({
           <option value="europe">Europe</option>
           <option value="oceania">Oceania</option>
         </select>
-      </div>
+      </div> */}
     </section>
   );
 };

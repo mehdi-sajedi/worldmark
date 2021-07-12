@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
 @import 'utilities';
 
 :root {
@@ -7,10 +8,11 @@
   --clr-elements: hsl(0, 0%, 100%);
   --clr-input: hsl(0, 0%, 52%);
   --border-radius: 3px;
-  --border-radius-btn: 5px;
+  --border-radius-circle: 100px;
   --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   --box-shadow-hover: rgba(99, 99, 99, 0.2) 0px 4px 16px 0px;
-  --box-shadow-btn: rgba(0, 0, 0, 0.24) 3px 3px 8px;
+  --box-shadow-btn: rgba(0, 0, 0, 0.6) 0px 0px 10px -3px;
+  --box-shadow-btn-back: rgba(0, 0, 0, 0.2) 0px 0px 10px -1px;
   --box-shadow-borders: rgba(200, 200, 200, 0.8) 0px 0px 2px 1px;
 }
 
@@ -31,7 +33,7 @@
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  @include font-stack;
   font-size: 14px;
   background-color: var(--clr-background);
   color: var(--clr-text);
@@ -94,7 +96,7 @@ button {
     background-color: var(--clr-elements);
     color: var(--clr-text);
     box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-circle);
   }
 
   &__input {
@@ -115,7 +117,7 @@ button {
     }
 
     &__text {
-      font-family: 'Nunito Sans', sans-serif;
+      @include font-stack;
       font-size: 14.5px;
       height: inherit;
       border: none;
@@ -145,6 +147,52 @@ button {
   }
 }
 
+.custom-select {
+  position: relative;
+  box-shadow: var(--box-shadow);
+  display: grid;
+  place-items: center;
+  border-radius: var(--border-radius-circle);
+
+  &__tag {
+    @include font-stack;
+    letter-spacing: 0.25px;
+    height: 100%;
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    appearance: none;
+    background-color: var(--clr-elements);
+    color: var(--clr-text);
+    border-radius: inherit;
+  }
+
+  &__arrow {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    pointer-events: none;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid var(--clr-text);
+    }
+  }
+}
+
 // COUNTRIES COMPONENT
 .countries {
   display: grid;
@@ -161,7 +209,6 @@ button {
   box-shadow: var(--box-shadow);
   height: 320px;
   border-radius: var(--border-radius);
-  transition: all 0.4s ease;
 
   &__flag {
     width: 100%;
@@ -239,7 +286,7 @@ button {
 
       &__item {
         box-shadow: var(--box-shadow-borders);
-        border-radius: var(--border-radius);
+        border-radius: var(--border-radius-circle);
         margin: 8px 8px 8px 0;
 
         &:first-of-type {

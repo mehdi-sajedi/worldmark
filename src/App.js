@@ -11,11 +11,20 @@ import ShowMoreBtn from './components/Home/ShowMoreBtn';
 import NumCountriesShown from './components/Home/NumCountriesShown';
 
 // TODOS
-// Fix select tag dropdown arrow placement or build custom dropdown component
-// Refactor the code from the facts section. Render by loop and maybe convert to list items
-// Implement better practice for listening to scroll event
-// Add custom favicon
-// Improve accessbility
+
+// ? What to load on initial render? 
+// The current flaw is the UI unpredictably when filtering by search or dropdown
+// Alternative is to render all 250 components, but have placeholders for the images until the user scrolls down to them OR when they try to search/filter for them.
+
+// ? DESIGN
+// Select dropdown still has default styles
+// Back btn looks off, maybe combination of too big/box-shadow/square radius when other elements are circles
+// Responsive design/Media Queries
+
+// * Leave these for very end
+// Custom favicon
+// Accessibility
+// Cross-browser compatability
 
 const countryCodesToNames = new Map();
 

@@ -15,6 +15,10 @@
   z-index: -1;
 }
 
+@mixin font-stack() {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 .container {
   max-width: 90vw;
   margin: 0 auto;
@@ -42,6 +46,8 @@
   align-items: center;
   justify-content: center;
   margin: 5rem 0;
+  // border-radius: var(--border-radius-circle);
+  box-shadow: var(--box-shadow-btn-back);
 
   &__arrow {
     font-size: 22px;
@@ -58,6 +64,14 @@
   display: grid;
   place-items: center;
   margin-bottom: 1rem;
+}
+
+.show-more-btn {
+  border-radius: var(--border-radius-circle);
+}
+
+.cursor-default {
+  cursor: default;
 }
 
 // .scroll-to-top-btn {
