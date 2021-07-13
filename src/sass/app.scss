@@ -6,6 +6,7 @@
   --clr-background: hsl(0, 0%, 98%);
   --clr-text: hsl(200, 15%, 8%);
   --clr-elements: hsl(0, 0%, 100%);
+  --clr-elements-hover: hsl(0, 0%, 95%);
   --clr-input: hsl(0, 0%, 52%);
   --border-radius: 3px;
   --border-radius-circle: 100px;
@@ -20,6 +21,7 @@
   --clr-background: hsl(207, 26%, 17%);
   --clr-text: hsl(0, 0%, 100%);
   --clr-elements: hsl(209, 23%, 22%);
+  --clr-elements-hover: hsl(209, 23%, 18%);
   --clr-input: hsl(0, 0%, 100%);
   --box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
   --box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 16px 0px;
@@ -82,6 +84,10 @@ button {
     &__icon {
       margin-top: 3px;
     }
+
+    &__text {
+      font-weight: 600;
+    }
   }
 }
 
@@ -91,8 +97,7 @@ button {
   justify-content: space-between;
   margin: 3rem 0 1.5rem;
 
-  &__input,
-  &__dropdown {
+  &__input {
     background-color: var(--clr-elements);
     color: var(--clr-text);
     box-shadow: var(--box-shadow);
@@ -134,61 +139,63 @@ button {
   }
 
   &__dropdown {
-    border: none;
-    outline: none;
-    padding: 0.8rem 0.8rem;
-    width: 150px;
-    cursor: pointer;
-
-    // appearance: none;
-    // background: url('../images/chevron-down-outline.svg') no-repeat center right;
-    // background-size: 15px;
-    // background-position-x: right 7%;
-  }
-}
-
-.custom-select {
-  position: relative;
-  box-shadow: var(--box-shadow);
-  display: grid;
-  place-items: center;
-  border-radius: var(--border-radius-circle);
-
-  &__tag {
-    @include font-stack;
-    letter-spacing: 0.25px;
-    height: 100%;
-    padding: 0.5rem 3rem 0.5rem 1rem;
-    cursor: pointer;
-    border: none;
-    appearance: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
     background-color: var(--clr-elements);
-    color: var(--clr-text);
-    border-radius: inherit;
-  }
+    border-radius: var(--border-radius-circle);
+    box-shadow: var(--box-shadow);
 
-  &__arrow {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3rem;
-    height: 100%;
-    pointer-events: none;
+    &__item {
+      display: flex;
+      align-items: center;
+      padding: 11px;
+      cursor: pointer;
 
-    &::before {
-      content: '';
-      display: block;
+      &__text {
+        text-transform: capitalize;
+      }
+
+      > * {
+        margin: 0 10px;
+      }
+    }
+
+    &__options {
+      background-color: var(--clr-elements);
+      color: var(--clr-text);
+      width: 150px;
+      overflow: hidden;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 0;
-      height: 0;
+      top: 47px;
+      right: 50%;
+      transform: translateX(50%);
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
 
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 6px solid var(--clr-text);
+      &.hide-dropdown {
+        max-height: 0;
+        opacity: 0;
+      }
+
+      &__item {
+        padding: 10px;
+        cursor: pointer;
+
+        &__input {
+          display: none;
+        }
+
+        &__label {
+          cursor: pointer;
+          pointer-events: none; // do not remove - needed for dropdown functionality
+          text-transform: capitalize;
+        }
+
+        &:hover {
+          background-color: var(--clr-elements-hover);
+        }
+      }
     }
   }
 }

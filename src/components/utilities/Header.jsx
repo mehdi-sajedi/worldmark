@@ -14,7 +14,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
         <i className="header__theme-btn__icon">
           {darkMode ? <HiMoon /> : <HiOutlineMoon />}
         </i>
-        <p className="header__theme-btn__text weight-600">
+        <p className="header__theme-btn__text">
           {darkMode ? 'Light Mode' : 'Dark Mode'}
         </p>
       </div>

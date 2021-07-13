@@ -12,7 +12,7 @@ import NumCountriesShown from './components/Home/NumCountriesShown';
 
 // TODOS
 
-// ? What to load on initial render? 
+// ? What to load on initial render?
 // The current flaw is the UI unpredictably when filtering by search or dropdown
 // Alternative is to render all 250 components, but have placeholders for the images until the user scrolls down to them OR when they try to search/filter for them.
 
@@ -33,7 +33,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [countries, setCountries] = useState([]);
   const [inputText, setInputText] = useState('');
-  const [dropdown, setDropdown] = useState('DEFAULT');
+  const [dropdown, setDropdown] = useState('Filter by region');
   // const [showScrollBtn, setShowScrollBtn] = useState(false);
   const [numCountriesShown, setNumCountriesShown] = useState(12);
   const [currentCountries, setCurrentCountries] = useState([]);
@@ -114,7 +114,7 @@ function App() {
                 <Countries currentCountries={currentCountries} />
                 {currentCountries.length < countries.length &&
                   inputText === '' &&
-                  dropdown === 'DEFAULT' && (
+                  dropdown === 'Filter by region' && (
                     <ShowMoreBtn setNumCountriesShown={setNumCountriesShown} />
                   )}
                 <NumCountriesShown

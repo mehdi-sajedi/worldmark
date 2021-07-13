@@ -108,7 +108,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                 </div>
               </div>
               <div className="details__info__borders">
-                <span className="weight-600">Border Countries:</span>
+                <span className="fw-600">Border Countries:</span>
                 {country.borders.length !== 0 ? (
                   country.borders.map((item, idx) => (
                     <div className="details__info__borders__item" key={idx}>
