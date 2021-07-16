@@ -60,6 +60,7 @@ button {
   justify-content: space-between;
   align-items: center;
   background-color: var(--clr-elements);
+  // background-color: gold;
   padding: 1.2rem 0;
 
   &::before {
@@ -69,6 +70,7 @@ button {
 
   &__text {
     color: var(--clr-text);
+    // background-color: cadetblue;
   }
 
   &__theme-btn {
@@ -105,7 +107,7 @@ button {
   }
 
   &__input {
-    width: 400px;
+    width: clamp(15vw, 400px, 40vw);
     height: 40px;
     display: flex;
     justify-content: flex-start;
@@ -140,7 +142,7 @@ button {
 
   &__dropdown {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     position: relative;
     background-color: var(--clr-elements);
     border-radius: var(--border-radius-circle);
@@ -162,11 +164,11 @@ button {
     }
 
     &__options {
+      position: absolute;
       background-color: var(--clr-elements);
       color: var(--clr-text);
       width: 150px;
       overflow: hidden;
-      position: absolute;
       top: 47px;
       right: 50%;
       transform: translateX(50%);
@@ -203,7 +205,10 @@ button {
 // COUNTRIES COMPONENT
 .countries {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  // gap: 5.55vw;
+  // gap: clamp(5vw, 5rem, 9vw);
   gap: 5rem;
   margin-bottom: 5rem;
 }
@@ -214,7 +219,7 @@ button {
   align-items: flex-start;
   background-color: var(--clr-elements);
   box-shadow: var(--box-shadow);
-  height: 320px;
+  height: 330px;
   border-radius: var(--border-radius);
 
   &__flag {
@@ -258,18 +263,18 @@ button {
 
 // DETAILS PAGE
 .details {
-  font-size: 16px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 10rem;
+  display: flex;
+  align-items: flex-start;
   margin-bottom: 3rem;
+  column-gap: 8rem;
+  font-size: 16px;
 
   &__flag {
-    width: 100%;
+    width: 50%;
   }
 
   &__info {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -283,6 +288,13 @@ button {
       justify-content: space-between;
       line-height: 1.85;
       margin-top: 2rem;
+      column-gap: 3rem;
+      white-space: nowrap;
+
+      &__col-2 {
+        width: 50%; // Mess with this for spacing between columns
+        white-space: pre-wrap;
+      }
     }
 
     &__borders {
@@ -290,22 +302,33 @@ button {
       flex-wrap: wrap;
       align-items: center;
       margin-top: 6rem;
+      // white-space: nowrap;
 
-      &__item {
-        box-shadow: var(--box-shadow-borders);
-        border-radius: var(--border-radius-circle);
-        margin: 8px 8px 8px 0;
+      &__title {
+        margin-right: 20px;
+      }
 
-        &:first-of-type {
-          margin: 8px 8px 8px 15px;
-        }
+      &__countries {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
 
-        &__text {
-          display: inline-block;
-          font-size: 14.5px;
-          padding: 5px 15px;
+        &__item {
+          background-color: var(--clr-elements);
+          color: var(--clr-text);
+          box-shadow: var(--box-shadow-borders);
+          // border-radius: var(--border-radius-circle);
+          margin: 8px 12px 8px 0;
+
+          &__text {
+            display: inline-block;
+            font-size: 14.5px;
+            padding: 5px 15px;
+          }
         }
       }
     }
   }
 }
+
+@import 'media';

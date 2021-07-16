@@ -1,10 +1,3 @@
-@mixin flex-center($direction: row) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
-
 @mixin extend-background($color) {
   content: '';
   background-color: $color;
@@ -20,8 +13,9 @@
 }
 
 .container {
-  max-width: 90vw;
+  max-width: clamp(50vw, 2200px, 90vw);
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .fw-600 {
@@ -29,6 +23,7 @@
 }
 
 .btn {
+  @include font-stack();
   padding: 8px 24px;
   background-color: var(--clr-elements);
   color: var(--clr-text);
@@ -52,7 +47,7 @@
   &__arrow {
     font-size: 22px;
     margin-right: 10px;
-    transform: translateY(1px);
+    // transform: translateY(1px);
   }
 
   &__text {
@@ -74,22 +69,37 @@
   cursor: default;
 }
 
-// .scroll-to-top-btn {
-//   display: grid;
-//   place-items: center;
-//   position: fixed;
-//   bottom: 40px;
-//   right: 1.73%;
-//   // background-color: var(--clr-text);
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 100px;
-//   transition: all 0.3s ease;
-//   box-shadow: var(--box-shadow);
-//   & i {
-//     color: var(--clr-text);
-//     margin-top: 2px;
-//     font-size: 19px;
-//     transition: all 0.3s ease;
-//   }
-// }
+.scroll-to-top-btn {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  bottom: 40px;
+  right: 1%;
+  // background-color: var(--clr-text);
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow);
+  & i {
+    color: var(--clr-text);
+    margin-top: 2px;
+    font-size: 19px;
+    transition: all 0.3s ease;
+  }
+}
+
+// Safari column-gap workaround
+_::-webkit-full-page-media,
+_:future,
+:root .details > * + * {
+  margin-left: 8rem;
+}
+
+@media (max-width: 992px) {
+  _::-webkit-full-page-media,
+  _:future,
+  :root .details > * + * {
+    margin-left: 0;
+  }
+}

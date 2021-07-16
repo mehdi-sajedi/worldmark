@@ -108,25 +108,32 @@ const CountryDetails = ({ countryCodesToNames }) => {
                 </div>
               </div>
               <div className="details__info__borders">
-                <span className="fw-600">Border Countries:</span>
-                {country.borders.length !== 0 ? (
-                  country.borders.map((item, idx) => (
-                    <div className="details__info__borders__item" key={idx}>
-                      <Link
-                        to={`/details/${item}`}
-                        className="details__info__borders__item__text"
+                <span className="details__info__borders__title fw-600">
+                  Border Countries:
+                </span>
+                <div className="details__info__borders__countries">
+                  {country.borders.length !== 0 ? (
+                    country.borders.map((item, idx) => (
+                      <div
+                        className="details__info__borders__countries__item"
+                        key={idx}
                       >
-                        {countryCodesToNames.get(item)}
-                      </Link>
+                        <Link
+                          to={`/details/${item}`}
+                          className="details__info__borders__countries__item__text"
+                        >
+                          {countryCodesToNames.get(item)}
+                        </Link>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="details__info__borders__item ">
+                      <p className="details__info__borders__item__text cursor-default">
+                        None
+                      </p>
                     </div>
-                  ))
-                ) : (
-                  <div className="details__info__borders__item ">
-                    <p className="details__info__borders__item__text cursor-default">
-                      None
-                    </p>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </div>
           </>

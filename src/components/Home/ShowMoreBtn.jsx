@@ -10,7 +10,7 @@ const ShowMoreBtn = ({ setNumCountriesShown }) => {
   return (
     <div className="show-more-btn-container">
       <button onClick={showMoreCountries} className="btn show-more-btn">
-        <span className="show-more-btn__text">Show More</span>
+        Show More
       </button>
     </div>
   );

@@ -17,7 +17,6 @@ import NumCountriesShown from './components/Home/NumCountriesShown';
 // Alternative is to render all 250 components, but have placeholders for the images until the user scrolls down to them OR when they try to search/filter for them.
 
 // ? DESIGN
-// Select dropdown still has default styles
 // Back btn looks off, maybe combination of too big/box-shadow/square radius when other elements are circles
 // Responsive design/Media Queries
 

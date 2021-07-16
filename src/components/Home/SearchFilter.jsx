@@ -3,6 +3,7 @@ import DropdownItem from './DropdownItem';
 import { HiSearch } from 'react-icons/hi';
 import { IoIosArrowDown } from 'react-icons/io';
 
+// prettier-ignore
 const dropdownOptions = [
   'show all',
   'africa',
@@ -21,26 +22,26 @@ const SearchFilter = ({
   setDropdown,
 }) => {
   const [hideDropdown, setHideDropdown] = useState(true);
-  const dropdownRef = useRef();
+  const dropdownButtonRef = useRef();
+  const dropdownOptionsContainerRef = useRef();
 
   useEffect(() => {
     const x = document.addEventListener('mousedown', (e) => {
-      if (e.target.parentNode !== dropdownRef.current) setHideDropdown(true);
+      if (e.target.closest('.search-filter__dropdown')) {
+        setHideDropdown((prevState) => !prevState);
+      } else if (e.target.parentNode !== dropdownOptionsContainerRef.current) {
+        setHideDropdown(true);
+      }
     });
     return () => {
       document.removeEventListener('mousedown', x);
     };
   }, []);
 
-  const toggleDropdown = () => {
-    setHideDropdown((prevState) => !prevState);
-  };
-
   const countriesFilter = (e, from) => {
     let dropdownArg, inputArg;
 
     if (from === 'dropdown') {
-      setHideDropdown((prevState) => !prevState);
       setDropdown(e.target.dataset.value);
       dropdownArg = e.target.dataset.value;
       inputArg = inputText;
@@ -50,6 +51,7 @@ const SearchFilter = ({
       dropdownArg = dropdown;
       inputArg = e.target.value;
     }
+
     const matches = countries.filter((country) => {
       return (
         matchByDropdown(country.region, dropdownArg) &&
@@ -64,21 +66,21 @@ const SearchFilter = ({
     setCurrentCountries(matches);
   };
 
-  const matchByCountryIdentifier = (countryIdentifier, val) => {
-    return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
+  const matchByDropdown = (region, val) => {
+    if (val === 'show all' || val === 'Filter by region') return true;
+    return val === region.toLowerCase();
   };
 
-  const matchBySearch = (name, alpha2Code, alpha3Code, val) => {
+  const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
     return (
-      matchByCountryIdentifier(name, val) ||
+      matchByCountryIdentifier(country, val) ||
       matchByCountryIdentifier(alpha2Code, val) ||
       matchByCountryIdentifier(alpha3Code, val)
     );
   };
 
-  const matchByDropdown = (region, val) => {
-    if (val === 'show all' || val === 'Filter by region') return true;
-    return val === region.toLowerCase();
+  const matchByCountryIdentifier = (countryIdentifier, val) => {
+    return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
   };
 
   return (
@@ -97,7 +99,11 @@ const SearchFilter = ({
       </div>
 
       <div className="search-filter__dropdown">
-        <div className="search-filter__dropdown__item" onClick={toggleDropdown}>
+        <div
+          className="search-filter__dropdown__item"
+          // onClick={toggleDropdown}
+          ref={dropdownButtonRef}
+        >
           <p className="search-filter__dropdown__item__text ">{dropdown}</p>
           <IoIosArrowDown />
         </div>
@@ -106,10 +112,10 @@ const SearchFilter = ({
             hideDropdown && 'hide-dropdown'
           }`}
           onClick={(e) => countriesFilter(e, 'dropdown')}
-          ref={dropdownRef}
+          ref={dropdownOptionsContainerRef}
         >
           {dropdownOptions.map((country) => (
-            <DropdownItem country={country} />
+            <DropdownItem country={country} key={country} />
           ))}
         </div>
       </div>
