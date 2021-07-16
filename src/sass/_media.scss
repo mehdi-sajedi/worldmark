@@ -1,5 +1,5 @@
 // Home Page
-@media (max-width: 600px) {
+@media (max-width: 695px) {
   .header {
     font-size: 13px;
   }
@@ -41,9 +41,9 @@
     &__info {
       &__facts {
         flex-direction: column;
-        line-height: 2;
 
         &__col-2 {
+          // don't think this does anything useful anymore
           width: clamp(50%, calc(1000px - 40vw), 100%);
         }
       }

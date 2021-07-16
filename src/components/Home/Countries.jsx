@@ -3,7 +3,10 @@ import Country from './Country';
 
 const Countries = ({ currentCountries }) => {
   return (
-    <section className="countries">
+    <section
+      // style={currentCountries.length <= 5 ? { backgroundColor: 'gold' } : null}
+      className={`countries ${currentCountries.length <= 5 && 'snapper'}`}
+    >
       {currentCountries.map((country, idx) => (
         <Country key={idx} {...country} />
       ))}

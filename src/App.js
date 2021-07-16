@@ -19,6 +19,7 @@ import NumCountriesShown from './components/Home/NumCountriesShown';
 // ? DESIGN
 // Back btn looks off, maybe combination of too big/box-shadow/square radius when other elements are circles
 // Responsive design/Media Queries
+// Flag a little too big when breaking to tablet view
 
 // * Leave these for very end
 // Custom favicon
@@ -36,6 +37,7 @@ function App() {
   // const [showScrollBtn, setShowScrollBtn] = useState(false);
   const [numCountriesShown, setNumCountriesShown] = useState(12);
   const [currentCountries, setCurrentCountries] = useState([]);
+
 
   useEffect(() => {
     setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
