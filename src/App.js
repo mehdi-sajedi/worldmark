@@ -17,9 +17,7 @@ import NumCountriesShown from './components/Home/NumCountriesShown';
 // Alternative is to render all 250 components, but have placeholders for the images until the user scrolls down to them OR when they try to search/filter for them.
 
 // ? DESIGN
-// Back btn looks off, maybe combination of too big/box-shadow/square radius when other elements are circles
-// Responsive design/Media Queries
-// Flag a little too big when breaking to tablet view
+// Header clumped on mobile
 
 // * Leave these for very end
 // Custom favicon
@@ -33,11 +31,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [countries, setCountries] = useState([]);
   const [inputText, setInputText] = useState('');
-  const [dropdown, setDropdown] = useState('Filter by region');
+  const [dropdownText, setDropdownText] = useState('Filter by Region');
   // const [showScrollBtn, setShowScrollBtn] = useState(false);
   const [numCountriesShown, setNumCountriesShown] = useState(12);
   const [currentCountries, setCurrentCountries] = useState([]);
-
 
   useEffect(() => {
     setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
@@ -99,8 +96,8 @@ function App() {
               setCurrentCountries={setCurrentCountries}
               inputText={inputText}
               setInputText={setInputText}
-              dropdown={dropdown}
-              setDropdown={setDropdown}
+              dropdownText={dropdownText}
+              setDropdownText={setDropdownText}
             />
 
             {isLoading ? (
@@ -115,7 +112,7 @@ function App() {
                 <Countries currentCountries={currentCountries} />
                 {currentCountries.length < countries.length &&
                   inputText === '' &&
-                  dropdown === 'Filter by region' && (
+                  dropdownText === 'Filter by Region' && (
                     <ShowMoreBtn setNumCountriesShown={setNumCountriesShown} />
                   )}
                 <NumCountriesShown

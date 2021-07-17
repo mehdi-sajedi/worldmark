@@ -6,9 +6,9 @@ const BackBtn = () => {
   const history = useHistory();
 
   return (
-    <button onClick={() => history.goBack()} className="btn back-btn">
-      <BsArrowLeft className="back-btn__arrow" />
-      <span className="back-btn__text">Back</span>
+    <button onClick={() => history.goBack()} className="btn btn-back">
+      <BsArrowLeft className="btn-back__arrow" />
+      <span className="btn-back__text">Back</span>
     </button>
   );
 };

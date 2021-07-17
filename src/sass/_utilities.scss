@@ -24,6 +24,7 @@
 
 .btn {
   @include font-stack();
+  font-size: 13px;
   padding: 8px 24px;
   background-color: var(--clr-elements);
   color: var(--clr-text);
@@ -36,13 +37,12 @@
   letter-spacing: 0.5px;
 }
 
-.back-btn {
+.btn-back {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 5rem 0;
-  // border-radius: var(--border-radius-circle);
-  box-shadow: var(--box-shadow-btn-back);
+  box-shadow: var(--box-shadow-solid);
 
   &__arrow {
     font-size: 22px;
@@ -55,13 +55,13 @@
   }
 }
 
-.show-more-btn-container {
+.btn-show-more-container {
   display: grid;
   place-items: center;
   margin-bottom: 1rem;
 }
 
-.show-more-btn {
+.btn-show-more {
   border-radius: var(--border-radius-circle);
 }
 
@@ -78,7 +78,7 @@
   // background-color: var(--clr-text);
   width: 40px;
   height: 40px;
-  border-radius: 100px;
+  border-radius: var(--border-radius-circle);
   transition: all 0.3s ease;
   box-shadow: var(--box-shadow);
   & i {
@@ -100,20 +100,4 @@ _::-webkit-full-page-media,
 _:future,
 :root .details__info__facts > * + * {
   margin-left: 3rem;
-}
-
-@media (max-width: 1250px) {
-  _::-webkit-full-page-media,
-  _:future,
-  :root .details__info__facts > * + * {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 992px) {
-  _::-webkit-full-page-media,
-  _:future,
-  :root .details > * + * {
-    margin-left: 0;
-  }
 }

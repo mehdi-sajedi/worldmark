@@ -1,5 +1,5 @@
 // Home Page
-@media (max-width: 695px) {
+@media (max-width: 675px) {
   .header {
     font-size: 13px;
   }
@@ -15,58 +15,48 @@
 
     &__dropdown {
       margin: 0 auto;
-      font-size: 12.5px;
+      font-size: 12px;
       padding: 0 5px;
     }
   }
 
   .countries {
-    gap: 3rem;
-    width: 80%;
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+    // width: 80%;
     margin: 0 auto 3rem;
+
+    &.snapper > * {
+      margin: 0 auto;
+    }
+  }
+
+  .country {
+    &__info {
+      margin-left: 25px;
+    }
   }
 
   .countries-shown {
-    font-size: 12.5px;
+    font-size: 12px;
 
     &.top {
       text-align: center;
     }
   }
-}
 
-// Details Page
-@media (max-width: 1250px) {
-  .details {
-    &__info {
-      &__facts {
-        flex-direction: column;
-
-        &__col-2 {
-          // don't think this does anything useful anymore
-          width: clamp(50%, calc(1000px - 40vw), 100%);
-        }
-      }
-
-      &__borders {
-        margin-top: 4rem;
-        // white-space: pre-wrap;
-        &__item {
-          &:first-of-type {
-            margin: 8px;
-          }
-        }
-      }
-    }
+  .btn {
+    font-size: 12px;
   }
 }
 
-@media (max-width: 992px) {
+// Details Page
+@media (max-width: 1200px) {
   .details {
     flex-direction: column;
 
     &__flag {
-      width: clamp(50%, calc(300px + 40vw), 100%);
+      width: clamp(50%, calc(275px + 30vw), 100%);
     }
 
     &__info {
@@ -76,13 +66,22 @@
       }
 
       &__facts {
+        flex-direction: column;
         line-height: 2.2;
+
+        &__col-2 {
+          &__languages {
+            line-height: 2;
+          }
+        }
       }
 
       &__borders {
+        margin-top: 4rem;
         white-space: nowrap;
         flex-direction: column;
         align-items: flex-start;
+        width: 90%;
       }
     }
   }
@@ -97,5 +96,18 @@
     &__text {
       font-size: 13px;
     }
+  }
+
+  // Safari - clearing custom column-gap
+  _::-webkit-full-page-media,
+  _:future,
+  :root .details__info__facts > * + * {
+    margin-left: 0;
+  }
+
+  _::-webkit-full-page-media,
+  _:future,
+  :root .details > * + * {
+    margin-left: 0;
   }
 }

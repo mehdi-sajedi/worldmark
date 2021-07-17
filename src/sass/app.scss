@@ -6,15 +6,14 @@
   --clr-background: hsl(0, 0%, 98%);
   --clr-text: hsl(200, 15%, 8%);
   --clr-elements: hsl(0, 0%, 100%);
-  --clr-elements-hover: hsl(0, 0%, 95%);
+  --clr-elements-hover: hsl(0, 0%, 94%);
   --clr-input: hsl(0, 0%, 52%);
   --border-radius: 3px;
   --border-radius-circle: 100px;
   --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   --box-shadow-hover: rgba(99, 99, 99, 0.2) 0px 4px 16px 0px;
   --box-shadow-btn: rgba(0, 0, 0, 0.6) 0px 0px 10px -3px;
-  --box-shadow-btn-back: rgba(0, 0, 0, 0.2) 0px 0px 10px -1px;
-  --box-shadow-borders: rgba(200, 200, 200, 0.8) 0px 0px 2px 1px;
+  --box-shadow-solid: rgba(200, 200, 200, 0.8) 0px 0px 2px 1px;
 }
 
 .darkmode {
@@ -25,7 +24,7 @@
   --clr-input: hsl(0, 0%, 100%);
   --box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
   --box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 16px 0px;
-  --box-shadow-borders: rgba(0, 0, 0, 0.4) 0px 0px 5px 1px;
+  --box-shadow-solid: rgba(0, 0, 0, 0.4) 0px 0px 5px 1px;
 }
 
 * {
@@ -34,14 +33,18 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 body {
   @include font-stack;
   font-size: 14px;
   background-color: var(--clr-background);
   color: var(--clr-text);
   letter-spacing: 0.5px;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  position: relative;
 }
 
 a {
@@ -60,8 +63,8 @@ button {
   justify-content: space-between;
   align-items: center;
   background-color: var(--clr-elements);
-  // background-color: gold;
   padding: 1.2rem 0;
+  // box-shadow: var(--box-shadow);
 
   &::before {
     @include extend-background(var(--clr-elements));
@@ -70,7 +73,6 @@ button {
 
   &__text {
     color: var(--clr-text);
-    // background-color: cadetblue;
   }
 
   &__theme-btn {
@@ -104,9 +106,6 @@ button {
     color: var(--clr-text);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius-circle);
-  }
-
-  &__input {
     width: clamp(15vw, 400px, 40vw);
     height: 40px;
     display: flex;
@@ -125,7 +124,7 @@ button {
 
     &__text {
       @include font-stack;
-      font-size: 14.5px;
+      font-size: 14px;
       height: inherit;
       border: none;
       outline: none;
@@ -145,17 +144,19 @@ button {
     // flex-direction: column;
     position: relative;
     background-color: var(--clr-elements);
-    border-radius: var(--border-radius-circle);
+    border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 
     &__item {
       display: flex;
       align-items: center;
       padding: 11px;
+      padding: 11px 7px;
       cursor: pointer;
 
       &__text {
         text-transform: capitalize;
+        font-size: 13px;
       }
 
       > * {
@@ -175,14 +176,14 @@ button {
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius);
 
-      &.hide-dropdown {
+      &.hidden {
         max-height: 0;
         opacity: 0;
       }
 
       &__item {
         padding: 10px;
-        cursor: pointer;
+        // cursor: default;
 
         &__input {
           display: none;
@@ -206,12 +207,11 @@ button {
 .countries {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
-  gap: 5rem;
+  gap: clamp(60px, 4vw, 100px);
   margin-bottom: 5rem;
 
   &.snapper > * {
     width: clamp(256px, 100%, 315px);
-    margin: 0 auto;
   }
 }
 
@@ -228,13 +228,13 @@ button {
     width: 100%;
     height: 50%;
     object-fit: cover;
-    justify-self: flex-start;
+    // justify-self: flex-start;
     border-radius: var(--border-radius);
   }
 
   &__info {
-    width: 80%;
-    margin: 0 auto;
+    text-align: left;
+    margin-left: 30px;
     padding: 1.5rem 0;
 
     &__name {
@@ -244,7 +244,7 @@ button {
     &__details {
       list-style: none;
       margin-top: 1rem;
-      line-height: 1.75;
+      line-height: 1.9;
     }
   }
 
@@ -322,7 +322,7 @@ button {
         &__item {
           background-color: var(--clr-elements);
           color: var(--clr-text);
-          box-shadow: var(--box-shadow-borders);
+          box-shadow: var(--box-shadow-solid);
           // border-radius: var(--border-radius-circle);
           margin: 8px 12px 8px 0;
 

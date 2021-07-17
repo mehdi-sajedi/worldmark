@@ -6,17 +6,6 @@ import Loading from '../Utilities/Loading';
 import BackBtn from './BackBtn';
 import CountryDetailsItem from './CountryDetailsItem';
 
-// const {
-//   nativeName,
-//   population,
-//   region,
-//   subregion,
-//   capital,
-//   topLevelDomain,
-//   currencies,
-//   languages,
-// } = data;
-
 const CountryDetails = ({ countryCodesToNames }) => {
   const { id } = useParams();
   const [country, setCountry] = useState([]);
@@ -27,6 +16,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
     const res = await axios.get(`https://restcountries.eu/rest/v2/alpha/${id}`);
     setCountry(res.data);
     setIsLoading(false);
+    console.log(res.data);
   }, [id]);
 
   useEffect(() => {
@@ -51,7 +41,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
               <div className="details__info__facts">
                 <div className="details__info__facts__col-1">
                   <CountryDetailsItem
-                    className="native"
+                    className="native-name"
                     title="Native Name"
                     property={country.nativeName}
                     column="1"
@@ -63,35 +53,36 @@ const CountryDetails = ({ countryCodesToNames }) => {
                     column="1"
                   />
                   <CountryDetailsItem
-                    className="region"
-                    title="Region"
-                    property={country.region}
-                    column="1"
-                  />
-                  <CountryDetailsItem
-                    className="sub-region"
-                    title="Sub Region"
-                    property={country.subregion}
-                    column="1"
-                  />
-                  <CountryDetailsItem
                     className="capital"
                     title="Capital"
                     property={country.capital}
                     column="1"
                   />
-                </div>
-                <div className="details__info__facts__col-2">
-                  <CountryDetailsItem
-                    className="top-level-domain"
-                    title="Top Level Domain"
-                    property={country.topLevelDomain}
-                    column="2"
-                  />
                   <CountryDetailsItem
                     className="currency"
                     title="Currency"
                     property={country.currencies[0].name}
+                    column="1"
+                  />
+
+                  <CountryDetailsItem
+                    className="alpha-3-code"
+                    title="Alpha-3 Code"
+                    property={country.alpha3Code}
+                    column="2"
+                  />
+                </div>
+                <div className="details__info__facts__col-2">
+                  <CountryDetailsItem
+                    className="region"
+                    title="Region"
+                    property={country.region}
+                    column="2"
+                  />
+                  <CountryDetailsItem
+                    className="sub-region"
+                    title="Sub Region"
+                    property={country.subregion}
                     column="2"
                   />
                   <CountryDetailsItem
@@ -103,7 +94,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                         {idx === country.languages.length - 1 ? '' : ', '}
                       </span>
                     ))}
-                    column="2"
+                    column="1"
                   />
                 </div>
               </div>
@@ -127,8 +118,8 @@ const CountryDetails = ({ countryCodesToNames }) => {
                       </div>
                     ))
                   ) : (
-                    <div className="details__info__borders__item ">
-                      <p className="details__info__borders__item__text cursor-default">
+                    <div className="details__info__borders__countries__item ">
+                      <p className="details__info__borders__countries__item__text cursor-default">
                         None
                       </p>
                     </div>

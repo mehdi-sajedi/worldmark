@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import DropdownItem from './DropdownItem';
+import useComponentInvisible from '../../hooks/useComponentInvisible';
 import { HiSearch } from 'react-icons/hi';
 import { IoIosArrowDown } from 'react-icons/io';
 
-// prettier-ignore
 const dropdownOptions = [
   'show all',
   'africa',
@@ -18,37 +18,26 @@ const SearchFilter = ({
   setCurrentCountries,
   inputText,
   setInputText,
-  dropdown,
-  setDropdown,
+  dropdownText,
+  setDropdownText,
 }) => {
-  const [hideDropdown, setHideDropdown] = useState(true);
-  const dropdownButtonRef = useRef();
-  const dropdownOptionsContainerRef = useRef();
-
-  useEffect(() => {
-    const x = document.addEventListener('mousedown', (e) => {
-      if (e.target.closest('.search-filter__dropdown')) {
-        setHideDropdown((prevState) => !prevState);
-      } else if (e.target.parentNode !== dropdownOptionsContainerRef.current) {
-        setHideDropdown(true);
-      }
-    });
-    return () => {
-      document.removeEventListener('mousedown', x);
-    };
-  }, []);
+  const {
+    ref: dropdownRef,
+    isComponentInvisible: isDropdownInvisible,
+    setIsComponentInvisible: setIsDropdownInvisible,
+  } = useComponentInvisible(true);
 
   const countriesFilter = (e, from) => {
     let dropdownArg, inputArg;
 
     if (from === 'dropdown') {
-      setDropdown(e.target.dataset.value);
+      setDropdownText(e.target.dataset.value);
       dropdownArg = e.target.dataset.value;
       inputArg = inputText;
     }
     if (from === 'search') {
       setInputText(e.target.value);
-      dropdownArg = dropdown;
+      dropdownArg = dropdownText;
       inputArg = e.target.value;
     }
 
@@ -98,21 +87,20 @@ const SearchFilter = ({
         />
       </div>
 
-      <div className="search-filter__dropdown">
-        <div
-          className="search-filter__dropdown__item"
-          // onClick={toggleDropdown}
-          ref={dropdownButtonRef}
-        >
-          <p className="search-filter__dropdown__item__text ">{dropdown}</p>
+      <div
+        className="search-filter__dropdown"
+        onClick={() => setIsDropdownInvisible((prevState) => !prevState)}
+        ref={dropdownRef}
+      >
+        <div className="search-filter__dropdown__item">
+          <p className="search-filter__dropdown__item__text ">{dropdownText}</p>
           <IoIosArrowDown />
         </div>
         <div
           className={`search-filter__dropdown__options ${
-            hideDropdown && 'hide-dropdown'
+            isDropdownInvisible ? 'hidden' : ''
           }`}
           onClick={(e) => countriesFilter(e, 'dropdown')}
-          ref={dropdownOptionsContainerRef}
         >
           {dropdownOptions.map((country) => (
             <DropdownItem country={country} key={country} />
