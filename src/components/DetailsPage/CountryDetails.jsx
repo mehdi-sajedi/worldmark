@@ -5,7 +5,6 @@ import axios from 'axios';
 import Loading from '../Utilities/Loading';
 import BackBtn from './BackBtn';
 import CountryDetailsItem from './CountryDetailsItem';
-import PageNotFound from '../Utilities/PageNotFound';
 
 const CountryDetails = ({ countryCodesToNames }) => {
   const { id } = useParams();
