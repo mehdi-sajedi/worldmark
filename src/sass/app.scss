@@ -3,29 +3,29 @@
 @import 'utilities';
 
 :root {
-  --clr-background: hsl(0, 0%, 98%);
-  --clr-text: hsl(200, 15%, 8%);
-  --clr-elements: hsl(0, 0%, 100%);
-  --clr-elements-inverse: hsl(209, 23%, 22%);
-  --clr-elements-hover: hsl(0, 0%, 94%);
-  --clr-input: hsl(0, 0%, 52%);
+  --clr-background: rgb(250, 250, 250);
+  --clr-text: rgb(17, 21, 23);
+  --clr-elements: rgb(255, 255, 255);
+  --clr-elements-inverse: rgb(43, 57, 69);
+  --clr-elements-hover: rgb(240, 240, 240);
+  --clr-input: rgb(133, 133, 133);
   --border-radius: 3px;
-  --border-radius-circle: 100px;
-  --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  --box-shadow-hover: rgba(99, 99, 99, 0.2) 0px 4px 16px 0px;
+  --border-radius-circle: 1000px;
+  --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
+  --box-shadow-hover: rgba(99, 99, 99, 0.2) 0px 4px 16px;
   --box-shadow-btn: rgba(0, 0, 0, 0.6) 0px 0px 10px -3px;
   --box-shadow-solid: rgba(200, 200, 200, 0.8) 0px 0px 2px 1px;
 }
 
 .darkmode {
-  --clr-background: hsl(207, 26%, 17%);
-  --clr-text: hsl(0, 0%, 100%);
+  --clr-background: rgb(32, 44, 55);
+  --clr-text: rgb(255, 255, 255);
   --clr-elements: hsl(209, 23%, 22%);
-  --clr-elements-inverse: hsl(0, 0%, 100%);
-  --clr-elements-hover: hsl(209, 23%, 18%);
-  --clr-input: hsl(0, 0%, 100%);
+  --clr-elements-inverse: rgb(255, 255, 255);
+  --clr-elements-hover: rgb(35, 46, 56);
+  --clr-input: rgb(255, 255, 255);
   --box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
-  --box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 16px 0px;
+  --box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 16px;
   --box-shadow-solid: rgba(0, 0, 0, 0.4) 0px 0px 5px 1px;
 }
 
@@ -215,6 +215,17 @@ button {
   }
 }
 
+// Countries Shown Text
+.countries-shown.top {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.countries-shown.bottom {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 // COUNTRIES COMPONENT
 .countries {
   display: grid;
@@ -263,16 +274,6 @@ button {
   &:hover {
     box-shadow: var(--box-shadow-hover);
   }
-}
-
-.countries-shown.top {
-  text-align: left;
-  margin-bottom: 1.5rem;
-}
-
-.countries-shown.bottom {
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
 .footer {
@@ -328,7 +329,6 @@ button {
   &__arrow {
     font-size: 22px;
     margin-right: 10px;
-    // transform: translateY(1px);
   }
 
   &__text {

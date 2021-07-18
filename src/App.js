@@ -77,8 +77,8 @@ function App() {
   }, [countries, numCountriesShown, setCurrentCountries]);
 
   return (
-    <BrowserRouter>
-      <main className="container">
+    <main className="container">
+      <BrowserRouter>
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Switch>
           <Route exact path="/">
@@ -117,8 +117,8 @@ function App() {
           </Route>
           <Route>{PageNotFound}</Route>
         </Switch>
-      </main>
-    </BrowserRouter>
+      </BrowserRouter>
+    </main>
   );
 }
 
