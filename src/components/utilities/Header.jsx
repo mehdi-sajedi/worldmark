@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiOutlineMoon } from 'react-icons/hi';
 import { HiMoon } from 'react-icons/hi';
-// import { IoIosSunny } from 'react-icons/io';
 
 const Header = ({ toggleDarkMode, darkMode }) => {
   return (

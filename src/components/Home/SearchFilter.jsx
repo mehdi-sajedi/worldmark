@@ -56,7 +56,7 @@ const SearchFilter = ({
   };
 
   const matchByDropdown = (region, val) => {
-    if (val === 'show all' || val === 'Filter by region') return true;
+    if (val === 'show all' || val === 'Filter by Region') return true;
     return val === region.toLowerCase();
   };
 
@@ -93,8 +93,10 @@ const SearchFilter = ({
         ref={dropdownRef}
       >
         <div className="search-filter__dropdown__item">
-          <p className="search-filter__dropdown__item__text ">{dropdownText}</p>
-          <IoIosArrowDown />
+          <p className="search-filter__dropdown__item__text">{dropdownText}</p>
+          <span className="search-filter__dropdown__item__arrow">
+            <IoIosArrowDown />
+          </span>
         </div>
         <div
           className={`search-filter__dropdown__options ${

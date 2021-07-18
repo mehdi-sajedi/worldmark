@@ -37,24 +37,6 @@
   letter-spacing: 0.5px;
 }
 
-.btn-back {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 5rem 0;
-  box-shadow: var(--box-shadow-solid);
-
-  &__arrow {
-    font-size: 22px;
-    margin-right: 10px;
-    // transform: translateY(1px);
-  }
-
-  &__text {
-    font-size: 14.5px;
-  }
-}
-
 .btn-show-more-container {
   display: grid;
   place-items: center;
@@ -69,24 +51,22 @@
   cursor: default;
 }
 
-.scroll-to-top-btn {
-  display: grid;
-  place-items: center;
-  position: fixed;
-  bottom: 40px;
-  right: 1%;
-  // background-color: var(--clr-text);
-  width: 40px;
-  height: 40px;
-  border-radius: var(--border-radius-circle);
-  transition: all 0.3s ease;
-  box-shadow: var(--box-shadow);
-  & i {
-    color: var(--clr-text);
-    margin-top: 2px;
-    font-size: 19px;
-    transition: all 0.3s ease;
+.loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &.home {
+    margin-top: 5rem;
   }
+}
+
+.page-not-found {
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 // Safari column-gap workaround

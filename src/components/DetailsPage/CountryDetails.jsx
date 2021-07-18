@@ -1,35 +1,47 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Loading from '../Utilities/Loading';
 import BackBtn from './BackBtn';
 import CountryDetailsItem from './CountryDetailsItem';
+import PageNotFound from '../Utilities/PageNotFound';
 
 const CountryDetails = ({ countryCodesToNames }) => {
   const { id } = useParams();
   const [country, setCountry] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const fetchCountry = useCallback(async () => {
-    setIsLoading(true);
-    const res = await axios.get(`https://restcountries.eu/rest/v2/alpha/${id}`);
-    setCountry(res.data);
-    setIsLoading(false);
-    console.log(res.data);
-  }, [id]);
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
+    const fetchCountry = async () => {
+      setIsLoading(true);
+      try {
+        const res = await axios.get(
+          `https://restcountries.eu/rest/v2/alpha/${id}`
+        );
+        setCountry(res.data);
+      } catch (error) {
+        setIsError(true);
+        console.error(error.message);
+      }
+      setIsLoading(false);
+    };
+
     fetchCountry();
-  }, [fetchCountry]);
+  }, [id]);
 
   return (
     <>
       <BackBtn />
       <section className="details">
-        {isLoading ? (
-          <Loading />
-        ) : (
+        {isLoading && <Loading />}
+        {isError && (
+          <p className="page-not-found">
+            Could not fetch country with Alpha-3 Code {id}
+          </p>
+        )}
+        {!isLoading && !isError && (
           <>
             <img
               className="details__flag"

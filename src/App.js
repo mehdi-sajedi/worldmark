@@ -7,8 +7,9 @@ import SearchFilter from './components/Home/SearchFilter';
 import Countries from './components/Home/Countries';
 import CountryDetails from './components/DetailsPage/CountryDetails';
 import Loading from './components/Utilities/Loading';
-import ShowMoreBtn from './components/Home/ShowMoreBtn';
-import NumCountriesShown from './components/Home/NumCountriesShown';
+import CountriesShownText from './components/Home/CountriesShownText';
+import Footer from './components/Home/Footer';
+import PageNotFound from './components/Utilities/PageNotFound';
 
 // TODOS
 
@@ -17,7 +18,8 @@ import NumCountriesShown from './components/Home/NumCountriesShown';
 // Alternative is to render all 250 components, but have placeholders for the images until the user scrolls down to them OR when they try to search/filter for them.
 
 // ? DESIGN
-// Header clumped on mobile
+// Make Filter By Region into Filter by Region
+// Dropdown will overflow when there are 0 countries
 
 // * Leave these for very end
 // Custom favicon
@@ -28,11 +30,10 @@ const countryCodesToNames = new Map();
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [countries, setCountries] = useState([]);
   const [inputText, setInputText] = useState('');
   const [dropdownText, setDropdownText] = useState('Filter by Region');
-  // const [showScrollBtn, setShowScrollBtn] = useState(false);
   const [numCountriesShown, setNumCountriesShown] = useState(12);
   const [currentCountries, setCurrentCountries] = useState([]);
 
@@ -59,9 +60,13 @@ function App() {
   useEffect(() => {
     const fetchCountries = async () => {
       setIsLoading(true);
-      const res = await axios.get('https://restcountries.eu/rest/v2/all');
-      setCountries(res.data);
-      createCountryKeyPairs(res.data);
+      try {
+        const res = await axios.get('https://restcountries.eu/rest/v2/all');
+        setCountries(res.data);
+        createCountryKeyPairs(res.data);
+      } catch (error) {
+        console.error(error);
+      }
       setIsLoading(false);
     };
     fetchCountries();
@@ -69,20 +74,7 @@ function App() {
 
   useEffect(() => {
     setCurrentCountries(countries.slice(0, numCountriesShown));
-  }, [countries, numCountriesShown]);
-
-  // const checkScrollPosition = () => {
-  //   console.log('runnin');
-  //   window.pageYOffset >= 1250 &&
-  //     setShowScrollBtn(true) &&
-  //     clearEventListener();
-  // };
-
-  // window.addEventListener('scroll', checkScrollPosition);
-
-  // const clearEventListener = () => {
-  //   window.removeEventListener('scroll', checkScrollPosition);
-  // };
+  }, [countries, numCountriesShown, setCurrentCountries]);
 
   return (
     <BrowserRouter>
@@ -90,7 +82,6 @@ function App() {
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Switch>
           <Route exact path="/">
-            {/* {showScrollBtn && <ScrollToTopBtn />} */}
             <SearchFilter
               countries={countries}
               setCurrentCountries={setCurrentCountries}
@@ -100,32 +91,31 @@ function App() {
               setDropdownText={setDropdownText}
             />
 
-            {isLoading ? (
-              <Loading />
-            ) : (
+            {isLoading && <Loading page="home" />}
+            {!isLoading && (
               <>
-                <NumCountriesShown
+                <CountriesShownText
                   currentCountries={currentCountries}
                   countries={countries}
                   location="top"
                 />
                 <Countries currentCountries={currentCountries} />
-                {currentCountries.length < countries.length &&
-                  inputText === '' &&
-                  dropdownText === 'Filter by Region' && (
-                    <ShowMoreBtn setNumCountriesShown={setNumCountriesShown} />
-                  )}
-                <NumCountriesShown
-                  currentCountries={currentCountries}
+                <Footer
                   countries={countries}
-                  location="bottom"
+                  currentCountries={currentCountries}
+                  setCurrentCountries={setCurrentCountries}
+                  inputText={inputText}
+                  dropdownText={dropdownText}
+                  setNumCountriesShown={setNumCountriesShown}
+                  numCountriesShown={numCountriesShown}
                 />
               </>
             )}
           </Route>
-          <Route path="/details/:id">
+          <Route exact path="/details/:id">
             <CountryDetails countryCodesToNames={countryCodesToNames} />
           </Route>
+          <Route>{PageNotFound}</Route>
         </Switch>
       </main>
     </BrowserRouter>

@@ -1,6 +1,6 @@
 import { useLoading, ThreeDots } from '@agney/react-loading';
 
-const Loading = () => {
+const Loading = ({ page }) => {
   const { containerProps, indicatorEl } = useLoading({
     loading: true,
     indicator: <ThreeDots width="50" />,
@@ -9,13 +9,7 @@ const Loading = () => {
   return (
     <section
       {...containerProps}
-      style={{
-        // textAlign: 'center',
-        position: 'absolute',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        marginTop: '3rem',
-      }}
+      className={`loading ${page === 'home' ? 'home' : 'details'}`}
     >
       {indicatorEl}
     </section>

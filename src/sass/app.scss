@@ -6,6 +6,7 @@
   --clr-background: hsl(0, 0%, 98%);
   --clr-text: hsl(200, 15%, 8%);
   --clr-elements: hsl(0, 0%, 100%);
+  --clr-elements-inverse: hsl(209, 23%, 22%);
   --clr-elements-hover: hsl(0, 0%, 94%);
   --clr-input: hsl(0, 0%, 52%);
   --border-radius: 3px;
@@ -20,6 +21,7 @@
   --clr-background: hsl(207, 26%, 17%);
   --clr-text: hsl(0, 0%, 100%);
   --clr-elements: hsl(209, 23%, 22%);
+  --clr-elements-inverse: hsl(0, 0%, 100%);
   --clr-elements-hover: hsl(209, 23%, 18%);
   --clr-input: hsl(0, 0%, 100%);
   --box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
@@ -36,6 +38,7 @@
 html {
   overflow-x: hidden;
   overflow-y: scroll;
+  height: 100%;
 }
 
 body {
@@ -43,8 +46,9 @@ body {
   font-size: 14px;
   background-color: var(--clr-background);
   color: var(--clr-text);
-  letter-spacing: 0.5px;
+  overflow-x: hidden;
   position: relative;
+  letter-spacing: 0.5px;
 }
 
 a {
@@ -79,6 +83,7 @@ button {
     display: flex;
     align-items: center;
     cursor: pointer;
+    user-select: none;
 
     &__icon,
     &__text {
@@ -146,6 +151,7 @@ button {
     background-color: var(--clr-elements);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    user-select: none;
 
     &__item {
       display: flex;
@@ -156,7 +162,12 @@ button {
 
       &__text {
         text-transform: capitalize;
-        font-size: 13px;
+        font-size: 12.5px;
+      }
+
+      &__arrow {
+        display: grid;
+        place-items: center;
       }
 
       > * {
@@ -175,6 +186,7 @@ button {
       transform: translateX(50%);
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius);
+      z-index: 600;
 
       &.hidden {
         max-height: 0;
@@ -263,7 +275,67 @@ button {
   margin-bottom: 2rem;
 }
 
+.footer {
+  position: relative;
+
+  .scroll-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-elements);
+    width: 55px;
+    height: 55px;
+    border-radius: var(--border-radius-circle);
+    transition: all 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin: 0 auto;
+    padding: 8px 0 0 1px;
+
+    .icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-1 {
+        margin-top: 35px;
+      }
+
+      &-2 {
+        transform: translateY(-33px);
+      }
+    }
+
+    & i {
+      color: var(--clr-text);
+      font-size: 30px;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
 // DETAILS PAGE
+.btn-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 0;
+  box-shadow: var(--box-shadow-solid);
+
+  &__arrow {
+    font-size: 22px;
+    margin-right: 10px;
+    // transform: translateY(1px);
+  }
+
+  &__text {
+    font-size: 14.5px;
+  }
+}
+
 .details {
   display: flex;
   align-items: flex-start;

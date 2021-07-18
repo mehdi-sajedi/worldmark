@@ -1,7 +1,7 @@
 // Home Page
 @media (max-width: 675px) {
   .header {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .search-filter {
@@ -62,7 +62,7 @@
     &__info {
       width: 100%;
       &__name {
-        margin-top: 4rem;
+        margin-top: clamp(40px, 7vw, 64px);
       }
 
       &__facts {
@@ -86,8 +86,8 @@
     }
   }
 
-  .back-btn {
-    margin: 2.5rem 0 4rem;
+  .btn-back {
+    margin: clamp(40px, 7vw, 64px) 0;
 
     &__arrow {
       font-size: 18px;
