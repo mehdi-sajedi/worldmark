@@ -69,6 +69,10 @@
         flex-direction: column;
         line-height: 2.2;
 
+        &__col-1 {
+          white-space: pre-wrap;
+        }
+
         &__col-2 {
           &__languages {
             line-height: 2;
