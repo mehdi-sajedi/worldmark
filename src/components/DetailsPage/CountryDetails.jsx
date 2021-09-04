@@ -110,7 +110,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                 </div>
               </div>
               <div className="details__info__borders">
-                <span className="details__info__borders__title fw-600">
+                <span className="details__info__borders__title">
                   Border Countries:
                 </span>
                 <div className="details__info__borders__countries">

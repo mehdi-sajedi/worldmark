@@ -102,16 +102,16 @@
     }
   }
 
-  // Safari - clearing custom column-gap
-  _::-webkit-full-page-media,
-  _:future,
-  :root .details__info__facts > * + * {
-    margin-left: 0;
-  }
+  // // Safari - clearing custom column-gap
+  // _::-webkit-full-page-media,
+  // _:future,
+  // :root .details__info__facts > * + * {
+  //   margin-left: 0;
+  // }
 
-  _::-webkit-full-page-media,
-  _:future,
-  :root .details > * + * {
-    margin-left: 0;
-  }
+  // _::-webkit-full-page-media,
+  // _:future,
+  // :root .details > * + * {
+  //   margin-left: 0;
+  // }
 }

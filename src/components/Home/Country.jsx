@@ -10,15 +10,15 @@ const Country = ({ alpha3Code, name, flag, population, region, capital }) => {
           <h3 className="country__info__name">{name}</h3>
           <ul className="country__info__details">
             <li className="country__info__details__population">
-              <span className="fw-600">Population: </span>
+              <span>Population: </span>
               {population.toLocaleString()}
             </li>
             <li className="country__info__details__region">
-              <span className="fw-600">Region: </span>
+              <span>Region: </span>
               {region}
             </li>
             <li className="country__info__details__capital">
-              <span className="fw-600">Capital: </span>
+              <span>Capital: </span>
               {capital}
             </li>
           </ul>

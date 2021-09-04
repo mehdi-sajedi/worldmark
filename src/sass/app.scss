@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;500;700&family=Nunito:wght@300;500;700&family=Urbanist:wght@300;500;700&family=Work+Sans:wght@300;500;700&display=swap');
 
 @import 'utilities';
 
 :root {
-  --clr-background: rgb(250, 250, 250);
-  --clr-text: rgb(17, 21, 23);
-  --clr-elements: rgb(255, 255, 255);
-  --clr-elements-inverse: rgb(43, 57, 69);
-  --clr-elements-hover: rgb(240, 240, 240);
-  --clr-input: rgb(133, 133, 133);
+  --clr-background: #fafafa;
+  --clr-text: #111517;
+  --clr-elements: #fff;
+  --clr-elements-inverse: #2b3945;
+  --clr-elements-hover: #f0f0f0;
+  --clr-input: #858585;
+  --clr-outline: #999;
   --border-radius: 3px;
   --border-radius-circle: 1000px;
   --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
@@ -18,12 +19,13 @@
 }
 
 .darkmode {
-  --clr-background: rgb(32, 44, 55);
-  --clr-text: rgb(255, 255, 255);
-  --clr-elements: hsl(209, 23%, 22%);
-  --clr-elements-inverse: rgb(255, 255, 255);
-  --clr-elements-hover: rgb(35, 46, 56);
-  --clr-input: rgb(255, 255, 255);
+  --clr-background: #202c37;
+  --clr-text: #fff;
+  --clr-elements: #2b3945;
+  --clr-elements-inverse: #fff;
+  --clr-elements-hover: #232e38;
+  --clr-input: #fff;
+  --clr-outline: #ccc;
   --box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
   --box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 16px;
   --box-shadow-solid: rgba(0, 0, 0, 0.4) 0px 0px 5px 1px;
@@ -49,7 +51,9 @@ body {
   color: var(--clr-text);
   overflow-x: hidden;
   position: relative;
-  letter-spacing: 0.5px;
+  // letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  font-weight: 300;
 }
 
 a {
@@ -96,7 +100,7 @@ button {
     }
 
     &__text {
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 }
@@ -118,6 +122,8 @@ button {
     justify-content: flex-start;
     align-items: center;
     padding: 1.2rem 0 1.2rem 1rem;
+    border: 1px solid transparent;
+    transition: border 0.25s ease;
 
     &__icon,
     &__text {
@@ -137,11 +143,16 @@ button {
       background-color: transparent;
       color: var(--clr-input);
       width: 100%;
+      font-weight: 300;
 
       &::placeholder {
         color: var(--clr-input);
         opacity: 1;
       }
+    }
+
+    &:focus-within {
+      border: 1px solid var(--clr-outline);
     }
   }
 
@@ -187,7 +198,7 @@ button {
       transform: translateX(50%);
       box-shadow: var(--box-shadow);
       border-radius: var(--border-radius);
-      z-index: 600;
+      z-index: 723;
 
       &.hidden {
         max-height: 0;
@@ -262,13 +273,18 @@ button {
     padding: 1.5rem 0;
 
     &__name {
-      font-size: 17px;
+      font-size: 19px;
+      font-weight: 800;
     }
 
     &__details {
       list-style: none;
       margin-top: 1rem;
       line-height: 1.9;
+
+      li span {
+        font-weight: 500;
+      }
     }
   }
 
@@ -374,6 +390,10 @@ button {
         width: 100%;
         white-space: normal;
       }
+
+      .title {
+        font-weight: 500;
+      }
     }
 
     &__borders {
@@ -385,6 +405,7 @@ button {
 
       &__title {
         margin-right: 20px;
+        font-weight: 500;
       }
 
       &__countries {
