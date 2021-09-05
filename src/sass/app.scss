@@ -4,12 +4,13 @@
 
 :root {
   --clr-background: #fafafa;
-  --clr-text: #111517;
   --clr-elements: #fff;
   --clr-elements-inverse: #2b3945;
   --clr-elements-hover: #f0f0f0;
+  --clr-text: #111517;
   --clr-input: #858585;
   --clr-outline: #999;
+
   --border-radius: 3px;
   --border-radius-circle: 1000px;
   --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
@@ -19,13 +20,18 @@
 }
 
 .darkmode {
-  --clr-background: #202c37;
-  --clr-text: #fff;
-  --clr-elements: #2b3945;
-  --clr-elements-inverse: #fff;
+  // --clr-background: #202c37;
+  // --clr-elements: #2b3945;
+
+  --clr-background: #192734;
+  --clr-elements: #22303c;
+
+  --clr-elements-inverse: #f9f9f9;
   --clr-elements-hover: #232e38;
-  --clr-input: #fff;
+  --clr-text: #f9f9f9;
+  --clr-input: #f9f9f9;
   --clr-outline: #ccc;
+
   --box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
   --box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 16px;
   --box-shadow-solid: rgba(0, 0, 0, 0.4) 0px 0px 5px 1px;
@@ -51,8 +57,7 @@ body {
   color: var(--clr-text);
   overflow-x: hidden;
   position: relative;
-  // letter-spacing: 0.5px;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   font-weight: 300;
 }
 
@@ -141,13 +146,15 @@ button {
       border: none;
       outline: none;
       background-color: transparent;
-      color: var(--clr-input);
+      color: var(--clr-text);
       width: 100%;
       font-weight: 300;
+      letter-spacing: 0.75px;
 
       &::placeholder {
         color: var(--clr-input);
         opacity: 1;
+        letter-spacing: 0.5px;
       }
     }
 
@@ -273,7 +280,7 @@ button {
     padding: 1.5rem 0;
 
     &__name {
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 800;
     }
 
@@ -371,7 +378,7 @@ button {
     justify-content: flex-start;
 
     &__name {
-      font-size: 26px;
+      font-size: 28px;
     }
 
     &__facts {

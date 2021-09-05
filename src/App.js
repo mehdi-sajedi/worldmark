@@ -21,11 +21,6 @@ import PageNotFound from './components/Utilities/PageNotFound';
 // Make Filter By Region into Filter by Region
 // Dropdown will overflow when there are 0 countries
 
-// * Leave these for very end
-// Custom favicon
-// Accessibility
-// Cross-browser compatability
-
 const countryCodesToNames = new Map();
 
 function App() {

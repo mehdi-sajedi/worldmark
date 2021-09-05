@@ -3,7 +3,7 @@ import React from 'react';
 const ShowMoreBtn = ({ setNumCountriesShown }) => {
   const showMoreCountries = () => {
     setNumCountriesShown((prevAmount) => {
-      return prevAmount + 48 > 250 ? 250 : prevAmount + 48;
+      return prevAmount + 120 > 250 ? 250 : prevAmount + 120;
     });
   };
 
