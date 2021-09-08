@@ -17,10 +17,6 @@ import PageNotFound from './components/Utilities/PageNotFound';
 // The current flaw is the UI unpredictably when filtering by search or dropdown
 // Alternative is to render all 250 components, but have placeholders for the images until the user scrolls down to them OR when they try to search/filter for them.
 
-// ? DESIGN
-// Make Filter By Region into Filter by Region
-// Dropdown will overflow when there are 0 countries
-
 const countryCodesToNames = new Map();
 
 function App() {

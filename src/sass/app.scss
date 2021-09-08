@@ -27,7 +27,7 @@
   --clr-elements: #22303c;
 
   --clr-elements-inverse: #f9f9f9;
-  --clr-elements-hover: #232e38;
+  --clr-elements-hover: #1d2933;
   --clr-text: #f9f9f9;
   --clr-input: #f9f9f9;
   --clr-outline: black;
@@ -200,7 +200,6 @@ button {
       background-color: var(--clr-elements);
       color: var(--clr-text);
       width: 150px;
-      height: 222px;
       overflow: hidden;
       top: 47px;
       right: 50%;
