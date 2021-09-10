@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './sass/app.scss';
 import axios from 'axios';
@@ -19,6 +19,37 @@ import PageNotFound from './components/Utilities/PageNotFound';
 
 const countryCodesToNames = new Map();
 
+const initialFilterState = {
+  menuOpen: false,
+  region: 'all',
+  subRegion: 'all',
+  minPopulation: 0,
+  maxPopulation: 999999999,
+};
+
+const reducer = (state, action) => {
+  if (action.type === 'TOGGLE-MENU') {
+    // toggle menu
+    return { ...state, menuOpen: !state.menuOpen };
+  }
+
+  if (action.type === 'POPULATION') {
+    // set minPopulation
+    // set maxPopulation
+    return { ...state };
+  }
+
+  if (action.type === 'SUB-REGION') {
+    // set subregion
+    return { ...state };
+  }
+
+  if (action.type === 'REGION') {
+    // set region
+    return { ...state };
+  }
+};
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +58,8 @@ function App() {
   const [dropdownText, setDropdownText] = useState('Filter by Region');
   const [numCountriesShown, setNumCountriesShown] = useState(12);
   const [currentCountries, setCurrentCountries] = useState([]);
+
+  const [filterState, dispatch] = useReducer(reducer, initialFilterState);
 
   useEffect(() => {
     setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
@@ -80,6 +113,9 @@ function App() {
               setInputText={setInputText}
               dropdownText={dropdownText}
               setDropdownText={setDropdownText}
+              //
+              filterState={filterState}
+              dispatch={dispatch}
             />
 
             {isLoading && <Loading page="home" />}

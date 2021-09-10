@@ -1,17 +1,18 @@
 import React from 'react';
-import DropdownItem from './DropdownItem';
-import useComponentInvisible from '../../hooks/useComponentInvisible';
+// import DropdownItem from './DropdownItem';
+// import useComponentInvisible from '../../hooks/useComponentInvisible';
 import { HiSearch } from 'react-icons/hi';
-import { IoIosArrowDown } from 'react-icons/io';
+// import { IoIosArrowDown } from 'react-icons/io';
+import { BsFilterRight, BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 
-const dropdownOptions = [
-  'show all',
-  'africa',
-  'americas',
-  'asia',
-  'europe',
-  'oceania',
-];
+// const dropdownOptions = [
+//   'show all',
+//   'africa',
+//   'americas',
+//   'asia',
+//   'europe',
+//   'oceania',
+// ];
 
 const SearchFilter = ({
   countries,
@@ -20,12 +21,14 @@ const SearchFilter = ({
   setInputText,
   dropdownText,
   setDropdownText,
+  filterState,
+  dispatch,
 }) => {
-  const {
-    ref: dropdownRef,
-    isComponentInvisible: isDropdownInvisible,
-    setIsComponentInvisible: setIsDropdownInvisible,
-  } = useComponentInvisible(true);
+  // const {
+  //   ref: dropdownRef,
+  //   isComponentInvisible: isDropdownInvisible,
+  //   setIsComponentInvisible: setIsDropdownInvisible,
+  // } = useComponentInvisible(true);
 
   const countriesFilter = (e, from) => {
     let dropdownArg, inputArg;
@@ -72,6 +75,15 @@ const SearchFilter = ({
     return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
   };
 
+  const toggleFilterMenu = () => {
+    dispatch({ type: 'TOGGLE-MENU' });
+    console.log(filterState.menuOpen);
+  };
+
+  const openCategory = (key) => {
+    console.log(key);
+  };
+
   return (
     <section className="search-filter">
       <div className="search-filter__input">
@@ -87,7 +99,27 @@ const SearchFilter = ({
         />
       </div>
 
-      <div
+      <div className="filter-wrapper" onClick={toggleFilterMenu}>
+        <BsFilterRight className="filter-icon" />
+      </div>
+
+      <div className={`filter-menu ${filterState.menuOpen && 'filter-open'}`}>
+        <h3>Filter</h3>
+        <div className="filter-category">
+          <p>Population</p>
+          <BsArrowRight className="btn-open-category" onClick={openCategory} />
+        </div>
+        <div className="filter-category">
+          <p>Region</p>
+          <BsArrowRight className="btn-open-category" onClick={openCategory} />
+        </div>
+        <div className="filter-category">
+          <p>Sub Region</p>
+          <BsArrowRight className="btn-open-category" onClick={openCategory} />
+        </div>
+      </div>
+
+      {/* <div
         className="search-filter__dropdown"
         onClick={() => setIsDropdownInvisible((prevState) => !prevState)}
         ref={dropdownRef}
@@ -108,7 +140,7 @@ const SearchFilter = ({
             <DropdownItem country={country} key={country} />
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
