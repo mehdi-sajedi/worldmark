@@ -235,6 +235,8 @@ button {
   }
 }
 
+
+
 // Countries Shown Text
 .countries-shown.top {
   text-align: left;
@@ -271,13 +273,12 @@ button {
     width: 100%;
     height: 50%;
     object-fit: cover;
-    // justify-self: flex-start;
     border-radius: var(--border-radius);
   }
 
   &__info {
     text-align: left;
-    margin-left: 30px;
+    margin: 0 30px;
     padding: 1.5rem 0;
 
     &__name {
