@@ -3,6 +3,7 @@ import React from 'react';
 // import useComponentInvisible from '../../hooks/useComponentInvisible';
 import { HiSearch } from 'react-icons/hi';
 // import { IoIosArrowDown } from 'react-icons/io';
+import { RiArrowDownSLine } from 'react-icons/ri';
 import { BsFilterRight, BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 
 // const dropdownOptions = [
@@ -77,11 +78,14 @@ const SearchFilter = ({
 
   const toggleFilterMenu = () => {
     dispatch({ type: 'TOGGLE-MENU' });
-    console.log(filterState.menuOpen);
   };
 
-  const openCategory = (key) => {
-    console.log(key);
+  const toggleSubRegions = (region) => {
+    dispatch({ type: 'TOGGLE-SUB-REGIONS', payload: region });
+  };
+
+  const testing = () => {
+    console.log('checked');
   };
 
   return (
@@ -104,18 +108,83 @@ const SearchFilter = ({
       </div>
 
       <div className={`filter-menu ${filterState.menuOpen && 'filter-open'}`}>
-        <h3>Filter</h3>
-        <div className="filter-category">
-          <p>Population</p>
-          <BsArrowRight className="btn-open-category" onClick={openCategory} />
-        </div>
-        <div className="filter-category">
-          <p>Region</p>
-          <BsArrowRight className="btn-open-category" onClick={openCategory} />
-        </div>
-        <div className="filter-category">
-          <p>Sub Region</p>
-          <BsArrowRight className="btn-open-category" onClick={openCategory} />
+        <h3>Filter | Sort</h3>
+        <div className="filter-categories">
+          <div className="filter-category population">
+            <p>Population</p>
+            <input type="text" placeholder="Min" />
+            <input type="text" placeholder="Max" />
+          </div>
+          <div className="filter-category region">
+            <p>Region</p>
+            <div className="options">
+              <div className="option">
+                <div className="top-layer">
+                  <input type="checkbox" id="africa" onChange={testing} />
+                  <label htmlFor="africa">Africa</label>
+                  <RiArrowDownSLine
+                    className="dropdown"
+                    region="africa"
+                    onClick={() => toggleSubRegions('africa')}
+                  />
+                </div>
+                <div
+                  className={`bottom-layer ${
+                    filterState.regions.africa.open ? 'sub-open' : undefined
+                  }`}
+                >
+                  <div className="sub-option">
+                    <input type="checkbox" id="afr-n" />
+                    <label htmlFor="afr-n">Northern</label>
+                  </div>
+                  <div className="sub-option">
+                    <input type="checkbox" id="afr-s" />
+                    <label htmlFor="afr-s">Southern</label>
+                  </div>
+                  <div className="sub-option">
+                    <input type="checkbox" id="afr-w" />
+                    <label htmlFor="afr-w">Western</label>
+                  </div>
+                  <div className="sub-option">
+                    <input type="checkbox" id="afr-e" />
+                    <label htmlFor="afr-e">Eastern</label>
+                  </div>
+                  <div className="sub-option">
+                    <input type="checkbox" id="afr-m" />
+                    <label htmlFor="afr-m">Middle</label>
+                  </div>
+                </div>
+              </div>
+              <div className="option">
+                <div className="top-layer">
+                  <input type="checkbox" id="america" />
+                  <label htmlFor="america">America</label>
+                  <RiArrowDownSLine className="dropdown" />
+                </div>
+              </div>
+              <div className="option">
+                <div className="top-layer">
+                  <input type="checkbox" id="asia" />
+                  <label htmlFor="asia">Asia</label>
+                  <RiArrowDownSLine className="dropdown" />
+                </div>
+              </div>
+              <div className="option">
+                <div className="top-layer">
+                  <input type="checkbox" id="europe" />
+                  <label htmlFor="europe">Europe</label>
+                  <RiArrowDownSLine className="dropdown" />
+                </div>
+              </div>
+              <div className="option">
+                <div className="top-layer">
+                  <input type="checkbox" id="oceania" />
+                  <label htmlFor="oceania">Oceania</label>
+                  <RiArrowDownSLine className="dropdown" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

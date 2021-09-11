@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useReducer } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { useImmerReducer } from 'use-immer';
 import './sass/app.scss';
 import axios from 'axios';
 import Header from './components/Utilities/Header';
@@ -11,23 +12,129 @@ import CountriesShownText from './components/Home/CountriesShownText';
 import Footer from './components/Home/Footer';
 import PageNotFound from './components/Utilities/PageNotFound';
 
-// TODOS
+// Africa (5)
+/*
+Northern Africa
+Middle Africa
+Western Africa
+Southern Africa
+Eastern Africa
+*/
 
-// ? What to load on initial render?
-// The current flaw is the UI unpredictably when filtering by search or dropdown
-// Alternative is to render all 250 components, but have placeholders for the images until the user scrolls down to them OR when they try to search/filter for them.
+// America (4)
+/*
+Northern America
+Southern America
+Central America
+Caribbean
+*/
+
+// Asia (5)
+/*
+Southern Asia
+Western Asia
+South-Eastern Asia
+Eastern Asia
+Central Asia
+
+*/
+
+// Europe (4)
+/*
+Northern Europe
+Southern Europe
+Western Europe
+Eastern Europe
+*/
+
+// Oceania (4)
+/*
+Australia and New Zealand
+Melanesia
+Micronesia
+Polynesia
+*/
 
 const countryCodesToNames = new Map();
+const subRegions = new Set();
 
 const initialFilterState = {
   menuOpen: false,
-  region: 'all',
-  subRegion: 'all',
   minPopulation: 0,
-  maxPopulation: 999999999,
+  maxPopulation: 9999999999,
+  regions: {
+    africa: {
+      open: false,
+      selected: true,
+      af_n: true,
+      af_s: true,
+      af_w: true,
+      af_e: true,
+      af_m: true,
+    },
+    america: {
+      open: false,
+      am_n: true,
+      am_s: true,
+      am_c: true,
+      caribbean: true,
+    },
+    asia: {
+      open: false,
+      as_n: true,
+      as_s: true,
+      as_w: true,
+      as_e: true,
+      as_se: true,
+    },
+    europe: {
+      open: false,
+      eu_n: true,
+      eu_s: true,
+      eu_w: true,
+      eu_e: true,
+    },
+    oceania: {
+      open: false,
+      aus_nz: true,
+      mel: true,
+      mic: true,
+      pol: true,
+    },
+  },
 };
 
 const reducer = (state, action) => {
+  // menu
+  if (action.type === 'TOGGLE-SUB-REGIONS') {
+    console.log(action.payload);
+    return {
+      ...state,
+      regions: {
+        ...state.regions,
+        africa: {
+          ...state.regions.africa,
+          open: !state.regions.africa.open,
+        },
+      },
+    };
+  }
+
+  // selection
+  if (action.type === 'TOGGLE-REGION') {
+    return {
+      ...state,
+      regions: {
+        ...state.regions,
+        africa: {
+          ...state.regions.africa,
+          selected: !state.regions.africa.selected,
+        },
+      },
+    };
+  }
+
+  // menu
   if (action.type === 'TOGGLE-MENU') {
     // toggle menu
     return { ...state, menuOpen: !state.menuOpen };
@@ -99,6 +206,21 @@ function App() {
   useEffect(() => {
     setCurrentCountries(countries.slice(0, numCountriesShown));
   }, [countries, numCountriesShown, setCurrentCountries]);
+
+  useEffect(() => {
+    const fetchSubRegions = async () => {
+      try {
+        const res = await axios.get('https://restcountries.eu/rest/v2/all');
+        res.data.forEach((country) => {
+          subRegions.add(country.subregion);
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchSubRegions();
+    console.log(subRegions);
+  }, []);
 
   return (
     <main className="container">
