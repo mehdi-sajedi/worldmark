@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useImmerReducer } from 'use-immer';
 import './sass/app.scss';
@@ -64,8 +64,8 @@ const initialFilterState = {
   maxPopulation: 9999999999,
   regions: {
     africa: {
+      id: 'africa',
       open: false,
-      selected: true,
       af_n: true,
       af_s: true,
       af_w: true,
@@ -73,6 +73,7 @@ const initialFilterState = {
       af_m: true,
     },
     america: {
+      id: 'america',
       open: false,
       am_n: true,
       am_s: true,
@@ -80,6 +81,7 @@ const initialFilterState = {
       caribbean: true,
     },
     asia: {
+      id: 'asia',
       open: false,
       as_n: true,
       as_s: true,
@@ -88,6 +90,7 @@ const initialFilterState = {
       as_se: true,
     },
     europe: {
+      id: 'europe',
       open: false,
       eu_n: true,
       eu_s: true,
@@ -95,6 +98,7 @@ const initialFilterState = {
       eu_e: true,
     },
     oceania: {
+      id: 'oceania',
       open: false,
       aus_nz: true,
       mel: true,
@@ -104,56 +108,15 @@ const initialFilterState = {
   },
 };
 
-const reducer = (state, action) => {
-  // menu
-  if (action.type === 'TOGGLE-SUB-REGIONS') {
-    console.log(action.payload);
-    return {
-      ...state,
-      regions: {
-        ...state.regions,
-        africa: {
-          ...state.regions.africa,
-          open: !state.regions.africa.open,
-        },
-      },
-    };
-  }
-
-  // selection
-  if (action.type === 'TOGGLE-REGION') {
-    return {
-      ...state,
-      regions: {
-        ...state.regions,
-        africa: {
-          ...state.regions.africa,
-          selected: !state.regions.africa.selected,
-        },
-      },
-    };
-  }
-
-  // menu
+const reducer = (draft, action) => {
   if (action.type === 'TOGGLE-MENU') {
-    // toggle menu
-    return { ...state, menuOpen: !state.menuOpen };
+    draft.menuOpen = !draft.menuOpen;
   }
 
-  if (action.type === 'POPULATION') {
-    // set minPopulation
-    // set maxPopulation
-    return { ...state };
-  }
-
-  if (action.type === 'SUB-REGION') {
-    // set subregion
-    return { ...state };
-  }
-
-  if (action.type === 'REGION') {
-    // set region
-    return { ...state };
+  if (action.type === 'TOGGLE-SUB-REGIONS') {
+    Object.values(draft.regions).forEach((item) => {
+      if (item.id === action.payload) item.open = !item.open;
+    });
   }
 };
 
@@ -166,7 +129,7 @@ function App() {
   const [numCountriesShown, setNumCountriesShown] = useState(12);
   const [currentCountries, setCurrentCountries] = useState([]);
 
-  const [filterState, dispatch] = useReducer(reducer, initialFilterState);
+  const [filterState, dispatch] = useImmerReducer(reducer, initialFilterState);
 
   useEffect(() => {
     setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
@@ -219,7 +182,7 @@ function App() {
       }
     };
     fetchSubRegions();
-    console.log(subRegions);
+    // console.log(subRegions);
   }, []);
 
   return (
