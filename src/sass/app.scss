@@ -10,6 +10,7 @@
   --clr-text: #111517;
   --clr-input: #858585;
   --clr-outline: #bbb;
+  --clr-filter-menu: #eee;
 
   --border-radius: 3px;
   --border-radius-circle: 1000px;
@@ -31,6 +32,7 @@
   --clr-text: #f9f9f9;
   --clr-input: #f9f9f9;
   --clr-outline: black;
+  --clr-filter-menu: #1f2c36;
 
   --box-shadow: rgba(0, 0, 0, 0.24) 3px 3px 8px;
   --box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 16px;
@@ -254,7 +256,7 @@ button {
   width: 450px;
   // height: 300px;
   transform: translateX(32vw);
-  background-color: #eee;
+  background-color: var(--clr-filter-menu);
   transition: transform 0.35s ease-out;
   padding: 1.5rem;
 

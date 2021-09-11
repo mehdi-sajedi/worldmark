@@ -12,49 +12,6 @@ import CountriesShownText from './components/Home/CountriesShownText';
 import Footer from './components/Home/Footer';
 import PageNotFound from './components/Utilities/PageNotFound';
 
-// Africa (5)
-/*
-Northern Africa
-Middle Africa
-Western Africa
-Southern Africa
-Eastern Africa
-*/
-
-// America (4)
-/*
-Northern America
-Southern America
-Central America
-Caribbean
-*/
-
-// Asia (5)
-/*
-Southern Asia
-Western Asia
-South-Eastern Asia
-Eastern Asia
-Central Asia
-
-*/
-
-// Europe (4)
-/*
-Northern Europe
-Southern Europe
-Western Europe
-Eastern Europe
-*/
-
-// Oceania (4)
-/*
-Australia and New Zealand
-Melanesia
-Micronesia
-Polynesia
-*/
-
 const countryCodesToNames = new Map();
 const subRegions = new Set();
 
@@ -65,58 +22,86 @@ const initialFilterState = {
   regions: {
     africa: {
       id: 'africa',
-      open: false,
-      af_n: true,
-      af_s: true,
-      af_w: true,
-      af_e: true,
-      af_m: true,
+      expanded: false,
+      selected: false,
+      subRegions: {
+        af_n: false,
+        af_s: true,
+        af_w: true,
+        af_e: true,
+        af_m: true,
+      },
     },
     america: {
       id: 'america',
-      open: false,
-      am_n: true,
-      am_s: true,
-      am_c: true,
-      caribbean: true,
+      expanded: false,
+      selected: false,
+      subRegions: {
+        am_n: true,
+        am_s: true,
+        am_c: true,
+        caribbean: true,
+      },
     },
     asia: {
       id: 'asia',
-      open: false,
-      as_n: true,
-      as_s: true,
-      as_w: true,
-      as_e: true,
-      as_se: true,
+      expanded: false,
+      selected: false,
+      subRegions: {
+        as_n: true,
+        as_s: true,
+        as_w: true,
+        as_e: true,
+        as_se: true,
+      },
     },
     europe: {
       id: 'europe',
-      open: false,
-      eu_n: true,
-      eu_s: true,
-      eu_w: true,
-      eu_e: true,
+      expanded: false,
+      selected: false,
+      subRegions: {
+        eu_n: true,
+        eu_s: true,
+        eu_w: true,
+        eu_e: true,
+      },
     },
     oceania: {
       id: 'oceania',
-      open: false,
-      aus_nz: true,
-      mel: true,
-      mic: true,
-      pol: true,
+      expanded: false,
+      selected: false,
+      subRegions: {
+        aus_nz: true,
+        mel: true,
+        mic: true,
+        pol: true,
+      },
     },
   },
 };
 
 const reducer = (draft, action) => {
-  if (action.type === 'TOGGLE-MENU') {
+  if (action.type === 'TOGGLE-FILTER-MENU') {
     draft.menuOpen = !draft.menuOpen;
   }
 
-  if (action.type === 'TOGGLE-SUB-REGIONS') {
-    Object.values(draft.regions).forEach((item) => {
-      if (item.id === action.payload) item.open = !item.open;
-    });
+  if (action.type === 'TOGGLE-SUB-REGIONS-MENU') {
+    // Object.values(draft.regions).forEach((r) => {
+    //   if (r.id === action.payload) r.expanded = !r.expanded;
+    //   if (r.expanded && r.id !== action.payload) r.expanded = !r.expanded;
+    // });
+    draft.regions[action.payload].expanded =
+      !draft.regions[action.payload].expanded;
+  }
+
+  if (action.type === 'TOGGLE-REGION-CHECK') {
+    draft.regions[action.payload].selected =
+      !draft.regions[action.payload].selected;
+  }
+
+  if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
+    draft.regions[action.payload[0]].subRegions[action.payload[1]] =
+      !draft.regions[action.payload[0]].subRegions[action.payload[1]];
   }
 };
 
@@ -182,7 +167,6 @@ function App() {
       }
     };
     fetchSubRegions();
-    // console.log(subRegions);
   }, []);
 
   return (
@@ -198,7 +182,6 @@ function App() {
               setInputText={setInputText}
               dropdownText={dropdownText}
               setDropdownText={setDropdownText}
-              //
               filterState={filterState}
               dispatch={dispatch}
             />

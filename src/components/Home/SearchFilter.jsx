@@ -1,6 +1,7 @@
 import React from 'react';
 // import DropdownItem from './DropdownItem';
 // import useComponentInvisible from '../../hooks/useComponentInvisible';
+import FilterRegion from './FilterRegion';
 import { HiSearch } from 'react-icons/hi';
 // import { IoIosArrowDown } from 'react-icons/io';
 import { RiArrowDownSLine } from 'react-icons/ri';
@@ -77,15 +78,19 @@ const SearchFilter = ({
   };
 
   const toggleFilterMenu = () => {
-    dispatch({ type: 'TOGGLE-MENU' });
+    dispatch({ type: 'TOGGLE-FILTER-MENU' });
   };
 
-  const toggleSubRegions = (region) => {
-    dispatch({ type: 'TOGGLE-SUB-REGIONS', payload: region });
+  const toggleSubRegionsMenu = (region) => {
+    dispatch({ type: 'TOGGLE-SUB-REGIONS-MENU', payload: region });
   };
 
-  const testing = () => {
-    console.log('checked');
+  const toggleRegionCheck = (idx) => {
+    dispatch({ type: 'TOGGLE-REGION-CHECK', payload: idx });
+  };
+
+  const toggleSubRegionCheck = (details) => {
+    dispatch({ type: 'TOGGLE-SUB-REGION-CHECK', payload: details });
   };
 
   return (
@@ -118,55 +123,75 @@ const SearchFilter = ({
           <div className="filter-category region">
             <p>Region</p>
             <div className="options">
+              <FilterRegion filterState={filterState} dispatch={dispatch} />
               <div className="option">
                 <div className="top-layer">
-                  <input type="checkbox" id="africa" onChange={testing} />
+                  <input
+                    type="checkbox"
+                    id="africa"
+                    checked={filterState.regions['africa'].selected}
+                    onChange={() => toggleRegionCheck('africa')}
+                  />
                   <label htmlFor="africa">Africa</label>
                   <RiArrowDownSLine
                     className="dropdown"
-                    onClick={() => toggleSubRegions('africa')}
+                    onClick={() => toggleSubRegionsMenu('africa')}
                   />
                 </div>
                 <div
                   className={`bottom-layer ${
-                    filterState.regions.africa.open ? 'sub-open' : undefined
+                    filterState.regions['africa'].expanded
+                      ? 'sub-open'
+                      : undefined
                   }`}
                 >
                   <div className="sub-option">
-                    <input type="checkbox" id="afr-n" />
-                    <label htmlFor="afr-n">Northern</label>
+                    <input
+                      type="checkbox"
+                      id="af-n"
+                      checked={filterState.regions['africa'].subRegions['af_n']}
+                      onChange={() => toggleSubRegionCheck(['africa', 'af_n'])}
+                    />
+                    <label htmlFor="af-n">Northern</label>
                   </div>
                   <div className="sub-option">
-                    <input type="checkbox" id="afr-s" />
-                    <label htmlFor="afr-s">Southern</label>
+                    <input type="checkbox" id="af-s" />
+                    <label htmlFor="af-s">Southern</label>
                   </div>
                   <div className="sub-option">
-                    <input type="checkbox" id="afr-w" />
-                    <label htmlFor="afr-w">Western</label>
+                    <input type="checkbox" id="af-w" />
+                    <label htmlFor="af-w">Western</label>
                   </div>
                   <div className="sub-option">
-                    <input type="checkbox" id="afr-e" />
-                    <label htmlFor="afr-e">Eastern</label>
+                    <input type="checkbox" id="af-e" />
+                    <label htmlFor="af-e">Eastern</label>
                   </div>
                   <div className="sub-option">
-                    <input type="checkbox" id="afr-m" />
-                    <label htmlFor="afr-m">Middle</label>
+                    <input type="checkbox" id="af-m" />
+                    <label htmlFor="af-m">Middle</label>
                   </div>
                 </div>
               </div>
 
               <div className="option">
                 <div className="top-layer">
-                  <input type="checkbox" id="america" />
+                  <input
+                    type="checkbox"
+                    id="america"
+                    checked={filterState.regions.america.selected}
+                    onChange={() => toggleRegionCheck(1)}
+                  />
                   <label htmlFor="america">America</label>
                   <RiArrowDownSLine
                     className="dropdown"
-                    onClick={() => toggleSubRegions('america')}
+                    onClick={() => toggleSubRegionsMenu('america')}
                   />
                 </div>
                 <div
                   className={`bottom-layer ${
-                    filterState.regions.america.open ? 'sub-open' : undefined
+                    filterState.regions.america.expanded
+                      ? 'sub-open'
+                      : undefined
                   }`}
                 >
                   <div className="sub-option">
@@ -190,16 +215,21 @@ const SearchFilter = ({
 
               <div className="option">
                 <div className="top-layer">
-                  <input type="checkbox" id="asia" />
+                  <input
+                    type="checkbox"
+                    id="asia"
+                    checked={filterState.regions.asia.selected}
+                    onChange={() => toggleRegionCheck(2)}
+                  />
                   <label htmlFor="asia">Asia</label>
                   <RiArrowDownSLine
                     className="dropdown"
-                    onClick={() => toggleSubRegions('asia')}
+                    onClick={() => toggleSubRegionsMenu('asia')}
                   />
                 </div>
                 <div
                   className={`bottom-layer ${
-                    filterState.regions.asia.open ? 'sub-open' : undefined
+                    filterState.regions.asia.expanded ? 'sub-open' : undefined
                   }`}
                 >
                   <div className="sub-option">
@@ -227,16 +257,21 @@ const SearchFilter = ({
 
               <div className="option">
                 <div className="top-layer">
-                  <input type="checkbox" id="europe" />
+                  <input
+                    type="checkbox"
+                    id="europe"
+                    checked={filterState.regions.europe.selected}
+                    onChange={() => toggleRegionCheck(3)}
+                  />
                   <label htmlFor="europe">Europe</label>
                   <RiArrowDownSLine
                     className="dropdown"
-                    onClick={() => toggleSubRegions('europe')}
+                    onClick={() => toggleSubRegionsMenu('europe')}
                   />
                 </div>
                 <div
                   className={`bottom-layer ${
-                    filterState.regions.europe.open ? 'sub-open' : undefined
+                    filterState.regions.europe.expanded ? 'sub-open' : undefined
                   }`}
                 >
                   <div className="sub-option">
@@ -260,16 +295,23 @@ const SearchFilter = ({
 
               <div className="option">
                 <div className="top-layer">
-                  <input type="checkbox" id="oceania" />
+                  <input
+                    type="checkbox"
+                    id="oceania"
+                    checked={filterState.regions.oceania.selected}
+                    onChange={() => toggleRegionCheck(4)}
+                  />
                   <label htmlFor="oceania">Oceania</label>
                   <RiArrowDownSLine
                     className="dropdown"
-                    onClick={() => toggleSubRegions('oceania')}
+                    onClick={() => toggleSubRegionsMenu('oceania')}
                   />
                 </div>
                 <div
                   className={`bottom-layer ${
-                    filterState.regions.oceania.open ? 'sub-open' : undefined
+                    filterState.regions.oceania.expanded
+                      ? 'sub-open'
+                      : undefined
                   }`}
                 >
                   <div className="sub-option">
