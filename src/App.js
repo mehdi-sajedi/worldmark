@@ -52,6 +52,10 @@ function App() {
     dispatch({ type: 'SET-CURRENT-COUNTRIES' });
   }, [dispatch, appState.countries, appState.numCountriesShown]);
 
+  useEffect(() => {
+    dispatch({ type: 'FILTER-ACTIVE' });
+  }, [dispatch, appState.regions]);
+
   // useEffect(() => {
   //   const fetchSubRegions = async () => {
   //     try {

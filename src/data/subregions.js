@@ -22,7 +22,7 @@ const subRegionData = {
     },
   ],
 
-  america: [
+  americas: [
     {
       name: 'Northern',
       initials: 'am_n',

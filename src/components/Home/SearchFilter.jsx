@@ -4,7 +4,7 @@ import { HiSearch } from 'react-icons/hi';
 import { IoFilter } from 'react-icons/io5';
 import { AppContext } from '../../context/app-context';
 
-const regions = ['africa', 'america', 'asia', 'europe', 'oceania'];
+const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
 
 const SearchFilter = () => {
   const { appState, dispatch } = useContext(AppContext);

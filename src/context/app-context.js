@@ -1,10 +1,15 @@
 import React, { createContext } from 'react';
 import { useImmerReducer } from 'use-immer';
+import { enableMapSet } from 'immer';
+enableMapSet();
 
 export const AppContext = createContext();
 
 export const AppProvider = (props) => {
   const initialAppState = {
+    filterActive: false,
+    activeRegions: new Set(),
+    // - ************************
     darkMode: false,
     isLoading: false,
     countries: [],
@@ -28,8 +33,8 @@ export const AppProvider = (props) => {
           af_m: false,
         },
       },
-      america: {
-        id: 'america',
+      americas: {
+        id: 'americas',
         expanded: false,
         selected: false,
         subRegions: {
@@ -115,6 +120,7 @@ export const AppProvider = (props) => {
     if (action.type === 'SORT-POPULATION-DESCENDING') {
       draft.currentCountries = action.payload;
     }
+
     // - ************************
     // - ************************
     // - ************************
@@ -140,6 +146,38 @@ export const AppProvider = (props) => {
     if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
       draft.regions[action.payload[0]].subRegions[action.payload[1]] =
         !draft.regions[action.payload[0]].subRegions[action.payload[1]];
+    }
+
+    if (action.type === 'FILTER-ACTIVE') {
+      Object.values(draft.regions).some((region) => {
+        if (region.selected) return (draft.filterActive = true);
+        else return (draft.filterActive = false);
+      });
+
+      Object.values(draft.regions).forEach((region) => {
+        if (region.selected) draft.activeRegions.add(region.id);
+        else {
+          draft.activeRegions.delete(region.id);
+        }
+      });
+
+      if (draft.filterActive) {
+        draft.currentCountries = draft.countries.filter((country) => {
+          let actives = [...draft.activeRegions];
+          return actives.includes(country.region.toLowerCase()) && country;
+          // if (actives.includes(country.region.toLowerCase())) {
+          //   console.log('yes');
+          //   return country;
+          // }
+        });
+      } else draft.currentCountries = draft.countries;
+    }
+
+    if (action.type === 'SET-COUNTRIES-FILTER') {
+      // Object.values(draft.regions).some((region) => {
+
+      // });
+      console.log(draft.currentCountries);
     }
   };
 
