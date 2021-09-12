@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import FilterSubRegion from './FilterSubRegion';
+import subRegionData from '../../data/subregions';
 import { RiArrowDownSLine } from 'react-icons/ri';
+import { CSSTransition } from 'react-transition-group';
+import { AppContext } from '../../context/app-context';
 
-const FilterRegion = ({ filterState, dispatch }) => {
+const FilterRegion = ({ region, idx }) => {
+  const [filterState, dispatch] = useContext(AppContext);
+
   const toggleSubRegionsMenu = (region) => {
     dispatch({ type: 'TOGGLE-SUB-REGIONS-MENU', payload: region });
   };
@@ -10,56 +16,53 @@ const FilterRegion = ({ filterState, dispatch }) => {
     dispatch({ type: 'TOGGLE-REGION-CHECK', payload: idx });
   };
 
-  const toggleSubRegionCheck = (details) => {
-    dispatch({ type: 'TOGGLE-SUB-REGION-CHECK', payload: details });
-  };
-  
+  const [fuck, setFuck] = useState(true);
+
   return (
     <div className="option">
       <div className="top-layer">
         <input
           type="checkbox"
-          id="africa"
-          checked={filterState.regions['africa'].selected}
-          onChange={() => toggleRegionCheck('africa')}
+          id={region}
+          checked={filterState.regions[region].selected}
+          onChange={() => toggleRegionCheck(region)}
         />
-        <label htmlFor="africa">Africa</label>
+        <label className="capitalize" htmlFor={region}>
+          {region}
+        </label>
         <RiArrowDownSLine
           className="dropdown"
-          onClick={() => toggleSubRegionsMenu('africa')}
+          onClick={() => toggleSubRegionsMenu(region)}
+          // onClick={() => setFuck((prevState) => !prevState)}
         />
       </div>
-      <div
+      {/* <div
         className={`bottom-layer ${
-          filterState.regions['africa'].expanded ? 'sub-open' : undefined
+          filterState.regions[region].expanded ? 'sub-open' : undefined
         }`}
+      > */}
+      <CSSTransition
+        in={filterState.regions[region].expanded}
+        // in={fuck}
+        classNames="fade"
+        timeout={0}
       >
-        <div className="sub-option">
-          <input
-            type="checkbox"
-            id="af-n"
-            checked={filterState.regions['africa'].subRegions['af_n']}
-            onChange={() => toggleSubRegionCheck(['africa', 'af_n'])}
-          />
-          <label htmlFor="af-n">Northern</label>
+        <div className="bottom-layer">
+          {Object.values(subRegionData)[idx].map((subregion) => {
+            return (
+              <FilterSubRegion
+                // filterState={filterState}
+                // dispatch={dispatch}
+                region={region}
+                name={subregion.name}
+                initials={subregion.initials}
+                key={subregion.initials}
+              />
+            );
+          })}
         </div>
-        <div className="sub-option">
-          <input type="checkbox" id="af-s" />
-          <label htmlFor="af-s">Southern</label>
-        </div>
-        <div className="sub-option">
-          <input type="checkbox" id="af-w" />
-          <label htmlFor="af-w">Western</label>
-        </div>
-        <div className="sub-option">
-          <input type="checkbox" id="af-e" />
-          <label htmlFor="af-e">Eastern</label>
-        </div>
-        <div className="sub-option">
-          <input type="checkbox" id="af-m" />
-          <label htmlFor="af-m">Middle</label>
-        </div>
-      </div>
+      </CSSTransition>
+      {/* </div> */}
     </div>
   );
 };
