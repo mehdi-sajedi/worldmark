@@ -102,7 +102,7 @@ export const AppProvider = (props) => {
 
   const initialAppState = {
     darkMode: false,
-    isLoading: true,
+    isLoading: false,
     countries: [],
     inputText: '',
     currentCountries: [],
@@ -119,6 +119,10 @@ export const AppProvider = (props) => {
 
     if (action.type === 'GET-DARK-STORAGE') {
       draft.darkMode = JSON.parse(localStorage.getItem('darkmode'));
+    }
+
+    if (action.type === 'SET-INPUT-TEXT') {
+      draft.inputText = action.payload;
     }
   };
 

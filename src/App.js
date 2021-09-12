@@ -16,10 +16,7 @@ const countryCodesToNames = new Map();
 // const subRegions = new Set();
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
   const [countries, setCountries] = useState([]);
-  const [inputText, setInputText] = useState('');
-  const [dropdownText, setDropdownText] = useState('Filter by Region');
   const [numCountriesShown, setNumCountriesShown] = useState(12);
   const [currentCountries, setCurrentCountries] = useState([]);
 
@@ -42,7 +39,7 @@ function App() {
 
   useEffect(() => {
     const fetchCountries = async () => {
-      setIsLoading(true);
+      dispatch2({ type: 'TOGGLE-LOADING' });
       try {
         const res = await axios.get('https://restcountries.eu/rest/v2/all');
         setCountries(res.data);
@@ -50,7 +47,7 @@ function App() {
       } catch (error) {
         console.error(error);
       }
-      setIsLoading(false);
+      dispatch2({ type: 'TOGGLE-LOADING' });
     };
     fetchCountries();
   }, []);
@@ -83,14 +80,10 @@ function App() {
               countries={countries}
               currentCountries={currentCountries}
               setCurrentCountries={setCurrentCountries}
-              inputText={inputText}
-              setInputText={setInputText}
-              dropdownText={dropdownText}
-              setDropdownText={setDropdownText}
             />
 
-            {isLoading && <Loading page="home" />}
-            {!isLoading && (
+            {appState.isLoading && <Loading page="home" />}
+            {!appState.isLoading && (
               <>
                 <CountriesShownText
                   currentCountries={currentCountries}
@@ -102,8 +95,6 @@ function App() {
                   countries={countries}
                   currentCountries={currentCountries}
                   setCurrentCountries={setCurrentCountries}
-                  inputText={inputText}
-                  dropdownText={dropdownText}
                   setNumCountriesShown={setNumCountriesShown}
                   numCountriesShown={numCountriesShown}
                 />

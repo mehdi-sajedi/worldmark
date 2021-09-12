@@ -6,48 +6,26 @@ import { AppContext } from '../../context/app-context';
 
 const regions = ['africa', 'america', 'asia', 'europe', 'oceania'];
 
-const SearchFilter = ({
-  countries,
-  currentCountries,
-  setCurrentCountries,
-  inputText,
-  setInputText,
-  dropdownText,
-  setDropdownText,
-}) => {
-  const { filterState, dispatch } = useContext(AppContext);
+const SearchFilter = ({ countries, currentCountries, setCurrentCountries }) => {
+  const { filterState, dispatch, appState, dispatch2 } = useContext(AppContext);
 
   const countriesFilter = (e, from) => {
-    let dropdownArg, inputArg;
+    let inputArg;
 
-    if (from === 'dropdown') {
-      setDropdownText(e.target.dataset.value);
-      dropdownArg = e.target.dataset.value;
-      inputArg = inputText;
-    }
     if (from === 'search') {
-      setInputText(e.target.value);
-      dropdownArg = dropdownText;
+      dispatch2({ type: 'SET-INPUT-TEXT', payload: e.target.value });
       inputArg = e.target.value;
     }
 
     const matches = countries.filter((country) => {
-      return (
-        matchByDropdown(country.region, dropdownArg) &&
-        matchBySearch(
-          country.name,
-          country.alpha2Code,
-          country.alpha3Code,
-          inputArg
-        )
+      return matchBySearch(
+        country.name,
+        country.alpha2Code,
+        country.alpha3Code,
+        inputArg
       );
     });
     setCurrentCountries(matches);
-  };
-
-  const matchByDropdown = (region, val) => {
-    if (val === 'show all' || val === 'Filter by Region') return true;
-    return val === region.toLowerCase();
   };
 
   const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
@@ -86,7 +64,7 @@ const SearchFilter = ({
           type="text"
           placeholder="Search for a country"
           onChange={(e) => countriesFilter(e, 'search')}
-          value={inputText}
+          value={appState.inputText}
         />
       </div>
 
@@ -108,15 +86,7 @@ const SearchFilter = ({
             <p className="region">Region</p>
             <div className="options">
               {regions.map((region, idx) => {
-                return (
-                  <FilterRegion
-                    // filterState={filterState}
-                    // dispatch={dispatch}
-                    region={region}
-                    key={region}
-                    idx={idx}
-                  />
-                );
+                return <FilterRegion region={region} key={region} idx={idx} />;
               })}
             </div>
           </div>
