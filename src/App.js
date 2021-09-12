@@ -39,7 +39,6 @@ function App() {
       try {
         const res = await axios.get('https://restcountries.eu/rest/v2/all');
         dispatch2({ type: 'SET-ALL-COUNTRIES', payload: res.data });
-        console.log('from all countries');
         createCountryKeyPairs(res.data);
       } catch (error) {
         console.error(error);
@@ -50,7 +49,6 @@ function App() {
   }, [dispatch2]);
 
   useEffect(() => {
-    console.log('from current countries');
     dispatch2({ type: 'SET-CURRENT-COUNTRIES' });
   }, [dispatch2, appState.countries, appState.numCountriesShown]);
 
