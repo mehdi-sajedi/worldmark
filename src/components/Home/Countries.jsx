@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/app-context';
 import Country from './Country';
 
-const Countries = ({ currentCountries }) => {
+const Countries = () => {
+  const { appState } = useContext(AppContext);
   return (
     <section
-      className={`countries ${currentCountries.length <= 5 && 'snapper'}`}
+      className={`countries ${
+        appState.currentCountries.length <= 5 && 'snapper'
+      }`}
     >
-      {currentCountries.map((country, idx) => (
+      {appState.currentCountries.map((country, idx) => (
         <Country key={idx} {...country} />
       ))}
     </section>

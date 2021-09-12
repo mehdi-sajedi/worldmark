@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/app-context';
 
-const ShowMoreBtn = ({ setNumCountriesShown }) => {
+const ShowMoreBtn = () => {
+  const { appState, dispatch2 } = useContext(AppContext);
+
   const showMoreCountries = () => {
-    setNumCountriesShown((prevAmount) => {
-      return prevAmount + 120 > 250 ? 250 : prevAmount + 120;
-    });
+    const num =
+      appState.numCountriesShown + 120 > 250
+        ? 250
+        : appState.numCountriesShown + 120;
+    dispatch2({ type: 'SET-NUM-COUNTRIES-SHOWN', payload: num });
   };
 
   return (

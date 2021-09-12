@@ -6,7 +6,7 @@ import { AppContext } from '../../context/app-context';
 
 const regions = ['africa', 'america', 'asia', 'europe', 'oceania'];
 
-const SearchFilter = ({ countries, currentCountries, setCurrentCountries }) => {
+const SearchFilter = () => {
   const { filterState, dispatch, appState, dispatch2 } = useContext(AppContext);
 
   const countriesFilter = (e, from) => {
@@ -17,7 +17,7 @@ const SearchFilter = ({ countries, currentCountries, setCurrentCountries }) => {
       inputArg = e.target.value;
     }
 
-    const matches = countries.filter((country) => {
+    const matches = appState.countries.filter((country) => {
       return matchBySearch(
         country.name,
         country.alpha2Code,
@@ -25,7 +25,7 @@ const SearchFilter = ({ countries, currentCountries, setCurrentCountries }) => {
         inputArg
       );
     });
-    setCurrentCountries(matches);
+    dispatch2({ type: 'SET-CURRENT-COUNTRIES-MATCH', payload: matches });
   };
 
   const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
@@ -44,13 +44,11 @@ const SearchFilter = ({ countries, currentCountries, setCurrentCountries }) => {
     dispatch({ type: 'TOGGLE-FILTER-MENU' });
   };
 
-  const sortCountries = () => {
-    console.log(currentCountries);
-    setCurrentCountries((country) => {
-      return country.slice().sort((a, b) => {
-        return b.population - a.population;
-      });
+  const sortPopulation = () => {
+    const sortedCountries = appState.currentCountries.slice().sort((a, b) => {
+      return b.population - a.population;
     });
+    dispatch2({ type: 'SORT-POPULATION-DESCENDING', payload: sortedCountries });
   };
 
   return (
@@ -76,7 +74,7 @@ const SearchFilter = ({ countries, currentCountries, setCurrentCountries }) => {
         <h3>Filter | Sort</h3>
         <div className="filter-categories">
           <div className="filter-category population-category">
-            <p className="population" onClick={sortCountries}>
+            <p className="population" onClick={sortPopulation}>
               Population
             </p>
             <input type="text" placeholder="Min" />

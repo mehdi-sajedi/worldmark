@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/app-context';
 
-const CountriesShownText = ({ currentCountries, countries, location }) => {
+const CountriesShownText = ({ location }) => {
+  const { appState } = useContext(AppContext);
+
   return (
     <div className={`countries-shown ${location}`}>
-      {(location === 'top' || currentCountries.length !== 0) && (
+      {(location === 'top' || appState.currentCountries.length !== 0) && (
         <p className="countries-shown__text">
-          Showing {currentCountries.length} of {countries.length} countries
+          Showing {appState.currentCountries.length} of{' '}
+          {appState.countries.length} countries
         </p>
       )}
     </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './sass/app.scss';
 import { AppContext } from './context/app-context';
@@ -16,15 +16,11 @@ const countryCodesToNames = new Map();
 // const subRegions = new Set();
 
 function App() {
-  const [countries, setCountries] = useState([]);
-  const [numCountriesShown, setNumCountriesShown] = useState(12);
-  const [currentCountries, setCurrentCountries] = useState([]);
-
   const { appState, dispatch2 } = useContext(AppContext);
 
   useEffect(() => {
     dispatch2({ type: 'GET-DARK-STORAGE' });
-  }, []);
+  }, [dispatch2]);
 
   useEffect(() => {
     appState.darkMode && document.body.classList.add('darkmode');
@@ -42,7 +38,8 @@ function App() {
       dispatch2({ type: 'TOGGLE-LOADING' });
       try {
         const res = await axios.get('https://restcountries.eu/rest/v2/all');
-        setCountries(res.data);
+        dispatch2({ type: 'SET-ALL-COUNTRIES', payload: res.data });
+        console.log('from all countries');
         createCountryKeyPairs(res.data);
       } catch (error) {
         console.error(error);
@@ -50,11 +47,12 @@ function App() {
       dispatch2({ type: 'TOGGLE-LOADING' });
     };
     fetchCountries();
-  }, []);
+  }, [dispatch2]);
 
   useEffect(() => {
-    setCurrentCountries(countries.slice(0, numCountriesShown));
-  }, [countries, numCountriesShown, setCurrentCountries]);
+    console.log('from current countries');
+    dispatch2({ type: 'SET-CURRENT-COUNTRIES' });
+  }, [dispatch2, appState.countries, appState.numCountriesShown]);
 
   // useEffect(() => {
   //   const fetchSubRegions = async () => {
@@ -76,28 +74,14 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <SearchFilter
-              countries={countries}
-              currentCountries={currentCountries}
-              setCurrentCountries={setCurrentCountries}
-            />
+            <SearchFilter />
 
             {appState.isLoading && <Loading page="home" />}
             {!appState.isLoading && (
               <>
-                <CountriesShownText
-                  currentCountries={currentCountries}
-                  countries={countries}
-                  location="top"
-                />
-                <Countries currentCountries={currentCountries} />
-                <Footer
-                  countries={countries}
-                  currentCountries={currentCountries}
-                  setCurrentCountries={setCurrentCountries}
-                  setNumCountriesShown={setNumCountriesShown}
-                  numCountriesShown={numCountriesShown}
-                />
+                <CountriesShownText location="top" />
+                <Countries />
+                <Footer />
               </>
             )}
           </Route>

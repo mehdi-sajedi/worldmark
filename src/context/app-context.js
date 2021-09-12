@@ -106,6 +106,7 @@ export const AppProvider = (props) => {
     countries: [],
     inputText: '',
     currentCountries: [],
+    numCountriesShown: 12,
   };
 
   const appReducer = (draft, action) => {
@@ -123,6 +124,29 @@ export const AppProvider = (props) => {
 
     if (action.type === 'SET-INPUT-TEXT') {
       draft.inputText = action.payload;
+    }
+
+    if (action.type === 'SET-ALL-COUNTRIES') {
+      draft.countries = action.payload;
+    }
+
+    if (action.type === 'SET-CURRENT-COUNTRIES') {
+      draft.currentCountries = draft.countries.slice(
+        0,
+        draft.numCountriesShown
+      );
+    }
+
+    if (action.type === 'SET-CURRENT-COUNTRIES-MATCH') {
+      draft.currentCountries = action.payload;
+    }
+
+    if (action.type === 'SET-NUM-COUNTRIES-SHOWN') {
+      draft.numCountriesShown = action.payload;
+    }
+
+    if (action.type === 'SORT-POPULATION-DESCENDING') {
+      draft.currentCountries = action.payload;
     }
   };
 
