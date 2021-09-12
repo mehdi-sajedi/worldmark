@@ -204,7 +204,7 @@ const SearchFilter = ({
                     // filterState={filterState}
                     // dispatch={dispatch}
                     region={region}
-                    key={Math.random() * 999999}
+                    key={region}
                     idx={idx}
                   />
                 );

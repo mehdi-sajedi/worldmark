@@ -287,6 +287,8 @@ button {
       > p {
         margin-bottom: 1rem;
         font-weight: 500;
+        cursor: default;
+        user-select: none;
       }
 
       .btn-open-category {
@@ -327,8 +329,8 @@ button {
             }
 
             .dropdown {
-              height: 26px;
-              width: 26px;
+              height: 28px;
+              width: 28px;
               margin-left: auto;
               cursor: pointer;
             }
@@ -346,11 +348,11 @@ button {
             visibility: hidden;
             transition: all 0.35s ease;
 
-            &.sub-open {
-              max-height: 150px;
-              opacity: 1;
-              visibility: visible;
-            }
+            // &.sub-open {
+            //   max-height: 150px;
+            //   opacity: 1;
+            //   visibility: visible;
+            // }
 
             .sub-option {
               margin: 5px 0;
@@ -366,24 +368,6 @@ button {
               }
             }
           }
-
-          // .fade-enter {
-          //   max-height: 0;
-          //   opacity: 0;
-          //   visibility: hidden;
-          // }
-          // .fade-enter-active,
-          // .fade-appear-active {
-          //   max-height: 150px;
-          //   opacity: 1;
-          //   visibility: visible;
-          // }
-
-          // .fade-appear {
-          //   max-height: 150px;
-          //   opacity: 1;
-          //   visibility: visible;
-          // }
 
           .fade-enter-done {
             max-height: 150px;
@@ -403,6 +387,7 @@ button {
     text-align: center;
     font-size: 22px;
     margin-bottom: 2rem;
+    cursor: default;
   }
 }
 
