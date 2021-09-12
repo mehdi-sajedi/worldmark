@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../context/app-context';
 
 const FilterSubRegion = ({ region, name, initials }) => {
-  const [filterState, dispatch] = useContext(AppContext);
+  const { filterState, dispatch } = useContext(AppContext);
 
   const toggleSubRegionCheck = (details) => {
     dispatch({ type: 'TOGGLE-SUB-REGION-CHECK', payload: details });

@@ -262,7 +262,7 @@ button {
   transform: translateX(32vw);
   background-color: var(--clr-filter-menu);
   transition: transform 0.35s ease-out;
-  padding: 1.5rem;
+  padding: 1.5rem 0.5rem;
 
   &.filter-open {
     transform: translateX(5vw);
@@ -296,7 +296,7 @@ button {
         height: 100%;
       }
 
-      &.population {
+      &.population-category {
         input {
           width: 90px;
           height: 30px;
@@ -304,9 +304,9 @@ button {
         }
       }
 
-      &.region {
+      &.region-category {
         .option {
-          width: 160px;
+          width: 150px;
 
           .top-layer {
             display: flex;
@@ -320,12 +320,12 @@ button {
             }
 
             > * {
-              margin: 8px 0;
+              margin: 6px 0;
             }
 
             input {
               height: 20px;
-              width: 20px;
+              // width: 20px;
             }
 
             .dropdown {
@@ -333,6 +333,11 @@ button {
               width: 28px;
               margin-left: auto;
               cursor: pointer;
+              transition: all 0.35s ease;
+            }
+
+            .turn-enter-done {
+              transform: rotate(180deg);
             }
           }
 
@@ -357,6 +362,9 @@ button {
             .sub-option {
               margin: 5px 0;
               display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              transform: translateX(16px);
               input {
                 height: 15px;
                 width: 15px;
@@ -364,7 +372,7 @@ button {
 
               label {
                 margin-left: 10px;
-                width: 85px;
+                width: 100px;
               }
             }
           }

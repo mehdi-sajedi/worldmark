@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useImmerReducer } from 'use-immer';
 import './sass/app.scss';
+import { AppContext } from './context/app-context';
 import axios from 'axios';
 import Header from './components/Utilities/Header';
 import SearchFilter from './components/Home/SearchFilter';
@@ -13,100 +13,9 @@ import Footer from './components/Home/Footer';
 import PageNotFound from './components/Utilities/PageNotFound';
 
 const countryCodesToNames = new Map();
-const subRegions = new Set();
-
-// const initialFilterState = {
-//   menuOpen: false,
-//   minPopulation: 0,
-//   maxPopulation: 9999999999,
-//   regions: {
-//     africa: {
-//       id: 'africa',
-//       expanded: false,
-//       selected: false,
-//       subRegions: {
-//         af_n: false,
-//         af_s: false,
-//         af_w: false,
-//         af_e: false,
-//         af_m: false,
-//       },
-//     },
-//     america: {
-//       id: 'america',
-//       expanded: false,
-//       selected: false,
-//       subRegions: {
-//         am_n: false,
-//         am_s: false,
-//         am_c: false,
-//         carib: false,
-//       },
-//     },
-//     asia: {
-//       id: 'asia',
-//       expanded: false,
-//       selected: false,
-//       subRegions: {
-//         as_w: false,
-//         as_e: false,
-//         as_c: false,
-//         as_s: false,
-//         as_se: false,
-//       },
-//     },
-//     europe: {
-//       id: 'europe',
-//       expanded: false,
-//       selected: false,
-//       subRegions: {
-//         eu_n: false,
-//         eu_s: false,
-//         eu_w: false,
-//         eu_e: false,
-//       },
-//     },
-//     oceania: {
-//       id: 'oceania',
-//       expanded: false,
-//       selected: false,
-//       subRegions: {
-//         aus_nz: false,
-//         mel: false,
-//         mic: false,
-//         pol: false,
-//       },
-//     },
-//   },
-// };
-
-// const reducer = (draft, action) => {
-//   if (action.type === 'TOGGLE-FILTER-MENU') {
-//     draft.menuOpen = !draft.menuOpen;
-//   }
-
-//   if (action.type === 'TOGGLE-SUB-REGIONS-MENU') {
-//     // Object.values(draft.regions).forEach((r) => {
-//     //   if (r.id === action.payload) r.expanded = !r.expanded;
-//     //   if (r.expanded && r.id !== action.payload) r.expanded = !r.expanded;
-//     // });
-//     draft.regions[action.payload].expanded =
-//       !draft.regions[action.payload].expanded;
-//   }
-
-//   if (action.type === 'TOGGLE-REGION-CHECK') {
-//     draft.regions[action.payload].selected =
-//       !draft.regions[action.payload].selected;
-//   }
-
-//   if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
-//     draft.regions[action.payload[0]].subRegions[action.payload[1]] =
-//       !draft.regions[action.payload[0]].subRegions[action.payload[1]];
-//   }
-// };
+// const subRegions = new Set();
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [countries, setCountries] = useState([]);
   const [inputText, setInputText] = useState('');
@@ -114,21 +23,16 @@ function App() {
   const [numCountriesShown, setNumCountriesShown] = useState(12);
   const [currentCountries, setCurrentCountries] = useState([]);
 
-  // const [filterState, dispatch] = useImmerReducer(reducer, initialFilterState);
+  const { appState, dispatch2 } = useContext(AppContext);
 
   useEffect(() => {
-    setDarkMode(JSON.parse(localStorage.getItem('darkmode')));
+    dispatch2({ type: 'GET-DARK-STORAGE' });
   }, []);
 
   useEffect(() => {
-    darkMode && document.body.classList.add('darkmode');
-    !darkMode && document.body.classList.remove('darkmode');
-  }, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-    localStorage.setItem('darkmode', JSON.stringify(!darkMode));
-  };
+    appState.darkMode && document.body.classList.add('darkmode');
+    !appState.darkMode && document.body.classList.remove('darkmode');
+  }, [appState.darkMode]);
 
   const createCountryKeyPairs = (countries) => {
     countries.forEach((country) => {
@@ -155,35 +59,34 @@ function App() {
     setCurrentCountries(countries.slice(0, numCountriesShown));
   }, [countries, numCountriesShown, setCurrentCountries]);
 
-  useEffect(() => {
-    const fetchSubRegions = async () => {
-      try {
-        const res = await axios.get('https://restcountries.eu/rest/v2/all');
-        res.data.forEach((country) => {
-          subRegions.add(country.subregion);
-        });
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchSubRegions();
-  }, []);
+  // useEffect(() => {
+  //   const fetchSubRegions = async () => {
+  //     try {
+  //       const res = await axios.get('https://restcountries.eu/rest/v2/all');
+  //       res.data.forEach((country) => {
+  //         subRegions.add(country.subregion);
+  //       });
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   fetchSubRegions();
+  // }, []);
 
   return (
     <main className="container">
       <BrowserRouter>
-        <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+        <Header />
         <Switch>
           <Route exact path="/">
             <SearchFilter
               countries={countries}
+              currentCountries={currentCountries}
               setCurrentCountries={setCurrentCountries}
               inputText={inputText}
               setInputText={setInputText}
               dropdownText={dropdownText}
               setDropdownText={setDropdownText}
-              // filterState={filterState}
-              // dispatch={dispatch}
             />
 
             {isLoading && <Loading page="home" />}

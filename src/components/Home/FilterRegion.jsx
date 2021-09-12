@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import FilterSubRegion from './FilterSubRegion';
 import subRegionData from '../../data/subregions';
 import { RiArrowDownSLine } from 'react-icons/ri';
@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import { AppContext } from '../../context/app-context';
 
 const FilterRegion = ({ region, idx }) => {
-  const [filterState, dispatch] = useContext(AppContext);
+  const { filterState, dispatch } = useContext(AppContext);
 
   const toggleSubRegionsMenu = (region) => {
     dispatch({ type: 'TOGGLE-SUB-REGIONS-MENU', payload: region });
@@ -15,8 +15,6 @@ const FilterRegion = ({ region, idx }) => {
   const toggleRegionCheck = (idx) => {
     dispatch({ type: 'TOGGLE-REGION-CHECK', payload: idx });
   };
-
-  const [fuck, setFuck] = useState(true);
 
   return (
     <div className="option">
@@ -30,20 +28,19 @@ const FilterRegion = ({ region, idx }) => {
         <label className="capitalize" htmlFor={region}>
           {region}
         </label>
-        <RiArrowDownSLine
-          className="dropdown"
-          onClick={() => toggleSubRegionsMenu(region)}
-          // onClick={() => setFuck((prevState) => !prevState)}
-        />
+        <CSSTransition
+          in={filterState.regions[region].expanded}
+          classNames="turn"
+          timeout={0}
+        >
+          <RiArrowDownSLine
+            className="dropdown"
+            onClick={() => toggleSubRegionsMenu(region)}
+          />
+        </CSSTransition>
       </div>
-      {/* <div
-        className={`bottom-layer ${
-          filterState.regions[region].expanded ? 'sub-open' : undefined
-        }`}
-      > */}
       <CSSTransition
         in={filterState.regions[region].expanded}
-        // in={fuck}
         classNames="fade"
         timeout={0}
       >
@@ -51,8 +48,6 @@ const FilterRegion = ({ region, idx }) => {
           {Object.values(subRegionData)[idx].map((subregion) => {
             return (
               <FilterSubRegion
-                // filterState={filterState}
-                // dispatch={dispatch}
                 region={region}
                 name={subregion.name}
                 initials={subregion.initials}
@@ -62,7 +57,6 @@ const FilterRegion = ({ region, idx }) => {
           })}
         </div>
       </CSSTransition>
-      {/* </div> */}
     </div>
   );
 };

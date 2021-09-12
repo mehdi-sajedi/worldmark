@@ -96,8 +96,36 @@ export const AppProvider = (props) => {
 
   const [filterState, dispatch] = useImmerReducer(reducer, initialFilterState);
 
+  // - ******************************************************************
+  // - ******************************************************************
+  // - ******************************************************************
+
+  const initialAppState = {
+    darkMode: false,
+    isLoading: true,
+    countries: [],
+    inputText: '',
+    currentCountries: [],
+  };
+
+  const appReducer = (draft, action) => {
+    if (action.type === 'TOGGLE-DARK') {
+      draft.darkMode = !draft.darkMode;
+      localStorage.setItem('darkmode', JSON.stringify(draft.darkMode));
+    }
+    if (action.type === 'TOGGLE-LOADING') {
+      draft.isLoading = !draft.isLoading;
+    }
+
+    if (action.type === 'GET-DARK-STORAGE') {
+      draft.darkMode = JSON.parse(localStorage.getItem('darkmode'));
+    }
+  };
+
+  const [appState, dispatch2] = useImmerReducer(appReducer, initialAppState);
+
   return (
-    <AppContext.Provider value={[filterState, dispatch]}>
+    <AppContext.Provider value={{ filterState, dispatch, appState, dispatch2 }}>
       {props.children}
     </AppContext.Provider>
   );
