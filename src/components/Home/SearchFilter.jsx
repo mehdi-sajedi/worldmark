@@ -7,13 +7,13 @@ import { AppContext } from '../../context/app-context';
 const regions = ['africa', 'america', 'asia', 'europe', 'oceania'];
 
 const SearchFilter = () => {
-  const { filterState, dispatch, appState, dispatch2 } = useContext(AppContext);
+  const { appState, dispatch } = useContext(AppContext);
 
   const countriesFilter = (e, from) => {
     let inputArg;
 
     if (from === 'search') {
-      dispatch2({ type: 'SET-INPUT-TEXT', payload: e.target.value });
+      dispatch({ type: 'SET-INPUT-TEXT', payload: e.target.value });
       inputArg = e.target.value;
     }
 
@@ -25,7 +25,7 @@ const SearchFilter = () => {
         inputArg
       );
     });
-    dispatch2({ type: 'SET-CURRENT-COUNTRIES-MATCH', payload: matches });
+    dispatch({ type: 'SET-CURRENT-COUNTRIES-MATCH', payload: matches });
   };
 
   const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
@@ -48,7 +48,7 @@ const SearchFilter = () => {
     const sortedCountries = appState.currentCountries.slice().sort((a, b) => {
       return b.population - a.population;
     });
-    dispatch2({ type: 'SORT-POPULATION-DESCENDING', payload: sortedCountries });
+    dispatch({ type: 'SORT-POPULATION-DESCENDING', payload: sortedCountries });
   };
 
   return (
@@ -70,7 +70,7 @@ const SearchFilter = () => {
         <IoFilter className="filter-icon" />
       </div>
 
-      <div className={`filter-menu ${filterState.menuOpen && 'filter-open'}`}>
+      <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>
         <h3>Filter | Sort</h3>
         <div className="filter-categories">
           <div className="filter-category population-category">

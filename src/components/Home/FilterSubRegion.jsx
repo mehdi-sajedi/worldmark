@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../context/app-context';
 
 const FilterSubRegion = ({ region, name, initials }) => {
-  const { filterState, dispatch } = useContext(AppContext);
+  const { appState, dispatch } = useContext(AppContext);
 
   const toggleSubRegionCheck = (details) => {
     dispatch({ type: 'TOGGLE-SUB-REGION-CHECK', payload: details });
@@ -13,7 +13,7 @@ const FilterSubRegion = ({ region, name, initials }) => {
       <input
         type="checkbox"
         id={initials}
-        checked={filterState.regions[region].subRegions[initials]}
+        checked={appState.regions[region].subRegions[initials]}
         onChange={() => toggleSubRegionCheck([region, initials])}
       />
       <label className="capitalize" htmlFor={initials}>

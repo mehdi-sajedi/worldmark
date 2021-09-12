@@ -5,7 +5,7 @@ import { HiOutlineMoon } from 'react-icons/hi';
 import { HiMoon } from 'react-icons/hi';
 
 const Header = () => {
-  const { appState, dispatch2 } = useContext(AppContext);
+  const { appState, dispatch } = useContext(AppContext);
 
   return (
     <header className="header">
@@ -14,7 +14,7 @@ const Header = () => {
       </Link>
       <div
         className="header__theme-btn"
-        onClick={() => dispatch2({ type: 'TOGGLE-DARK' })}
+        onClick={() => dispatch({ type: 'TOGGLE-DARK' })}
       >
         <i className="header__theme-btn__icon">
           {appState.darkMode ? <HiMoon /> : <HiOutlineMoon />}

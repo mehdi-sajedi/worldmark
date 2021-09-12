@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../context/app-context';
 
 const ShowMoreBtn = () => {
-  const { appState, dispatch2 } = useContext(AppContext);
+  const { appState, dispatch } = useContext(AppContext);
 
   const showMoreCountries = () => {
     const num =
       appState.numCountriesShown + 120 > 250
         ? 250
         : appState.numCountriesShown + 120;
-    dispatch2({ type: 'SET-NUM-COUNTRIES-SHOWN', payload: num });
+    dispatch({ type: 'SET-NUM-COUNTRIES-SHOWN', payload: num });
   };
 
   return (

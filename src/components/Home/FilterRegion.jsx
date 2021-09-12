@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import { AppContext } from '../../context/app-context';
 
 const FilterRegion = ({ region, idx }) => {
-  const { filterState, dispatch } = useContext(AppContext);
+  const { appState, dispatch } = useContext(AppContext);
 
   const toggleSubRegionsMenu = (region) => {
     dispatch({ type: 'TOGGLE-SUB-REGIONS-MENU', payload: region });
@@ -22,14 +22,14 @@ const FilterRegion = ({ region, idx }) => {
         <input
           type="checkbox"
           id={region}
-          checked={filterState.regions[region].selected}
+          checked={appState.regions[region].selected}
           onChange={() => toggleRegionCheck(region)}
         />
         <label className="capitalize" htmlFor={region}>
           {region}
         </label>
         <CSSTransition
-          in={filterState.regions[region].expanded}
+          in={appState.regions[region].expanded}
           classNames="turn"
           timeout={0}
         >
@@ -40,7 +40,7 @@ const FilterRegion = ({ region, idx }) => {
         </CSSTransition>
       </div>
       <CSSTransition
-        in={filterState.regions[region].expanded}
+        in={appState.regions[region].expanded}
         classNames="fade"
         timeout={0}
       >

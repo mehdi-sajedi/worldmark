@@ -4,7 +4,14 @@ import { useImmerReducer } from 'use-immer';
 export const AppContext = createContext();
 
 export const AppProvider = (props) => {
-  const initialFilterState = {
+  const initialAppState = {
+    darkMode: false,
+    isLoading: false,
+    countries: [],
+    inputText: '',
+    currentCountries: [],
+    numCountriesShown: 12,
+    // - ************************
     menuOpen: false,
     minPopulation: 0,
     maxPopulation: 9999999999,
@@ -70,46 +77,6 @@ export const AppProvider = (props) => {
   };
 
   const reducer = (draft, action) => {
-    if (action.type === 'TOGGLE-FILTER-MENU') {
-      draft.menuOpen = !draft.menuOpen;
-    }
-
-    if (action.type === 'TOGGLE-SUB-REGIONS-MENU') {
-      // Object.values(draft.regions).forEach((r) => {
-      //   if (r.id === action.payload) r.expanded = !r.expanded;
-      //   if (r.expanded && r.id !== action.payload) r.expanded = !r.expanded;
-      // });
-      draft.regions[action.payload].expanded =
-        !draft.regions[action.payload].expanded;
-    }
-
-    if (action.type === 'TOGGLE-REGION-CHECK') {
-      draft.regions[action.payload].selected =
-        !draft.regions[action.payload].selected;
-    }
-
-    if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
-      draft.regions[action.payload[0]].subRegions[action.payload[1]] =
-        !draft.regions[action.payload[0]].subRegions[action.payload[1]];
-    }
-  };
-
-  const [filterState, dispatch] = useImmerReducer(reducer, initialFilterState);
-
-  // - ******************************************************************
-  // - ******************************************************************
-  // - ******************************************************************
-
-  const initialAppState = {
-    darkMode: false,
-    isLoading: false,
-    countries: [],
-    inputText: '',
-    currentCountries: [],
-    numCountriesShown: 12,
-  };
-
-  const appReducer = (draft, action) => {
     if (action.type === 'TOGGLE-DARK') {
       draft.darkMode = !draft.darkMode;
       localStorage.setItem('darkmode', JSON.stringify(draft.darkMode));
@@ -148,12 +115,38 @@ export const AppProvider = (props) => {
     if (action.type === 'SORT-POPULATION-DESCENDING') {
       draft.currentCountries = action.payload;
     }
+    // - ************************
+    // - ************************
+    // - ************************
+
+    if (action.type === 'TOGGLE-FILTER-MENU') {
+      draft.menuOpen = !draft.menuOpen;
+    }
+
+    if (action.type === 'TOGGLE-SUB-REGIONS-MENU') {
+      // Object.values(draft.regions).forEach((r) => {
+      //   if (r.id === action.payload) r.expanded = !r.expanded;
+      //   if (r.expanded && r.id !== action.payload) r.expanded = !r.expanded;
+      // });
+      draft.regions[action.payload].expanded =
+        !draft.regions[action.payload].expanded;
+    }
+
+    if (action.type === 'TOGGLE-REGION-CHECK') {
+      draft.regions[action.payload].selected =
+        !draft.regions[action.payload].selected;
+    }
+
+    if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
+      draft.regions[action.payload[0]].subRegions[action.payload[1]] =
+        !draft.regions[action.payload[0]].subRegions[action.payload[1]];
+    }
   };
 
-  const [appState, dispatch2] = useImmerReducer(appReducer, initialAppState);
+  const [appState, dispatch] = useImmerReducer(reducer, initialAppState);
 
   return (
-    <AppContext.Provider value={{ filterState, dispatch, appState, dispatch2 }}>
+    <AppContext.Provider value={{ appState, dispatch }}>
       {props.children}
     </AppContext.Provider>
   );

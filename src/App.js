@@ -16,11 +16,11 @@ const countryCodesToNames = new Map();
 // const subRegions = new Set();
 
 function App() {
-  const { appState, dispatch2 } = useContext(AppContext);
+  const { appState, dispatch } = useContext(AppContext);
 
   useEffect(() => {
-    dispatch2({ type: 'GET-DARK-STORAGE' });
-  }, [dispatch2]);
+    dispatch({ type: 'GET-DARK-STORAGE' });
+  }, [dispatch]);
 
   useEffect(() => {
     appState.darkMode && document.body.classList.add('darkmode');
@@ -35,22 +35,22 @@ function App() {
 
   useEffect(() => {
     const fetchCountries = async () => {
-      dispatch2({ type: 'TOGGLE-LOADING' });
+      dispatch({ type: 'TOGGLE-LOADING' });
       try {
         const res = await axios.get('https://restcountries.eu/rest/v2/all');
-        dispatch2({ type: 'SET-ALL-COUNTRIES', payload: res.data });
+        dispatch({ type: 'SET-ALL-COUNTRIES', payload: res.data });
         createCountryKeyPairs(res.data);
       } catch (error) {
         console.error(error);
       }
-      dispatch2({ type: 'TOGGLE-LOADING' });
+      dispatch({ type: 'TOGGLE-LOADING' });
     };
     fetchCountries();
-  }, [dispatch2]);
+  }, [dispatch]);
 
   useEffect(() => {
-    dispatch2({ type: 'SET-CURRENT-COUNTRIES' });
-  }, [dispatch2, appState.countries, appState.numCountriesShown]);
+    dispatch({ type: 'SET-CURRENT-COUNTRIES' });
+  }, [dispatch, appState.countries, appState.numCountriesShown]);
 
   // useEffect(() => {
   //   const fetchSubRegions = async () => {
