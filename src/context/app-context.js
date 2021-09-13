@@ -9,6 +9,7 @@ export const AppProvider = (props) => {
   const initialAppState = {
     filterActive: false,
     activeRegions: new Set(),
+    activeSubRegions: new Set(),
     // - ************************
     darkMode: false,
     isLoading: false,
@@ -84,6 +85,7 @@ export const AppProvider = (props) => {
   const reducer = (draft, action) => {
     if (action.type === 'TOGGLE-DARK') {
       draft.darkMode = !draft.darkMode;
+
       localStorage.setItem('darkmode', JSON.stringify(draft.darkMode));
     }
     if (action.type === 'TOGGLE-LOADING') {
@@ -141,14 +143,12 @@ export const AppProvider = (props) => {
     if (action.type === 'TOGGLE-REGION-CHECK') {
       draft.regions[action.payload].selected =
         !draft.regions[action.payload].selected;
-    }
 
-    if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
-      draft.regions[action.payload[0]].subRegions[action.payload[1]] =
-        !draft.regions[action.payload[0]].subRegions[action.payload[1]];
-    }
+      if (draft.regions[action.payload].selected) {
+        for (let i in draft.regions[action.payload].subRegions)
+          draft.regions[action.payload].subRegions[i] = false;
+      }
 
-    if (action.type === 'FILTER-ACTIVE') {
       Object.values(draft.regions).some((region) => {
         if (region.selected) return (draft.filterActive = true);
         else return (draft.filterActive = false);
@@ -165,19 +165,40 @@ export const AppProvider = (props) => {
         draft.currentCountries = draft.countries.filter((country) => {
           let actives = [...draft.activeRegions];
           return actives.includes(country.region.toLowerCase()) && country;
-          // if (actives.includes(country.region.toLowerCase())) {
-          //   console.log('yes');
-          //   return country;
-          // }
         });
       } else draft.currentCountries = draft.countries;
     }
 
-    if (action.type === 'SET-COUNTRIES-FILTER') {
-      // Object.values(draft.regions).some((region) => {
+    if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
+      draft.regions[action.payload[0]].subRegions[action.payload[1]] =
+        !draft.regions[action.payload[0]].subRegions[action.payload[1]];
 
-      // });
-      console.log(draft.currentCountries);
+      if (draft.regions[action.payload[0]].selected) {
+        draft.regions[action.payload[0]].selected = false;
+      }
+
+      Object.values(draft.regions).some((region) => {
+        if (region.selected) return (draft.filterActive = true);
+        else return (draft.filterActive = false);
+      });
+
+      Object.values(draft.regions).forEach((region) => {
+        if (region.selected) draft.activeRegions.add(region.id);
+        else {
+          draft.activeRegions.delete(region.id);
+        }
+      });
+
+      
+    
+
+
+      if (draft.filterActive) {
+        draft.currentCountries = draft.countries.filter((country) => {
+          let actives = [...draft.activeRegions];
+          return actives.includes(country.region.toLowerCase()) && country;
+        });
+      } else draft.currentCountries = draft.countries;
     }
   };
 

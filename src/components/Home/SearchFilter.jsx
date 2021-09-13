@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import FilterRegion from './FilterRegion';
 import { HiSearch } from 'react-icons/hi';
-import { IoFilter } from 'react-icons/io5';
+// import { IoFilter } from 'react-icons/io5';
 import { AppContext } from '../../context/app-context';
+import { BiSlider } from 'react-icons/bi';
 
 const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
 
@@ -67,7 +68,7 @@ const SearchFilter = () => {
       </div>
 
       <div className="filter-wrapper" onClick={toggleFilterMenu}>
-        <IoFilter className="filter-icon" />
+        <BiSlider className="filter-icon" />
       </div>
 
       <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>

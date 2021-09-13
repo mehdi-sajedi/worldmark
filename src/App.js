@@ -13,7 +13,7 @@ import Footer from './components/Home/Footer';
 import PageNotFound from './components/Utilities/PageNotFound';
 
 const countryCodesToNames = new Map();
-// const subRegions = new Set();
+const subRegions = new Set();
 
 function App() {
   const { appState, dispatch } = useContext(AppContext);
@@ -53,22 +53,19 @@ function App() {
   }, [dispatch, appState.countries, appState.numCountriesShown]);
 
   useEffect(() => {
-    dispatch({ type: 'FILTER-ACTIVE' });
-  }, [dispatch, appState.regions]);
-
-  // useEffect(() => {
-  //   const fetchSubRegions = async () => {
-  //     try {
-  //       const res = await axios.get('https://restcountries.eu/rest/v2/all');
-  //       res.data.forEach((country) => {
-  //         subRegions.add(country.subregion);
-  //       });
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   fetchSubRegions();
-  // }, []);
+    const fetchSubRegions = async () => {
+      try {
+        const res = await axios.get('https://restcountries.eu/rest/v2/all');
+        res.data.forEach((country) => {
+          subRegions.add(country.subregion);
+        });
+      } catch (error) {
+        console.error(error);
+      }
+      console.log(subRegions);
+    };
+    fetchSubRegions();
+  }, []);
 
   return (
     <main className="container">

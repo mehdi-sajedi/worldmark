@@ -59,7 +59,7 @@ const subRegionData = {
       initials: 'as_s',
     },
     {
-      name: 'southeastern',
+      name: 'Southeastern',
       initials: 'as_se',
     },
   ],
