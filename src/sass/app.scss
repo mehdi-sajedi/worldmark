@@ -524,10 +524,13 @@ button {
   }
 }
 
+.details-container {
+  margin-bottom: 3rem;
+}
+
 .details {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 3rem;
   column-gap: 8rem;
   font-size: 16px;
 

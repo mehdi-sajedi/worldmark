@@ -10,6 +10,18 @@ const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
 const SearchFilter = () => {
   const { appState, dispatch } = useContext(AppContext);
 
+  const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
+    return (
+      matchByCountryIdentifier(country, val) ||
+      matchByCountryIdentifier(alpha2Code, val) ||
+      matchByCountryIdentifier(alpha3Code, val)
+    );
+  };
+
+  const matchByCountryIdentifier = (countryIdentifier, val) => {
+    return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
+  };
+
   const countriesFilter = (e, from) => {
     let inputArg;
 
@@ -27,18 +39,6 @@ const SearchFilter = () => {
       );
     });
     dispatch({ type: 'SET-CURRENT-COUNTRIES-MATCH', payload: matches });
-  };
-
-  const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
-    return (
-      matchByCountryIdentifier(country, val) ||
-      matchByCountryIdentifier(alpha2Code, val) ||
-      matchByCountryIdentifier(alpha3Code, val)
-    );
-  };
-
-  const matchByCountryIdentifier = (countryIdentifier, val) => {
-    return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
   };
 
   const toggleFilterMenu = () => {

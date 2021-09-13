@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './sass/app.scss';
 import { AppContext } from './context/app-context';
 import axios from 'axios';
+import './sass/app.scss';
 import Header from './components/Utilities/Header';
 import SearchFilter from './components/Home/SearchFilter';
 import Countries from './components/Home/Countries';
@@ -13,7 +13,7 @@ import Footer from './components/Home/Footer';
 import PageNotFound from './components/Utilities/PageNotFound';
 
 const countryCodesToNames = new Map();
-const subRegions = new Set();
+// const subRegions = new Set();
 
 function App() {
   const { appState, dispatch } = useContext(AppContext);
@@ -52,20 +52,19 @@ function App() {
     dispatch({ type: 'SET-CURRENT-COUNTRIES' });
   }, [dispatch, appState.countries, appState.numCountriesShown]);
 
-  useEffect(() => {
-    const fetchSubRegions = async () => {
-      try {
-        const res = await axios.get('https://restcountries.eu/rest/v2/all');
-        res.data.forEach((country) => {
-          subRegions.add(country.subregion);
-        });
-      } catch (error) {
-        console.error(error);
-      }
-      console.log(subRegions);
-    };
-    fetchSubRegions();
-  }, []);
+  // useEffect(() => {
+  //   const fetchSubRegions = async () => {
+  //     try {
+  //       const res = await axios.get('https://restcountries.eu/rest/v2/all');
+  //       res.data.forEach((country) => {
+  //         subRegions.add(country.subregion);
+  //       });
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   fetchSubRegions();
+  // }, []);
 
   return (
     <main className="container">
