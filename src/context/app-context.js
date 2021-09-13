@@ -10,14 +10,12 @@ export const AppProvider = (props) => {
     filterActive: false,
     activeRegions: new Set(),
     activeSubRegions: new Set(),
-    // - ************************
     darkMode: false,
     isLoading: false,
     countries: [],
     inputText: '',
     currentCountries: [],
     numCountriesShown: 12,
-    // - ************************
     menuOpen: false,
     minPopulation: 0,
     maxPopulation: 9999999999,
@@ -27,11 +25,26 @@ export const AppProvider = (props) => {
         expanded: false,
         selected: false,
         subRegions: {
-          af_n: false,
-          af_s: false,
-          af_w: false,
-          af_e: false,
-          af_m: false,
+          af_n: {
+            id: 'northern africa',
+            selected: false,
+          },
+          af_s: {
+            id: 'southern africa',
+            selected: false,
+          },
+          af_w: {
+            id: 'western africa',
+            selected: false,
+          },
+          af_e: {
+            id: 'eastern africa',
+            selected: false,
+          },
+          af_m: {
+            id: 'middle africa',
+            selected: false,
+          },
         },
       },
       americas: {
@@ -39,10 +52,22 @@ export const AppProvider = (props) => {
         expanded: false,
         selected: false,
         subRegions: {
-          am_n: false,
-          am_s: false,
-          am_c: false,
-          carib: false,
+          am_n: {
+            id: 'northern america',
+            selected: false,
+          },
+          am_s: {
+            id: 'south america',
+            selected: false,
+          },
+          am_c: {
+            id: 'central america',
+            selected: false,
+          },
+          carib: {
+            id: 'caribbean',
+            selected: false,
+          },
         },
       },
       asia: {
@@ -50,11 +75,26 @@ export const AppProvider = (props) => {
         expanded: false,
         selected: false,
         subRegions: {
-          as_w: false,
-          as_e: false,
-          as_c: false,
-          as_s: false,
-          as_se: false,
+          as_w: {
+            id: 'western asia',
+            selected: false,
+          },
+          as_e: {
+            id: 'eastern asia',
+            selected: false,
+          },
+          as_c: {
+            id: 'central asia',
+            selected: false,
+          },
+          as_s: {
+            id: 'southern asia',
+            selected: false,
+          },
+          as_se: {
+            id: 'south-eastern asia',
+            selected: false,
+          },
         },
       },
       europe: {
@@ -62,10 +102,22 @@ export const AppProvider = (props) => {
         expanded: false,
         selected: false,
         subRegions: {
-          eu_n: false,
-          eu_s: false,
-          eu_w: false,
-          eu_e: false,
+          eu_n: {
+            id: 'northern europe',
+            selected: false,
+          },
+          eu_s: {
+            id: 'southern europe',
+            selected: false,
+          },
+          eu_w: {
+            id: 'western europe',
+            selected: false,
+          },
+          eu_e: {
+            id: 'eastern europe',
+            selected: false,
+          },
         },
       },
       oceania: {
@@ -73,10 +125,22 @@ export const AppProvider = (props) => {
         expanded: false,
         selected: false,
         subRegions: {
-          aus_nz: false,
-          mel: false,
-          mic: false,
-          pol: false,
+          aus_nz: {
+            id: 'australia and new zealand',
+            selected: false,
+          },
+          mel: {
+            id: 'melanesia',
+            selected: false,
+          },
+          mic: {
+            id: 'micronesia',
+            selected: false,
+          },
+          pol: {
+            id: 'polynesia',
+            selected: false,
+          },
         },
       },
     },
@@ -123,10 +187,6 @@ export const AppProvider = (props) => {
       draft.currentCountries = action.payload;
     }
 
-    // - ************************
-    // - ************************
-    // - ************************
-
     if (action.type === 'TOGGLE-FILTER-MENU') {
       draft.menuOpen = !draft.menuOpen;
     }
@@ -146,13 +206,8 @@ export const AppProvider = (props) => {
 
       if (draft.regions[action.payload].selected) {
         for (let i in draft.regions[action.payload].subRegions)
-          draft.regions[action.payload].subRegions[i] = false;
+          draft.regions[action.payload].subRegions[i].selected = false;
       }
-
-      Object.values(draft.regions).some((region) => {
-        if (region.selected) return (draft.filterActive = true);
-        else return (draft.filterActive = false);
-      });
 
       Object.values(draft.regions).forEach((region) => {
         if (region.selected) draft.activeRegions.add(region.id);
@@ -161,26 +216,38 @@ export const AppProvider = (props) => {
         }
       });
 
+      Object.values(draft.regions).forEach((region) => {
+        Object.values(region.subRegions).forEach((subregion) => {
+          if (subregion.selected) draft.activeSubRegions.add(subregion.id);
+          else draft.activeSubRegions.delete(subregion.id);
+        });
+      });
+
+      if (draft.activeRegions.size > 0 || draft.activeSubRegions.size > 0) {
+        draft.filterActive = true;
+      } else draft.filterActive = false;
+
       if (draft.filterActive) {
         draft.currentCountries = draft.countries.filter((country) => {
-          let actives = [...draft.activeRegions];
-          return actives.includes(country.region.toLowerCase()) && country;
+          let activeRegions = [...draft.activeRegions];
+          let activeSubRegions = [...draft.activeSubRegions];
+          return (
+            (activeRegions.includes(country.region.toLowerCase()) ||
+              activeSubRegions.includes(country.subregion.toLowerCase())) &&
+            country
+          );
         });
       } else draft.currentCountries = draft.countries;
     }
 
     if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
-      draft.regions[action.payload[0]].subRegions[action.payload[1]] =
-        !draft.regions[action.payload[0]].subRegions[action.payload[1]];
+      draft.regions[action.payload[0]].subRegions[action.payload[1]].selected =
+        !draft.regions[action.payload[0]].subRegions[action.payload[1]]
+          .selected;
 
       if (draft.regions[action.payload[0]].selected) {
         draft.regions[action.payload[0]].selected = false;
       }
-
-      Object.values(draft.regions).some((region) => {
-        if (region.selected) return (draft.filterActive = true);
-        else return (draft.filterActive = false);
-      });
 
       Object.values(draft.regions).forEach((region) => {
         if (region.selected) draft.activeRegions.add(region.id);
@@ -189,14 +256,26 @@ export const AppProvider = (props) => {
         }
       });
 
-      
-    
+      Object.values(draft.regions).forEach((region) => {
+        Object.values(region.subRegions).forEach((subregion) => {
+          if (subregion.selected) draft.activeSubRegions.add(subregion.id);
+          else draft.activeSubRegions.delete(subregion.id);
+        });
+      });
 
+      if (draft.activeRegions.size > 0 || draft.activeSubRegions.size > 0) {
+        draft.filterActive = true;
+      } else draft.filterActive = false;
 
       if (draft.filterActive) {
         draft.currentCountries = draft.countries.filter((country) => {
-          let actives = [...draft.activeRegions];
-          return actives.includes(country.region.toLowerCase()) && country;
+          let activeRegions = [...draft.activeRegions];
+          let activeSubRegions = [...draft.activeSubRegions];
+          return (
+            (activeRegions.includes(country.region.toLowerCase()) ||
+              activeSubRegions.includes(country.subregion.toLowerCase())) &&
+            country
+          );
         });
       } else draft.currentCountries = draft.countries;
     }

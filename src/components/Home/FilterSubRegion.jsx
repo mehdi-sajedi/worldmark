@@ -13,7 +13,7 @@ const FilterSubRegion = ({ region, name, initials }) => {
       <input
         type="checkbox"
         id={initials}
-        checked={appState.regions[region].subRegions[initials]}
+        checked={appState.regions[region].subRegions[initials].selected}
         onChange={() => toggleSubRegionCheck([region, initials])}
       />
       <label className="capitalize" htmlFor={initials}>
