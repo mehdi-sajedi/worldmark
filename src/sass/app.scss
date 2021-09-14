@@ -410,12 +410,29 @@ button {
   margin-bottom: 2rem;
 }
 
+@keyframes myAnimation {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 // COUNTRIES COMPONENT
 .countries {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
   gap: clamp(60px, 4vw, 100px);
   margin-bottom: 5rem;
+
+  &.play-animation {
+    animation: myAnimation 0.4s;
+    animation-fill-mode: backwards;
+  }
 
   &.snapper > * {
     width: clamp(256px, 100%, 315px);

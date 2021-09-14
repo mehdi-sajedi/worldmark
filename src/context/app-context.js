@@ -10,6 +10,7 @@ export const AppProvider = (props) => {
     filterActive: false,
     activeRegions: new Set(),
     activeSubRegions: new Set(),
+    playAnimation: true,
     darkMode: false,
     isLoading: false,
     countries: [],
@@ -278,6 +279,14 @@ export const AppProvider = (props) => {
           );
         });
       } else draft.currentCountries = draft.countries;
+    }
+
+    if (action.type === 'CLOSE-ANIMATION') {
+      draft.playAnimation = false;
+    }
+
+    if (action.type === 'ATTACH-ANIMATION') {
+      draft.playAnimation = true;
     }
   };
 

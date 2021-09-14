@@ -16,8 +16,9 @@ const CountryDetails = ({ countryCodesToNames }) => {
   const [isError, setIsError] = useState(false);
 
   const transition = useTransition(!isLoading, {
-    from: { x: 100, opacity: 1 },
-    enter: { x: 0, opacity: 1 },
+    from: { x: 40, y: 0, opacity: 0 },
+    enter: { x: 0, y: 0, opacity: 1 },
+    delay: 250,
   });
 
   useEffect(() => {
