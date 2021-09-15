@@ -254,6 +254,7 @@ button {
 }
 
 .filter-menu {
+  z-index: 99999999;
   position: absolute;
   top: 75px;
   right: 0;
@@ -412,7 +413,7 @@ button {
 
 @keyframes myAnimation {
   from {
-    transform: translateY(100px);
+    // transform: translateY(100px);
     opacity: 0;
   }
 
@@ -428,9 +429,10 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
   gap: clamp(60px, 4vw, 100px);
   margin-bottom: 5rem;
+  // overflow: hidden; ///
 
   &.play-animation {
-    animation: myAnimation 0.4s;
+    animation: myAnimation 0.6s 0.2s;
     animation-fill-mode: backwards;
   }
 

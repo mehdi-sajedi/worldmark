@@ -2,11 +2,11 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/app-context';
-import Loading from '../Utilities/Loading';
+// import Loading from '../Utilities/Loading';
 import BackBtn from './BackBtn';
 import CountryDetailsItem from './CountryDetailsItem';
 import { useTransition, animated } from 'react-spring';
-import history from '../Utilities/history';
+// import history from '../Utilities/history';
 
 const CountryDetails = ({ countryCodesToNames }) => {
   const { appState } = useContext(AppContext);

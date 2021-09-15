@@ -5,12 +5,12 @@ enableMapSet();
 
 export const AppContext = createContext();
 
-export const AppProvider = (props) => {
+export const AppProvider = ({ children }) => {
   const initialAppState = {
     filterActive: false,
     activeRegions: new Set(),
     activeSubRegions: new Set(),
-    playAnimation: true,
+    animationSet: true,
     darkMode: false,
     isLoading: false,
     countries: [],
@@ -269,6 +269,7 @@ export const AppProvider = (props) => {
       } else draft.filterActive = false;
 
       if (draft.filterActive) {
+        draft.currentCountries = [];
         draft.currentCountries = draft.countries.filter((country) => {
           let activeRegions = [...draft.activeRegions];
           let activeSubRegions = [...draft.activeSubRegions];
@@ -282,11 +283,11 @@ export const AppProvider = (props) => {
     }
 
     if (action.type === 'CLOSE-ANIMATION') {
-      draft.playAnimation = false;
+      draft.animationSet = false;
     }
 
     if (action.type === 'ATTACH-ANIMATION') {
-      draft.playAnimation = true;
+      draft.animationSet = true;
     }
   };
 
@@ -294,7 +295,7 @@ export const AppProvider = (props) => {
 
   return (
     <AppContext.Provider value={{ appState, dispatch }}>
-      {props.children}
+      {children}
     </AppContext.Provider>
   );
 };
