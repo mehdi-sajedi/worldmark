@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import FilterRegion from './FilterRegion';
 import { HiSearch } from 'react-icons/hi';
 // import { IoFilter } from 'react-icons/io5';
@@ -22,23 +22,37 @@ const SearchFilter = () => {
     return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
   };
 
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     // if (appState.inputText !== '') {
+  //     countriesFilter(appState.inputText);
+  //     // }
+  //   }, 7500);
+  //   return () => clearTimeout(timeout);
+  // }, [appState.inputText]);
+
   const countriesFilter = (e, from) => {
-    let inputArg;
+    // let inputArg;
 
-    if (from === 'search') {
-      dispatch({ type: 'SET-INPUT-TEXT', payload: e.target.value });
-      inputArg = e.target.value;
-    }
+    // if (from === 'search') {
+    dispatch({ type: 'SET-INPUT-TEXT', payload: e.target.value });
+    // dispatch({ type: 'SET-INPUT-TEXT', payload: e });
+    // inputArg = e.target.value;
+    // }
 
-    const matches = appState.countries.filter((country) => {
-      return matchBySearch(
-        country.name,
-        country.alpha2Code,
-        country.alpha3Code,
-        inputArg
-      );
-    });
-    dispatch({ type: 'SET-CURRENT-COUNTRIES-MATCH', payload: matches });
+    setTimeout(() => {
+      const matches = appState.countries.filter((country) => {
+        return matchBySearch(
+          country.name,
+          country.alpha2Code,
+          country.alpha3Code,
+          // e
+          e.target.value
+          // inputArg
+        );
+      });
+      dispatch({ type: 'SET-CURRENT-COUNTRIES-MATCH', payload: matches });
+    }, 250);
   };
 
   const toggleFilterMenu = () => {
@@ -63,6 +77,9 @@ const SearchFilter = () => {
           type="text"
           placeholder="Search for a country"
           onChange={(e) => countriesFilter(e, 'search')}
+          // onChange={(e) =>
+          //   dispatch({ type: 'SET-INPUT-TEXT', payload: e.target.value })
+          // }
           value={appState.inputText}
         />
       </div>
