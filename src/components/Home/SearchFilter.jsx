@@ -45,12 +45,12 @@ const SearchFilter = () => {
     dispatch({ type: 'TOGGLE-FILTER-MENU' });
   };
 
-  const sortPopulation = () => {
-    const sortedCountries = appState.currentCountries.slice().sort((a, b) => {
-      return b.population - a.population;
-    });
-    dispatch({ type: 'SORT-POPULATION-DESCENDING', payload: sortedCountries });
-  };
+  // const sortPopulation = () => {
+  //   const sortedCountries = appState.currentCountries.slice().sort((a, b) => {
+  //     return b.population - a.population;
+  //   });
+  //   dispatch({ type: 'SORT-POPULATION-DESCENDING', payload: sortedCountries });
+  // };
 
   return (
     <section className="search-filter">
@@ -74,13 +74,13 @@ const SearchFilter = () => {
       <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>
         <h3>Filter | Sort</h3>
         <div className="filter-categories">
-          <div className="filter-category population-category">
+          {/* <div className="filter-category population-category">
             <p className="population" onClick={sortPopulation}>
               Population
             </p>
             <input type="text" placeholder="Min" />
             <input type="text" placeholder="Max" />
-          </div>
+          </div> */}
           <div className="filter-category region-category">
             <p className="region">Region</p>
             <div className="options">

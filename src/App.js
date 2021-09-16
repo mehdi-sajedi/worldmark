@@ -53,6 +53,10 @@ function App() {
   }, [dispatch, appState.countries, appState.numCountriesShown]);
 
   // useEffect(() => {
+  //   dispatch({ type: 'SET-ALL-COUNTRIES' });
+  // }, [dispatch]);
+
+  // useEffect(() => {
   //   const fetchSubRegions = async () => {
   //     try {
   //       const res = await axios.get('https://restcountries.eu/rest/v2/all');

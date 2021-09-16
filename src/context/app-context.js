@@ -176,6 +176,10 @@ export const AppProvider = ({ children }) => {
       );
     }
 
+    // if (action.type === 'SET-ALL-COUNTRIES') {
+    //   draft.currentCountries = draft.countries;
+    // }
+
     if (action.type === 'SET-CURRENT-COUNTRIES-MATCH') {
       draft.currentCountries = action.payload;
     }

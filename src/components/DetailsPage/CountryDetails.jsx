@@ -16,9 +16,15 @@ const CountryDetails = ({ countryCodesToNames }) => {
   const [isError, setIsError] = useState(false);
 
   const transition = useTransition(!isLoading, {
-    from: { x: 40, y: 0, opacity: 0 },
+    from: { x: 100, y: 0, opacity: 0 },
     enter: { x: 0, y: 0, opacity: 1 },
-    delay: 250,
+    delay: 50,
+  });
+
+  const transitionFlag = useTransition(!isLoading, {
+    from: { x: -100, opacity: 0 },
+    enter: { x: 0, opacity: 1 },
+    delay: 50,
   });
 
   useEffect(() => {
@@ -38,6 +44,10 @@ const CountryDetails = ({ countryCodesToNames }) => {
     }
   }, [id, appState.countries]);
 
+  // {transition(
+  //   (style, item) =>
+  //     item && (
+
   return (
     <>
       <BackBtn setIsLoading={setIsLoading} />
@@ -48,18 +58,24 @@ const CountryDetails = ({ countryCodesToNames }) => {
             Could not fetch country with Alpha-3 Code {id}
           </p>
         )}
-        {!isError && (
+        {!isError && !isLoading && (
           <>
-            {transition(
-              (style, item) =>
-                item && (
-                  <animated.div className="details" style={style}>
-                    <img
+            <div className="details">
+              {transitionFlag(
+                (style, item) =>
+                  item && (
+                    <animated.img
+                      style={style}
                       className="details__flag"
                       src={country.flag}
                       alt="country flag"
                     />
-                    <div className="details__info">
+                  )
+              )}
+              {transition(
+                (style, item) =>
+                  item && (
+                    <animated.div className="details__info" style={style}>
                       <h1 className="details__info__name">{country.name}</h1>
                       <div className="details__info__facts">
                         <div className="details__info__facts__col-1">
@@ -152,10 +168,10 @@ const CountryDetails = ({ countryCodesToNames }) => {
                           )}
                         </div>
                       </div>
-                    </div>
-                  </animated.div>
-                )
-            )}
+                    </animated.div>
+                  )
+              )}
+            </div>
           </>
         )}
       </section>
