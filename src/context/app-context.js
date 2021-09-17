@@ -176,12 +176,17 @@ export const AppProvider = ({ children }) => {
       );
     }
 
-    // if (action.type === 'SET-ALL-COUNTRIES') {
-    //   draft.currentCountries = draft.countries;
-    // }
-
     if (action.type === 'SET-CURRENT-COUNTRIES-MATCH') {
-      draft.currentCountries = action.payload;
+      if (draft.filterActive) {
+        let activeRegions = [...draft.activeRegions];
+        let activeSubRegions = [...draft.activeSubRegions];
+        draft.currentCountries = action.payload.filter((country) => {
+          return (
+            activeRegions.includes(country.region.toLowerCase()) ||
+            activeSubRegions.includes(country.subregion.toLowerCase())
+          );
+        });
+      } else draft.currentCountries = action.payload;
     }
 
     if (action.type === 'SET-NUM-COUNTRIES-SHOWN') {
@@ -197,10 +202,6 @@ export const AppProvider = ({ children }) => {
     }
 
     if (action.type === 'TOGGLE-SUB-REGIONS-MENU') {
-      // Object.values(draft.regions).forEach((r) => {
-      //   if (r.id === action.payload) r.expanded = !r.expanded;
-      //   if (r.expanded && r.id !== action.payload) r.expanded = !r.expanded;
-      // });
       draft.regions[action.payload].expanded =
         !draft.regions[action.payload].expanded;
     }
@@ -239,10 +240,24 @@ export const AppProvider = ({ children }) => {
           return (
             (activeRegions.includes(country.region.toLowerCase()) ||
               activeSubRegions.includes(country.subregion.toLowerCase())) &&
+            (country.name.toLowerCase().includes(draft.inputText.trim()) ||
+              country.alpha2Code
+                .toLowerCase()
+                .includes(draft.inputText.trim()) ||
+              country.alpha3Code
+                .toLowerCase()
+                .includes(draft.inputText.trim())) &&
             country
           );
         });
-      } else draft.currentCountries = draft.countries;
+      } else
+        draft.currentCountries = draft.countries.filter((country) => {
+          return (
+            country.name.toLowerCase().includes(draft.inputText.trim()) ||
+            country.alpha2Code.toLowerCase().includes(draft.inputText.trim()) ||
+            country.alpha3Code.toLowerCase().includes(draft.inputText.trim())
+          );
+        });
     }
 
     if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
@@ -273,17 +288,30 @@ export const AppProvider = ({ children }) => {
       } else draft.filterActive = false;
 
       if (draft.filterActive) {
-        draft.currentCountries = [];
         draft.currentCountries = draft.countries.filter((country) => {
           let activeRegions = [...draft.activeRegions];
           let activeSubRegions = [...draft.activeSubRegions];
           return (
             (activeRegions.includes(country.region.toLowerCase()) ||
               activeSubRegions.includes(country.subregion.toLowerCase())) &&
+            (country.name.toLowerCase().includes(draft.inputText.trim()) ||
+              country.alpha2Code
+                .toLowerCase()
+                .includes(draft.inputText.trim()) ||
+              country.alpha3Code
+                .toLowerCase()
+                .includes(draft.inputText.trim())) &&
             country
           );
         });
-      } else draft.currentCountries = draft.countries;
+      } else
+        draft.currentCountries = draft.countries.filter((country) => {
+          return (
+            country.name.toLowerCase().includes(draft.inputText.trim()) ||
+            country.alpha2Code.toLowerCase().includes(draft.inputText.trim()) ||
+            country.alpha3Code.toLowerCase().includes(draft.inputText.trim())
+          );
+        });
     }
 
     if (action.type === 'CLOSE-ANIMATION') {

@@ -22,23 +22,8 @@ const SearchFilter = () => {
     return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
   };
 
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     // if (appState.inputText !== '') {
-  //     countriesFilter(appState.inputText);
-  //     // }
-  //   }, 7500);
-  //   return () => clearTimeout(timeout);
-  // }, [appState.inputText]);
-
-  const countriesFilter = (e, from) => {
-    // let inputArg;
-
-    // if (from === 'search') {
+  const countriesFilter = (e) => {
     dispatch({ type: 'SET-INPUT-TEXT', payload: e.target.value });
-    // dispatch({ type: 'SET-INPUT-TEXT', payload: e });
-    // inputArg = e.target.value;
-    // }
 
     setTimeout(() => {
       const matches = appState.countries.filter((country) => {
@@ -46,9 +31,7 @@ const SearchFilter = () => {
           country.name,
           country.alpha2Code,
           country.alpha3Code,
-          // e
           e.target.value
-          // inputArg
         );
       });
       dispatch({ type: 'SET-CURRENT-COUNTRIES-MATCH', payload: matches });
@@ -76,10 +59,7 @@ const SearchFilter = () => {
           className="search-filter__input__text"
           type="text"
           placeholder="Search for a country"
-          onChange={(e) => countriesFilter(e, 'search')}
-          // onChange={(e) =>
-          //   dispatch({ type: 'SET-INPUT-TEXT', payload: e.target.value })
-          // }
+          onChange={(e) => countriesFilter(e)}
           value={appState.inputText}
         />
       </div>
