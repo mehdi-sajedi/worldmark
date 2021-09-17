@@ -8,8 +8,10 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const initialAppState = {
     filterActive: false,
+    searchActive: false,
     activeRegions: new Set(),
     activeSubRegions: new Set(),
+    searchMatches: [],
     animationSet: true,
     darkMode: false,
     isLoading: false,
@@ -162,7 +164,19 @@ export const AppProvider = ({ children }) => {
     }
 
     if (action.type === 'SET-INPUT-TEXT') {
-      draft.inputText = action.payload;
+      draft.inputText = action.payload.inputValue;
+
+      // Left off trying to make search dropdown close when clicked outside
+      // Left off trying to make search dropdown close when clicked outside
+      // Left off trying to make search dropdown close when clicked outside
+
+
+      if (
+        action.payload.inputValue.length > 1 &&
+        document.activeElement === action.payload.inputRef
+      )
+        draft.searchActive = true;
+      else draft.searchActive = false;
     }
 
     if (action.type === 'SET-ALL-COUNTRIES') {
@@ -320,6 +334,16 @@ export const AppProvider = ({ children }) => {
 
     if (action.type === 'ATTACH-ANIMATION') {
       draft.animationSet = true;
+    }
+
+    if (action.type === 'SEARCH-MATCHES') {
+      draft.searchMatches = draft.countries.filter((country) => {
+        return (
+          country.name.toLowerCase().includes(draft.inputText.trim()) ||
+          country.alpha2Code.toLowerCase().includes(draft.inputText.trim()) ||
+          country.alpha3Code.toLowerCase().includes(draft.inputText.trim())
+        );
+      });
     }
   };
 

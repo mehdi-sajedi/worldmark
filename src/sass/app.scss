@@ -125,6 +125,7 @@ button {
   position: relative;
 
   &__input {
+    position: relative;
     background-color: var(--clr-elements);
     color: var(--clr-text);
     box-shadow: var(--box-shadow);
@@ -137,6 +138,43 @@ button {
     padding: 1.2rem 0 1.2rem 1rem;
     border: 1px solid transparent;
     transition: border 0.25s ease;
+
+    .search-bar-dropdown {
+      z-index: 100;
+      position: absolute;
+      height: 200px;
+      width: 95%;
+      background-color: var(--clr-filter-menu);
+      border-radius: var(--border-radius);
+      top: 125%;
+      right: 50%;
+      transform: translateX(50%);
+      overflow-y: scroll;
+      // padding: 7.5px 0px;
+      font-size: 16px;
+      font-weight: 500;
+
+      .dropdown-country {
+        display: flex;
+        width: 100%;
+        cursor: pointer;
+        padding: 15px 20px;
+        transition: all 0.2s ease;
+
+        .country-flag {
+          width: 30px;
+          height: 20px;
+        }
+
+        .country-name {
+          margin-left: 10px;
+        }
+
+        &:hover {
+          background-color: #ccc;
+        }
+      }
+    }
 
     &__icon,
     &__text {

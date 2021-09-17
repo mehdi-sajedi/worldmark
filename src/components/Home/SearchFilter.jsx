@@ -1,5 +1,6 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import FilterRegion from './FilterRegion';
+import SearchBarDropdown from './SearchBarDropdown';
 import { HiSearch } from 'react-icons/hi';
 // import { IoFilter } from 'react-icons/io5';
 import { AppContext } from '../../context/app-context';
@@ -9,6 +10,7 @@ const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
 
 const SearchFilter = () => {
   const { appState, dispatch } = useContext(AppContext);
+  const inputRef = useRef();
 
   const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
     return (
@@ -23,7 +25,10 @@ const SearchFilter = () => {
   };
 
   const countriesFilter = (e) => {
-    dispatch({ type: 'SET-INPUT-TEXT', payload: e.target.value });
+    dispatch({
+      type: 'SET-INPUT-TEXT',
+      payload: { inputValue: e.target.value, inputRef: inputRef.current },
+    });
 
     setTimeout(() => {
       const matches = appState.countries.filter((country) => {
@@ -52,6 +57,7 @@ const SearchFilter = () => {
   return (
     <section className="search-filter">
       <div className="search-filter__input">
+        {appState.searchActive && <SearchBarDropdown />}
         <i className="search-filter__input__icon">
           <HiSearch />
         </i>
@@ -61,6 +67,7 @@ const SearchFilter = () => {
           placeholder="Search for a country"
           onChange={(e) => countriesFilter(e)}
           value={appState.inputText}
+          ref={inputRef}
         />
       </div>
 

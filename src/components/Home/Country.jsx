@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
-import { AppContext } from '../../context/app-context';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAnimatePresence } from 'use-animate-presence';
 import CountryFlag from './CountryFlag';
-import Loading from '../Utilities/Loading';
 import LazyLoad from 'react-lazy-load';
 
 const variants = {
@@ -19,7 +17,7 @@ const Country = ({ alpha3Code, name, flag, population, region, capital }) => {
 
   return (
     <div ref={animatedDiv.ref}>
-      <LazyLoad offsetVertical={2000}>
+      <LazyLoad offsetVertical={1500}>
         <Link to={`/details/${alpha3Code}`}>
           <div className="country">
             <CountryFlag flag={flag} name={name} alpha3Code={alpha3Code} />

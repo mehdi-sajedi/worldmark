@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import Loading from '../Utilities/Loading';
+import React from 'react';
 
 const CountryFlag = ({ flag, name }) => {
   return <img className="country__flag" src={flag} alt={`${name} flag`} />;
