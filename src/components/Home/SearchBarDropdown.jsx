@@ -10,14 +10,19 @@ const SearchBarDropdown = () => {
   }, [dispatch, appState.inputText]);
 
   return (
-    <div className="search-bar-dropdown">
-      {appState.searchMatches.map((country) => {
+    <div
+      className={`search-bar-dropdown ${
+        appState.searchActive ? 'show-dropdown' : ''
+      }`}
+    >
+      {appState.searchMatches.map((country, idx) => {
         return (
           <SearchBarDropdownCountry
             name={country.name}
             flag={country.flag}
             alpha3Code={country.alpha3Code}
             key={`Dropdown-${country.name}`}
+            idx={idx}
           />
         );
       })}

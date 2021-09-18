@@ -16,6 +16,7 @@ const FilterSubRegion = ({ region, name, initials }) => {
         id={initials}
         checked={appState.regions[region].subRegions[initials].selected}
         onChange={() => toggleSubRegionCheck([region, initials])}
+        tabIndex="-1"
       />
       <label className="capitalize" htmlFor={initials}>
         {name}

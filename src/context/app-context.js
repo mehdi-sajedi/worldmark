@@ -166,11 +166,6 @@ export const AppProvider = ({ children }) => {
     if (action.type === 'SET-INPUT-TEXT') {
       draft.inputText = action.payload.inputValue;
 
-      // Left off trying to make search dropdown close when clicked outside
-      // Left off trying to make search dropdown close when clicked outside
-      // Left off trying to make search dropdown close when clicked outside
-
-
       if (
         action.payload.inputValue.length > 1 &&
         document.activeElement === action.payload.inputRef

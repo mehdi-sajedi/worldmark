@@ -25,6 +25,7 @@ const FilterRegion = ({ region, idx }) => {
           id={region}
           checked={appState.regions[region].selected}
           onChange={() => toggleRegionCheck(region)}
+          tabIndex="-1"
         />
         <label className="capitalize" htmlFor={region}>
           {region}

@@ -4,7 +4,8 @@ import SearchBarDropdown from './SearchBarDropdown';
 import { HiSearch } from 'react-icons/hi';
 // import { IoFilter } from 'react-icons/io5';
 import { AppContext } from '../../context/app-context';
-import { BiSlider } from 'react-icons/bi';
+// import { BiSlider } from 'react-icons/bi';
+import { FiSliders } from 'react-icons/fi';
 
 const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
 
@@ -40,7 +41,7 @@ const SearchFilter = () => {
         );
       });
       dispatch({ type: 'SET-CURRENT-COUNTRIES-MATCH', payload: matches });
-    }, 250);
+    }, 1000);
   };
 
   const toggleFilterMenu = () => {
@@ -57,7 +58,8 @@ const SearchFilter = () => {
   return (
     <section className="search-filter">
       <div className="search-filter__input">
-        {appState.searchActive && <SearchBarDropdown />}
+        {/* {appState.searchActive && <SearchBarDropdown />} */}
+        <SearchBarDropdown />
         <i className="search-filter__input__icon">
           <HiSearch />
         </i>
@@ -72,7 +74,7 @@ const SearchFilter = () => {
       </div>
 
       <div className="filter-wrapper" onClick={toggleFilterMenu}>
-        <BiSlider className="filter-icon" />
+        <FiSliders className="filter-icon" />
       </div>
 
       <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>
@@ -86,7 +88,7 @@ const SearchFilter = () => {
             <input type="text" placeholder="Max" />
           </div> */}
           <div className="filter-category region-category">
-            <p className="region">Region</p>
+            {/* <p className="region">Region</p> */}
             <div className="options">
               {regions.map((region, idx) => {
                 return <FilterRegion region={region} key={region} idx={idx} />;
