@@ -2,10 +2,9 @@ import React, { useContext, useRef } from 'react';
 import FilterRegion from './FilterRegion';
 import SearchBarDropdown from './SearchBarDropdown';
 import { HiSearch } from 'react-icons/hi';
-// import { IoFilter } from 'react-icons/io5';
 import { AppContext } from '../../context/app-context';
-// import { BiSlider } from 'react-icons/bi';
 import { FiSliders } from 'react-icons/fi';
+import { RiCloseFill } from 'react-icons/ri';
 
 const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
 
@@ -31,7 +30,7 @@ const SearchFilter = () => {
       payload: { inputValue: e.target.value, inputRef: inputRef.current },
     });
 
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       const matches = appState.countries.filter((country) => {
         return matchBySearch(
           country.name,
@@ -42,10 +41,29 @@ const SearchFilter = () => {
       });
       dispatch({ type: 'SET-CURRENT-COUNTRIES-MATCH', payload: matches });
     }, 1000);
+
+    return () => clearTimeout(timeout);
   };
 
   const toggleFilterMenu = () => {
     dispatch({ type: 'TOGGLE-FILTER-MENU' });
+  };
+
+  const clearSearch = (e) => {
+    dispatch({ type: 'CLEAR-SEARCH', payload: inputRef.current });
+    dispatch({
+      type: 'SET-INPUT-TEXT',
+      payload: { inputValue: '', inputRef: inputRef.current },
+    });
+
+    const timeout = setTimeout(() => {
+      dispatch({
+        type: 'SET-CURRENT-COUNTRIES-MATCH',
+        payload: appState.countries,
+      });
+    }, 2000);
+
+    return () => clearTimeout(timeout);
   };
 
   // const sortPopulation = () => {
@@ -58,7 +76,6 @@ const SearchFilter = () => {
   return (
     <section className="search-filter">
       <div className="search-filter__input">
-        {/* {appState.searchActive && <SearchBarDropdown />} */}
         <SearchBarDropdown />
         <i className="search-filter__input__icon">
           <HiSearch />
@@ -70,6 +87,12 @@ const SearchFilter = () => {
           onChange={(e) => countriesFilter(e)}
           value={appState.inputText}
           ref={inputRef}
+        />
+        <RiCloseFill
+          onClick={(e) => clearSearch(e)}
+          className={`search-close-icon ${
+            appState.inputText.length > 0 ? 'show-close' : ''
+          }`}
         />
       </div>
 

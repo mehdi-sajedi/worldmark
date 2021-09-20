@@ -6,7 +6,6 @@ const FilterSubRegion = ({ region, name, initials }) => {
 
   const toggleSubRegionCheck = (details) => {
     dispatch({ type: 'TOGGLE-SUB-REGION-CHECK', payload: details });
-    // dispatch({ type: 'ATTACH-ANIMATION' });
   };
 
   return (

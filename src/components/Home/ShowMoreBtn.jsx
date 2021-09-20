@@ -13,11 +13,12 @@ const ShowMoreBtn = () => {
   };
 
   return (
-    <div className="btn-show-more-container">
-      <button onClick={showMoreCountries} className="btn btn-show-more">
-        Show More
-      </button>
-    </div>
+    // <div className="btn-show-more-container">
+    //   <button onClick={showMoreCountries} className="btn btn-show-more">
+    //     Show More
+    //   </button>
+    // </div>
+    <></>
   );
 };
 

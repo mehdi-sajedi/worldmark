@@ -8,8 +8,12 @@ const CountriesShownText = ({ location }) => {
     <div className={`countries-shown ${location}`}>
       {(location === 'top' || appState.currentCountries.length !== 0) && (
         <p className="countries-shown__text">
-          Showing {appState.currentCountries.length} of{' '}
-          {appState.countries.length} countries
+          {appState.totalCountries.length > 0
+            ? `Showing ${appState.currentPageFirstPost + 1}-${
+                appState.currentPageLastPost
+              } of ${appState.totalCountries.length}
+          countries`
+            : ''}
         </p>
       )}
     </div>

@@ -14,7 +14,6 @@ const FilterRegion = ({ region, idx }) => {
 
   const toggleRegionCheck = (idx) => {
     dispatch({ type: 'TOGGLE-REGION-CHECK', payload: idx });
-    // dispatch({ type: 'ATTACH-ANIMATION' });
   };
 
   return (

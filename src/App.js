@@ -13,7 +13,6 @@ import Footer from './components/Home/Footer';
 import PageNotFound from './components/Utilities/PageNotFound';
 
 const countryCodesToNames = new Map();
-// const subRegions = new Set();
 
 function App() {
   const { appState, dispatch } = useContext(AppContext);
@@ -48,27 +47,27 @@ function App() {
     fetchCountries();
   }, [dispatch]);
 
+  const idxOfFirstPost =
+    appState.currentPage * appState.countriesPerPage -
+    appState.countriesPerPage;
+  const idxOfLastPost = appState.currentPage * appState.countriesPerPage;
+
   useEffect(() => {
-    dispatch({ type: 'SET-CURRENT-COUNTRIES' });
-  }, [dispatch, appState.countries, appState.numCountriesShown]);
+    dispatch({
+      type: 'SET-CURRENT-COUNTRIES',
+      payload: { idxFirst: idxOfFirstPost, idxLast: idxOfLastPost },
+    });
+  }, [
+    dispatch,
+    appState.countries,
+    appState.currentPage,
+    idxOfFirstPost,
+    idxOfLastPost,
+  ]);
 
-  // useEffect(() => {
-  //   dispatch({ type: 'SET-ALL-COUNTRIES' });
-  // }, [dispatch]);
-
-  // useEffect(() => {
-  //   const fetchSubRegions = async () => {
-  //     try {
-  //       const res = await axios.get('https://restcountries.eu/rest/v2/all');
-  //       res.data.forEach((country) => {
-  //         subRegions.add(country.subregion);
-  //       });
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   fetchSubRegions();
-  // }, []);
+  useEffect(() => {
+    dispatch({ type: 'RESET-TO-FIRST-PAGE' });
+  }, [dispatch, appState.totalCountries]);
 
   return (
     <main className="container">

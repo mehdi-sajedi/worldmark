@@ -5,23 +5,33 @@ enableMapSet();
 
 export const AppContext = createContext();
 
+// Try searching "options" for filter icon in react-icons and google icons
+
 export const AppProvider = ({ children }) => {
   const initialAppState = {
-    filterActive: false,
-    searchActive: false,
+    countries: [],
+    currentCountries: [],
+    totalCountries: [],
     activeRegions: new Set(),
     activeSubRegions: new Set(),
+    inputText: '',
     searchMatches: [],
-    animationSet: true,
+    countriesPerPage: 32,
+    currentPage: 1,
+    currentPageFirstPost: 0,
+    currentPageLastPost: 32,
+    numCountriesShown: 12,
+    filterActive: false,
+    showSearchDropdown: false,
+    menuOpen: false,
     darkMode: false,
     isLoading: false,
-    countries: [],
-    inputText: '',
-    currentCountries: [],
-    numCountriesShown: 12,
-    menuOpen: false,
-    minPopulation: 0,
-    maxPopulation: 9999999999,
+    // get pageFirstPost() {
+    //   return this.currentPage * this.countriesPerPage - this.countriesPerPage;
+    // },
+    // get pageLastPost() {
+    //   return this.currentPage * this.countriesPerPage;
+    // },
     regions: {
       africa: {
         id: 'africa',
@@ -166,22 +176,30 @@ export const AppProvider = ({ children }) => {
     if (action.type === 'SET-INPUT-TEXT') {
       draft.inputText = action.payload.inputValue;
 
-      if (
-        action.payload.inputValue.length > 1 &&
-        document.activeElement === action.payload.inputRef
-      )
-        draft.searchActive = true;
-      else draft.searchActive = false;
+      // if (
+      //   action.payload.inputValue.length > 1 &&
+      //   document.activeElement === action.payload.inputRef
+      // )
+
+      if (action.payload.inputValue.length > 1) draft.showSearchDropdown = true;
+      else draft.showSearchDropdown = false;
     }
 
     if (action.type === 'SET-ALL-COUNTRIES') {
       draft.countries = action.payload;
+      draft.totalCountries = action.payload;
     }
 
     if (action.type === 'SET-CURRENT-COUNTRIES') {
-      draft.currentCountries = draft.countries.slice(
-        0,
-        draft.numCountriesShown
+      // draft.currentCountries = draft.countries.slice(
+      //   0,
+      //   draft.numCountriesShown
+      // );
+      // draft.currentCountries = draft.countries;
+      // draft.totalCountries = draft.countries;
+      draft.currentCountries = draft.totalCountries.slice(
+        action.payload.idxFirst,
+        action.payload.idxLast
       );
     }
 
@@ -189,22 +207,34 @@ export const AppProvider = ({ children }) => {
       if (draft.filterActive) {
         let activeRegions = [...draft.activeRegions];
         let activeSubRegions = [...draft.activeSubRegions];
-        draft.currentCountries = action.payload.filter((country) => {
+        draft.totalCountries = action.payload.filter((country) => {
           return (
             activeRegions.includes(country.region.toLowerCase()) ||
             activeSubRegions.includes(country.subregion.toLowerCase())
           );
         });
-      } else draft.currentCountries = action.payload;
+
+        draft.currentCountries = draft.totalCountries.slice(
+          draft.currentPageFirstPost,
+          draft.currentPageLastPost
+        );
+      } else {
+        draft.totalCountries = action.payload;
+
+        draft.currentCountries = draft.totalCountries.slice(
+          draft.currentPageFirstPost,
+          draft.currentPageLastPost
+        );
+      }
     }
 
     if (action.type === 'SET-NUM-COUNTRIES-SHOWN') {
       draft.numCountriesShown = action.payload;
     }
 
-    if (action.type === 'SORT-POPULATION-DESCENDING') {
-      draft.currentCountries = action.payload;
-    }
+    // if (action.type === 'SORT-POPULATION-DESCENDING') {
+    //   draft.currentCountries = action.payload;
+    // }
 
     if (action.type === 'TOGGLE-FILTER-MENU') {
       draft.menuOpen = !draft.menuOpen;
@@ -214,6 +244,10 @@ export const AppProvider = ({ children }) => {
       draft.regions[action.payload].expanded =
         !draft.regions[action.payload].expanded;
     }
+
+    // - ********************************************************************
+    // - ********************************************************************
+    // - ********************************************************************
 
     if (action.type === 'TOGGLE-REGION-CHECK') {
       draft.regions[action.payload].selected =
@@ -243,7 +277,7 @@ export const AppProvider = ({ children }) => {
       } else draft.filterActive = false;
 
       if (draft.filterActive) {
-        draft.currentCountries = draft.countries.filter((country) => {
+        draft.totalCountries = draft.countries.filter((country) => {
           let activeRegions = [...draft.activeRegions];
           let activeSubRegions = [...draft.activeSubRegions];
           return (
@@ -259,15 +293,29 @@ export const AppProvider = ({ children }) => {
             country
           );
         });
+
+        draft.currentCountries = draft.totalCountries.slice(
+          draft.currentPageFirstPost,
+          draft.currentPageLastPost
+        );
       } else
-        draft.currentCountries = draft.countries.filter((country) => {
+        draft.totalCountries = draft.countries.filter((country) => {
           return (
             country.name.toLowerCase().includes(draft.inputText.trim()) ||
             country.alpha2Code.toLowerCase().includes(draft.inputText.trim()) ||
             country.alpha3Code.toLowerCase().includes(draft.inputText.trim())
           );
         });
+
+      draft.currentCountries = draft.totalCountries.slice(
+        draft.currentPageFirstPost,
+        draft.currentPageLastPost
+      );
     }
+
+    // - ********************************************************************
+    // - ********************************************************************
+    // - ********************************************************************
 
     if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
       draft.regions[action.payload[0]].subRegions[action.payload[1]].selected =
@@ -297,7 +345,7 @@ export const AppProvider = ({ children }) => {
       } else draft.filterActive = false;
 
       if (draft.filterActive) {
-        draft.currentCountries = draft.countries.filter((country) => {
+        draft.totalCountries = draft.countries.filter((country) => {
           let activeRegions = [...draft.activeRegions];
           let activeSubRegions = [...draft.activeSubRegions];
           return (
@@ -313,32 +361,68 @@ export const AppProvider = ({ children }) => {
             country
           );
         });
+
+        draft.currentCountries = draft.totalCountries.slice(
+          draft.currentPageFirstPost,
+          draft.currentPageLastPost
+        );
       } else
-        draft.currentCountries = draft.countries.filter((country) => {
+        draft.totalCountries = draft.countries.filter((country) => {
           return (
             country.name.toLowerCase().includes(draft.inputText.trim()) ||
             country.alpha2Code.toLowerCase().includes(draft.inputText.trim()) ||
             country.alpha3Code.toLowerCase().includes(draft.inputText.trim())
           );
         });
+
+      draft.currentCountries = draft.totalCountries.slice(
+        draft.currentPageFirstPost,
+        draft.countriesPerPage
+      );
     }
 
-    if (action.type === 'CLOSE-ANIMATION') {
-      draft.animationSet = false;
-    }
-
-    if (action.type === 'ATTACH-ANIMATION') {
-      draft.animationSet = true;
-    }
+    // - ********************************************************************
+    // - ********************************************************************
+    // - ********************************************************************å
 
     if (action.type === 'SEARCH-MATCHES') {
       draft.searchMatches = draft.countries.filter((country) => {
         return (
-          country.name.toLowerCase().includes(draft.inputText.trim()) ||
-          country.alpha2Code.toLowerCase().includes(draft.inputText.trim()) ||
-          country.alpha3Code.toLowerCase().includes(draft.inputText.trim())
+          country.name
+            .toLowerCase()
+            .includes(draft.inputText.toLowerCase().trim()) ||
+          country.alpha2Code
+            .toLowerCase()
+            .includes(draft.inputText.toLowerCase().trim()) ||
+          country.alpha3Code
+            .toLowerCase()
+            .includes(draft.inputText.toLowerCase().trim())
         );
       });
+    }
+
+    if (action.type === 'CLEAR-SEARCH') {
+      draft.inputText = '';
+      action.payload.focus();
+    }
+
+    if (action.type === 'CLOSE-SEARCH-DROPDOWN') {
+      draft.showSearchDropdown = false;
+    }
+
+    if (action.type === 'SET-CURRENT-PAGE') {
+      draft.currentPage = action.payload.page;
+      draft.currentPageFirstPost = action.payload.idxFirst;
+      draft.currentPageLastPost = action.payload.idxLast;
+    }
+
+    if (action.type === 'RESET-TO-FIRST-PAGE') {
+      draft.currentPage = 1;
+      draft.currentPageFirstPost = 0;
+      draft.currentPageLastPost = Math.min(
+        draft.countriesPerPage,
+        draft.totalCountries.length
+      );
     }
   };
 
