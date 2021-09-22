@@ -17,10 +17,10 @@ const Country = ({ alpha3Code, name, flag, population, region, capital }) => {
 
   return (
     <div ref={animatedDiv.ref}>
-      <LazyLoad offsetVertical={1500}>
+      <LazyLoad offsetVertical={500}>
         <Link to={`/details/${alpha3Code}`}>
           <div className="country">
-            <CountryFlag flag={flag} name={name} alpha3Code={alpha3Code} />
+            {/* <CountryFlag flag={flag} name={name} alpha3Code={alpha3Code} /> */}
             <div className="country__info">
               <h3 className="country__info__name">{name}</h3>
               <ul className="country__info__details">

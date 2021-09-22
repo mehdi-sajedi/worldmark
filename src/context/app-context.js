@@ -6,6 +6,7 @@ enableMapSet();
 export const AppContext = createContext();
 
 // Try searching "options" for filter icon in react-icons and google icons
+// If using the API, filter the response to only fetch the data you need.
 
 export const AppProvider = ({ children }) => {
   const initialAppState = {
@@ -16,22 +17,17 @@ export const AppProvider = ({ children }) => {
     activeSubRegions: new Set(),
     inputText: '',
     searchMatches: [],
-    countriesPerPage: 32,
+    sortBy: 'nameAZ',
+    countriesPerPage: 36,
     currentPage: 1,
     currentPageFirstPost: 0,
-    currentPageLastPost: 32,
+    currentPageLastPost: 36,
     numCountriesShown: 12,
     filterActive: false,
     showSearchDropdown: false,
     menuOpen: false,
     darkMode: false,
     isLoading: false,
-    // get pageFirstPost() {
-    //   return this.currentPage * this.countriesPerPage - this.countriesPerPage;
-    // },
-    // get pageLastPost() {
-    //   return this.currentPage * this.countriesPerPage;
-    // },
     regions: {
       africa: {
         id: 'africa',
@@ -160,6 +156,29 @@ export const AppProvider = ({ children }) => {
   };
 
   const reducer = (draft, action) => {
+    function sortMyStuff() {
+      if (draft.sortBy === 'popHL') {
+        draft.totalCountries = draft.totalCountries.sort(
+          (a, b) => b.population - a.population
+        );
+      }
+      if (draft.sortBy === 'popLH') {
+        draft.totalCountries = draft.totalCountries.sort(
+          (a, b) => a.population - b.population
+        );
+      }
+      if (draft.sortBy === 'nameAZ') {
+        draft.totalCountries = draft.totalCountries.sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+      }
+      if (draft.sortBy === 'nameZA') {
+        draft.totalCountries = draft.totalCountries.sort((a, b) =>
+          b.name.localeCompare(a.name)
+        );
+      }
+    }
+
     if (action.type === 'TOGGLE-DARK') {
       draft.darkMode = !draft.darkMode;
 
@@ -191,12 +210,6 @@ export const AppProvider = ({ children }) => {
     }
 
     if (action.type === 'SET-CURRENT-COUNTRIES') {
-      // draft.currentCountries = draft.countries.slice(
-      //   0,
-      //   draft.numCountriesShown
-      // );
-      // draft.currentCountries = draft.countries;
-      // draft.totalCountries = draft.countries;
       draft.currentCountries = draft.totalCountries.slice(
         action.payload.idxFirst,
         action.payload.idxLast
@@ -231,10 +244,6 @@ export const AppProvider = ({ children }) => {
     if (action.type === 'SET-NUM-COUNTRIES-SHOWN') {
       draft.numCountriesShown = action.payload;
     }
-
-    // if (action.type === 'SORT-POPULATION-DESCENDING') {
-    //   draft.currentCountries = action.payload;
-    // }
 
     if (action.type === 'TOGGLE-FILTER-MENU') {
       draft.menuOpen = !draft.menuOpen;
@@ -298,7 +307,7 @@ export const AppProvider = ({ children }) => {
           draft.currentPageFirstPost,
           draft.currentPageLastPost
         );
-      } else
+      } else {
         draft.totalCountries = draft.countries.filter((country) => {
           return (
             country.name.toLowerCase().includes(draft.inputText.trim()) ||
@@ -307,10 +316,12 @@ export const AppProvider = ({ children }) => {
           );
         });
 
-      draft.currentCountries = draft.totalCountries.slice(
-        draft.currentPageFirstPost,
-        draft.currentPageLastPost
-      );
+        draft.currentCountries = draft.totalCountries.slice(
+          draft.currentPageFirstPost,
+          draft.currentPageLastPost
+        );
+      }
+      sortMyStuff();
     }
 
     // - ********************************************************************
@@ -379,6 +390,7 @@ export const AppProvider = ({ children }) => {
         draft.currentPageFirstPost,
         draft.countriesPerPage
       );
+      sortMyStuff();
     }
 
     // - ********************************************************************
@@ -422,6 +434,17 @@ export const AppProvider = ({ children }) => {
       draft.currentPageLastPost = Math.min(
         draft.countriesPerPage,
         draft.totalCountries.length
+      );
+    }
+
+    if (action.type === 'SET-SORT') {
+      draft.sortBy = action.payload;
+
+      sortMyStuff();
+
+      draft.currentCountries = draft.totalCountries.slice(
+        draft.currentPageFirstPost,
+        draft.countriesPerPage
       );
     }
   };

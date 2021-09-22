@@ -7,6 +7,27 @@ import { FiSliders } from 'react-icons/fi';
 import { RiCloseFill } from 'react-icons/ri';
 
 const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
+const sortCategories = [
+  {
+    text: 'Name: A to Z',
+    id: 'nameAZ',
+  },
+
+  {
+    text: 'Name: Z to A',
+    id: 'nameZA',
+  },
+
+  {
+    text: 'Population: High to Low',
+    id: 'popHL',
+  },
+
+  {
+    text: 'Population: Low to High',
+    id: 'popLH',
+  },
+];
 
 const SearchFilter = () => {
   const { appState, dispatch } = useContext(AppContext);
@@ -66,6 +87,13 @@ const SearchFilter = () => {
     return () => clearTimeout(timeout);
   };
 
+  const handleSortSelect = (e) => {
+    dispatch({
+      type: 'SET-SORT',
+      payload: e.target.id,
+    });
+  };
+
   // const sortPopulation = () => {
   //   const sortedCountries = appState.currentCountries.slice().sort((a, b) => {
   //     return b.population - a.population;
@@ -101,7 +129,7 @@ const SearchFilter = () => {
       </div>
 
       <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>
-        <h3>Filter | Sort</h3>
+        <h3 className="filter-heading">Filter</h3>
         <div className="filter-categories">
           {/* <div className="filter-category population-category">
             <p className="population" onClick={sortPopulation}>
@@ -111,13 +139,30 @@ const SearchFilter = () => {
             <input type="text" placeholder="Max" />
           </div> */}
           <div className="filter-category region-category">
-            {/* <p className="region">Region</p> */}
             <div className="options">
               {regions.map((region, idx) => {
                 return <FilterRegion region={region} key={region} idx={idx} />;
               })}
             </div>
           </div>
+        </div>
+        <div className="line"></div>
+        <h3 className="sort-heading">Sort by</h3>
+        <div className="sort-categories">
+          {sortCategories.map((item) => {
+            return (
+              <p
+                onClick={(e) => handleSortSelect(e)}
+                id={item.id}
+                key={item.id}
+                className={`${
+                  appState.sortBy === item.id ? 'sort-active' : ''
+                }`}
+              >
+                {item.text}
+              </p>
+            );
+          })}
         </div>
       </div>
     </section>
