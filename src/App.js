@@ -38,7 +38,7 @@ function App() {
     //   dispatch({ type: 'TOGGLE-LOADING' });
     //   try {
     //     // const res = await axios.get('https://restcountries.eu/rest/v2/all');
-    //     const res = await axios.get('https://restcountries.com/v3/all');
+        // const res = await axios.get('https://restcountries.com/v2/all');
     //     dispatch({ type: 'SET-ALL-COUNTRIES', payload: res.data });
     //     createCountryKeyPairs(res.data);
     //   } catch (error) {

@@ -21,6 +21,7 @@ const Country = ({ alpha3Code, name, flag, population, region, capital }) => {
         <Link to={`/details/${alpha3Code}`}>
           <div className="country">
             {/* <CountryFlag flag={flag} name={name} alpha3Code={alpha3Code} /> */}
+
             <div className="country__info">
               <h3 className="country__info__name">{name}</h3>
               <ul className="country__info__details">

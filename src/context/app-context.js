@@ -156,7 +156,7 @@ export const AppProvider = ({ children }) => {
   };
 
   const reducer = (draft, action) => {
-    function sortMyStuff() {
+    function sortCountries() {
       if (draft.sortBy === 'popHL') {
         draft.totalCountries = draft.totalCountries.sort(
           (a, b) => b.population - a.population
@@ -179,9 +179,72 @@ export const AppProvider = ({ children }) => {
       }
     }
 
+    // - *************************************************************
+    // - *************************************************************
+    // - *************************************************************
+
+    function toggleFilterCheck() {
+      Object.values(draft.regions).forEach((region) => {
+        if (region.selected) draft.activeRegions.add(region.id);
+        else {
+          draft.activeRegions.delete(region.id);
+        }
+      });
+
+      Object.values(draft.regions).forEach((region) => {
+        Object.values(region.subRegions).forEach((subregion) => {
+          if (subregion.selected) draft.activeSubRegions.add(subregion.id);
+          else draft.activeSubRegions.delete(subregion.id);
+        });
+      });
+
+      if (draft.activeRegions.size > 0 || draft.activeSubRegions.size > 0) {
+        draft.filterActive = true;
+      } else draft.filterActive = false;
+
+      if (draft.filterActive) {
+        draft.totalCountries = draft.countries.filter((country) => {
+          let activeRegions = [...draft.activeRegions];
+          let activeSubRegions = [...draft.activeSubRegions];
+          return (
+            (activeRegions.includes(country.region.toLowerCase()) ||
+              activeSubRegions.includes(country.subregion.toLowerCase())) &&
+            (country.name.toLowerCase().includes(draft.inputText.trim()) ||
+              country.alpha2Code
+                .toLowerCase()
+                .includes(draft.inputText.trim()) ||
+              country.alpha3Code
+                .toLowerCase()
+                .includes(draft.inputText.trim())) &&
+            country
+          );
+        });
+      } else {
+        draft.totalCountries = draft.countries.filter((country) => {
+          return (
+            country.name.toLowerCase().includes(draft.inputText.trim()) ||
+            country.alpha2Code.toLowerCase().includes(draft.inputText.trim()) ||
+            country.alpha3Code.toLowerCase().includes(draft.inputText.trim())
+          );
+        });
+      }
+
+      showCurrentPageCountries();
+    }
+
+    function showCurrentPageCountries() {
+      draft.currentCountries = draft.totalCountries.slice(
+        draft.currentPageFirstPost,
+        draft.currentPageLastPost
+      );
+    }
+
+    // - *************************************************************
+    // - *************************************************************
+    // - *************************************************************
+
     if (action.type === 'TOGGLE-DARK') {
       draft.darkMode = !draft.darkMode;
-
       localStorage.setItem('darkmode', JSON.stringify(draft.darkMode));
     }
     if (action.type === 'TOGGLE-LOADING') {
@@ -226,19 +289,10 @@ export const AppProvider = ({ children }) => {
             activeSubRegions.includes(country.subregion.toLowerCase())
           );
         });
-
-        draft.currentCountries = draft.totalCountries.slice(
-          draft.currentPageFirstPost,
-          draft.currentPageLastPost
-        );
       } else {
         draft.totalCountries = action.payload;
-
-        draft.currentCountries = draft.totalCountries.slice(
-          draft.currentPageFirstPost,
-          draft.currentPageLastPost
-        );
       }
+      showCurrentPageCountries();
     }
 
     if (action.type === 'SET-NUM-COUNTRIES-SHOWN') {
@@ -254,10 +308,6 @@ export const AppProvider = ({ children }) => {
         !draft.regions[action.payload].expanded;
     }
 
-    // - ********************************************************************
-    // - ********************************************************************
-    // - ********************************************************************
-
     if (action.type === 'TOGGLE-REGION-CHECK') {
       draft.regions[action.payload].selected =
         !draft.regions[action.payload].selected;
@@ -267,66 +317,9 @@ export const AppProvider = ({ children }) => {
           draft.regions[action.payload].subRegions[i].selected = false;
       }
 
-      Object.values(draft.regions).forEach((region) => {
-        if (region.selected) draft.activeRegions.add(region.id);
-        else {
-          draft.activeRegions.delete(region.id);
-        }
-      });
-
-      Object.values(draft.regions).forEach((region) => {
-        Object.values(region.subRegions).forEach((subregion) => {
-          if (subregion.selected) draft.activeSubRegions.add(subregion.id);
-          else draft.activeSubRegions.delete(subregion.id);
-        });
-      });
-
-      if (draft.activeRegions.size > 0 || draft.activeSubRegions.size > 0) {
-        draft.filterActive = true;
-      } else draft.filterActive = false;
-
-      if (draft.filterActive) {
-        draft.totalCountries = draft.countries.filter((country) => {
-          let activeRegions = [...draft.activeRegions];
-          let activeSubRegions = [...draft.activeSubRegions];
-          return (
-            (activeRegions.includes(country.region.toLowerCase()) ||
-              activeSubRegions.includes(country.subregion.toLowerCase())) &&
-            (country.name.toLowerCase().includes(draft.inputText.trim()) ||
-              country.alpha2Code
-                .toLowerCase()
-                .includes(draft.inputText.trim()) ||
-              country.alpha3Code
-                .toLowerCase()
-                .includes(draft.inputText.trim())) &&
-            country
-          );
-        });
-
-        draft.currentCountries = draft.totalCountries.slice(
-          draft.currentPageFirstPost,
-          draft.currentPageLastPost
-        );
-      } else {
-        draft.totalCountries = draft.countries.filter((country) => {
-          return (
-            country.name.toLowerCase().includes(draft.inputText.trim()) ||
-            country.alpha2Code.toLowerCase().includes(draft.inputText.trim()) ||
-            country.alpha3Code.toLowerCase().includes(draft.inputText.trim())
-          );
-        });
-
-        draft.currentCountries = draft.totalCountries.slice(
-          draft.currentPageFirstPost,
-          draft.currentPageLastPost
-        );
-      }
-      sortMyStuff();
+      toggleFilterCheck();
+      sortCountries();
     }
-
-    // - ********************************************************************
-    // - ********************************************************************
-    // - ********************************************************************
 
     if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
       draft.regions[action.payload[0]].subRegions[action.payload[1]].selected =
@@ -337,65 +330,9 @@ export const AppProvider = ({ children }) => {
         draft.regions[action.payload[0]].selected = false;
       }
 
-      Object.values(draft.regions).forEach((region) => {
-        if (region.selected) draft.activeRegions.add(region.id);
-        else {
-          draft.activeRegions.delete(region.id);
-        }
-      });
-
-      Object.values(draft.regions).forEach((region) => {
-        Object.values(region.subRegions).forEach((subregion) => {
-          if (subregion.selected) draft.activeSubRegions.add(subregion.id);
-          else draft.activeSubRegions.delete(subregion.id);
-        });
-      });
-
-      if (draft.activeRegions.size > 0 || draft.activeSubRegions.size > 0) {
-        draft.filterActive = true;
-      } else draft.filterActive = false;
-
-      if (draft.filterActive) {
-        draft.totalCountries = draft.countries.filter((country) => {
-          let activeRegions = [...draft.activeRegions];
-          let activeSubRegions = [...draft.activeSubRegions];
-          return (
-            (activeRegions.includes(country.region.toLowerCase()) ||
-              activeSubRegions.includes(country.subregion.toLowerCase())) &&
-            (country.name.toLowerCase().includes(draft.inputText.trim()) ||
-              country.alpha2Code
-                .toLowerCase()
-                .includes(draft.inputText.trim()) ||
-              country.alpha3Code
-                .toLowerCase()
-                .includes(draft.inputText.trim())) &&
-            country
-          );
-        });
-
-        draft.currentCountries = draft.totalCountries.slice(
-          draft.currentPageFirstPost,
-          draft.currentPageLastPost
-        );
-      } else
-        draft.totalCountries = draft.countries.filter((country) => {
-          return (
-            country.name.toLowerCase().includes(draft.inputText.trim()) ||
-            country.alpha2Code.toLowerCase().includes(draft.inputText.trim()) ||
-            country.alpha3Code.toLowerCase().includes(draft.inputText.trim())
-          );
-        });
-
-      draft.currentCountries = draft.totalCountries.slice(
-        draft.currentPageFirstPost,
-        draft.countriesPerPage
-      );
-      sortMyStuff();
+      toggleFilterCheck();
+      sortCountries();
     }
-
-    // - ********************************************************************
-    // - ********************************************************************
-    // - ********************************************************************å
 
     if (action.type === 'SEARCH-MATCHES') {
       draft.searchMatches = draft.countries.filter((country) => {
@@ -440,12 +377,8 @@ export const AppProvider = ({ children }) => {
     if (action.type === 'SET-SORT') {
       draft.sortBy = action.payload;
 
-      sortMyStuff();
-
-      draft.currentCountries = draft.totalCountries.slice(
-        draft.currentPageFirstPost,
-        draft.countriesPerPage
-      );
+      sortCountries();
+      showCurrentPageCountries();
     }
   };
 
