@@ -128,16 +128,59 @@ const SearchFilter = () => {
         <FiSliders className="filter-icon" />
       </div>
 
-      <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>
+      <div className="new-filter">
+        {/* <h3>Filter | Sort</h3> */}
+        <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>
+          <h3 className="filter-heading">Filter | Sort</h3>
+          <div className="filter-categories">
+            {/* <div className="filter-category population-category">
+              <p className="population" onClick={sortPopulation}>
+                Population
+              </p>
+              <input type="text" placeholder="Min" />
+              <input type="text" placeholder="Max" />
+            </div> */}
+            <div className="filter-category region-category">
+              <div className="options">
+                {regions.map((region, idx) => {
+                  return (
+                    <FilterRegion region={region} key={region} idx={idx} />
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <div className="line"></div>
+          <h3 className="sort-heading">Sort by</h3>
+          <div className="sort-categories">
+            {sortCategories.map((item) => {
+              return (
+                <p
+                  onClick={(e) => handleSortSelect(e)}
+                  id={item.id}
+                  key={item.id}
+                  className={`${
+                    appState.sortBy === item.id ? 'sort-active' : ''
+                  }`}
+                >
+                  {item.text}
+                </p>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>
         <h3 className="filter-heading">Filter</h3>
         <div className="filter-categories">
-          {/* <div className="filter-category population-category">
+          <div className="filter-category population-category">
             <p className="population" onClick={sortPopulation}>
               Population
             </p>
             <input type="text" placeholder="Min" />
             <input type="text" placeholder="Max" />
-          </div> */}
+          </div>
           <div className="filter-category region-category">
             <div className="options">
               {regions.map((region, idx) => {
@@ -164,7 +207,7 @@ const SearchFilter = () => {
             );
           })}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
