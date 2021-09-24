@@ -10,6 +10,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const initialAppState = {
+    temp: [],
     countries: [],
     currentCountries: [],
     totalCountries: [],
@@ -243,6 +244,12 @@ export const AppProvider = ({ children }) => {
     // - *************************************************************
     // - *************************************************************
 
+    if (action.type === 'TEMP') {
+      draft.temp = draft.countries.map((country) => {
+        return country.flag;
+      });
+    }
+
     if (action.type === 'TOGGLE-DARK') {
       draft.darkMode = !draft.darkMode;
       localStorage.setItem('darkmode', JSON.stringify(draft.darkMode));
@@ -301,6 +308,10 @@ export const AppProvider = ({ children }) => {
 
     if (action.type === 'TOGGLE-FILTER-MENU') {
       draft.menuOpen = !draft.menuOpen;
+    }
+
+    if (action.type === 'CLOSE-FILTER-MENU') {
+      draft.menuOpen = false;
     }
 
     if (action.type === 'TOGGLE-SUB-REGIONS-MENU') {

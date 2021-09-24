@@ -51,7 +51,7 @@
       "hr": "Afganistan",
       "fa": "افغانستان"
     },
-    "flag": "https://restcountries.eu/data/afg.svg",
+    "flag": "https://restcountries.com/data/afg.svg",
     "regionalBlocs": [
       {
         "acronym": "SAARC",
@@ -102,7 +102,7 @@
       "hr": "Ålandski otoci",
       "fa": "جزایر الند"
     },
-    "flag": "https://restcountries.eu/data/ala.svg",
+    "flag": "https://restcountries.com/data/ala.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -153,7 +153,7 @@
       "hr": "Albanija",
       "fa": "آلبانی"
     },
-    "flag": "https://restcountries.eu/data/alb.svg",
+    "flag": "https://restcountries.com/data/alb.svg",
     "regionalBlocs": [
       {
         "acronym": "CEFTA",
@@ -206,7 +206,7 @@
       "hr": "Alžir",
       "fa": "الجزایر"
     },
-    "flag": "https://restcountries.eu/data/dza.svg",
+    "flag": "https://restcountries.com/data/dza.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -281,7 +281,7 @@
       "hr": "Američka Samoa",
       "fa": "ساموآی آمریکا"
     },
-    "flag": "https://restcountries.eu/data/asm.svg",
+    "flag": "https://restcountries.com/data/asm.svg",
     "regionalBlocs": [],
     "cioc": "ASA"
   },
@@ -325,7 +325,7 @@
       "hr": "Andora",
       "fa": "آندورا"
     },
-    "flag": "https://restcountries.eu/data/and.svg",
+    "flag": "https://restcountries.com/data/and.svg",
     "regionalBlocs": [],
     "cioc": "AND"
   },
@@ -369,7 +369,7 @@
       "hr": "Angola",
       "fa": "آنگولا"
     },
-    "flag": "https://restcountries.eu/data/ago.svg",
+    "flag": "https://restcountries.com/data/ago.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -428,7 +428,7 @@
       "hr": "Angvila",
       "fa": "آنگویلا"
     },
-    "flag": "https://restcountries.eu/data/aia.svg",
+    "flag": "https://restcountries.com/data/aia.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -490,7 +490,7 @@
       "hr": "Antarktika",
       "fa": "جنوبگان"
     },
-    "flag": "https://restcountries.eu/data/ata.svg",
+    "flag": "https://restcountries.com/data/ata.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -536,7 +536,7 @@
       "hr": "Antigva i Barbuda",
       "fa": "آنتیگوا و باربودا"
     },
-    "flag": "https://restcountries.eu/data/atg.svg",
+    "flag": "https://restcountries.com/data/atg.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -597,7 +597,7 @@
       "hr": "Argentina",
       "fa": "آرژانتین"
     },
-    "flag": "https://restcountries.eu/data/arg.svg",
+    "flag": "https://restcountries.com/data/arg.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -664,7 +664,7 @@
       "hr": "Armenija",
       "fa": "ارمنستان"
     },
-    "flag": "https://restcountries.eu/data/arm.svg",
+    "flag": "https://restcountries.com/data/arm.svg",
     "regionalBlocs": [
       {
         "acronym": "EEU",
@@ -721,7 +721,7 @@
       "hr": "Aruba",
       "fa": "آروبا"
     },
-    "flag": "https://restcountries.eu/data/abw.svg",
+    "flag": "https://restcountries.com/data/abw.svg",
     "regionalBlocs": [],
     "cioc": "ARU"
   },
@@ -776,7 +776,7 @@
       "hr": "Australija",
       "fa": "استرالیا"
     },
-    "flag": "https://restcountries.eu/data/aus.svg",
+    "flag": "https://restcountries.com/data/aus.svg",
     "regionalBlocs": [],
     "cioc": "AUS"
   },
@@ -820,7 +820,7 @@
       "hr": "Austrija",
       "fa": "اتریش"
     },
-    "flag": "https://restcountries.eu/data/aut.svg",
+    "flag": "https://restcountries.com/data/aut.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -873,7 +873,7 @@
       "hr": "Azerbajdžan",
       "fa": "آذربایجان"
     },
-    "flag": "https://restcountries.eu/data/aze.svg",
+    "flag": "https://restcountries.com/data/aze.svg",
     "regionalBlocs": [],
     "cioc": "AZE"
   },
@@ -917,7 +917,7 @@
       "hr": "Bahami",
       "fa": "باهاما"
     },
-    "flag": "https://restcountries.eu/data/bhs.svg",
+    "flag": "https://restcountries.com/data/bhs.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -974,7 +974,7 @@
       "hr": "Bahrein",
       "fa": "بحرین"
     },
-    "flag": "https://restcountries.eu/data/bhr.svg",
+    "flag": "https://restcountries.com/data/bhr.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -1035,7 +1035,7 @@
       "hr": "Bangladeš",
       "fa": "بنگلادش"
     },
-    "flag": "https://restcountries.eu/data/bgd.svg",
+    "flag": "https://restcountries.com/data/bgd.svg",
     "regionalBlocs": [
       {
         "acronym": "SAARC",
@@ -1088,7 +1088,7 @@
       "hr": "Barbados",
       "fa": "باربادوس"
     },
-    "flag": "https://restcountries.eu/data/brb.svg",
+    "flag": "https://restcountries.com/data/brb.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -1160,7 +1160,7 @@
       "hr": "Bjelorusija",
       "fa": "بلاروس"
     },
-    "flag": "https://restcountries.eu/data/blr.svg",
+    "flag": "https://restcountries.com/data/blr.svg",
     "regionalBlocs": [
       {
         "acronym": "EEU",
@@ -1233,7 +1233,7 @@
       "hr": "Belgija",
       "fa": "بلژیک"
     },
-    "flag": "https://restcountries.eu/data/bel.svg",
+    "flag": "https://restcountries.com/data/bel.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -1290,7 +1290,7 @@
       "hr": "Belize",
       "fa": "بلیز"
     },
-    "flag": "https://restcountries.eu/data/blz.svg",
+    "flag": "https://restcountries.com/data/blz.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -1353,7 +1353,7 @@
       "hr": "Benin",
       "fa": "بنین"
     },
-    "flag": "https://restcountries.eu/data/ben.svg",
+    "flag": "https://restcountries.com/data/ben.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -1417,7 +1417,7 @@
       "hr": "Bermudi",
       "fa": "برمودا"
     },
-    "flag": "https://restcountries.eu/data/bmu.svg",
+    "flag": "https://restcountries.com/data/bmu.svg",
     "regionalBlocs": [],
     "cioc": "BER"
   },
@@ -1464,7 +1464,7 @@
       "hr": "Butan",
       "fa": "بوتان"
     },
-    "flag": "https://restcountries.eu/data/btn.svg",
+    "flag": "https://restcountries.com/data/btn.svg",
     "regionalBlocs": [
       {
         "acronym": "SAARC",
@@ -1538,7 +1538,7 @@
       "hr": "Bolivija",
       "fa": "بولیوی"
     },
-    "flag": "https://restcountries.eu/data/bol.svg",
+    "flag": "https://restcountries.com/data/bol.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -1596,7 +1596,7 @@
       "hr": null,
       "fa": "بونیر"
     },
-    "flag": "https://restcountries.eu/data/bes.svg",
+    "flag": "https://restcountries.com/data/bes.svg",
     "regionalBlocs": [],
     "cioc": null
   },
@@ -1658,7 +1658,7 @@
       "hr": "Bosna i Hercegovina",
       "fa": "بوسنی و هرزگوین"
     },
-    "flag": "https://restcountries.eu/data/bih.svg",
+    "flag": "https://restcountries.com/data/bih.svg",
     "regionalBlocs": [
       {
         "acronym": "CEFTA",
@@ -1715,7 +1715,7 @@
       "hr": "Bocvana",
       "fa": "بوتسوانا"
     },
-    "flag": "https://restcountries.eu/data/bwa.svg",
+    "flag": "https://restcountries.com/data/bwa.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -1786,7 +1786,7 @@
       "hr": "Otok Bouvet",
       "fa": "جزیره بووه"
     },
-    "flag": "https://restcountries.eu/data/bvt.svg",
+    "flag": "https://restcountries.com/data/bvt.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -1846,7 +1846,7 @@
       "hr": "Brazil",
       "fa": "برزیل"
     },
-    "flag": "https://restcountries.eu/data/bra.svg",
+    "flag": "https://restcountries.com/data/bra.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -1904,7 +1904,7 @@
       "hr": "Britanski Indijskooceanski teritorij",
       "fa": "قلمرو بریتانیا در اقیانوس هند"
     },
-    "flag": "https://restcountries.eu/data/iot.svg",
+    "flag": "https://restcountries.com/data/iot.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -1964,7 +1964,7 @@
       "hr": "Brunej",
       "fa": "برونئی"
     },
-    "flag": "https://restcountries.eu/data/brn.svg",
+    "flag": "https://restcountries.com/data/brn.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -2015,7 +2015,7 @@
       "hr": "Bugarska",
       "fa": "بلغارستان"
     },
-    "flag": "https://restcountries.eu/data/bgr.svg",
+    "flag": "https://restcountries.com/data/bgr.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -2074,7 +2074,7 @@
       "hr": "Burkina Faso",
       "fa": "بورکینافاسو"
     },
-    "flag": "https://restcountries.eu/data/bfa.svg",
+    "flag": "https://restcountries.com/data/bfa.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -2144,7 +2144,7 @@
       "hr": "Burundi",
       "fa": "بوروندی"
     },
-    "flag": "https://restcountries.eu/data/bdi.svg",
+    "flag": "https://restcountries.com/data/bdi.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -2203,7 +2203,7 @@
       "hr": "Zelenortska Republika",
       "fa": "کیپ ورد"
     },
-    "flag": "https://restcountries.eu/data/cpv.svg",
+    "flag": "https://restcountries.com/data/cpv.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -2263,7 +2263,7 @@
       "hr": "Kambodža",
       "fa": "کامبوج"
     },
-    "flag": "https://restcountries.eu/data/khm.svg",
+    "flag": "https://restcountries.com/data/khm.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -2322,7 +2322,7 @@
       "hr": "Kamerun",
       "fa": "کامرون"
     },
-    "flag": "https://restcountries.eu/data/cmr.svg",
+    "flag": "https://restcountries.com/data/cmr.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -2392,7 +2392,7 @@
       "hr": "Kanada",
       "fa": "کانادا"
     },
-    "flag": "https://restcountries.eu/data/can.svg",
+    "flag": "https://restcountries.com/data/can.svg",
     "regionalBlocs": [
       {
         "acronym": "NAFTA",
@@ -2448,7 +2448,7 @@
       "hr": "Kajmanski otoci",
       "fa": "جزایر کیمن"
     },
-    "flag": "https://restcountries.eu/data/cym.svg",
+    "flag": "https://restcountries.com/data/cym.svg",
     "regionalBlocs": [],
     "cioc": "CAY"
   },
@@ -2504,7 +2504,7 @@
       "hr": "Srednjoafrička Republika",
       "fa": "جمهوری آفریقای مرکزی"
     },
-    "flag": "https://restcountries.eu/data/caf.svg",
+    "flag": "https://restcountries.com/data/caf.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -2569,7 +2569,7 @@
       "hr": "Čad",
       "fa": "چاد"
     },
-    "flag": "https://restcountries.eu/data/tcd.svg",
+    "flag": "https://restcountries.com/data/tcd.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -2626,7 +2626,7 @@
       "hr": "Čile",
       "fa": "شیلی"
     },
-    "flag": "https://restcountries.eu/data/chl.svg",
+    "flag": "https://restcountries.com/data/chl.svg",
     "regionalBlocs": [
       {
         "acronym": "PA",
@@ -2712,7 +2712,7 @@
       "hr": "Kina",
       "fa": "چین"
     },
-    "flag": "https://restcountries.eu/data/chn.svg",
+    "flag": "https://restcountries.com/data/chn.svg",
     "regionalBlocs": [],
     "cioc": "CHN"
   },
@@ -2758,7 +2758,7 @@
       "hr": "Božićni otok",
       "fa": "جزیره کریسمس"
     },
-    "flag": "https://restcountries.eu/data/cxr.svg",
+    "flag": "https://restcountries.com/data/cxr.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -2808,7 +2808,7 @@
       "hr": "Kokosovi Otoci",
       "fa": "جزایر کوکوس"
     },
-    "flag": "https://restcountries.eu/data/cck.svg",
+    "flag": "https://restcountries.com/data/cck.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -2852,7 +2852,7 @@
       "hr": "Kolumbija",
       "fa": "کلمبیا"
     },
-    "flag": "https://restcountries.eu/data/col.svg",
+    "flag": "https://restcountries.com/data/col.svg",
     "regionalBlocs": [
       {
         "acronym": "PA",
@@ -2926,7 +2926,7 @@
       "hr": "Komori",
       "fa": "کومور"
     },
-    "flag": "https://restcountries.eu/data/com.svg",
+    "flag": "https://restcountries.com/data/com.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -3001,7 +3001,7 @@
       "hr": "Kongo",
       "fa": "کنگو"
     },
-    "flag": "https://restcountries.eu/data/cog.svg",
+    "flag": "https://restcountries.com/data/cog.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -3084,7 +3084,7 @@
       "hr": "Kongo, Demokratska Republika",
       "fa": "جمهوری کنگو"
     },
-    "flag": "https://restcountries.eu/data/cod.svg",
+    "flag": "https://restcountries.com/data/cod.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -3144,7 +3144,7 @@
       "hr": "Cookovo Otočje",
       "fa": "جزایر کوک"
     },
-    "flag": "https://restcountries.eu/data/cok.svg",
+    "flag": "https://restcountries.com/data/cok.svg",
     "regionalBlocs": [],
     "cioc": "COK"
   },
@@ -3190,7 +3190,7 @@
       "hr": "Kostarika",
       "fa": "کاستاریکا"
     },
-    "flag": "https://restcountries.eu/data/cri.svg",
+    "flag": "https://restcountries.com/data/cri.svg",
     "regionalBlocs": [
       {
         "acronym": "CAIS",
@@ -3248,7 +3248,7 @@
       "hr": "Obala Bjelokosti",
       "fa": "ساحل عاج"
     },
-    "flag": "https://restcountries.eu/data/civ.svg",
+    "flag": "https://restcountries.com/data/civ.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -3310,7 +3310,7 @@
       "hr": "Hrvatska",
       "fa": "کرواسی"
     },
-    "flag": "https://restcountries.eu/data/hrv.svg",
+    "flag": "https://restcountries.com/data/hrv.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -3364,7 +3364,7 @@
       "hr": "Kuba",
       "fa": "کوبا"
     },
-    "flag": "https://restcountries.eu/data/cub.svg",
+    "flag": "https://restcountries.com/data/cub.svg",
     "regionalBlocs": [],
     "cioc": "CUB"
   },
@@ -3429,7 +3429,7 @@
       "hr": null,
       "fa": "کوراسائو"
     },
-    "flag": "https://restcountries.eu/data/cuw.svg",
+    "flag": "https://restcountries.com/data/cuw.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -3492,7 +3492,7 @@
       "hr": "Cipar",
       "fa": "قبرس"
     },
-    "flag": "https://restcountries.eu/data/cyp.svg",
+    "flag": "https://restcountries.com/data/cyp.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -3549,7 +3549,7 @@
       "hr": "Češka",
       "fa": "جمهوری چک"
     },
-    "flag": "https://restcountries.eu/data/cze.svg",
+    "flag": "https://restcountries.com/data/cze.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -3605,7 +3605,7 @@
       "hr": "Danska",
       "fa": "دانمارک"
     },
-    "flag": "https://restcountries.eu/data/dnk.svg",
+    "flag": "https://restcountries.com/data/dnk.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -3672,7 +3672,7 @@
       "hr": "Džibuti",
       "fa": "جیبوتی"
     },
-    "flag": "https://restcountries.eu/data/dji.svg",
+    "flag": "https://restcountries.com/data/dji.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -3746,7 +3746,7 @@
       "hr": "Dominika",
       "fa": "دومینیکا"
     },
-    "flag": "https://restcountries.eu/data/dma.svg",
+    "flag": "https://restcountries.com/data/dma.svg",
     "regionalBlocs": [],
     "cioc": "DMA"
   },
@@ -3790,7 +3790,7 @@
       "hr": "Dominikanska Republika",
       "fa": "جمهوری دومینیکن"
     },
-    "flag": "https://restcountries.eu/data/dom.svg",
+    "flag": "https://restcountries.com/data/dom.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -3853,7 +3853,7 @@
       "hr": "Ekvador",
       "fa": "اکوادور"
     },
-    "flag": "https://restcountries.eu/data/ecu.svg",
+    "flag": "https://restcountries.com/data/ecu.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -3909,7 +3909,7 @@
       "hr": "Egipat",
       "fa": "مصر"
     },
-    "flag": "https://restcountries.eu/data/egy.svg",
+    "flag": "https://restcountries.com/data/egy.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -3982,7 +3982,7 @@
       "hr": "Salvador",
       "fa": "السالوادور"
     },
-    "flag": "https://restcountries.eu/data/slv.svg",
+    "flag": "https://restcountries.com/data/slv.svg",
     "regionalBlocs": [
       {
         "acronym": "CAIS",
@@ -4047,7 +4047,7 @@
       "hr": "Ekvatorijalna Gvineja",
       "fa": "گینه استوایی"
     },
-    "flag": "https://restcountries.eu/data/gnq.svg",
+    "flag": "https://restcountries.com/data/gnq.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -4126,7 +4126,7 @@
       "hr": "Eritreja",
       "fa": "اریتره"
     },
-    "flag": "https://restcountries.eu/data/eri.svg",
+    "flag": "https://restcountries.com/data/eri.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -4183,7 +4183,7 @@
       "hr": "Estonija",
       "fa": "استونی"
     },
-    "flag": "https://restcountries.eu/data/est.svg",
+    "flag": "https://restcountries.com/data/est.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -4239,7 +4239,7 @@
       "hr": "Etiopija",
       "fa": "اتیوپی"
     },
-    "flag": "https://restcountries.eu/data/eth.svg",
+    "flag": "https://restcountries.com/data/eth.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -4298,7 +4298,7 @@
       "hr": "Falklandski Otoci",
       "fa": "جزایر فالکلند"
     },
-    "flag": "https://restcountries.eu/data/flk.svg",
+    "flag": "https://restcountries.com/data/flk.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -4357,7 +4357,7 @@
       "hr": "Farski Otoci",
       "fa": "جزایر فارو"
     },
-    "flag": "https://restcountries.eu/data/fro.svg",
+    "flag": "https://restcountries.com/data/fro.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -4432,7 +4432,7 @@
       "hr": "Fiđi",
       "fa": "فیجی"
     },
-    "flag": "https://restcountries.eu/data/fji.svg",
+    "flag": "https://restcountries.com/data/fji.svg",
     "regionalBlocs": [],
     "cioc": "FIJ"
   },
@@ -4488,7 +4488,7 @@
       "hr": "Finska",
       "fa": "فنلاند"
     },
-    "flag": "https://restcountries.eu/data/fin.svg",
+    "flag": "https://restcountries.com/data/fin.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -4552,7 +4552,7 @@
       "hr": "Francuska",
       "fa": "فرانسه"
     },
-    "flag": "https://restcountries.eu/data/fra.svg",
+    "flag": "https://restcountries.com/data/fra.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -4603,7 +4603,7 @@
       "hr": "Francuska Gvajana",
       "fa": "گویان فرانسه"
     },
-    "flag": "https://restcountries.eu/data/guf.svg",
+    "flag": "https://restcountries.com/data/guf.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -4670,7 +4670,7 @@
       "hr": "Francuska Polinezija",
       "fa": "پلی‌نزی فرانسه"
     },
-    "flag": "https://restcountries.eu/data/pyf.svg",
+    "flag": "https://restcountries.com/data/pyf.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -4714,7 +4714,7 @@
       "hr": "Francuski južni i antarktički teritoriji",
       "fa": "سرزمین‌های جنوبی و جنوبگانی فرانسه"
     },
-    "flag": "https://restcountries.eu/data/atf.svg",
+    "flag": "https://restcountries.com/data/atf.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -4773,7 +4773,7 @@
       "hr": "Gabon",
       "fa": "گابن"
     },
-    "flag": "https://restcountries.eu/data/gab.svg",
+    "flag": "https://restcountries.com/data/gab.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -4830,7 +4830,7 @@
       "hr": "Gambija",
       "fa": "گامبیا"
     },
-    "flag": "https://restcountries.eu/data/gmb.svg",
+    "flag": "https://restcountries.com/data/gmb.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -4887,7 +4887,7 @@
       "hr": "Gruzija",
       "fa": "گرجستان"
     },
-    "flag": "https://restcountries.eu/data/geo.svg",
+    "flag": "https://restcountries.com/data/geo.svg",
     "regionalBlocs": [],
     "cioc": "GEO"
   },
@@ -4935,7 +4935,7 @@
       "hr": "Njemačka",
       "fa": "آلمان"
     },
-    "flag": "https://restcountries.eu/data/deu.svg",
+    "flag": "https://restcountries.com/data/deu.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -4986,7 +4986,7 @@
       "hr": "Gana",
       "fa": "غنا"
     },
-    "flag": "https://restcountries.eu/data/gha.svg",
+    "flag": "https://restcountries.com/data/gha.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -5043,7 +5043,7 @@
       "hr": "Gibraltar",
       "fa": "جبل‌طارق"
     },
-    "flag": "https://restcountries.eu/data/gib.svg",
+    "flag": "https://restcountries.com/data/gib.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -5099,7 +5099,7 @@
       "hr": "Grčka",
       "fa": "یونان"
     },
-    "flag": "https://restcountries.eu/data/grc.svg",
+    "flag": "https://restcountries.com/data/grc.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -5150,7 +5150,7 @@
       "hr": "Grenland",
       "fa": "گرینلند"
     },
-    "flag": "https://restcountries.eu/data/grl.svg",
+    "flag": "https://restcountries.com/data/grl.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -5196,7 +5196,7 @@
       "hr": "Grenada",
       "fa": "گرنادا"
     },
-    "flag": "https://restcountries.eu/data/grd.svg",
+    "flag": "https://restcountries.com/data/grd.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -5251,7 +5251,7 @@
       "hr": "Gvadalupa",
       "fa": "جزیره گوادلوپ"
     },
-    "flag": "https://restcountries.eu/data/glp.svg",
+    "flag": "https://restcountries.com/data/glp.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -5309,7 +5309,7 @@
       "hr": "Guam",
       "fa": "گوام"
     },
-    "flag": "https://restcountries.eu/data/gum.svg",
+    "flag": "https://restcountries.com/data/gum.svg",
     "regionalBlocs": [],
     "cioc": "GUM"
   },
@@ -5355,7 +5355,7 @@
       "hr": "Gvatemala",
       "fa": "گواتمالا"
     },
-    "flag": "https://restcountries.eu/data/gtm.svg",
+    "flag": "https://restcountries.com/data/gtm.svg",
     "regionalBlocs": [
       {
         "acronym": "CAIS",
@@ -5415,7 +5415,7 @@
       "hr": "Guernsey",
       "fa": "گرنزی"
     },
-    "flag": "https://restcountries.eu/data/ggy.svg",
+    "flag": "https://restcountries.com/data/ggy.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -5465,7 +5465,7 @@
       "hr": "Gvineja",
       "fa": "گینه"
     },
-    "flag": "https://restcountries.eu/data/gin.svg",
+    "flag": "https://restcountries.com/data/gin.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -5528,7 +5528,7 @@
       "hr": "Gvineja Bisau",
       "fa": "گینه بیسائو"
     },
-    "flag": "https://restcountries.eu/data/gnb.svg",
+    "flag": "https://restcountries.com/data/gnb.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -5585,7 +5585,7 @@
       "hr": "Gvajana",
       "fa": "گویان"
     },
-    "flag": "https://restcountries.eu/data/guy.svg",
+    "flag": "https://restcountries.com/data/guy.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -5662,7 +5662,7 @@
       "hr": "Haiti",
       "fa": "هائیتی"
     },
-    "flag": "https://restcountries.eu/data/hti.svg",
+    "flag": "https://restcountries.com/data/hti.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -5719,7 +5719,7 @@
       "hr": "Otok Heard i otočje McDonald",
       "fa": "جزیره هرد و جزایر مک‌دونالد"
     },
-    "flag": "https://restcountries.eu/data/hmd.svg",
+    "flag": "https://restcountries.com/data/hmd.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -5781,7 +5781,7 @@
       "hr": "Sveta Stolica",
       "fa": "سریر مقدس"
     },
-    "flag": "https://restcountries.eu/data/vat.svg",
+    "flag": "https://restcountries.com/data/vat.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -5827,7 +5827,7 @@
       "hr": "Honduras",
       "fa": "هندوراس"
     },
-    "flag": "https://restcountries.eu/data/hnd.svg",
+    "flag": "https://restcountries.com/data/hnd.svg",
     "regionalBlocs": [
       {
         "acronym": "CAIS",
@@ -5886,7 +5886,7 @@
       "hr": "Hong Kong",
       "fa": "هنگ‌کنگ"
     },
-    "flag": "https://restcountries.eu/data/hkg.svg",
+    "flag": "https://restcountries.com/data/hkg.svg",
     "regionalBlocs": [],
     "cioc": "HKG"
   },
@@ -5932,7 +5932,7 @@
       "hr": "Mađarska",
       "fa": "مجارستان"
     },
-    "flag": "https://restcountries.eu/data/hun.svg",
+    "flag": "https://restcountries.com/data/hun.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -5985,7 +5985,7 @@
       "hr": "Island",
       "fa": "ایسلند"
     },
-    "flag": "https://restcountries.eu/data/isl.svg",
+    "flag": "https://restcountries.com/data/isl.svg",
     "regionalBlocs": [
       {
         "acronym": "EFTA",
@@ -6042,7 +6042,7 @@
       "hr": "Indija",
       "fa": "هند"
     },
-    "flag": "https://restcountries.eu/data/ind.svg",
+    "flag": "https://restcountries.com/data/ind.svg",
     "regionalBlocs": [
       {
         "acronym": "SAARC",
@@ -6095,7 +6095,7 @@
       "hr": "Indonezija",
       "fa": "اندونزی"
     },
-    "flag": "https://restcountries.eu/data/idn.svg",
+    "flag": "https://restcountries.com/data/idn.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -6150,7 +6150,7 @@
       "hr": "Iran",
       "fa": "ایران"
     },
-    "flag": "https://restcountries.eu/data/irn.svg",
+    "flag": "https://restcountries.com/data/irn.svg",
     "regionalBlocs": [],
     "cioc": "IRI"
   },
@@ -6200,7 +6200,7 @@
       "hr": "Irak",
       "fa": "عراق"
     },
-    "flag": "https://restcountries.eu/data/irq.svg",
+    "flag": "https://restcountries.com/data/irq.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -6266,7 +6266,7 @@
       "hr": "Irska",
       "fa": "ایرلند"
     },
-    "flag": "https://restcountries.eu/data/irl.svg",
+    "flag": "https://restcountries.com/data/irl.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -6326,7 +6326,7 @@
       "hr": "Otok Man",
       "fa": "جزیره من"
     },
-    "flag": "https://restcountries.eu/data/imn.svg",
+    "flag": "https://restcountries.com/data/imn.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -6385,7 +6385,7 @@
       "hr": "Izrael",
       "fa": "اسرائیل"
     },
-    "flag": "https://restcountries.eu/data/isr.svg",
+    "flag": "https://restcountries.com/data/isr.svg",
     "regionalBlocs": [],
     "cioc": "ISR"
   },
@@ -6429,7 +6429,7 @@
       "hr": "Italija",
       "fa": "ایتالیا"
     },
-    "flag": "https://restcountries.eu/data/ita.svg",
+    "flag": "https://restcountries.com/data/ita.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -6480,7 +6480,7 @@
       "hr": "Jamajka",
       "fa": "جامائیکا"
     },
-    "flag": "https://restcountries.eu/data/jam.svg",
+    "flag": "https://restcountries.com/data/jam.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -6535,7 +6535,7 @@
       "hr": "Japan",
       "fa": "ژاپن"
     },
-    "flag": "https://restcountries.eu/data/jpn.svg",
+    "flag": "https://restcountries.com/data/jpn.svg",
     "regionalBlocs": [],
     "cioc": "JPN"
   },
@@ -6593,7 +6593,7 @@
       "hr": "Jersey",
       "fa": "جرزی"
     },
-    "flag": "https://restcountries.eu/data/jey.svg",
+    "flag": "https://restcountries.com/data/jey.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -6643,7 +6643,7 @@
       "hr": "Jordan",
       "fa": "اردن"
     },
-    "flag": "https://restcountries.eu/data/jor.svg",
+    "flag": "https://restcountries.com/data/jor.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -6715,7 +6715,7 @@
       "hr": "Kazahstan",
       "fa": "قزاقستان"
     },
-    "flag": "https://restcountries.eu/data/kaz.svg",
+    "flag": "https://restcountries.com/data/kaz.svg",
     "regionalBlocs": [
       {
         "acronym": "EEU",
@@ -6774,7 +6774,7 @@
       "hr": "Kenija",
       "fa": "کنیا"
     },
-    "flag": "https://restcountries.eu/data/ken.svg",
+    "flag": "https://restcountries.com/data/ken.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -6834,7 +6834,7 @@
       "hr": "Kiribati",
       "fa": "کیریباتی"
     },
-    "flag": "https://restcountries.eu/data/kir.svg",
+    "flag": "https://restcountries.com/data/kir.svg",
     "regionalBlocs": [],
     "cioc": "KIR"
   },
@@ -6885,7 +6885,7 @@
       "hr": "Sjeverna Koreja",
       "fa": "کره جنوبی"
     },
-    "flag": "https://restcountries.eu/data/prk.svg",
+    "flag": "https://restcountries.com/data/prk.svg",
     "regionalBlocs": [],
     "cioc": "PRK"
   },
@@ -6931,7 +6931,7 @@
       "hr": "Južna Koreja",
       "fa": "کره شمالی"
     },
-    "flag": "https://restcountries.eu/data/kor.svg",
+    "flag": "https://restcountries.com/data/kor.svg",
     "regionalBlocs": [],
     "cioc": "KOR"
   },
@@ -6975,7 +6975,7 @@
       "hr": "Kuvajt",
       "fa": "کویت"
     },
-    "flag": "https://restcountries.eu/data/kwt.svg",
+    "flag": "https://restcountries.com/data/kwt.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -7042,7 +7042,7 @@
       "hr": "Kirgistan",
       "fa": "قرقیزستان"
     },
-    "flag": "https://restcountries.eu/data/kgz.svg",
+    "flag": "https://restcountries.com/data/kgz.svg",
     "regionalBlocs": [
       {
         "acronym": "EEU",
@@ -7099,7 +7099,7 @@
       "hr": "Laos",
       "fa": "لائوس"
     },
-    "flag": "https://restcountries.eu/data/lao.svg",
+    "flag": "https://restcountries.com/data/lao.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -7150,7 +7150,7 @@
       "hr": "Latvija",
       "fa": "لتونی"
     },
-    "flag": "https://restcountries.eu/data/lva.svg",
+    "flag": "https://restcountries.com/data/lva.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -7209,7 +7209,7 @@
       "hr": "Libanon",
       "fa": "لبنان"
     },
-    "flag": "https://restcountries.eu/data/lbn.svg",
+    "flag": "https://restcountries.com/data/lbn.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -7273,7 +7273,7 @@
       "hr": "Lesoto",
       "fa": "لسوتو"
     },
-    "flag": "https://restcountries.eu/data/lso.svg",
+    "flag": "https://restcountries.com/data/lso.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -7330,7 +7330,7 @@
       "hr": "Liberija",
       "fa": "لیبریا"
     },
-    "flag": "https://restcountries.eu/data/lbr.svg",
+    "flag": "https://restcountries.com/data/lbr.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -7387,7 +7387,7 @@
       "hr": "Libija",
       "fa": "لیبی"
     },
-    "flag": "https://restcountries.eu/data/lby.svg",
+    "flag": "https://restcountries.com/data/lby.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -7458,7 +7458,7 @@
       "hr": "Lihtenštajn",
       "fa": "لیختن‌اشتاین"
     },
-    "flag": "https://restcountries.eu/data/lie.svg",
+    "flag": "https://restcountries.com/data/lie.svg",
     "regionalBlocs": [
       {
         "acronym": "EFTA",
@@ -7509,7 +7509,7 @@
       "hr": "Litva",
       "fa": "لیتوانی"
     },
-    "flag": "https://restcountries.eu/data/ltu.svg",
+    "flag": "https://restcountries.com/data/ltu.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -7578,7 +7578,7 @@
       "hr": "Luksemburg",
       "fa": "لوکزامبورگ"
     },
-    "flag": "https://restcountries.eu/data/lux.svg",
+    "flag": "https://restcountries.com/data/lux.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -7641,7 +7641,7 @@
       "hr": "Makao",
       "fa": "مکائو"
     },
-    "flag": "https://restcountries.eu/data/mac.svg",
+    "flag": "https://restcountries.com/data/mac.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -7687,7 +7687,7 @@
       "hr": "Makedonija",
       "fa": ""
     },
-    "flag": "https://restcountries.eu/data/mkd.svg",
+    "flag": "https://restcountries.com/data/mkd.svg",
     "regionalBlocs": [
       {
         "acronym": "CEFTA",
@@ -7751,7 +7751,7 @@
       "hr": "Madagaskar",
       "fa": "ماداگاسکار"
     },
-    "flag": "https://restcountries.eu/data/mdg.svg",
+    "flag": "https://restcountries.com/data/mdg.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -7816,7 +7816,7 @@
       "hr": "Malavi",
       "fa": "مالاوی"
     },
-    "flag": "https://restcountries.eu/data/mwi.svg",
+    "flag": "https://restcountries.com/data/mwi.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -7875,7 +7875,7 @@
       "hr": "Malezija",
       "fa": "مالزی"
     },
-    "flag": "https://restcountries.eu/data/mys.svg",
+    "flag": "https://restcountries.com/data/mys.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -7933,7 +7933,7 @@
       "hr": "Maldivi",
       "fa": "مالدیو"
     },
-    "flag": "https://restcountries.eu/data/mdv.svg",
+    "flag": "https://restcountries.com/data/mdv.svg",
     "regionalBlocs": [
       {
         "acronym": "SAARC",
@@ -7986,7 +7986,7 @@
       "hr": "Mali",
       "fa": "مالی"
     },
-    "flag": "https://restcountries.eu/data/mli.svg",
+    "flag": "https://restcountries.com/data/mli.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -8049,7 +8049,7 @@
       "hr": "Malta",
       "fa": "مالت"
     },
-    "flag": "https://restcountries.eu/data/mlt.svg",
+    "flag": "https://restcountries.com/data/mlt.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -8112,7 +8112,7 @@
       "hr": "Maršalovi Otoci",
       "fa": "جزایر مارشال"
     },
-    "flag": "https://restcountries.eu/data/mhl.svg",
+    "flag": "https://restcountries.com/data/mhl.svg",
     "regionalBlocs": [],
     "cioc": "MHL"
   },
@@ -8156,7 +8156,7 @@
       "hr": "Martinique",
       "fa": "مونتسرات"
     },
-    "flag": "https://restcountries.eu/data/mtq.svg",
+    "flag": "https://restcountries.com/data/mtq.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -8206,7 +8206,7 @@
       "hr": "Mauritanija",
       "fa": "موریتانی"
     },
-    "flag": "https://restcountries.eu/data/mrt.svg",
+    "flag": "https://restcountries.com/data/mrt.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -8273,7 +8273,7 @@
       "hr": "Mauricijus",
       "fa": "موریس"
     },
-    "flag": "https://restcountries.eu/data/mus.svg",
+    "flag": "https://restcountries.com/data/mus.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -8330,7 +8330,7 @@
       "hr": "Mayotte",
       "fa": "مایوت"
     },
-    "flag": "https://restcountries.eu/data/myt.svg",
+    "flag": "https://restcountries.com/data/myt.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -8392,7 +8392,7 @@
       "hr": "Meksiko",
       "fa": "مکزیک"
     },
-    "flag": "https://restcountries.eu/data/mex.svg",
+    "flag": "https://restcountries.com/data/mex.svg",
     "regionalBlocs": [
       {
         "acronym": "PA",
@@ -8455,7 +8455,7 @@
       "hr": "Mikronezija",
       "fa": "ایالات فدرال میکرونزی"
     },
-    "flag": "https://restcountries.eu/data/fsm.svg",
+    "flag": "https://restcountries.com/data/fsm.svg",
     "regionalBlocs": [],
     "cioc": "FSM"
   },
@@ -8499,7 +8499,7 @@
       "hr": "Moldova",
       "fa": "مولداوی"
     },
-    "flag": "https://restcountries.eu/data/mda.svg",
+    "flag": "https://restcountries.com/data/mda.svg",
     "regionalBlocs": [
       {
         "acronym": "CEFTA",
@@ -8550,7 +8550,7 @@
       "hr": "Monako",
       "fa": "موناکو"
     },
-    "flag": "https://restcountries.eu/data/mco.svg",
+    "flag": "https://restcountries.com/data/mco.svg",
     "regionalBlocs": [],
     "cioc": "MON"
   },
@@ -8596,7 +8596,7 @@
       "hr": "Mongolija",
       "fa": "مغولستان"
     },
-    "flag": "https://restcountries.eu/data/mng.svg",
+    "flag": "https://restcountries.com/data/mng.svg",
     "regionalBlocs": [],
     "cioc": "MGL"
   },
@@ -8658,7 +8658,7 @@
       "hr": "Crna Gora",
       "fa": "مونته‌نگرو"
     },
-    "flag": "https://restcountries.eu/data/mne.svg",
+    "flag": "https://restcountries.com/data/mne.svg",
     "regionalBlocs": [
       {
         "acronym": "CEFTA",
@@ -8711,7 +8711,7 @@
       "hr": "Montserrat",
       "fa": "مایوت"
     },
-    "flag": "https://restcountries.eu/data/msr.svg",
+    "flag": "https://restcountries.com/data/msr.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -8768,7 +8768,7 @@
       "hr": "Maroko",
       "fa": "مراکش"
     },
-    "flag": "https://restcountries.eu/data/mar.svg",
+    "flag": "https://restcountries.com/data/mar.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -8837,7 +8837,7 @@
       "hr": "Mozambik",
       "fa": "موزامبیک"
     },
-    "flag": "https://restcountries.eu/data/moz.svg",
+    "flag": "https://restcountries.com/data/moz.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -8899,7 +8899,7 @@
       "hr": "Mijanmar",
       "fa": "میانمار"
     },
-    "flag": "https://restcountries.eu/data/mmr.svg",
+    "flag": "https://restcountries.com/data/mmr.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -8959,7 +8959,7 @@
       "hr": "Namibija",
       "fa": "نامیبیا"
     },
-    "flag": "https://restcountries.eu/data/nam.svg",
+    "flag": "https://restcountries.com/data/nam.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -9031,7 +9031,7 @@
       "hr": "Nauru",
       "fa": "نائورو"
     },
-    "flag": "https://restcountries.eu/data/nru.svg",
+    "flag": "https://restcountries.com/data/nru.svg",
     "regionalBlocs": [],
     "cioc": "NRU"
   },
@@ -9079,7 +9079,7 @@
       "hr": "Nepal",
       "fa": "نپال"
     },
-    "flag": "https://restcountries.eu/data/npl.svg",
+    "flag": "https://restcountries.com/data/npl.svg",
     "regionalBlocs": [
       {
         "acronym": "SAARC",
@@ -9130,7 +9130,7 @@
       "hr": "Nizozemska",
       "fa": "پادشاهی هلند"
     },
-    "flag": "https://restcountries.eu/data/nld.svg",
+    "flag": "https://restcountries.com/data/nld.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -9181,7 +9181,7 @@
       "hr": "Nova Kaledonija",
       "fa": "کالدونیای جدید"
     },
-    "flag": "https://restcountries.eu/data/ncl.svg",
+    "flag": "https://restcountries.com/data/ncl.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -9239,7 +9239,7 @@
       "hr": "Novi Zeland",
       "fa": "نیوزیلند"
     },
-    "flag": "https://restcountries.eu/data/nzl.svg",
+    "flag": "https://restcountries.com/data/nzl.svg",
     "regionalBlocs": [],
     "cioc": "NZL"
   },
@@ -9285,7 +9285,7 @@
       "hr": "Nikaragva",
       "fa": "نیکاراگوئه"
     },
-    "flag": "https://restcountries.eu/data/nic.svg",
+    "flag": "https://restcountries.com/data/nic.svg",
     "regionalBlocs": [
       {
         "acronym": "CAIS",
@@ -9338,7 +9338,7 @@
       "hr": "Niger",
       "fa": "نیجر"
     },
-    "flag": "https://restcountries.eu/data/ner.svg",
+    "flag": "https://restcountries.com/data/ner.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -9400,7 +9400,7 @@
       "hr": "Nigerija",
       "fa": "نیجریه"
     },
-    "flag": "https://restcountries.eu/data/nga.svg",
+    "flag": "https://restcountries.com/data/nga.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -9460,7 +9460,7 @@
       "hr": "Niue",
       "fa": "نیووی"
     },
-    "flag": "https://restcountries.eu/data/niu.svg",
+    "flag": "https://restcountries.com/data/niu.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -9510,7 +9510,7 @@
       "hr": "Otok Norfolk",
       "fa": "جزیره نورفک"
     },
-    "flag": "https://restcountries.eu/data/nfk.svg",
+    "flag": "https://restcountries.com/data/nfk.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -9566,7 +9566,7 @@
       "hr": "Sjevernomarijanski otoci",
       "fa": "جزایر ماریانای شمالی"
     },
-    "flag": "https://restcountries.eu/data/mnp.svg",
+    "flag": "https://restcountries.com/data/mnp.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -9631,7 +9631,7 @@
       "hr": "Norveška",
       "fa": "نروژ"
     },
-    "flag": "https://restcountries.eu/data/nor.svg",
+    "flag": "https://restcountries.com/data/nor.svg",
     "regionalBlocs": [
       {
         "acronym": "EFTA",
@@ -9682,7 +9682,7 @@
       "hr": "Oman",
       "fa": "عمان"
     },
-    "flag": "https://restcountries.eu/data/omn.svg",
+    "flag": "https://restcountries.com/data/omn.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -9748,7 +9748,7 @@
       "hr": "Pakistan",
       "fa": "پاکستان"
     },
-    "flag": "https://restcountries.eu/data/pak.svg",
+    "flag": "https://restcountries.com/data/pak.svg",
     "regionalBlocs": [
       {
         "acronym": "SAARC",
@@ -9802,7 +9802,7 @@
       "hr": "Palau",
       "fa": "پالائو"
     },
-    "flag": "https://restcountries.eu/data/plw.svg",
+    "flag": "https://restcountries.com/data/plw.svg",
     "regionalBlocs": [],
     "cioc": "PLW"
   },
@@ -9848,7 +9848,7 @@
       "hr": "Palestina",
       "fa": "فلسطین"
     },
-    "flag": "https://restcountries.eu/data/pse.svg",
+    "flag": "https://restcountries.com/data/pse.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -9906,7 +9906,7 @@
       "hr": "Panama",
       "fa": "پاناما"
     },
-    "flag": "https://restcountries.eu/data/pan.svg",
+    "flag": "https://restcountries.com/data/pan.svg",
     "regionalBlocs": [
       {
         "acronym": "CAIS",
@@ -9963,7 +9963,7 @@
       "hr": "Papua Nova Gvineja",
       "fa": "پاپوآ گینه نو"
     },
-    "flag": "https://restcountries.eu/data/png.svg",
+    "flag": "https://restcountries.com/data/png.svg",
     "regionalBlocs": [],
     "cioc": "PNG"
   },
@@ -10020,7 +10020,7 @@
       "hr": "Paragvaj",
       "fa": "پاراگوئه"
     },
-    "flag": "https://restcountries.eu/data/pry.svg",
+    "flag": "https://restcountries.com/data/pry.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -10076,7 +10076,7 @@
       "hr": "Peru",
       "fa": "پرو"
     },
-    "flag": "https://restcountries.eu/data/per.svg",
+    "flag": "https://restcountries.com/data/per.svg",
     "regionalBlocs": [
       {
         "acronym": "PA",
@@ -10142,7 +10142,7 @@
       "hr": "Filipini",
       "fa": "جزایر الندفیلیپین"
     },
-    "flag": "https://restcountries.eu/data/phl.svg",
+    "flag": "https://restcountries.com/data/phl.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -10196,7 +10196,7 @@
       "hr": "Pitcairnovo otočje",
       "fa": "پیتکرن"
     },
-    "flag": "https://restcountries.eu/data/pcn.svg",
+    "flag": "https://restcountries.com/data/pcn.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -10240,7 +10240,7 @@
       "hr": "Poljska",
       "fa": "لهستان"
     },
-    "flag": "https://restcountries.eu/data/pol.svg",
+    "flag": "https://restcountries.com/data/pol.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -10296,7 +10296,7 @@
       "hr": "Portugal",
       "fa": "پرتغال"
     },
-    "flag": "https://restcountries.eu/data/prt.svg",
+    "flag": "https://restcountries.com/data/prt.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -10359,7 +10359,7 @@
       "hr": "Portoriko",
       "fa": "پورتو ریکو"
     },
-    "flag": "https://restcountries.eu/data/pri.svg",
+    "flag": "https://restcountries.com/data/pri.svg",
     "regionalBlocs": [],
     "cioc": "PUR"
   },
@@ -10403,7 +10403,7 @@
       "hr": "Katar",
       "fa": "قطر"
     },
-    "flag": "https://restcountries.eu/data/qat.svg",
+    "flag": "https://restcountries.com/data/qat.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -10464,7 +10464,7 @@
       "hr": "Kosovo",
       "fa": "کوزوو"
     },
-    "flag": "https://restcountries.eu/data/kos.svg",
+    "flag": "https://restcountries.com/data/kos.svg",
     "regionalBlocs": [
       {
         "acronym": "CEFTA",
@@ -10515,7 +10515,7 @@
       "hr": "Réunion",
       "fa": "رئونیون"
     },
-    "flag": "https://restcountries.eu/data/reu.svg",
+    "flag": "https://restcountries.com/data/reu.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -10572,7 +10572,7 @@
       "hr": "Rumunjska",
       "fa": "رومانی"
     },
-    "flag": "https://restcountries.eu/data/rou.svg",
+    "flag": "https://restcountries.com/data/rou.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -10654,7 +10654,7 @@
       "hr": "Rusija",
       "fa": "روسیه"
     },
-    "flag": "https://restcountries.eu/data/rus.svg",
+    "flag": "https://restcountries.com/data/rus.svg",
     "regionalBlocs": [
       {
         "acronym": "EEU",
@@ -10722,7 +10722,7 @@
       "hr": "Ruanda",
       "fa": "رواندا"
     },
-    "flag": "https://restcountries.eu/data/rwa.svg",
+    "flag": "https://restcountries.com/data/rwa.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -10784,7 +10784,7 @@
       "hr": "Saint Barthélemy",
       "fa": "سن-بارتلمی"
     },
-    "flag": "https://restcountries.eu/data/blm.svg",
+    "flag": "https://restcountries.com/data/blm.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -10830,7 +10830,7 @@
       "hr": "Sveta Helena",
       "fa": "سنت هلنا، اسنشن و تریستان دا کونا"
     },
-    "flag": "https://restcountries.eu/data/shn.svg",
+    "flag": "https://restcountries.com/data/shn.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -10889,7 +10889,7 @@
       "hr": "Sveti Kristof i Nevis",
       "fa": "سنت کیتس و نویس"
     },
-    "flag": "https://restcountries.eu/data/kna.svg",
+    "flag": "https://restcountries.com/data/kna.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -10946,7 +10946,7 @@
       "hr": "Sveta Lucija",
       "fa": "سنت لوسیا"
     },
-    "flag": "https://restcountries.eu/data/lca.svg",
+    "flag": "https://restcountries.com/data/lca.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -11017,7 +11017,7 @@
       "hr": "Sveti Martin",
       "fa": "سینت مارتن"
     },
-    "flag": "https://restcountries.eu/data/maf.svg",
+    "flag": "https://restcountries.com/data/maf.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -11064,7 +11064,7 @@
       "hr": "Sveti Petar i Mikelon",
       "fa": "سن پیر و میکلن"
     },
-    "flag": "https://restcountries.eu/data/spm.svg",
+    "flag": "https://restcountries.com/data/spm.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -11110,7 +11110,7 @@
       "hr": "Sveti Vincent i Grenadini",
       "fa": "سنت وینسنت و گرنادین‌ها"
     },
-    "flag": "https://restcountries.eu/data/vct.svg",
+    "flag": "https://restcountries.com/data/vct.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -11175,7 +11175,7 @@
       "hr": "Samoa",
       "fa": "ساموآ"
     },
-    "flag": "https://restcountries.eu/data/wsm.svg",
+    "flag": "https://restcountries.com/data/wsm.svg",
     "regionalBlocs": [],
     "cioc": "SAM"
   },
@@ -11223,7 +11223,7 @@
       "hr": "San Marino",
       "fa": "سان مارینو"
     },
-    "flag": "https://restcountries.eu/data/smr.svg",
+    "flag": "https://restcountries.com/data/smr.svg",
     "regionalBlocs": [],
     "cioc": "SMR"
   },
@@ -11273,7 +11273,7 @@
       "hr": "Sveti Toma i Princip",
       "fa": "کواترو دو فرویرو"
     },
-    "flag": "https://restcountries.eu/data/stp.svg",
+    "flag": "https://restcountries.com/data/stp.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -11334,7 +11334,7 @@
       "hr": "Saudijska Arabija",
       "fa": "عربستان سعودی"
     },
-    "flag": "https://restcountries.eu/data/sau.svg",
+    "flag": "https://restcountries.com/data/sau.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -11391,7 +11391,7 @@
       "hr": "Senegal",
       "fa": "سنگال"
     },
-    "flag": "https://restcountries.eu/data/sen.svg",
+    "flag": "https://restcountries.com/data/sen.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -11456,7 +11456,7 @@
       "hr": "Srbija",
       "fa": "صربستان"
     },
-    "flag": "https://restcountries.eu/data/srb.svg",
+    "flag": "https://restcountries.com/data/srb.svg",
     "regionalBlocs": [
       {
         "acronym": "CEFTA",
@@ -11520,7 +11520,7 @@
       "hr": "Sejšeli",
       "fa": "سیشل"
     },
-    "flag": "https://restcountries.eu/data/syc.svg",
+    "flag": "https://restcountries.com/data/syc.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -11579,7 +11579,7 @@
       "hr": "Sijera Leone",
       "fa": "سیرالئون"
     },
-    "flag": "https://restcountries.eu/data/sle.svg",
+    "flag": "https://restcountries.com/data/sle.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -11657,7 +11657,7 @@
       "hr": "Singapur",
       "fa": "سنگاپور"
     },
-    "flag": "https://restcountries.eu/data/sgp.svg",
+    "flag": "https://restcountries.com/data/sgp.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -11716,7 +11716,7 @@
       "hr": null,
       "fa": "سینت مارتن"
     },
-    "flag": "https://restcountries.eu/data/sxm.svg",
+    "flag": "https://restcountries.com/data/sxm.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -11760,7 +11760,7 @@
       "hr": "Slovačka",
       "fa": "اسلواکی"
     },
-    "flag": "https://restcountries.eu/data/svk.svg",
+    "flag": "https://restcountries.com/data/svk.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -11811,7 +11811,7 @@
       "hr": "Slovenija",
       "fa": "اسلوونی"
     },
-    "flag": "https://restcountries.eu/data/svn.svg",
+    "flag": "https://restcountries.com/data/svn.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -11864,7 +11864,7 @@
       "hr": "Solomonski Otoci",
       "fa": "جزایر سلیمان"
     },
-    "flag": "https://restcountries.eu/data/slb.svg",
+    "flag": "https://restcountries.com/data/slb.svg",
     "regionalBlocs": [],
     "cioc": "SOL"
   },
@@ -11922,7 +11922,7 @@
       "hr": "Somalija",
       "fa": "سومالی"
     },
-    "flag": "https://restcountries.eu/data/som.svg",
+    "flag": "https://restcountries.com/data/som.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -12045,7 +12045,7 @@
       "hr": "Južnoafrička Republika",
       "fa": "آفریقای جنوبی"
     },
-    "flag": "https://restcountries.eu/data/zaf.svg",
+    "flag": "https://restcountries.com/data/zaf.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -12105,7 +12105,7 @@
       "hr": "Južna Georgija i otočje Južni Sandwich",
       "fa": "جزایر جورجیای جنوبی و ساندویچ جنوبی"
     },
-    "flag": "https://restcountries.eu/data/sgs.svg",
+    "flag": "https://restcountries.com/data/sgs.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -12163,7 +12163,7 @@
       "hr": "Južni Sudan",
       "fa": "سودان جنوبی"
     },
-    "flag": "https://restcountries.eu/data/ssd.svg",
+    "flag": "https://restcountries.com/data/ssd.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -12220,7 +12220,7 @@
       "hr": "Španjolska",
       "fa": "اسپانیا"
     },
-    "flag": "https://restcountries.eu/data/esp.svg",
+    "flag": "https://restcountries.com/data/esp.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -12283,7 +12283,7 @@
       "hr": "Šri Lanka",
       "fa": "سری‌لانکا"
     },
-    "flag": "https://restcountries.eu/data/lka.svg",
+    "flag": "https://restcountries.com/data/lka.svg",
     "regionalBlocs": [
       {
         "acronym": "SAARC",
@@ -12342,7 +12342,7 @@
       "hr": "Sudan",
       "fa": "سودان"
     },
-    "flag": "https://restcountries.eu/data/sdn.svg",
+    "flag": "https://restcountries.com/data/sdn.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -12417,7 +12417,7 @@
       "hr": "Surinam",
       "fa": "سورینام"
     },
-    "flag": "https://restcountries.eu/data/sur.svg",
+    "flag": "https://restcountries.com/data/sur.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -12485,7 +12485,7 @@
       "hr": "Svalbard i Jan Mayen",
       "fa": "سوالبارد و یان ماین"
     },
-    "flag": "https://restcountries.eu/data/sjm.svg",
+    "flag": "https://restcountries.com/data/sjm.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -12542,7 +12542,7 @@
       "hr": "Svazi",
       "fa": "سوازیلند"
     },
-    "flag": "https://restcountries.eu/data/swz.svg",
+    "flag": "https://restcountries.com/data/swz.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -12599,7 +12599,7 @@
       "hr": "Švedska",
       "fa": "سوئد"
     },
-    "flag": "https://restcountries.eu/data/swe.svg",
+    "flag": "https://restcountries.com/data/swe.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -12669,7 +12669,7 @@
       "hr": "Švicarska",
       "fa": "سوئیس"
     },
-    "flag": "https://restcountries.eu/data/che.svg",
+    "flag": "https://restcountries.com/data/che.svg",
     "regionalBlocs": [
       {
         "acronym": "EFTA",
@@ -12724,7 +12724,7 @@
       "hr": "Sirija",
       "fa": "سوریه"
     },
-    "flag": "https://restcountries.eu/data/syr.svg",
+    "flag": "https://restcountries.com/data/syr.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -12787,7 +12787,7 @@
       "hr": "Tajvan",
       "fa": "تایوان"
     },
-    "flag": "https://restcountries.eu/data/twn.svg",
+    "flag": "https://restcountries.com/data/twn.svg",
     "regionalBlocs": [],
     "cioc": "TPE"
   },
@@ -12845,7 +12845,7 @@
       "hr": "Tađikistan",
       "fa": "تاجیکستان"
     },
-    "flag": "https://restcountries.eu/data/tjk.svg",
+    "flag": "https://restcountries.com/data/tjk.svg",
     "regionalBlocs": [],
     "cioc": "TJK"
   },
@@ -12901,7 +12901,7 @@
       "hr": "Tanzanija",
       "fa": "تانزانیا"
     },
-    "flag": "https://restcountries.eu/data/tza.svg",
+    "flag": "https://restcountries.com/data/tza.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -12965,7 +12965,7 @@
       "hr": "Tajland",
       "fa": "تایلند"
     },
-    "flag": "https://restcountries.eu/data/tha.svg",
+    "flag": "https://restcountries.com/data/tha.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -13025,7 +13025,7 @@
       "hr": "Istočni Timor",
       "fa": "تیمور شرقی"
     },
-    "flag": "https://restcountries.eu/data/tls.svg",
+    "flag": "https://restcountries.com/data/tls.svg",
     "regionalBlocs": [],
     "cioc": "TLS"
   },
@@ -13076,7 +13076,7 @@
       "hr": "Togo",
       "fa": "توگو"
     },
-    "flag": "https://restcountries.eu/data/tgo.svg",
+    "flag": "https://restcountries.com/data/tgo.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -13135,7 +13135,7 @@
       "hr": "Tokelau",
       "fa": "توکلائو"
     },
-    "flag": "https://restcountries.eu/data/tkl.svg",
+    "flag": "https://restcountries.com/data/tkl.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -13185,7 +13185,7 @@
       "hr": "Tonga",
       "fa": "تونگا"
     },
-    "flag": "https://restcountries.eu/data/ton.svg",
+    "flag": "https://restcountries.com/data/ton.svg",
     "regionalBlocs": [],
     "cioc": "TGA"
   },
@@ -13231,7 +13231,7 @@
       "hr": "Trinidad i Tobago",
       "fa": "ترینیداد و توباگو"
     },
-    "flag": "https://restcountries.eu/data/tto.svg",
+    "flag": "https://restcountries.com/data/tto.svg",
     "regionalBlocs": [
       {
         "acronym": "CARICOM",
@@ -13292,7 +13292,7 @@
       "hr": "Tunis",
       "fa": "تونس"
     },
-    "flag": "https://restcountries.eu/data/tun.svg",
+    "flag": "https://restcountries.com/data/tun.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -13364,7 +13364,7 @@
       "hr": "Turska",
       "fa": "ترکیه"
     },
-    "flag": "https://restcountries.eu/data/tur.svg",
+    "flag": "https://restcountries.com/data/tur.svg",
     "regionalBlocs": [],
     "cioc": "TUR"
   },
@@ -13416,7 +13416,7 @@
       "hr": "Turkmenistan",
       "fa": "ترکمنستان"
     },
-    "flag": "https://restcountries.eu/data/tkm.svg",
+    "flag": "https://restcountries.com/data/tkm.svg",
     "regionalBlocs": [],
     "cioc": "TKM"
   },
@@ -13462,7 +13462,7 @@
       "hr": "Otoci Turks i Caicos",
       "fa": "جزایر تورکس و کایکوس"
     },
-    "flag": "https://restcountries.eu/data/tca.svg",
+    "flag": "https://restcountries.com/data/tca.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -13509,7 +13509,7 @@
       "hr": "Tuvalu",
       "fa": "تووالو"
     },
-    "flag": "https://restcountries.eu/data/tuv.svg",
+    "flag": "https://restcountries.com/data/tuv.svg",
     "regionalBlocs": [],
     "cioc": "TUV"
   },
@@ -13561,7 +13561,7 @@
       "hr": "Uganda",
       "fa": "اوگاندا"
     },
-    "flag": "https://restcountries.eu/data/uga.svg",
+    "flag": "https://restcountries.com/data/uga.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -13620,7 +13620,7 @@
       "hr": "Ukrajina",
       "fa": "وکراین"
     },
-    "flag": "https://restcountries.eu/data/ukr.svg",
+    "flag": "https://restcountries.com/data/ukr.svg",
     "regionalBlocs": [],
     "cioc": "UKR"
   },
@@ -13666,7 +13666,7 @@
       "hr": "Ujedinjeni Arapski Emirati",
       "fa": "امارات متحده عربی"
     },
-    "flag": "https://restcountries.eu/data/are.svg",
+    "flag": "https://restcountries.com/data/are.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -13731,7 +13731,7 @@
       "hr": "Ujedinjeno Kraljevstvo",
       "fa": "بریتانیای کبیر و ایرلند شمالی"
     },
-    "flag": "https://restcountries.eu/data/gbr.svg",
+    "flag": "https://restcountries.com/data/gbr.svg",
     "regionalBlocs": [
       {
         "acronym": "EU",
@@ -13784,7 +13784,7 @@
       "hr": "Mali udaljeni otoci SAD-a",
       "fa": "جزایر کوچک حاشیه‌ای ایالات متحده آمریکا"
     },
-    "flag": "https://restcountries.eu/data/umi.svg",
+    "flag": "https://restcountries.com/data/umi.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -13842,7 +13842,7 @@
       "hr": "Sjedinjene Američke Države",
       "fa": "ایالات متحده آمریکا"
     },
-    "flag": "https://restcountries.eu/data/usa.svg",
+    "flag": "https://restcountries.com/data/usa.svg",
     "regionalBlocs": [
       {
         "acronym": "NAFTA",
@@ -13900,7 +13900,7 @@
       "hr": "Urugvaj",
       "fa": "اروگوئه"
     },
-    "flag": "https://restcountries.eu/data/ury.svg",
+    "flag": "https://restcountries.com/data/ury.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -13969,7 +13969,7 @@
       "hr": "Uzbekistan",
       "fa": "ازبکستان"
     },
-    "flag": "https://restcountries.eu/data/uzb.svg",
+    "flag": "https://restcountries.com/data/uzb.svg",
     "regionalBlocs": [],
     "cioc": "UZB"
   },
@@ -14030,7 +14030,7 @@
       "hr": "Vanuatu",
       "fa": "وانواتو"
     },
-    "flag": "https://restcountries.eu/data/vut.svg",
+    "flag": "https://restcountries.com/data/vut.svg",
     "regionalBlocs": [],
     "cioc": "VAN"
   },
@@ -14080,7 +14080,7 @@
       "hr": "Venezuela",
       "fa": "ونزوئلا"
     },
-    "flag": "https://restcountries.eu/data/ven.svg",
+    "flag": "https://restcountries.com/data/ven.svg",
     "regionalBlocs": [
       {
         "acronym": "USAN",
@@ -14140,7 +14140,7 @@
       "hr": "Vijetnam",
       "fa": "ویتنام"
     },
-    "flag": "https://restcountries.eu/data/vnm.svg",
+    "flag": "https://restcountries.com/data/vnm.svg",
     "regionalBlocs": [
       {
         "acronym": "ASEAN",
@@ -14194,7 +14194,7 @@
       "hr": "Britanski Djevičanski Otoci",
       "fa": "جزایر ویرجین بریتانیا"
     },
-    "flag": "https://restcountries.eu/data/vgb.svg",
+    "flag": "https://restcountries.com/data/vgb.svg",
     "regionalBlocs": [],
     "cioc": "IVB"
   },
@@ -14245,7 +14245,7 @@
       "hr": null,
       "fa": "جزایر ویرجین آمریکا"
     },
-    "flag": "https://restcountries.eu/data/vir.svg",
+    "flag": "https://restcountries.com/data/vir.svg",
     "regionalBlocs": [],
     "cioc": "ISV"
   },
@@ -14293,7 +14293,7 @@
       "hr": "Wallis i Fortuna",
       "fa": "والیس و فوتونا"
     },
-    "flag": "https://restcountries.eu/data/wlf.svg",
+    "flag": "https://restcountries.com/data/wlf.svg",
     "regionalBlocs": [],
     "cioc": ""
   },
@@ -14340,7 +14340,7 @@
       "hr": "Zapadna Sahara",
       "fa": "جمهوری دموکراتیک عربی صحرا"
     },
-    "flag": "https://restcountries.eu/data/esh.svg",
+    "flag": "https://restcountries.com/data/esh.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -14397,7 +14397,7 @@
       "hr": "Jemen",
       "fa": "یمن"
     },
-    "flag": "https://restcountries.eu/data/yem.svg",
+    "flag": "https://restcountries.com/data/yem.svg",
     "regionalBlocs": [
       {
         "acronym": "AL",
@@ -14452,7 +14452,7 @@
       "hr": "Zambija",
       "fa": "زامبیا"
     },
-    "flag": "https://restcountries.eu/data/zmb.svg",
+    "flag": "https://restcountries.com/data/zmb.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",
@@ -14531,7 +14531,7 @@
       "hr": "Zimbabve",
       "fa": "زیمباوه"
     },
-    "flag": "https://restcountries.eu/data/zwe.svg",
+    "flag": "https://restcountries.com/data/zwe.svg",
     "regionalBlocs": [
       {
         "acronym": "AU",

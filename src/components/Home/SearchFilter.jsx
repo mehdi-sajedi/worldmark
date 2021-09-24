@@ -1,33 +1,8 @@
 import React, { useContext, useRef } from 'react';
-import FilterRegion from './FilterRegion';
 import SearchBarDropdown from './SearchBarDropdown';
 import { HiSearch } from 'react-icons/hi';
 import { AppContext } from '../../context/app-context';
-import { FiSliders } from 'react-icons/fi';
 import { RiCloseFill } from 'react-icons/ri';
-
-const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
-const sortCategories = [
-  {
-    text: 'Name: A to Z',
-    id: 'nameAZ',
-  },
-
-  {
-    text: 'Name: Z to A',
-    id: 'nameZA',
-  },
-
-  {
-    text: 'Population: High to Low',
-    id: 'popHL',
-  },
-
-  {
-    text: 'Population: Low to High',
-    id: 'popLH',
-  },
-];
 
 const SearchFilter = () => {
   const { appState, dispatch } = useContext(AppContext);
@@ -66,10 +41,6 @@ const SearchFilter = () => {
     return () => clearTimeout(timeout);
   };
 
-  const toggleFilterMenu = () => {
-    dispatch({ type: 'TOGGLE-FILTER-MENU' });
-  };
-
   const clearSearch = (e) => {
     dispatch({ type: 'CLEAR-SEARCH', payload: inputRef.current });
     dispatch({
@@ -86,20 +57,6 @@ const SearchFilter = () => {
 
     return () => clearTimeout(timeout);
   };
-
-  const handleSortSelect = (e) => {
-    dispatch({
-      type: 'SET-SORT',
-      payload: e.target.id,
-    });
-  };
-
-  // const sortPopulation = () => {
-  //   const sortedCountries = appState.currentCountries.slice().sort((a, b) => {
-  //     return b.population - a.population;
-  //   });
-  //   dispatch({ type: 'SORT-POPULATION-DESCENDING', payload: sortedCountries });
-  // };
 
   return (
     <section className="search-filter">
@@ -123,91 +80,6 @@ const SearchFilter = () => {
           }`}
         />
       </div>
-
-      <div className="filter-wrapper" onClick={toggleFilterMenu}>
-        <FiSliders className="filter-icon" />
-      </div>
-
-      <div className="new-filter">
-        {/* <h3>Filter | Sort</h3> */}
-        <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>
-          <h3 className="filter-heading">Filter | Sort</h3>
-          <div className="filter-categories">
-            {/* <div className="filter-category population-category">
-              <p className="population" onClick={sortPopulation}>
-                Population
-              </p>
-              <input type="text" placeholder="Min" />
-              <input type="text" placeholder="Max" />
-            </div> */}
-            <div className="filter-category region-category">
-              <div className="options">
-                {regions.map((region, idx) => {
-                  return (
-                    <FilterRegion region={region} key={region} idx={idx} />
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-          <div className="line"></div>
-          <h3 className="sort-heading">Sort by</h3>
-          <div className="sort-categories">
-            {sortCategories.map((item) => {
-              return (
-                <p
-                  onClick={(e) => handleSortSelect(e)}
-                  id={item.id}
-                  key={item.id}
-                  className={`${
-                    appState.sortBy === item.id ? 'sort-active' : ''
-                  }`}
-                >
-                  {item.text}
-                </p>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* <div className={`filter-menu ${appState.menuOpen && 'filter-open'}`}>
-        <h3 className="filter-heading">Filter</h3>
-        <div className="filter-categories">
-          <div className="filter-category population-category">
-            <p className="population" onClick={sortPopulation}>
-              Population
-            </p>
-            <input type="text" placeholder="Min" />
-            <input type="text" placeholder="Max" />
-          </div>
-          <div className="filter-category region-category">
-            <div className="options">
-              {regions.map((region, idx) => {
-                return <FilterRegion region={region} key={region} idx={idx} />;
-              })}
-            </div>
-          </div>
-        </div>
-        <div className="line"></div>
-        <h3 className="sort-heading">Sort by</h3>
-        <div className="sort-categories">
-          {sortCategories.map((item) => {
-            return (
-              <p
-                onClick={(e) => handleSortSelect(e)}
-                id={item.id}
-                key={item.id}
-                className={`${
-                  appState.sortBy === item.id ? 'sort-active' : ''
-                }`}
-              >
-                {item.text}
-              </p>
-            );
-          })}
-        </div>
-      </div> */}
     </section>
   );
 };

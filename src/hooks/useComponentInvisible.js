@@ -1,31 +1,27 @@
-import { useState, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef, useCallback } from 'react';
+import { AppContext } from '../context/app-context';
 
-const useComponentInvisible = (init) => {
-  const [isComponentInvisible, setIsComponentInvisible] = useState(init);
+const useComponentInvisible = (reducerAction) => {
+  const { dispatch } = useContext(AppContext);
   const ref = useRef(null);
 
-  const handleHideDropdown = (e) => {
-    if (e.key === 'Escape') {
-      setIsComponentInvisible(true);
-    }
-  };
-
-  const handleClickOutside = (e) => {
-    if (ref.current && !ref.current.contains(e.target)) {
-      setIsComponentInvisible(true);
-    }
-  };
+  const handleClickOutside = useCallback(
+    (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        dispatch({ type: reducerAction });
+      }
+    },
+    [dispatch, reducerAction]
+  );
 
   useEffect(() => {
-    document.addEventListener('keydown', handleHideDropdown, true);
     document.addEventListener('mousedown', handleClickOutside, true);
     return () => {
-      document.removeEventListener('keydown', handleHideDropdown, true);
       document.removeEventListener('mousedown', handleClickOutside, true);
     };
-  }, []);
+  }, [handleClickOutside]);
 
-  return { ref, isComponentInvisible, setIsComponentInvisible };
+  return { ref };
 };
 
 export default useComponentInvisible;
