@@ -3,13 +3,11 @@
 @import 'include-media';
 @import 'utilities';
 
-// Filter Menu UI with sorting & mobile layout
 // Filter menu icon & pagination pages layout on mobile
 // Filter menu draggable increase height
 // Sticky searchbar on mobile
 // Pagination arrows? Prev, next, beginning, end
 // Change checkboxes into toggle boxes?
-// Color marker on country cards indicating what region it is
 // Slider for countries per page
 // Keyboard accessibility
 
@@ -73,7 +71,7 @@
 
 html {
   overflow-x: hidden;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   height: 100%;
   scrollbar-color: var(--scrollbar-color);
 
@@ -174,7 +172,7 @@ button {
 
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 10px;
   }
 
   &__input {
@@ -668,6 +666,18 @@ button {
       }
     }
   }
+
+  .countries-per-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-value {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+  }
 }
 
 // - *************************************************************
@@ -717,6 +727,7 @@ button {
   border-radius: var(--border-radius);
   position: relative;
   transition: var(--theme-transition);
+  overflow: hidden;
 
   .lazyload-wrapper {
     width: 100%;
@@ -778,7 +789,7 @@ button {
   transition: var(--theme-transition);
 
   @include media('<=small') {
-    margin-bottom: 0;
+    margin-bottom: 3rem;
   }
 }
 
@@ -825,9 +836,11 @@ button {
   }
 
   .country-pages {
-    // margin: 0 auto;
-    // height: 50px;
     font-size: 18px;
+
+    @include media('<=small') {
+      font-size: 14px;
+    }
 
     ul {
       display: flex;
@@ -836,22 +849,29 @@ button {
       list-style: none;
 
       li {
-        border: 1px solid var(--clr-elements-inverse);
-        width: 35px;
-        // height: 35px;
-        text-align: center;
-        margin: 0 2px;
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: var(--box-shadow-hover);
+        text-align: center;
+        width: 35px;
+        margin: 0 2px;
+        border: 1px solid var(--clr-elements-inverse);
         border-radius: 2px;
+        box-shadow: var(--box-shadow-hover);
+
+        @include media('<=small') {
+          width: 25px;
+        }
 
         a {
           display: block;
           width: 100%;
           height: 100%;
           padding: 8px 5px;
+
+          @include media('<=small') {
+            padding: 5px;
+          }
         }
 
         &.active-page {

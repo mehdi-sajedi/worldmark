@@ -37,6 +37,10 @@ const FilterMenu = () => {
     });
   };
 
+  const handleCountriesSlider = (e) => {
+    dispatch({ type: 'SET-COUNTRIES-PER-PAGE', payload: e.target.value });
+  };
+
   return (
     <div
       ref={ref}
@@ -67,6 +71,21 @@ const FilterMenu = () => {
             </p>
           );
         })}
+      </div>
+      <div className="line"></div>
+      <h3 className="countries-heading">Countries / Page</h3>
+      <div className="countries-per-page">
+        <input
+          type="range"
+          className="country-per-page-input"
+          min="12"
+          max="72"
+          value={appState.countriesPerPage}
+          onChange={(e) => handleCountriesSlider(e)}
+        />
+        <h4 className="countries-per-page-value">
+          {appState.countriesPerPage}
+        </h4>
       </div>
     </div>
   );

@@ -10,7 +10,6 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const initialAppState = {
-    temp: [],
     countries: [],
     currentCountries: [],
     totalCountries: [],
@@ -244,12 +243,6 @@ export const AppProvider = ({ children }) => {
     // - *************************************************************
     // - *************************************************************
 
-    if (action.type === 'TEMP') {
-      draft.temp = draft.countries.map((country) => {
-        return country.flag;
-      });
-    }
-
     if (action.type === 'TOGGLE-DARK') {
       draft.darkMode = !draft.darkMode;
       localStorage.setItem('darkmode', JSON.stringify(draft.darkMode));
@@ -379,6 +372,17 @@ export const AppProvider = ({ children }) => {
     if (action.type === 'RESET-TO-FIRST-PAGE') {
       draft.currentPage = 1;
       draft.currentPageFirstPost = 0;
+      draft.currentPageLastPost = Math.min(
+        draft.countriesPerPage,
+        draft.totalCountries.length
+      );
+    }
+
+    if (action.type === 'SET-COUNTRIES-PER-PAGE') {
+      console.log(action.payload);
+      draft.currentPage = 1;
+      draft.currentPageFirstPost = 0;
+      draft.countriesPerPage = action.payload;
       draft.currentPageLastPost = Math.min(
         draft.countriesPerPage,
         draft.totalCountries.length

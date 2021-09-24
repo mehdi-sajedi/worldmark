@@ -53,27 +53,31 @@ function App() {
 
     dispatch({ type: 'SET-ALL-COUNTRIES', payload: countries });
     createCountryKeyPairs(countries);
-
-    dispatch({ type: 'TEMP' });
   }, [dispatch]);
 
-  const idxOfFirstPost =
-    appState.currentPage * appState.countriesPerPage -
-    appState.countriesPerPage;
-  const idxOfLastPost = appState.currentPage * appState.countriesPerPage;
+  // const idxOfFirstPost =
+  //   appState.currentPage * appState.countriesPerPage -
+  //   appState.countriesPerPage;
+  // const idxOfLastPost = appState.currentPage * appState.countriesPerPage;
 
   useEffect(() => {
     dispatch({
       type: 'SET-CURRENT-COUNTRIES',
-      payload: { idxFirst: idxOfFirstPost, idxLast: idxOfLastPost },
+      // payload: { idxFirst: idxOfFirstPost, idxLast: idxOfLastPost },
+      payload: {
+        idxFirst: appState.currentPageFirstPost,
+        idxLast: appState.currentPageLastPost,
+      },
     });
   }, [
     dispatch,
     appState.countries,
     appState.totalCountries,
     appState.currentPage,
-    idxOfFirstPost,
-    idxOfLastPost,
+    appState.currentPageFirstPost,
+    appState.currentPageLastPost,
+    // idxOfFirstPost,
+    // idxOfLastPost,
   ]);
 
   useEffect(() => {
