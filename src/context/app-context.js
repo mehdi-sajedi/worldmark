@@ -10,6 +10,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const initialAppState = {
+    temp: [],
     countries: [],
     currentCountries: [],
     totalCountries: [],
@@ -354,6 +355,10 @@ export const AppProvider = ({ children }) => {
       });
     }
 
+    if (action.type === 'temp') {
+      draft.temp = action.payload;
+    }
+
     if (action.type === 'CLEAR-SEARCH') {
       draft.inputText = '';
       action.payload.focus();
@@ -379,7 +384,6 @@ export const AppProvider = ({ children }) => {
     }
 
     if (action.type === 'SET-COUNTRIES-PER-PAGE') {
-      console.log(action.payload);
       draft.currentPage = 1;
       draft.currentPageFirstPost = 0;
       draft.countriesPerPage = action.payload;

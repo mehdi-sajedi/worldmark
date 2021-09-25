@@ -33,8 +33,6 @@
   --border-radius: 3px;
   --border-radius-circle: 1000px;
 
-  --theme-transition: background-color 0.35s ease-out, color 0.35s ease-out;
-
   --checkmark: url('/checkmarks/check-white.svg');
 }
 
@@ -71,7 +69,7 @@
 
 html {
   overflow-x: hidden;
-  // overflow-y: scroll;
+  overflow-y: scroll;
   height: 100%;
   scrollbar-color: var(--scrollbar-color);
 
@@ -106,7 +104,6 @@ button {
 .header-container {
   background-color: var(--clr-elements);
   box-shadow: var(--box-shadow);
-  transition: var(--theme-transition);
 }
 
 .header {
@@ -119,7 +116,6 @@ button {
   align-items: center;
   background-color: var(--clr-elements);
   padding: 1.2rem 1rem;
-  transition: var(--theme-transition);
 
   @include media('<=small') {
     font-size: 12px;
@@ -189,7 +185,7 @@ button {
     border-radius: var(--border-radius-circle);
     border: 2px solid transparent;
     // transition: border 0.25s ease;
-    transition: var(--theme-transition), border 0.25s ease;
+    transition: border 0.25s ease;
 
     @include media('<=small') {
       width: 100%;
@@ -210,6 +206,7 @@ button {
       border-radius: var(--border-radius);
       padding: 0 10px;
       transition: all 0.3s ease-out;
+      box-shadow: var(--box-shadow-btn);
       //
       opacity: 0;
       visibility: hidden;
@@ -327,7 +324,6 @@ button {
   display: grid;
   place-items: center;
   display: none;
-  transition: var(--theme-transition);
 
   @include media('<=small') {
     display: grid;
@@ -346,7 +342,6 @@ button {
     width: 100%;
     height: 100%;
     color: var(--clr-text);
-    transition: var(--theme-transition);
 
     @include media('<=small') {
       width: 40%;
@@ -397,8 +392,7 @@ button {
   overflow: scroll;
   // transition: all 0.35s cubic-bezier(0.61, 0.21, 0.19, 0.97);
   // transition: all 0.35s cubic-bezier(0.19, 0.82, 0.47, 0.96);
-  transition: var(--theme-transition),
-    transform 0.35s cubic-bezier(0.19, 0.82, 0.47, 0.96);
+  transition: transform 0.35s cubic-bezier(0.19, 0.82, 0.47, 0.96);
 
   @include media('<=small') {
     transform: translateX(-50%) translateY(430px);
@@ -677,6 +671,41 @@ button {
       margin-top: 10px;
       font-size: 20px;
     }
+
+    &-input {
+      -webkit-appearance: none;
+      width: 160px;
+      height: 7px;
+      background-color: var(--clr-outline);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.35s ease;
+
+      @include media('<=small') {
+        width: 250px;
+      }
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        background-color: white;
+        cursor: grab;
+        box-shadow: 0 0 10px 0px var(--clr-outline);
+        transition: all 0.35s ease;
+
+        &:hover {
+          width: 22px;
+          height: 22px;
+          box-shadow: 0 0 10px 3px var(--clr-outline);
+        }
+      }
+
+      &::-webkit-slider-runnable-track {
+        transition: all 0.35s ease;
+      }
+    }
   }
 }
 
@@ -726,7 +755,7 @@ button {
   height: 330px;
   border-radius: var(--border-radius);
   position: relative;
-  transition: var(--theme-transition);
+
   overflow: hidden;
 
   .lazyload-wrapper {
@@ -786,7 +815,6 @@ button {
 .footer {
   position: relative;
   margin-bottom: 6rem;
-  transition: var(--theme-transition);
 
   @include media('<=small') {
     margin-bottom: 3rem;
@@ -797,7 +825,6 @@ button {
 .countries-shown.top {
   text-align: left;
   margin-bottom: 1.5rem;
-  transition: var(--theme-transition);
 
   @include media('<=small') {
     font-size: 12px;
@@ -808,7 +835,6 @@ button {
 .countries-shown.bottom {
   text-align: center;
   margin-bottom: 2rem;
-  transition: var(--theme-transition);
 
   @include media('<=small') {
     font-size: 12px;
@@ -820,7 +846,6 @@ button {
   justify-content: center;
   align-items: center;
   margin: 0 auto 2rem;
-  transition: var(--theme-transition);
 
   .arrow {
     font-size: 24px;
@@ -882,6 +907,12 @@ button {
           }
         }
       }
+
+      .dots {
+        margin: 0 3px;
+        font-size: 30px;
+        font-weight: 500;
+      }
     }
   }
 }
@@ -891,7 +922,6 @@ button {
 // - *************************************************************
 .details-container {
   margin-bottom: 3rem;
-  transition: var(--theme-transition);
 }
 
 .details {
@@ -1002,7 +1032,6 @@ button {
           box-shadow: var(--box-shadow-solid);
           // border-radius: var(--border-radius-circle);
           margin: 8px 12px 8px 0;
-          transition: var(--theme-transition);
 
           &__text {
             display: inline-block;

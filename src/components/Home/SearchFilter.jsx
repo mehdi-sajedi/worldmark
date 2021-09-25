@@ -48,14 +48,14 @@ const SearchFilter = () => {
       payload: { inputValue: '', inputRef: inputRef.current },
     });
 
-    const timeout = setTimeout(() => {
-      dispatch({
-        type: 'SET-CURRENT-COUNTRIES-MATCH',
-        payload: appState.countries,
-      });
-    }, 2000);
+    // const timeout = setTimeout(() => {
+    dispatch({
+      type: 'SET-CURRENT-COUNTRIES-MATCH',
+      payload: appState.countries,
+    });
+    // }, 2000);
 
-    return () => clearTimeout(timeout);
+    // return () => clearTimeout(timeout);
   };
 
   return (

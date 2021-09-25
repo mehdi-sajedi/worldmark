@@ -14,6 +14,7 @@ import FilterBtn from './components/Home/FilterBtn';
 import FilterMenu from './components/Home/FilterMenu';
 import Overlay from './components/Utilities/Overlay';
 import countries from './data/countries.json';
+import axios from 'axios';
 
 const countryCodesToNames = new Map();
 
@@ -36,24 +37,42 @@ function App() {
   };
 
   useEffect(() => {
-    // const fetchCountries = async () => {
-    //   dispatch({ type: 'TOGGLE-LOADING' });
-    //   try {
-    //     // const res = await axios.get('https://restcountries.eu/rest/v2/all');
-    //     const res = await axios.get('https://restcountries.com/v2/all');
+    const fetchCountries = async () => {
+      const res = await axios.get('https://restcountries.com/v3/all');
+      const data = await Object.values(res.data)
+        .sort((a, b) => a.cca2.localeCompare(b.cca2))
+        .map((country) => {
+          return {
+            _name: country.name.common,
+            officialName: country.name.official,
+            unMember: country.unMember,
+            independent: country.independent,
+            borders: country.borders,
+            area: country.area,
+            landlocked: country.landlocked,
+            _languages: country.languages,
+          };
+        });
 
-    //     dispatch({ type: 'SET-ALL-COUNTRIES', payload: res.data });
-    //     createCountryKeyPairs(res.data);
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    //   dispatch({ type: 'TOGGLE-LOADING' });
-    // };
-    // fetchCountries();
+      dispatch({ type: 'temp', payload: data });
+      dispatch({ type: 'SET-ALL-COUNTRIES', payload: countries });
+      createCountryKeyPairs(countries);
+      nextFunction();
+    };
+    fetchCountries();
 
-    dispatch({ type: 'SET-ALL-COUNTRIES', payload: countries });
-    createCountryKeyPairs(countries);
-  }, [dispatch]);
+    function nextFunction() {
+      const copy = appState.countries.slice();
+      const result = copy
+        .sort((a, b) => a.alpha2Code.localeCompare(b.alpha2Code))
+        .map((country, idx) => {
+          return { ...country, ...appState.temp[idx] };
+        })
+        .sort((a, b) => a.name.localeCompare(b.name));
+
+      dispatch({ type: 'temp', payload: result });
+    }
+  }, [dispatch, appState.countries]);
 
   // const idxOfFirstPost =
   //   appState.currentPage * appState.countriesPerPage -
@@ -69,6 +88,7 @@ function App() {
         idxLast: appState.currentPageLastPost,
       },
     });
+    window.scrollTo(0, 0);
   }, [
     dispatch,
     appState.countries,
@@ -91,6 +111,14 @@ function App() {
         <main className="container">
           <Switch>
             <Route exact path="/">
+              <a
+                href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                  JSON.stringify(appState.temp)
+                )}`}
+                download="filename.json"
+              >
+                {`Download Json`}
+              </a>
               <SearchFilter />
               <FilterBtn />
               <FilterMenu />

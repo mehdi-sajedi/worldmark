@@ -77,9 +77,9 @@ const FilterMenu = () => {
       <div className="countries-per-page">
         <input
           type="range"
-          className="country-per-page-input"
+          className="countries-per-page-input"
           min="12"
-          max="72"
+          max="84"
           value={appState.countriesPerPage}
           onChange={(e) => handleCountriesSlider(e)}
         />
