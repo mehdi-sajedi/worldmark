@@ -42,20 +42,19 @@ const SearchFilter = () => {
   };
 
   const clearSearch = (e) => {
-    dispatch({ type: 'CLEAR-SEARCH', payload: inputRef.current });
+    dispatch({
+      type: 'CLEAR-SEARCH',
+      payload: inputRef.current,
+    });
     dispatch({
       type: 'SET-INPUT-TEXT',
       payload: { inputValue: '', inputRef: inputRef.current },
     });
 
-    // const timeout = setTimeout(() => {
     dispatch({
       type: 'SET-CURRENT-COUNTRIES-MATCH',
       payload: appState.countries,
     });
-    // }, 2000);
-
-    // return () => clearTimeout(timeout);
   };
 
   return (
@@ -74,7 +73,7 @@ const SearchFilter = () => {
           ref={inputRef}
         />
         <RiCloseFill
-          onClick={(e) => clearSearch(e)}
+          onClick={() => clearSearch()}
           className={`search-close-icon ${
             appState.inputText.length > 0 ? 'show-close' : ''
           }`}

@@ -12,6 +12,7 @@ const variants = {
 const Country = ({
   alpha3Code,
   name,
+  _name,
   flag,
   flags,
   population,
@@ -23,15 +24,20 @@ const Country = ({
     initial: 'visible',
   });
 
+  const style = {
+    backgroundImage: `url(https://restcountries.com/data/${alpha3Code.toLowerCase()}.svg)`,
+    fontSize: '40px',
+  };
+
   return (
-    <div ref={animatedDiv.ref}>
+    <div ref={animatedDiv.ref} className={_name}>
       <LazyLoad offsetVertical={3000}>
         <Link to={`/details/${alpha3Code}`}>
           <div className="country">
-            <CountryFlag flag={flag} name={name} alpha3Code={alpha3Code} />
+            <CountryFlag flag={flag} name={_name} alpha3Code={alpha3Code} />
 
             <div className="country__info">
-              <h3 className="country__info__name">{name}</h3>
+              <h3 className="country__info__name">{_name}</h3>
               <ul className="country__info__details">
                 <li className="country__info__details__population">
                   <span>Population: </span>
@@ -46,6 +52,9 @@ const Country = ({
                   {capital}
                 </li>
               </ul>
+            </div>
+            <div className="flag-line-wrapper">
+              <div style={style} className={`flag-line ${alpha3Code}`}></div>
             </div>
           </div>
         </Link>

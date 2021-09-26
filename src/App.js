@@ -13,8 +13,7 @@ import PageNotFound from './components/Utilities/PageNotFound';
 import FilterBtn from './components/Home/FilterBtn';
 import FilterMenu from './components/Home/FilterMenu';
 import Overlay from './components/Utilities/Overlay';
-import countries from './data/countries.json';
-import axios from 'axios';
+import countries from './data/countries-updated.json';
 
 const countryCodesToNames = new Map();
 
@@ -32,63 +31,25 @@ function App() {
 
   const createCountryKeyPairs = (countries) => {
     countries.forEach((country) => {
-      countryCodesToNames.set(country.alpha3Code, country.name);
+      countryCodesToNames.set(country.alpha3Code, country._name);
     });
   };
 
   useEffect(() => {
-    const fetchCountries = async () => {
-      const res = await axios.get('https://restcountries.com/v3/all');
-      const data = await Object.values(res.data)
-        .sort((a, b) => a.cca2.localeCompare(b.cca2))
-        .map((country) => {
-          return {
-            _name: country.name.common,
-            officialName: country.name.official,
-            unMember: country.unMember,
-            independent: country.independent,
-            borders: country.borders,
-            area: country.area,
-            landlocked: country.landlocked,
-            _languages: country.languages,
-          };
-        });
-
-      dispatch({ type: 'temp', payload: data });
-      dispatch({ type: 'SET-ALL-COUNTRIES', payload: countries });
-      createCountryKeyPairs(countries);
-      nextFunction();
-    };
-    fetchCountries();
-
-    function nextFunction() {
-      const copy = appState.countries.slice();
-      const result = copy
-        .sort((a, b) => a.alpha2Code.localeCompare(b.alpha2Code))
-        .map((country, idx) => {
-          return { ...country, ...appState.temp[idx] };
-        })
-        .sort((a, b) => a.name.localeCompare(b.name));
-
-      dispatch({ type: 'temp', payload: result });
-    }
+    dispatch({ type: 'SET-ALL-COUNTRIES', payload: countries });
+    dispatch({ type: 'SET-A3-CODES', payload: countries });
+    createCountryKeyPairs(countries);
   }, [dispatch, appState.countries]);
-
-  // const idxOfFirstPost =
-  //   appState.currentPage * appState.countriesPerPage -
-  //   appState.countriesPerPage;
-  // const idxOfLastPost = appState.currentPage * appState.countriesPerPage;
 
   useEffect(() => {
     dispatch({
       type: 'SET-CURRENT-COUNTRIES',
-      // payload: { idxFirst: idxOfFirstPost, idxLast: idxOfLastPost },
       payload: {
         idxFirst: appState.currentPageFirstPost,
         idxLast: appState.currentPageLastPost,
       },
     });
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, [
     dispatch,
     appState.countries,
@@ -96,8 +57,6 @@ function App() {
     appState.currentPage,
     appState.currentPageFirstPost,
     appState.currentPageLastPost,
-    // idxOfFirstPost,
-    // idxOfLastPost,
   ]);
 
   useEffect(() => {
@@ -111,14 +70,6 @@ function App() {
         <main className="container">
           <Switch>
             <Route exact path="/">
-              <a
-                href={`data:text/json;charset=utf-8,${encodeURIComponent(
-                  JSON.stringify(appState.temp)
-                )}`}
-                download="filename.json"
-              >
-                {`Download Json`}
-              </a>
               <SearchFilter />
               <FilterBtn />
               <FilterMenu />

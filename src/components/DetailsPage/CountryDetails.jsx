@@ -76,13 +76,15 @@ const CountryDetails = ({ countryCodesToNames }) => {
                 (style, item) =>
                   item && (
                     <animated.div className="details__info" style={style}>
-                      <h1 className="details__info__name">{country.name}</h1>
+                      <h1 className="details__info__name">
+                        {country.officialName}
+                      </h1>
                       <div className="details__info__facts">
                         <div className="details__info__facts__col-1">
                           <CountryDetailsItem
                             className="native-name"
-                            title="Native Name"
-                            property={country.nativeName}
+                            title="Common Name"
+                            property={country._name}
                             column="1"
                           />
                           <CountryDetailsItem
@@ -108,7 +110,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                             className="alpha-3-code"
                             title="Alpha-3 Code"
                             property={country.alpha3Code}
-                            column="2"
+                            column="1"
                           />
                         </div>
                         <div className="details__info__facts__col-2">
@@ -144,7 +146,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                           Border Countries:
                         </span>
                         <div className="details__info__borders__countries">
-                          {country.borders.length !== 0 ? (
+                          {country?.borders ? (
                             country.borders.map((item, idx) => (
                               <div
                                 className="details__info__borders__countries__item"

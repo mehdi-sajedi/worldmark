@@ -6,15 +6,13 @@
 // Filter menu icon & pagination pages layout on mobile
 // Filter menu draggable increase height
 // Sticky searchbar on mobile
-// Pagination arrows? Prev, next, beginning, end
 // Change checkboxes into toggle boxes?
-// Slider for countries per page
 // Keyboard accessibility
 
 :root {
   --clr-background: #fafafa;
   --clr-elements: #fff;
-  --clr-elements-transparent: rgba(255, 255, 255, 0.975);
+  --clr-elements-transparent: rgba(255, 255, 255, 0.96);
   --clr-elements-inverse: #2b3945;
   --clr-elements-hover: #f0f0f0;
   --clr-text: #111517;
@@ -31,6 +29,7 @@
   --box-shadow-solid: rgba(200, 200, 200, 0.8) 0px 0px 2px 1px;
 
   --border-radius: 3px;
+  --border-radius-extra: 5px;
   --border-radius-circle: 1000px;
 
   --checkmark: url('/checkmarks/check-white.svg');
@@ -42,7 +41,7 @@
 
   --clr-background: #192734;
   --clr-elements: #22303c;
-  --clr-elements-transparent: rgba(34, 48, 60, 0.975);
+  --clr-elements-transparent: rgba(34, 48, 60, 0.98);
 
   --clr-elements-inverse: #f9f9f9;
   --clr-elements-hover: #1d2933;
@@ -351,32 +350,8 @@ button {
   }
 }
 
-// .new-filter {
-//   // width: 100%;
-//   // height: 100%;
-//   // overflow: hidden;
-//   // position: relative;
-
-//   @include media('<=small') {
-//     // display: none;
-//   }
-
-//   &:hover .filter-menu {
-//     // transform: translateX(-50%) translateY(-100px);
-//     transform: translateX(-50%) translateY(0);
-//     opacity: 1;
-//   }
-
-//   h3 {
-//     font-family: 'Ubuntu';
-//     font-size: 18px;
-//     text-transform: uppercase;
-//     letter-spacing: 1px;
-//     text-align: center;
-//   }
-// }
-
 .filter-menu {
+  --bezier: cubic-bezier(0.61, 0.21, 0.19, 0.97);
   position: fixed;
   height: 524.2px;
   height: 390px;
@@ -388,16 +363,22 @@ button {
   transform: translateX(-50%) translateY(330px);
   width: 300px;
   background-color: var(--clr-elements-transparent);
+  backdrop-filter: blur(10px);
   border-radius: 30px 30px 0 0;
   overflow: scroll;
-  // transition: all 0.35s cubic-bezier(0.61, 0.21, 0.19, 0.97);
-  // transition: all 0.35s cubic-bezier(0.19, 0.82, 0.47, 0.96);
-  transition: transform 0.35s cubic-bezier(0.19, 0.82, 0.47, 0.96);
+  transition: transform 0.35s var(--bezier), height 0.35s var(--bezier),
+    width 0.35s var(--bezier);
 
   @include media('<=small') {
     transform: translateX(-50%) translateY(430px);
     width: 100vw;
     height: 400px;
+  }
+
+  @include media('>small') {
+    &:hover {
+      width: 350px;
+    }
   }
 
   &:hover {
@@ -448,6 +429,7 @@ button {
       align-items: center;
       // width: 50%;
       width: 100%;
+      // margin: 5px 0;
 
       > p {
         margin-bottom: 1rem;
@@ -475,7 +457,7 @@ button {
         }
         .option {
           // width: 150px;
-          width: 85%;
+          width: 75%;
           margin: 0 auto;
 
           &:not(:last-of-type) {
@@ -516,7 +498,6 @@ button {
             display: flex;
             align-items: center;
             // width: 210px;
-            width: 100%;
 
             // display: grid;
             // grid-template-columns: 2fr 2fr 3fr;
@@ -563,22 +544,21 @@ button {
             font-size: 13.5px;
             display: flex;
             flex-direction: column;
-            // align-items: center;
             align-items: flex-start;
+
             width: 70%;
             margin: 0 auto;
 
-            // padding-left: 12px;
             overflow: hidden;
-            //
             max-height: 0;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.35s ease;
             transition: all 0.35s cubic-bezier(0.61, 0.21, 0.19, 0.97);
 
-            // border-top: 1px solid var(--clr-outline);
-            // border-bottom: 1px solid var(--clr-outline);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 80%;
+            // box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
             @include media('<=small') {
               font-size: 13px;
@@ -587,6 +567,7 @@ button {
             label {
               margin-left: 15px;
               width: 100px;
+              width: 50px;
 
               &::before {
                 left: -22px;
@@ -601,17 +582,12 @@ button {
               display: flex;
               justify-content: flex-start;
               align-items: center;
-              // transform: translateX(16px);
-
-              // input {
-              //   height: 15px;
-              //   width: 15px;
-              // }
             }
           }
 
           .fade-enter-done {
-            max-height: 150px;
+            // max-height: 150px;
+            max-height: 84px;
             opacity: 1;
             visibility: visible;
           }
@@ -680,6 +656,7 @@ button {
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.35s ease;
+      width: 200px;
 
       @include media('<=small') {
         width: 250px;
@@ -753,8 +730,9 @@ button {
   background-color: var(--clr-elements);
   box-shadow: var(--box-shadow);
   height: 330px;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-extra);
   position: relative;
+  transition: transform 0.35s;
 
   overflow: hidden;
 
@@ -770,7 +748,10 @@ button {
     height: 50%;
     // height: 100%;
     object-fit: cover;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    box-shadow: var(--box-shadow);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
+
+    // border-radius: var(--border-radius) var(--border-radius) 0 0;
     //
     //
   }
@@ -804,8 +785,37 @@ button {
     }
   }
 
+  .flag-line-wrapper {
+    // overflow: hidden;
+    width: 100%;
+    height: 5px;
+    position: relative;
+  }
+
+  .flag-line {
+    width: 0;
+    height: 5px;
+    position: absolute;
+    bottom: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-20px);
+    }
+  }
+
   &:hover {
-    box-shadow: var(--box-shadow-hover);
+    // transform: translateY(-20px);
+
+    .flag-line {
+      opacity: 1;
+    }
   }
 }
 

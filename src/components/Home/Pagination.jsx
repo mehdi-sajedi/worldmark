@@ -17,7 +17,8 @@ const Pagination = () => {
     return appState.currentPage + 2 <= num;
   });
 
-  const handlePaginate = (pageNum, direction) => {
+  const handlePaginate = (pageNum) => {
+    if (pageNum < 1 || pageNum > maxPages) return;
     dispatch({
       type: 'SET-CURRENT-PAGE',
       payload: {
@@ -40,21 +41,6 @@ const Pagination = () => {
       />
       <div className="country-pages">
         <ul>
-          {/* {pageNumbers.map((pageNum) => {
-            return (
-              <li
-                key={pageNum}
-                className={`${
-                  pageNum === appState.currentPage ? 'active-page' : ''
-                } `}
-              >
-                <a href="#/" onClick={() => handlePaginate(pageNum)}>
-                  {pageNum}
-                </a>
-              </li>
-            );
-          })} */}
-
           {appState.currentPage >= 3 && (
             <>
               <li

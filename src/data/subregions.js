@@ -85,7 +85,8 @@ const subRegionData = {
 
   oceania: [
     {
-      name: 'Australia & New Zealand',
+      // name: 'Australia & New Zealand',
+      name: 'Australia & NZ',
       initials: 'aus_nz',
     },
     {

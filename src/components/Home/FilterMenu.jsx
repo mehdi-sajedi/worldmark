@@ -47,6 +47,8 @@ const FilterMenu = () => {
       className={`filter-menu ${appState.menuOpen && 'filter-open'}`}
     >
       <h3 className="filter-heading">Filter | Sort</h3>
+      <div className="line"></div>
+      <h3 className="region-heading">Regions</h3>
       <div className="filter-categories">
         <div className="filter-category region-category">
           <div className="options">
@@ -78,6 +80,7 @@ const FilterMenu = () => {
         <input
           type="range"
           className="countries-per-page-input"
+          tabIndex="-1"
           min="12"
           max="84"
           value={appState.countriesPerPage}

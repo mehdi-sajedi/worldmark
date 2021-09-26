@@ -10,7 +10,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const initialAppState = {
-    temp: [],
+    a3Codes: [],
     countries: [],
     currentCountries: [],
     totalCountries: [],
@@ -355,10 +355,6 @@ export const AppProvider = ({ children }) => {
       });
     }
 
-    if (action.type === 'temp') {
-      draft.temp = action.payload;
-    }
-
     if (action.type === 'CLEAR-SEARCH') {
       draft.inputText = '';
       action.payload.focus();
@@ -398,6 +394,10 @@ export const AppProvider = ({ children }) => {
 
       sortCountries();
       showCurrentPageCountries();
+    }
+
+    if (action.type === 'SET-A3-CODES') {
+      draft.a3Codes = action.payload.map((country) => country.alpha3Code);
     }
   };
 
