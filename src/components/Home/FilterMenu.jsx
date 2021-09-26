@@ -32,7 +32,7 @@ const FilterMenu = () => {
 
   const handleSortSelect = (e) => {
     dispatch({
-      type: 'SET-SORT',
+      type: 'SET-SORT-TYPE',
       payload: e.target.id,
     });
   };

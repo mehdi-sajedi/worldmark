@@ -2,21 +2,21 @@ import React, { useContext } from 'react';
 import { AppContext } from '../../context/app-context';
 import Country from './Country';
 
-const Countries = () => {
+const CountriesGrid = () => {
   const { appState } = useContext(AppContext);
 
   return (
     <section
       className={`countries ${
-        appState.currentCountries.length <= 5 ? 'snapper' : ''
+        appState.currentPageCountries.length <= 5 ? 'snapper' : ''
       }
         `}
     >
-      {appState.currentCountries.map((country) => (
+      {appState.currentPageCountries.map((country) => (
         <Country key={country.alpha3Code} {...country} />
       ))}
     </section>
   );
 };
 
-export default Countries;
+export default CountriesGrid;

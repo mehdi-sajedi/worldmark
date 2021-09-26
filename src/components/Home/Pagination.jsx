@@ -6,7 +6,7 @@ const Pagination = () => {
   const { appState, dispatch } = useContext(AppContext);
   const pageNumbers = [];
   const maxPages = Math.ceil(
-    appState.totalCountries.length / appState.countriesPerPage
+    appState.allPagesCountries.length / appState.countriesPerPage
   );
 
   for (let i = 1; i <= maxPages; i++) {
@@ -27,7 +27,7 @@ const Pagination = () => {
           pageNum * appState.countriesPerPage - appState.countriesPerPage,
         idxLast: Math.min(
           pageNum * appState.countriesPerPage,
-          appState.totalCountries.length
+          appState.allPagesCountries.length
         ),
       },
     });

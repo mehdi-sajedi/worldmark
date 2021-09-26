@@ -5,11 +5,11 @@ import useComponentInvisible from '../../hooks/useComponentInvisible';
 
 const SearchBarDropdown = () => {
   const { appState, dispatch } = useContext(AppContext);
-  const { ref } = useComponentInvisible('CLOSE-SEARCH-DROPDOWN');
+  const { ref } = useComponentInvisible('CLOSE-SEARCHBAR-DROPDOWN');
 
   useEffect(() => {
-    dispatch({ type: 'SEARCH-MATCHES' });
-  }, [dispatch, appState.inputText]);
+    dispatch({ type: 'SET-ONLY-SEARCH-MATCHES' });
+  }, [dispatch, appState.searchText]);
 
   return (
     <div

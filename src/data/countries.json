@@ -60,7 +60,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "AFG"
+    "cioc": "AFG",
+    "_name": "Afghanistan",
+    "officialName": "Islamic Republic of Afghanistan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "prs": "Dari", "pus": "Pashto", "tuk": "Turkmen" }
   },
   {
     "name": "Åland Islands",
@@ -78,7 +84,6 @@
     "area": 1580,
     "gini": null,
     "timezones": ["UTC+02:00"],
-    "borders": [],
     "nativeName": "Åland",
     "numericCode": "248",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -111,7 +116,13 @@
         "otherNames": []
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Åland Islands",
+    "officialName": "Åland Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "swe": "Swedish" }
   },
   {
     "name": "Albania",
@@ -162,7 +173,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "ALB"
+    "cioc": "ALB",
+    "_name": "Albania",
+    "officialName": "Republic of Albania",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "sqi": "Albanian" }
   },
   {
     "name": "Algeria",
@@ -231,7 +248,13 @@
         ]
       }
     ],
-    "cioc": "ALG"
+    "cioc": "ALG",
+    "_name": "Algeria",
+    "officialName": "People's Democratic Republic of Algeria",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "American Samoa",
@@ -249,7 +272,6 @@
     "area": 199,
     "gini": null,
     "timezones": ["UTC-11:00"],
-    "borders": [],
     "nativeName": "American Samoa",
     "numericCode": "016",
     "currencies": [
@@ -283,7 +305,13 @@
     },
     "flag": "https://restcountries.com/data/asm.svg",
     "regionalBlocs": [],
-    "cioc": "ASA"
+    "cioc": "ASA",
+    "_name": "American Samoa",
+    "officialName": "American Samoa",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "smo": "Samoan" }
   },
   {
     "name": "Andorra",
@@ -327,7 +355,13 @@
     },
     "flag": "https://restcountries.com/data/and.svg",
     "regionalBlocs": [],
-    "cioc": "AND"
+    "cioc": "AND",
+    "_name": "Andorra",
+    "officialName": "Principality of Andorra",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "cat": "Catalan" }
   },
   {
     "name": "Angola",
@@ -384,7 +418,13 @@
         ]
       }
     ],
-    "cioc": "ANG"
+    "cioc": "ANG",
+    "_name": "Angola",
+    "officialName": "Republic of Angola",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "por": "Portuguese" }
   },
   {
     "name": "Anguilla",
@@ -402,7 +442,6 @@
     "area": 91,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Anguilla",
     "numericCode": "660",
     "currencies": [
@@ -430,7 +469,13 @@
     },
     "flag": "https://restcountries.com/data/aia.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Anguilla",
+    "officialName": "Anguilla",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Antarctica",
@@ -457,7 +502,6 @@
       "UTC+10:00",
       "UTC+12:00"
     ],
-    "borders": [],
     "nativeName": "Antarctica",
     "numericCode": "010",
     "currencies": [
@@ -492,7 +536,12 @@
     },
     "flag": "https://restcountries.com/data/ata.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Antarctica",
+    "officialName": "Antarctica",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false
   },
   {
     "name": "Antigua and Barbuda",
@@ -510,7 +559,6 @@
     "area": 442,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Antigua and Barbuda",
     "numericCode": "028",
     "currencies": [
@@ -549,7 +597,13 @@
         ]
       }
     ],
-    "cioc": "ANT"
+    "cioc": "ANT",
+    "_name": "Antigua and Barbuda",
+    "officialName": "Antigua and Barbuda",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Argentina",
@@ -611,7 +665,13 @@
         ]
       }
     ],
-    "cioc": "ARG"
+    "cioc": "ARG",
+    "_name": "Argentina",
+    "officialName": "Argentine Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "grn": "Guaraní", "spa": "Spanish" }
   },
   {
     "name": "Armenia",
@@ -673,7 +733,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "ARM"
+    "cioc": "ARM",
+    "_name": "Armenia",
+    "officialName": "Republic of Armenia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "hye": "Armenian" }
   },
   {
     "name": "Aruba",
@@ -691,7 +757,6 @@
     "area": 180,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Aruba",
     "numericCode": "533",
     "currencies": [{ "code": "AWG", "name": "Aruban florin", "symbol": "ƒ" }],
@@ -723,7 +788,13 @@
     },
     "flag": "https://restcountries.com/data/abw.svg",
     "regionalBlocs": [],
-    "cioc": "ARU"
+    "cioc": "ARU",
+    "_name": "Aruba",
+    "officialName": "Aruba",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "nld": "Dutch", "pap": "Papiamento" }
   },
   {
     "name": "Australia",
@@ -750,7 +821,6 @@
       "UTC+10:30",
       "UTC+11:30"
     ],
-    "borders": [],
     "nativeName": "Australia",
     "numericCode": "036",
     "currencies": [
@@ -778,7 +848,13 @@
     },
     "flag": "https://restcountries.com/data/aus.svg",
     "regionalBlocs": [],
-    "cioc": "AUS"
+    "cioc": "AUS",
+    "_name": "Australia",
+    "officialName": "Commonwealth of Australia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Austria",
@@ -829,7 +905,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "AUT"
+    "cioc": "AUT",
+    "_name": "Austria",
+    "officialName": "Republic of Austria",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "bar": "Austro-Bavarian German" }
   },
   {
     "name": "Azerbaijan",
@@ -875,7 +957,13 @@
     },
     "flag": "https://restcountries.com/data/aze.svg",
     "regionalBlocs": [],
-    "cioc": "AZE"
+    "cioc": "AZE",
+    "_name": "Azerbaijan",
+    "officialName": "Republic of Azerbaijan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "aze": "Azerbaijani", "rus": "Russian" }
   },
   {
     "name": "Bahamas",
@@ -893,7 +981,6 @@
     "area": 13943,
     "gini": null,
     "timezones": ["UTC-05:00"],
-    "borders": [],
     "nativeName": "Bahamas",
     "numericCode": "044",
     "currencies": [{ "code": "BSD", "name": "Bahamian dollar", "symbol": "$" }],
@@ -930,7 +1017,13 @@
         ]
       }
     ],
-    "cioc": "BAH"
+    "cioc": "BAH",
+    "_name": "Bahamas",
+    "officialName": "Commonwealth of the Bahamas",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Bahrain",
@@ -948,7 +1041,6 @@
     "area": 765,
     "gini": null,
     "timezones": ["UTC+03:00"],
-    "borders": [],
     "nativeName": "‏البحرين",
     "numericCode": "048",
     "currencies": [
@@ -987,7 +1079,13 @@
         ]
       }
     ],
-    "cioc": "BRN"
+    "cioc": "BRN",
+    "_name": "Bahrain",
+    "officialName": "Kingdom of Bahrain",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Bangladesh",
@@ -1044,7 +1142,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "BAN"
+    "cioc": "BAN",
+    "_name": "Bangladesh",
+    "officialName": "People's Republic of Bangladesh",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ben": "Bengali" }
   },
   {
     "name": "Barbados",
@@ -1062,7 +1166,6 @@
     "area": 430,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Barbados",
     "numericCode": "052",
     "currencies": [
@@ -1101,7 +1204,13 @@
         ]
       }
     ],
-    "cioc": "BAR"
+    "cioc": "BAR",
+    "_name": "Barbados",
+    "officialName": "Barbados",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Belarus",
@@ -1169,7 +1278,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "BLR"
+    "cioc": "BLR",
+    "_name": "Belarus",
+    "officialName": "Republic of Belarus",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "bel": "Belarusian", "rus": "Russian" }
   },
   {
     "name": "Belgium",
@@ -1242,7 +1357,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "BEL"
+    "cioc": "BEL",
+    "_name": "Belgium",
+    "officialName": "Kingdom of Belgium",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "deu": "German", "fra": "French", "nld": "Dutch" }
   },
   {
     "name": "Belize",
@@ -1309,7 +1430,17 @@
         "otherNames": ["Sistema de la Integración Centroamericana,"]
       }
     ],
-    "cioc": "BIZ"
+    "cioc": "BIZ",
+    "_name": "Belize",
+    "officialName": "Belize",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": {
+      "bjz": "Belizean Creole",
+      "eng": "English",
+      "spa": "Spanish"
+    }
   },
   {
     "name": "Benin",
@@ -1368,7 +1499,13 @@
         ]
       }
     ],
-    "cioc": "BEN"
+    "cioc": "BEN",
+    "_name": "Benin",
+    "officialName": "Republic of Benin",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Bermuda",
@@ -1391,7 +1528,6 @@
     "area": 54,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Bermuda",
     "numericCode": "060",
     "currencies": [
@@ -1419,7 +1555,13 @@
     },
     "flag": "https://restcountries.com/data/bmu.svg",
     "regionalBlocs": [],
-    "cioc": "BER"
+    "cioc": "BER",
+    "_name": "Bermuda",
+    "officialName": "Bermuda",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Bhutan",
@@ -1473,7 +1615,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "BHU"
+    "cioc": "BHU",
+    "_name": "Bhutan",
+    "officialName": "Kingdom of Bhutan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "dzo": "Dzongkha" }
   },
   {
     "name": "Bolivia (Plurinational State of)",
@@ -1552,7 +1700,18 @@
         ]
       }
     ],
-    "cioc": "BOL"
+    "cioc": "BOL",
+    "_name": "Bolivia",
+    "officialName": "Plurinational State of Bolivia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": {
+      "aym": "Aymara",
+      "grn": "Guaraní",
+      "que": "Quechua",
+      "spa": "Spanish"
+    }
   },
   {
     "name": "Bonaire, Sint Eustatius and Saba",
@@ -1567,10 +1726,9 @@
     "population": 17408,
     "latlng": [12.15, -68.266667],
     "demonym": "Dutch",
-    "area": 294,
+    "area": 328,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Bonaire",
     "numericCode": "535",
     "currencies": [
@@ -1598,7 +1756,13 @@
     },
     "flag": "https://restcountries.com/data/bes.svg",
     "regionalBlocs": [],
-    "cioc": null
+    "cioc": null,
+    "_name": "Caribbean Netherlands",
+    "officialName": "Bonaire, Sint Eustatius and Saba",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "nld": "Dutch", "pap": "Papiamento" }
   },
   {
     "name": "Bosnia and Herzegovina",
@@ -1667,7 +1831,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "BIH"
+    "cioc": "BIH",
+    "_name": "Bosnia and Herzegovina",
+    "officialName": "Bosnia and Herzegovina",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "bos": "Bosnian", "hrv": "Croatian", "srp": "Serbian" }
   },
   {
     "name": "Botswana",
@@ -1730,7 +1900,13 @@
         ]
       }
     ],
-    "cioc": "BOT"
+    "cioc": "BOT",
+    "_name": "Botswana",
+    "officialName": "Republic of Botswana",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "eng": "English", "tsn": "Tswana" }
   },
   {
     "name": "Bouvet Island",
@@ -1748,7 +1924,6 @@
     "area": 49,
     "gini": null,
     "timezones": ["UTC+01:00"],
-    "borders": [],
     "nativeName": "Bouvetøya",
     "numericCode": "074",
     "currencies": [
@@ -1788,7 +1963,13 @@
     },
     "flag": "https://restcountries.com/data/bvt.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Bouvet Island",
+    "officialName": "Bouvet Island",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "nor": "Norwegian" }
   },
   {
     "name": "Brazil",
@@ -1860,7 +2041,13 @@
         ]
       }
     ],
-    "cioc": "BRA"
+    "cioc": "BRA",
+    "_name": "Brazil",
+    "officialName": "Federative Republic of Brazil",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "por": "Portuguese" }
   },
   {
     "name": "British Indian Ocean Territory",
@@ -1878,7 +2065,6 @@
     "area": 60,
     "gini": null,
     "timezones": ["UTC+06:00"],
-    "borders": [],
     "nativeName": "British Indian Ocean Territory",
     "numericCode": "086",
     "currencies": [
@@ -1919,7 +2105,13 @@
         ]
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "British Indian Ocean Territory",
+    "officialName": "British Indian Ocean Territory",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Brunei Darussalam",
@@ -1973,7 +2165,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "BRU"
+    "cioc": "BRU",
+    "_name": "Brunei",
+    "officialName": "Nation of Brunei, Abode of Peace",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "msa": "Malay" }
   },
   {
     "name": "Bulgaria",
@@ -2024,7 +2222,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "BUL"
+    "cioc": "BUL",
+    "_name": "Bulgaria",
+    "officialName": "Republic of Bulgaria",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "bul": "Bulgarian" }
   },
   {
     "name": "Burkina Faso",
@@ -2089,7 +2293,13 @@
         ]
       }
     ],
-    "cioc": "BUR"
+    "cioc": "BUR",
+    "_name": "Burkina Faso",
+    "officialName": "Burkina Faso",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Burundi",
@@ -2159,7 +2369,13 @@
         ]
       }
     ],
-    "cioc": "BDI"
+    "cioc": "BDI",
+    "_name": "Burundi",
+    "officialName": "Republic of Burundi",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "fra": "French", "run": "Kirundi" }
   },
   {
     "name": "Cabo Verde",
@@ -2177,7 +2393,6 @@
     "area": 4033,
     "gini": 50.5,
     "timezones": ["UTC-01:00"],
-    "borders": [],
     "nativeName": "Cabo Verde",
     "numericCode": "132",
     "currencies": [
@@ -2218,7 +2433,13 @@
         ]
       }
     ],
-    "cioc": "CPV"
+    "cioc": "CPV",
+    "_name": "Cape Verde",
+    "officialName": "Republic of Cabo Verde",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "por": "Portuguese" }
   },
   {
     "name": "Cambodia",
@@ -2272,7 +2493,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "CAM"
+    "cioc": "CAM",
+    "_name": "Cambodia",
+    "officialName": "Kingdom of Cambodia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "khm": "Khmer" }
   },
   {
     "name": "Cameroon",
@@ -2337,7 +2564,13 @@
         ]
       }
     ],
-    "cioc": "CMR"
+    "cioc": "CMR",
+    "_name": "Cameroon",
+    "officialName": "Republic of Cameroon",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "fra": "French" }
   },
   {
     "name": "Canada",
@@ -2404,7 +2637,13 @@
         ]
       }
     ],
-    "cioc": "CAN"
+    "cioc": "CAN",
+    "_name": "Canada",
+    "officialName": "Canada",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "fra": "French" }
   },
   {
     "name": "Cayman Islands",
@@ -2422,7 +2661,6 @@
     "area": 264,
     "gini": null,
     "timezones": ["UTC-05:00"],
-    "borders": [],
     "nativeName": "Cayman Islands",
     "numericCode": "136",
     "currencies": [
@@ -2450,7 +2688,13 @@
     },
     "flag": "https://restcountries.com/data/cym.svg",
     "regionalBlocs": [],
-    "cioc": "CAY"
+    "cioc": "CAY",
+    "_name": "Cayman Islands",
+    "officialName": "Cayman Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Central African Republic",
@@ -2519,7 +2763,13 @@
         ]
       }
     ],
-    "cioc": "CAF"
+    "cioc": "CAF",
+    "_name": "Central African Republic",
+    "officialName": "Central African Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "fra": "French", "sag": "Sango" }
   },
   {
     "name": "Chad",
@@ -2537,7 +2787,7 @@
     "area": 1284000,
     "gini": 39.8,
     "timezones": ["UTC+01:00"],
-    "borders": ["CMR", "CAF", "LBY", "NER", "NGA", "SSD"],
+    "borders": ["CMR", "CAF", "LBY", "NER", "NGA", "SDN"],
     "nativeName": "Tchad",
     "numericCode": "148",
     "currencies": [
@@ -2584,7 +2834,13 @@
         ]
       }
     ],
-    "cioc": "CHA"
+    "cioc": "CHA",
+    "_name": "Chad",
+    "officialName": "Republic of Chad",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "ara": "Arabic", "fra": "French" }
   },
   {
     "name": "Chile",
@@ -2646,7 +2902,13 @@
         ]
       }
     ],
-    "cioc": "CHI"
+    "cioc": "CHI",
+    "_name": "Chile",
+    "officialName": "Republic of Chile",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "China",
@@ -2669,7 +2931,7 @@
     "population": 1439323776,
     "latlng": [35, 105],
     "demonym": "Chinese",
-    "area": 9640011,
+    "area": 9706961,
     "gini": 47,
     "timezones": ["UTC+08:00"],
     "borders": [
@@ -2684,6 +2946,7 @@
       "LAO",
       "MAC",
       "MNG",
+      "NPL",
       "PAK",
       "RUS",
       "TJK",
@@ -2714,7 +2977,13 @@
     },
     "flag": "https://restcountries.com/data/chn.svg",
     "regionalBlocs": [],
-    "cioc": "CHN"
+    "cioc": "CHN",
+    "_name": "China",
+    "officialName": "People's Republic of China",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "zho": "Chinese" }
   },
   {
     "name": "Christmas Island",
@@ -2732,7 +3001,6 @@
     "area": 135,
     "gini": null,
     "timezones": ["UTC+07:00"],
-    "borders": [],
     "nativeName": "Christmas Island",
     "numericCode": "162",
     "currencies": [
@@ -2760,7 +3028,13 @@
     },
     "flag": "https://restcountries.com/data/cxr.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Christmas Island",
+    "officialName": "Territory of Christmas Island",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Cocos (Keeling) Islands",
@@ -2782,7 +3056,6 @@
     "area": 14,
     "gini": null,
     "timezones": ["UTC+06:30"],
-    "borders": [],
     "nativeName": "Cocos (Keeling) Islands",
     "numericCode": "166",
     "currencies": [
@@ -2810,7 +3083,13 @@
     },
     "flag": "https://restcountries.com/data/cck.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Cocos (Keeling) Islands",
+    "officialName": "Territory of the Cocos (Keeling) Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Colombia",
@@ -2872,7 +3151,13 @@
         ]
       }
     ],
-    "cioc": "COL"
+    "cioc": "COL",
+    "_name": "Colombia",
+    "officialName": "Republic of Colombia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Comoros",
@@ -2896,7 +3181,6 @@
     "area": 1862,
     "gini": 64.3,
     "timezones": ["UTC+03:00"],
-    "borders": [],
     "nativeName": "Komori",
     "numericCode": "174",
     "currencies": [{ "code": "KMF", "name": "Comorian franc", "symbol": "Fr" }],
@@ -2951,7 +3235,13 @@
         ]
       }
     ],
-    "cioc": "COM"
+    "cioc": "COM",
+    "_name": "Comoros",
+    "officialName": "Union of the Comoros",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic", "fra": "French", "zdj": "Comorian" }
   },
   {
     "name": "Congo",
@@ -3016,7 +3306,13 @@
         ]
       }
     ],
-    "cioc": "CGO"
+    "cioc": "CGO",
+    "_name": "Republic of the Congo",
+    "officialName": "Republic of the Congo",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French", "kon": "Kikongo", "lin": "Lingala" }
   },
   {
     "name": "Congo (Democratic Republic of the)",
@@ -3099,7 +3395,19 @@
         ]
       }
     ],
-    "cioc": "COD"
+    "cioc": "COD",
+    "_name": "DR Congo",
+    "officialName": "Democratic Republic of the Congo",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": {
+      "fra": "French",
+      "kon": "Kikongo",
+      "lin": "Lingala",
+      "lua": "Tshiluba",
+      "swa": "Swahili"
+    }
   },
   {
     "name": "Cook Islands",
@@ -3117,7 +3425,6 @@
     "area": 236,
     "gini": null,
     "timezones": ["UTC-10:00"],
-    "borders": [],
     "nativeName": "Cook Islands",
     "numericCode": "184",
     "currencies": [
@@ -3146,7 +3453,13 @@
     },
     "flag": "https://restcountries.com/data/cok.svg",
     "regionalBlocs": [],
-    "cioc": "COK"
+    "cioc": "COK",
+    "_name": "Cook Islands",
+    "officialName": "Cook Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "rar": "Cook Islands Māori" }
   },
   {
     "name": "Costa Rica",
@@ -3199,7 +3512,13 @@
         "otherNames": ["Sistema de la Integración Centroamericana,"]
       }
     ],
-    "cioc": "CRC"
+    "cioc": "CRC",
+    "_name": "Costa Rica",
+    "officialName": "Republic of Costa Rica",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Côte d'Ivoire",
@@ -3263,7 +3582,13 @@
         ]
       }
     ],
-    "cioc": "CIV"
+    "cioc": "CIV",
+    "_name": "Ivory Coast",
+    "officialName": "Republic of Côte d'Ivoire",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Croatia",
@@ -3319,7 +3644,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "CRO"
+    "cioc": "CRO",
+    "_name": "Croatia",
+    "officialName": "Republic of Croatia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "hrv": "Croatian" }
   },
   {
     "name": "Cuba",
@@ -3337,7 +3668,6 @@
     "area": 109884,
     "gini": null,
     "timezones": ["UTC-05:00"],
-    "borders": [],
     "nativeName": "Cuba",
     "numericCode": "192",
     "currencies": [
@@ -3366,7 +3696,13 @@
     },
     "flag": "https://restcountries.com/data/cub.svg",
     "regionalBlocs": [],
-    "cioc": "CUB"
+    "cioc": "CUB",
+    "_name": "Cuba",
+    "officialName": "Republic of Cuba",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Curaçao",
@@ -3391,7 +3727,6 @@
     "area": 444,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Curaçao",
     "numericCode": "531",
     "currencies": [
@@ -3431,7 +3766,13 @@
     },
     "flag": "https://restcountries.com/data/cuw.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Curaçao",
+    "officialName": "Country of Curaçao",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "nld": "Dutch", "pap": "Papiamento" }
   },
   {
     "name": "Cyprus",
@@ -3456,7 +3797,6 @@
     "area": 9251,
     "gini": null,
     "timezones": ["UTC+02:00"],
-    "borders": ["GBR"],
     "nativeName": "Κύπρος",
     "numericCode": "196",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -3501,7 +3841,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "CYP"
+    "cioc": "CYP",
+    "_name": "Cyprus",
+    "officialName": "Republic of Cyprus",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ell": "Greek", "tur": "Turkish" }
   },
   {
     "name": "Czech Republic",
@@ -3558,7 +3904,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "CZE"
+    "cioc": "CZE",
+    "_name": "Czechia",
+    "officialName": "Czech Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "ces": "Czech", "slk": "Slovak" }
   },
   {
     "name": "Denmark",
@@ -3614,7 +3966,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "DEN"
+    "cioc": "DEN",
+    "_name": "Denmark",
+    "officialName": "Kingdom of Denmark",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "dan": "Danish" }
   },
   {
     "name": "Djibouti",
@@ -3697,7 +4055,13 @@
         ]
       }
     ],
-    "cioc": "DJI"
+    "cioc": "DJI",
+    "_name": "Djibouti",
+    "officialName": "Republic of Djibouti",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic", "fra": "French" }
   },
   {
     "name": "Dominica",
@@ -3720,7 +4084,6 @@
     "area": 751,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Dominica",
     "numericCode": "212",
     "currencies": [
@@ -3748,7 +4111,13 @@
     },
     "flag": "https://restcountries.com/data/dma.svg",
     "regionalBlocs": [],
-    "cioc": "DMA"
+    "cioc": "DMA",
+    "_name": "Dominica",
+    "officialName": "Commonwealth of Dominica",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Dominican Republic",
@@ -3809,7 +4178,13 @@
         "otherNames": ["Sistema de la Integración Centroamericana,"]
       }
     ],
-    "cioc": "DOM"
+    "cioc": "DOM",
+    "_name": "Dominican Republic",
+    "officialName": "Dominican Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Ecuador",
@@ -3867,7 +4242,13 @@
         ]
       }
     ],
-    "cioc": "ECU"
+    "cioc": "ECU",
+    "_name": "Ecuador",
+    "officialName": "Republic of Ecuador",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Egypt",
@@ -3885,7 +4266,7 @@
     "area": 1002450,
     "gini": 30.8,
     "timezones": ["UTC+02:00"],
-    "borders": ["ISR", "LBY", "SDN"],
+    "borders": ["ISR", "LBY", "PSE", "SDN"],
     "nativeName": "مصر‎",
     "numericCode": "818",
     "currencies": [{ "code": "EGP", "name": "Egyptian pound", "symbol": "£" }],
@@ -3934,7 +4315,13 @@
         ]
       }
     ],
-    "cioc": "EGY"
+    "cioc": "EGY",
+    "_name": "Egypt",
+    "officialName": "Arab Republic of Egypt",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "El Salvador",
@@ -3991,7 +4378,13 @@
         "otherNames": ["Sistema de la Integración Centroamericana,"]
       }
     ],
-    "cioc": "ESA"
+    "cioc": "ESA",
+    "_name": "El Salvador",
+    "officialName": "Republic of El Salvador",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Equatorial Guinea",
@@ -4062,7 +4455,13 @@
         ]
       }
     ],
-    "cioc": "GEQ"
+    "cioc": "GEQ",
+    "_name": "Equatorial Guinea",
+    "officialName": "Republic of Equatorial Guinea",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French", "por": "Portuguese", "spa": "Spanish" }
   },
   {
     "name": "Eritrea",
@@ -4141,7 +4540,13 @@
         ]
       }
     ],
-    "cioc": "ERI"
+    "cioc": "ERI",
+    "_name": "Eritrea",
+    "officialName": "State of Eritrea",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic", "eng": "English", "tir": "Tigrinya" }
   },
   {
     "name": "Estonia",
@@ -4192,7 +4597,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "EST"
+    "cioc": "EST",
+    "_name": "Estonia",
+    "officialName": "Republic of Estonia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "est": "Estonian" }
   },
   {
     "name": "Ethiopia",
@@ -4254,7 +4665,13 @@
         ]
       }
     ],
-    "cioc": "ETH"
+    "cioc": "ETH",
+    "_name": "Ethiopia",
+    "officialName": "Federal Democratic Republic of Ethiopia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "amh": "Amharic" }
   },
   {
     "name": "Falkland Islands (Malvinas)",
@@ -4272,7 +4689,6 @@
     "area": 12173,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Falkland Islands",
     "numericCode": "238",
     "currencies": [
@@ -4312,7 +4728,13 @@
         ]
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Falkland Islands",
+    "officialName": "Falkland Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Faroe Islands",
@@ -4330,7 +4752,6 @@
     "area": 1393,
     "gini": null,
     "timezones": ["UTC+00:00"],
-    "borders": [],
     "nativeName": "Føroyar",
     "numericCode": "234",
     "currencies": [
@@ -4366,7 +4787,13 @@
         "otherNames": []
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Faroe Islands",
+    "officialName": "Faroe Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "dan": "Danish", "fao": "Faroese" }
   },
   {
     "name": "Fiji",
@@ -4390,7 +4817,6 @@
     "area": 18272,
     "gini": 42.8,
     "timezones": ["UTC+12:00"],
-    "borders": [],
     "nativeName": "Fiji",
     "numericCode": "242",
     "currencies": [{ "code": "FJD", "name": "Fijian dollar", "symbol": "$" }],
@@ -4434,7 +4860,13 @@
     },
     "flag": "https://restcountries.com/data/fji.svg",
     "regionalBlocs": [],
-    "cioc": "FIJ"
+    "cioc": "FIJ",
+    "_name": "Fiji",
+    "officialName": "Republic of Fiji",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "fij": "Fijian", "hif": "Fiji Hindi" }
   },
   {
     "name": "Finland",
@@ -4497,7 +4929,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "FIN"
+    "cioc": "FIN",
+    "_name": "Finland",
+    "officialName": "Republic of Finland",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fin": "Finnish", "swe": "Swedish" }
   },
   {
     "name": "France",
@@ -4512,7 +4950,7 @@
     "population": 65273511,
     "latlng": [46, 2],
     "demonym": "French",
-    "area": 640679,
+    "area": 551695,
     "gini": 32.7,
     "timezones": [
       "UTC-10:00",
@@ -4561,7 +4999,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "FRA"
+    "cioc": "FRA",
+    "_name": "France",
+    "officialName": "French Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "French Guiana",
@@ -4576,7 +5020,7 @@
     "population": 254541,
     "latlng": [4, -53],
     "demonym": "",
-    "area": null,
+    "area": 83534,
     "gini": null,
     "timezones": ["UTC-03:00"],
     "borders": ["BRA", "SUR"],
@@ -4623,7 +5067,13 @@
         "otherNames": []
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "French Guiana",
+    "officialName": "Guiana",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "French Polynesia",
@@ -4646,7 +5096,6 @@
     "area": 4167,
     "gini": null,
     "timezones": ["UTC-10:00", "UTC-09:30", "UTC-09:00"],
-    "borders": [],
     "nativeName": "Polynésie française",
     "numericCode": "258",
     "currencies": [{ "code": "XPF", "name": "CFP franc", "symbol": "Fr" }],
@@ -4672,7 +5121,13 @@
     },
     "flag": "https://restcountries.com/data/pyf.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "French Polynesia",
+    "officialName": "French Polynesia",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "French Southern Territories",
@@ -4690,7 +5145,6 @@
     "area": 7747,
     "gini": null,
     "timezones": ["UTC+05:00"],
-    "borders": [],
     "nativeName": "Territoire des Terres australes et antarctiques françaises",
     "numericCode": "260",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -4729,7 +5183,13 @@
         ]
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "French Southern and Antarctic Lands",
+    "officialName": "Territory of the French Southern and Antarctic Lands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Gabon",
@@ -4788,7 +5248,13 @@
         ]
       }
     ],
-    "cioc": "GAB"
+    "cioc": "GAB",
+    "_name": "Gabon",
+    "officialName": "Gabonese Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Gambia",
@@ -4803,7 +5269,7 @@
     "population": 1882450,
     "latlng": [13.46666666, -16.56666666],
     "demonym": "Gambian",
-    "area": 11295,
+    "area": 10689,
     "gini": null,
     "timezones": ["UTC+00:00"],
     "borders": ["SEN"],
@@ -4845,7 +5311,13 @@
         ]
       }
     ],
-    "cioc": "GAM"
+    "cioc": "GAM",
+    "_name": "Gambia",
+    "officialName": "Republic of the Gambia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Georgia",
@@ -4889,7 +5361,13 @@
     },
     "flag": "https://restcountries.com/data/geo.svg",
     "regionalBlocs": [],
-    "cioc": "GEO"
+    "cioc": "GEO",
+    "_name": "Georgia",
+    "officialName": "Georgia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "kat": "Georgian" }
   },
   {
     "name": "Germany",
@@ -4944,7 +5422,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "GER"
+    "cioc": "GER",
+    "_name": "Germany",
+    "officialName": "Federal Republic of Germany",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "deu": "German" }
   },
   {
     "name": "Ghana",
@@ -5001,7 +5485,13 @@
         ]
       }
     ],
-    "cioc": "GHA"
+    "cioc": "GHA",
+    "_name": "Ghana",
+    "officialName": "Republic of Ghana",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Gibraltar",
@@ -5052,7 +5542,13 @@
         "otherNames": []
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Gibraltar",
+    "officialName": "Gibraltar",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Greece",
@@ -5108,7 +5604,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "GRE"
+    "cioc": "GRE",
+    "_name": "Greece",
+    "officialName": "Hellenic Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ell": "Greek" }
   },
   {
     "name": "Greenland",
@@ -5126,7 +5628,6 @@
     "area": 2166086,
     "gini": null,
     "timezones": ["UTC-04:00", "UTC-03:00", "UTC-01:00", "UTC+00:00"],
-    "borders": [],
     "nativeName": "Kalaallit Nunaat",
     "numericCode": "304",
     "currencies": [{ "code": "DKK", "name": "Danish krone", "symbol": "kr" }],
@@ -5152,7 +5653,13 @@
     },
     "flag": "https://restcountries.com/data/grl.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Greenland",
+    "officialName": "Greenland",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "kal": "Greenlandic" }
   },
   {
     "name": "Grenada",
@@ -5170,7 +5677,6 @@
     "area": 344,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Grenada",
     "numericCode": "308",
     "currencies": [
@@ -5209,7 +5715,13 @@
         ]
       }
     ],
-    "cioc": "GRN"
+    "cioc": "GRN",
+    "_name": "Grenada",
+    "officialName": "Grenada",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Guadeloupe",
@@ -5224,10 +5736,9 @@
     "population": 400132,
     "latlng": [16.25, -61.583333],
     "demonym": "Guadeloupian",
-    "area": null,
+    "area": 1628,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Guadeloupe",
     "numericCode": "312",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -5253,7 +5764,13 @@
     },
     "flag": "https://restcountries.com/data/glp.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Guadeloupe",
+    "officialName": "Guadeloupe",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Guam",
@@ -5271,7 +5788,6 @@
     "area": 549,
     "gini": null,
     "timezones": ["UTC+10:00"],
-    "borders": [],
     "nativeName": "Guam",
     "numericCode": "316",
     "currencies": [
@@ -5311,7 +5827,13 @@
     },
     "flag": "https://restcountries.com/data/gum.svg",
     "regionalBlocs": [],
-    "cioc": "GUM"
+    "cioc": "GUM",
+    "_name": "Guam",
+    "officialName": "Guam",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "cha": "Chamorro", "eng": "English", "spa": "Spanish" }
   },
   {
     "name": "Guatemala",
@@ -5364,7 +5886,13 @@
         "otherNames": ["Sistema de la Integración Centroamericana,"]
       }
     ],
-    "cioc": "GUA"
+    "cioc": "GUA",
+    "_name": "Guatemala",
+    "officialName": "Republic of Guatemala",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Guernsey",
@@ -5382,7 +5910,6 @@
     "area": 78,
     "gini": null,
     "timezones": ["UTC+00:00"],
-    "borders": [],
     "nativeName": "Guernsey",
     "numericCode": "831",
     "currencies": [
@@ -5417,7 +5944,13 @@
     },
     "flag": "https://restcountries.com/data/ggy.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Guernsey",
+    "officialName": "Bailiwick of Guernsey",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "fra": "French", "nfr": "Guernésiais" }
   },
   {
     "name": "Guinea",
@@ -5480,7 +6013,13 @@
         ]
       }
     ],
-    "cioc": "GUI"
+    "cioc": "GUI",
+    "_name": "Guinea",
+    "officialName": "Republic of Guinea",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Guinea-Bissau",
@@ -5543,7 +6082,13 @@
         ]
       }
     ],
-    "cioc": "GBS"
+    "cioc": "GBS",
+    "_name": "Guinea-Bissau",
+    "officialName": "Republic of Guinea-Bissau",
+    "unMember": false,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "por": "Portuguese", "pov": "Upper Guinea Creole" }
   },
   {
     "name": "Guyana",
@@ -5609,7 +6154,13 @@
         ]
       }
     ],
-    "cioc": "GUY"
+    "cioc": "GUY",
+    "_name": "Guyana",
+    "officialName": "Co-operative Republic of Guyana",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Haiti",
@@ -5675,7 +6226,13 @@
         ]
       }
     ],
-    "cioc": "HAI"
+    "cioc": "HAI",
+    "_name": "Haiti",
+    "officialName": "Republic of Haiti",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French", "hat": "Haitian Creole" }
   },
   {
     "name": "Heard Island and McDonald Islands",
@@ -5693,7 +6250,6 @@
     "area": 412,
     "gini": null,
     "timezones": ["UTC+05:00"],
-    "borders": [],
     "nativeName": "Heard Island and McDonald Islands",
     "numericCode": "334",
     "currencies": [
@@ -5721,7 +6277,13 @@
     },
     "flag": "https://restcountries.com/data/hmd.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Heard Island and McDonald Islands",
+    "officialName": "Heard Island and McDonald Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Holy See",
@@ -5783,7 +6345,13 @@
     },
     "flag": "https://restcountries.com/data/vat.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Vatican City",
+    "officialName": "Vatican City State",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "ita": "Italian", "lat": "Latin" }
   },
   {
     "name": "Honduras",
@@ -5836,7 +6404,13 @@
         "otherNames": ["Sistema de la Integración Centroamericana,"]
       }
     ],
-    "cioc": "HON"
+    "cioc": "HON",
+    "_name": "Honduras",
+    "officialName": "Republic of Honduras",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Hong Kong",
@@ -5888,7 +6462,13 @@
     },
     "flag": "https://restcountries.com/data/hkg.svg",
     "regionalBlocs": [],
-    "cioc": "HKG"
+    "cioc": "HKG",
+    "_name": "Hong Kong",
+    "officialName": "Hong Kong Special Administrative Region of the People's Republic of China",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "zho": "Chinese" }
   },
   {
     "name": "Hungary",
@@ -5941,7 +6521,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "HUN"
+    "cioc": "HUN",
+    "_name": "Hungary",
+    "officialName": "Hungary",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "hun": "Hungarian" }
   },
   {
     "name": "Iceland",
@@ -5959,7 +6545,6 @@
     "area": 103000,
     "gini": null,
     "timezones": ["UTC"],
-    "borders": [],
     "nativeName": "Ísland",
     "numericCode": "352",
     "currencies": [
@@ -5994,7 +6579,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "ISL"
+    "cioc": "ISL",
+    "_name": "Iceland",
+    "officialName": "Iceland",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "isl": "Icelandic" }
   },
   {
     "name": "India",
@@ -6012,7 +6603,7 @@
     "area": 3287590,
     "gini": 33.4,
     "timezones": ["UTC+05:30"],
-    "borders": ["AFG", "BGD", "BTN", "MMR", "CHN", "NPL", "PAK", "LKA"],
+    "borders": ["BGD", "BTN", "MMR", "CHN", "NPL", "PAK"],
     "nativeName": "भारत",
     "numericCode": "356",
     "currencies": [{ "code": "INR", "name": "Indian rupee", "symbol": "₹" }],
@@ -6051,7 +6642,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "IND"
+    "cioc": "IND",
+    "_name": "India",
+    "officialName": "Republic of India",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "hin": "Hindi", "tam": "Tamil" }
   },
   {
     "name": "Indonesia",
@@ -6104,7 +6701,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "INA"
+    "cioc": "INA",
+    "_name": "Indonesia",
+    "officialName": "Republic of Indonesia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ind": "Indonesian" }
   },
   {
     "name": "Iran (Islamic Republic of)",
@@ -6152,7 +6755,13 @@
     },
     "flag": "https://restcountries.com/data/irn.svg",
     "regionalBlocs": [],
-    "cioc": "IRI"
+    "cioc": "IRI",
+    "_name": "Iran",
+    "officialName": "Islamic Republic of Iran",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fas": "Persian (Farsi)" }
   },
   {
     "name": "Iraq",
@@ -6213,7 +6822,13 @@
         ]
       }
     ],
-    "cioc": "IRQ"
+    "cioc": "IRQ",
+    "_name": "Iraq",
+    "officialName": "Republic of Iraq",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic", "arc": "Aramaic", "ckb": "Sorani" }
   },
   {
     "name": "Ireland",
@@ -6275,7 +6890,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "IRL"
+    "cioc": "IRL",
+    "_name": "Ireland",
+    "officialName": "Republic of Ireland",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "gle": "Irish" }
   },
   {
     "name": "Isle of Man",
@@ -6293,7 +6914,6 @@
     "area": 572,
     "gini": null,
     "timezones": ["UTC+00:00"],
-    "borders": [],
     "nativeName": "Isle of Man",
     "numericCode": "833",
     "currencies": [
@@ -6335,7 +6955,13 @@
         "otherNames": []
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Isle of Man",
+    "officialName": "Isle of Man",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "glv": "Manx" }
   },
   {
     "name": "Israel",
@@ -6353,7 +6979,7 @@
     "area": 20770,
     "gini": 39.2,
     "timezones": ["UTC+02:00"],
-    "borders": ["EGY", "JOR", "LBN", "SYR"],
+    "borders": ["EGY", "JOR", "LBN", "PSE", "SYR"],
     "nativeName": "יִשְׂרָאֵל",
     "numericCode": "376",
     "currencies": [
@@ -6387,7 +7013,13 @@
     },
     "flag": "https://restcountries.com/data/isr.svg",
     "regionalBlocs": [],
-    "cioc": "ISR"
+    "cioc": "ISR",
+    "_name": "Israel",
+    "officialName": "State of Israel",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic", "heb": "Hebrew" }
   },
   {
     "name": "Italy",
@@ -6438,7 +7070,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "ITA"
+    "cioc": "ITA",
+    "_name": "Italy",
+    "officialName": "Italian Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ita": "Italian" }
   },
   {
     "name": "Jamaica",
@@ -6456,7 +7094,6 @@
     "area": 10991,
     "gini": 45.5,
     "timezones": ["UTC-05:00"],
-    "borders": [],
     "nativeName": "Jamaica",
     "numericCode": "388",
     "currencies": [{ "code": "JMD", "name": "Jamaican dollar", "symbol": "$" }],
@@ -6493,7 +7130,13 @@
         ]
       }
     ],
-    "cioc": "JAM"
+    "cioc": "JAM",
+    "_name": "Jamaica",
+    "officialName": "Jamaica",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "jam": "Jamaican Patois" }
   },
   {
     "name": "Japan",
@@ -6511,7 +7154,6 @@
     "area": 377930,
     "gini": 38.1,
     "timezones": ["UTC+09:00"],
-    "borders": [],
     "nativeName": "日本",
     "numericCode": "392",
     "currencies": [{ "code": "JPY", "name": "Japanese yen", "symbol": "¥" }],
@@ -6537,7 +7179,13 @@
     },
     "flag": "https://restcountries.com/data/jpn.svg",
     "regionalBlocs": [],
-    "cioc": "JPN"
+    "cioc": "JPN",
+    "_name": "Japan",
+    "officialName": "Japan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "jpn": "Japanese" }
   },
   {
     "name": "Jersey",
@@ -6560,7 +7208,6 @@
     "area": 116,
     "gini": null,
     "timezones": ["UTC+01:00"],
-    "borders": [],
     "nativeName": "Jersey",
     "numericCode": "832",
     "currencies": [
@@ -6595,7 +7242,13 @@
     },
     "flag": "https://restcountries.com/data/jey.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Jersey",
+    "officialName": "Bailiwick of Jersey",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "fra": "French", "nrf": "Jèrriais" }
   },
   {
     "name": "Jordan",
@@ -6617,7 +7270,7 @@
     "area": 89342,
     "gini": 35.4,
     "timezones": ["UTC+03:00"],
-    "borders": ["IRQ", "ISR", "SAU", "SYR"],
+    "borders": ["IRQ", "ISR", "PSE", "SAU", "SYR"],
     "nativeName": "الأردن",
     "numericCode": "400",
     "currencies": [
@@ -6656,7 +7309,13 @@
         ]
       }
     ],
-    "cioc": "JOR"
+    "cioc": "JOR",
+    "_name": "Jordan",
+    "officialName": "Hashemite Kingdom of Jordan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Kazakhstan",
@@ -6724,7 +7383,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "KAZ"
+    "cioc": "KAZ",
+    "_name": "Kazakhstan",
+    "officialName": "Republic of Kazakhstan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "kaz": "Kazakh", "rus": "Russian" }
   },
   {
     "name": "Kenya",
@@ -6789,7 +7454,13 @@
         ]
       }
     ],
-    "cioc": "KEN"
+    "cioc": "KEN",
+    "_name": "Kenya",
+    "officialName": "Republic of Kenya",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "swa": "Swahili" }
   },
   {
     "name": "Kiribati",
@@ -6807,7 +7478,6 @@
     "area": 811,
     "gini": null,
     "timezones": ["UTC+12:00", "UTC+13:00", "UTC+14:00"],
-    "borders": [],
     "nativeName": "Kiribati",
     "numericCode": "296",
     "currencies": [
@@ -6836,7 +7506,13 @@
     },
     "flag": "https://restcountries.com/data/kir.svg",
     "regionalBlocs": [],
-    "cioc": "KIR"
+    "cioc": "KIR",
+    "_name": "Kiribati",
+    "officialName": "Independent and Sovereign Republic of Kiribati",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "gil": "Gilbertese" }
   },
   {
     "name": "Korea (Democratic People's Republic of)",
@@ -6887,7 +7563,13 @@
     },
     "flag": "https://restcountries.com/data/prk.svg",
     "regionalBlocs": [],
-    "cioc": "PRK"
+    "cioc": "PRK",
+    "_name": "North Korea",
+    "officialName": "Democratic People's Republic of Korea",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "kor": "Korean" }
   },
   {
     "name": "Korea (Republic of)",
@@ -6933,7 +7615,13 @@
     },
     "flag": "https://restcountries.com/data/kor.svg",
     "regionalBlocs": [],
-    "cioc": "KOR"
+    "cioc": "KOR",
+    "_name": "South Korea",
+    "officialName": "Republic of Korea",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "kor": "Korean" }
   },
   {
     "name": "Kuwait",
@@ -6951,7 +7639,7 @@
     "area": 17818,
     "gini": null,
     "timezones": ["UTC+03:00"],
-    "borders": ["IRN", "SAU"],
+    "borders": ["IRQ", "SAU"],
     "nativeName": "الكويت",
     "numericCode": "414",
     "currencies": [{ "code": "KWD", "name": "Kuwaiti dinar", "symbol": "د.ك" }],
@@ -6988,7 +7676,13 @@
         ]
       }
     ],
-    "cioc": "KUW"
+    "cioc": "KUW",
+    "_name": "Kuwait",
+    "officialName": "State of Kuwait",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Kyrgyzstan",
@@ -7051,7 +7745,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "KGZ"
+    "cioc": "KGZ",
+    "_name": "Kyrgyzstan",
+    "officialName": "Kyrgyz Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "kir": "Kyrgyz", "rus": "Russian" }
   },
   {
     "name": "Lao People's Democratic Republic",
@@ -7108,7 +7808,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "LAO"
+    "cioc": "LAO",
+    "_name": "Laos",
+    "officialName": "Lao People's Democratic Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "lao": "Lao" }
   },
   {
     "name": "Latvia",
@@ -7159,7 +7865,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "LAT"
+    "cioc": "LAT",
+    "_name": "Latvia",
+    "officialName": "Republic of Latvia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "lav": "Latvian" }
   },
   {
     "name": "Lebanon",
@@ -7222,7 +7934,13 @@
         ]
       }
     ],
-    "cioc": "LIB"
+    "cioc": "LIB",
+    "_name": "Lebanon",
+    "officialName": "Lebanese Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic", "fra": "French" }
   },
   {
     "name": "Lesotho",
@@ -7288,7 +8006,13 @@
         ]
       }
     ],
-    "cioc": "LES"
+    "cioc": "LES",
+    "_name": "Lesotho",
+    "officialName": "Kingdom of Lesotho",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "eng": "English", "sot": "Sotho" }
   },
   {
     "name": "Liberia",
@@ -7345,7 +8069,13 @@
         ]
       }
     ],
-    "cioc": "LBR"
+    "cioc": "LBR",
+    "_name": "Liberia",
+    "officialName": "Republic of Liberia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Libya",
@@ -7412,7 +8142,13 @@
         ]
       }
     ],
-    "cioc": "LBA"
+    "cioc": "LBA",
+    "_name": "Libya",
+    "officialName": "State of Libya",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Liechtenstein",
@@ -7467,7 +8203,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "LIE"
+    "cioc": "LIE",
+    "_name": "Liechtenstein",
+    "officialName": "Principality of Liechtenstein",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "deu": "German" }
   },
   {
     "name": "Lithuania",
@@ -7518,7 +8260,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "LTU"
+    "cioc": "LTU",
+    "_name": "Lithuania",
+    "officialName": "Republic of Lithuania",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "lit": "Lithuanian" }
   },
   {
     "name": "Luxembourg",
@@ -7587,7 +8335,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "LUX"
+    "cioc": "LUX",
+    "_name": "Luxembourg",
+    "officialName": "Grand Duchy of Luxembourg",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "deu": "German", "fra": "French", "ltz": "Luxembourgish" }
   },
   {
     "name": "Macao",
@@ -7643,7 +8397,13 @@
     },
     "flag": "https://restcountries.com/data/mac.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Macau",
+    "officialName": "Macao Special Administrative Region of the People's Republic of China",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "por": "Portuguese", "zho": "Chinese" }
   },
   {
     "name": "Macedonia (the former Yugoslav Republic of)",
@@ -7696,7 +8456,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "MKD"
+    "cioc": "MKD",
+    "_name": "North Macedonia",
+    "officialName": "Republic of North Macedonia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "mkd": "Macedonian" }
   },
   {
     "name": "Madagascar",
@@ -7719,7 +8485,6 @@
     "area": 587041,
     "gini": 44.1,
     "timezones": ["UTC+03:00"],
-    "borders": [],
     "nativeName": "Madagasikara",
     "numericCode": "450",
     "currencies": [
@@ -7766,7 +8531,13 @@
         ]
       }
     ],
-    "cioc": "MAD"
+    "cioc": "MAD",
+    "_name": "Madagascar",
+    "officialName": "Republic of Madagascar",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French", "mlg": "Malagasy" }
   },
   {
     "name": "Malawi",
@@ -7831,7 +8602,13 @@
         ]
       }
     ],
-    "cioc": "MAW"
+    "cioc": "MAW",
+    "_name": "Malawi",
+    "officialName": "Republic of Malawi",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "eng": "English", "nya": "Chewa" }
   },
   {
     "name": "Malaysia",
@@ -7884,7 +8661,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "MAS"
+    "cioc": "MAS",
+    "_name": "Malaysia",
+    "officialName": "Malaysia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "msa": "Malay" }
   },
   {
     "name": "Maldives",
@@ -7907,7 +8690,6 @@
     "area": 300,
     "gini": 37.4,
     "timezones": ["UTC+05:00"],
-    "borders": [],
     "nativeName": "Maldives",
     "numericCode": "462",
     "currencies": [
@@ -7942,7 +8724,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "MDV"
+    "cioc": "MDV",
+    "_name": "Maldives",
+    "officialName": "Republic of the Maldives",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "div": "Maldivian" }
   },
   {
     "name": "Mali",
@@ -8001,7 +8789,13 @@
         ]
       }
     ],
-    "cioc": "MLI"
+    "cioc": "MLI",
+    "_name": "Mali",
+    "officialName": "Republic of Mali",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Malta",
@@ -8019,7 +8813,6 @@
     "area": 316,
     "gini": null,
     "timezones": ["UTC+01:00"],
-    "borders": [],
     "nativeName": "Malta",
     "numericCode": "470",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -8058,7 +8851,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "MLT"
+    "cioc": "MLT",
+    "_name": "Malta",
+    "officialName": "Republic of Malta",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "mlt": "Maltese" }
   },
   {
     "name": "Marshall Islands",
@@ -8080,7 +8879,6 @@
     "area": 181,
     "gini": null,
     "timezones": ["UTC+12:00"],
-    "borders": [],
     "nativeName": "M̧ajeļ",
     "numericCode": "584",
     "currencies": [
@@ -8114,7 +8912,13 @@
     },
     "flag": "https://restcountries.com/data/mhl.svg",
     "regionalBlocs": [],
-    "cioc": "MHL"
+    "cioc": "MHL",
+    "_name": "Marshall Islands",
+    "officialName": "Republic of the Marshall Islands",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "mah": "Marshallese" }
   },
   {
     "name": "Martinique",
@@ -8129,10 +8933,9 @@
     "population": 378243,
     "latlng": [14.666667, -61],
     "demonym": "French",
-    "area": null,
+    "area": 1128,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Martinique",
     "numericCode": "474",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -8158,7 +8961,13 @@
     },
     "flag": "https://restcountries.com/data/mtq.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Martinique",
+    "officialName": "Martinique",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Mauritania",
@@ -8231,7 +9040,13 @@
         ]
       }
     ],
-    "cioc": "MTN"
+    "cioc": "MTN",
+    "_name": "Mauritania",
+    "officialName": "Islamic Republic of Mauritania",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Mauritius",
@@ -8249,7 +9064,6 @@
     "area": 2040,
     "gini": null,
     "timezones": ["UTC+04:00"],
-    "borders": [],
     "nativeName": "Maurice",
     "numericCode": "480",
     "currencies": [{ "code": "MUR", "name": "Mauritian rupee", "symbol": "₨" }],
@@ -8288,7 +9102,17 @@
         ]
       }
     ],
-    "cioc": "MRI"
+    "cioc": "MRI",
+    "_name": "Mauritius",
+    "officialName": "Republic of Mauritius",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": {
+      "eng": "English",
+      "fra": "French",
+      "mfe": "Mauritian Creole"
+    }
   },
   {
     "name": "Mayotte",
@@ -8303,10 +9127,9 @@
     "population": 226915,
     "latlng": [-12.83333333, 45.16666666],
     "demonym": "French",
-    "area": null,
+    "area": 374,
     "gini": null,
     "timezones": ["UTC+03:00"],
-    "borders": [],
     "nativeName": "Mayotte",
     "numericCode": "175",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -8345,7 +9168,13 @@
         ]
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Mayotte",
+    "officialName": "Department of Mayotte",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Mexico",
@@ -8410,7 +9239,13 @@
         ]
       }
     ],
-    "cioc": "MEX"
+    "cioc": "MEX",
+    "_name": "Mexico",
+    "officialName": "United Mexican States",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Micronesia (Federated States of)",
@@ -8428,7 +9263,6 @@
     "area": 702,
     "gini": null,
     "timezones": ["UTC+10:00", "UTC+11"],
-    "borders": [],
     "nativeName": "Micronesia",
     "numericCode": "583",
     "currencies": [
@@ -8457,7 +9291,13 @@
     },
     "flag": "https://restcountries.com/data/fsm.svg",
     "regionalBlocs": [],
-    "cioc": "FSM"
+    "cioc": "FSM",
+    "_name": "Micronesia",
+    "officialName": "Federated States of Micronesia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Moldova (Republic of)",
@@ -8508,7 +9348,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "MDA"
+    "cioc": "MDA",
+    "_name": "Moldova",
+    "officialName": "Republic of Moldova",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "ron": "Moldavian" }
   },
   {
     "name": "Monaco",
@@ -8552,7 +9398,13 @@
     },
     "flag": "https://restcountries.com/data/mco.svg",
     "regionalBlocs": [],
-    "cioc": "MON"
+    "cioc": "MON",
+    "_name": "Monaco",
+    "officialName": "Principality of Monaco",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Mongolia",
@@ -8598,7 +9450,13 @@
     },
     "flag": "https://restcountries.com/data/mng.svg",
     "regionalBlocs": [],
-    "cioc": "MGL"
+    "cioc": "MGL",
+    "_name": "Mongolia",
+    "officialName": "Mongolia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "mon": "Mongolian" }
   },
   {
     "name": "Montenegro",
@@ -8667,7 +9525,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "MNE"
+    "cioc": "MNE",
+    "_name": "Montenegro",
+    "officialName": "Montenegro",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "cnr": "Montenegrin" }
   },
   {
     "name": "Montserrat",
@@ -8685,7 +9549,6 @@
     "area": 102,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Montserrat",
     "numericCode": "500",
     "currencies": [
@@ -8724,7 +9587,13 @@
         ]
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Montserrat",
+    "officialName": "Montserrat",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Morocco",
@@ -8793,7 +9662,13 @@
         ]
       }
     ],
-    "cioc": "MAR"
+    "cioc": "MAR",
+    "_name": "Morocco",
+    "officialName": "Kingdom of Morocco",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic", "ber": "Berber" }
   },
   {
     "name": "Mozambique",
@@ -8852,7 +9727,13 @@
         ]
       }
     ],
-    "cioc": "MOZ"
+    "cioc": "MOZ",
+    "_name": "Mozambique",
+    "officialName": "Republic of Mozambique",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "por": "Portuguese" }
   },
   {
     "name": "Myanmar",
@@ -8908,7 +9789,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "MYA"
+    "cioc": "MYA",
+    "_name": "Myanmar",
+    "officialName": "Republic of the Union of Myanmar",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "mya": "Burmese" }
   },
   {
     "name": "Namibia",
@@ -8974,7 +9861,23 @@
         ]
       }
     ],
-    "cioc": "NAM"
+    "cioc": "NAM",
+    "_name": "Namibia",
+    "officialName": "Republic of Namibia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": {
+      "afr": "Afrikaans",
+      "deu": "German",
+      "eng": "English",
+      "her": "Herero",
+      "hgm": "Khoekhoe",
+      "kwn": "Kwangali",
+      "loz": "Lozi",
+      "ndo": "Ndonga",
+      "tsn": "Tswana"
+    }
   },
   {
     "name": "Nauru",
@@ -8998,7 +9901,6 @@
     "area": 21,
     "gini": null,
     "timezones": ["UTC+12:00"],
-    "borders": [],
     "nativeName": "Nauru",
     "numericCode": "520",
     "currencies": [
@@ -9033,7 +9935,13 @@
     },
     "flag": "https://restcountries.com/data/nru.svg",
     "regionalBlocs": [],
-    "cioc": "NRU"
+    "cioc": "NRU",
+    "_name": "Nauru",
+    "officialName": "Republic of Nauru",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "nau": "Nauru" }
   },
   {
     "name": "Nepal",
@@ -9088,7 +9996,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "NEP"
+    "cioc": "NEP",
+    "_name": "Nepal",
+    "officialName": "Federal Democratic Republic of Nepal",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "nep": "Nepali" }
   },
   {
     "name": "Netherlands",
@@ -9139,7 +10053,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "NED"
+    "cioc": "NED",
+    "_name": "Netherlands",
+    "officialName": "Kingdom of the Netherlands",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "nld": "Dutch" }
   },
   {
     "name": "New Caledonia",
@@ -9157,7 +10077,6 @@
     "area": 18575,
     "gini": null,
     "timezones": ["UTC+11:00"],
-    "borders": [],
     "nativeName": "Nouvelle-Calédonie",
     "numericCode": "540",
     "currencies": [{ "code": "XPF", "name": "CFP franc", "symbol": "Fr" }],
@@ -9183,7 +10102,13 @@
     },
     "flag": "https://restcountries.com/data/ncl.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "New Caledonia",
+    "officialName": "New Caledonia",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "New Zealand",
@@ -9207,7 +10132,6 @@
       "UTC+12:45",
       "UTC+13:00"
     ],
-    "borders": [],
     "nativeName": "New Zealand",
     "numericCode": "554",
     "currencies": [
@@ -9241,7 +10165,17 @@
     },
     "flag": "https://restcountries.com/data/nzl.svg",
     "regionalBlocs": [],
-    "cioc": "NZL"
+    "cioc": "NZL",
+    "_name": "New Zealand",
+    "officialName": "New Zealand",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": {
+      "eng": "English",
+      "mri": "Māori",
+      "nzs": "New Zealand Sign Language"
+    }
   },
   {
     "name": "Nicaragua",
@@ -9294,7 +10228,13 @@
         "otherNames": ["Sistema de la Integración Centroamericana,"]
       }
     ],
-    "cioc": "NCA"
+    "cioc": "NCA",
+    "_name": "Nicaragua",
+    "officialName": "Republic of Nicaragua",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Niger",
@@ -9353,7 +10293,13 @@
         ]
       }
     ],
-    "cioc": "NIG"
+    "cioc": "NIG",
+    "_name": "Niger",
+    "officialName": "Republic of Niger",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Nigeria",
@@ -9415,7 +10361,13 @@
         ]
       }
     ],
-    "cioc": "NGR"
+    "cioc": "NGR",
+    "_name": "Nigeria",
+    "officialName": "Federal Republic of Nigeria",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Niue",
@@ -9433,7 +10385,6 @@
     "area": 260,
     "gini": null,
     "timezones": ["UTC-11:00"],
-    "borders": [],
     "nativeName": "Niuē",
     "numericCode": "570",
     "currencies": [
@@ -9462,7 +10413,13 @@
     },
     "flag": "https://restcountries.com/data/niu.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Niue",
+    "officialName": "Niue",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "niu": "Niuean" }
   },
   {
     "name": "Norfolk Island",
@@ -9484,7 +10441,6 @@
     "area": 36,
     "gini": null,
     "timezones": ["UTC+11:30"],
-    "borders": [],
     "nativeName": "Norfolk Island",
     "numericCode": "574",
     "currencies": [
@@ -9512,7 +10468,13 @@
     },
     "flag": "https://restcountries.com/data/nfk.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Norfolk Island",
+    "officialName": "Territory of Norfolk Island",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "pih": "Norfuk" }
   },
   {
     "name": "Northern Mariana Islands",
@@ -9534,7 +10496,6 @@
     "area": 464,
     "gini": null,
     "timezones": ["UTC+10:00"],
-    "borders": [],
     "nativeName": "Northern Mariana Islands",
     "numericCode": "580",
     "currencies": [
@@ -9568,7 +10529,13 @@
     },
     "flag": "https://restcountries.com/data/mnp.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Northern Mariana Islands",
+    "officialName": "Commonwealth of the Northern Mariana Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "cal": "Carolinian", "cha": "Chamorro", "eng": "English" }
   },
   {
     "name": "Norway",
@@ -9640,7 +10607,17 @@
         "otherNames": []
       }
     ],
-    "cioc": "NOR"
+    "cioc": "NOR",
+    "_name": "Norway",
+    "officialName": "Kingdom of Norway",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": {
+      "nno": "Norwegian Nynorsk",
+      "nob": "Norwegian Bokmål",
+      "smi": "Sami"
+    }
   },
   {
     "name": "Oman",
@@ -9695,7 +10672,13 @@
         ]
       }
     ],
-    "cioc": "OMA"
+    "cioc": "OMA",
+    "_name": "Oman",
+    "officialName": "Sultanate of Oman",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Pakistan",
@@ -9757,7 +10740,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "PAK"
+    "cioc": "PAK",
+    "_name": "Pakistan",
+    "officialName": "Islamic Republic of Pakistan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "urd": "Urdu" }
   },
   {
     "name": "Palau",
@@ -9775,7 +10764,6 @@
     "area": 459,
     "gini": null,
     "timezones": ["UTC+09:00"],
-    "borders": [],
     "nativeName": "Palau",
     "numericCode": "585",
     "currencies": [
@@ -9804,7 +10792,13 @@
     },
     "flag": "https://restcountries.com/data/plw.svg",
     "regionalBlocs": [],
-    "cioc": "PLW"
+    "cioc": "PLW",
+    "_name": "Palau",
+    "officialName": "Republic of Palau",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "pau": "Palauan" }
   },
   {
     "name": "Palestine, State of",
@@ -9819,7 +10813,7 @@
     "population": 4682467,
     "latlng": [31.9, 35.2],
     "demonym": "Palestinian",
-    "area": null,
+    "area": 6220,
     "gini": 35.5,
     "timezones": ["UTC+02:00"],
     "borders": ["ISR", "EGY", "JOR"],
@@ -9861,7 +10855,13 @@
         ]
       }
     ],
-    "cioc": "PLE"
+    "cioc": "PLE",
+    "_name": "Palestine",
+    "officialName": "State of Palestine",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Panama",
@@ -9915,7 +10915,13 @@
         "otherNames": ["Sistema de la Integración Centroamericana,"]
       }
     ],
-    "cioc": "PAN"
+    "cioc": "PAN",
+    "_name": "Panama",
+    "officialName": "Republic of Panama",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Papua New Guinea",
@@ -9965,7 +10971,13 @@
     },
     "flag": "https://restcountries.com/data/png.svg",
     "regionalBlocs": [],
-    "cioc": "PNG"
+    "cioc": "PNG",
+    "_name": "Papua New Guinea",
+    "officialName": "Independent State of Papua New Guinea",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "hmo": "Hiri Motu", "tpi": "Tok Pisin" }
   },
   {
     "name": "Paraguay",
@@ -10034,7 +11046,13 @@
         ]
       }
     ],
-    "cioc": "PAR"
+    "cioc": "PAR",
+    "_name": "Paraguay",
+    "officialName": "Republic of Paraguay",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "grn": "Guaraní", "spa": "Spanish" }
   },
   {
     "name": "Peru",
@@ -10096,7 +11114,13 @@
         ]
       }
     ],
-    "cioc": "PER"
+    "cioc": "PER",
+    "_name": "Peru",
+    "officialName": "Republic of Peru",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "aym": "Aymara", "que": "Quechua", "spa": "Spanish" }
   },
   {
     "name": "Philippines",
@@ -10118,7 +11142,6 @@
     "area": 342353,
     "gini": 43,
     "timezones": ["UTC+08:00"],
-    "borders": [],
     "nativeName": "Pilipinas",
     "numericCode": "608",
     "currencies": [{ "code": "PHP", "name": "Philippine peso", "symbol": "₱" }],
@@ -10151,7 +11174,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "PHI"
+    "cioc": "PHI",
+    "_name": "Philippines",
+    "officialName": "Republic of the Philippines",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "fil": "Filipino" }
   },
   {
     "name": "Pitcairn",
@@ -10169,7 +11198,6 @@
     "area": 47,
     "gini": null,
     "timezones": ["UTC-08:00"],
-    "borders": [],
     "nativeName": "Pitcairn Islands",
     "numericCode": "612",
     "currencies": [
@@ -10198,7 +11226,13 @@
     },
     "flag": "https://restcountries.com/data/pcn.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Pitcairn Islands",
+    "officialName": "Pitcairn Group of Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Poland",
@@ -10249,7 +11283,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "POL"
+    "cioc": "POL",
+    "_name": "Poland",
+    "officialName": "Republic of Poland",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "pol": "Polish" }
   },
   {
     "name": "Portugal",
@@ -10305,7 +11345,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "POR"
+    "cioc": "POR",
+    "_name": "Portugal",
+    "officialName": "Portuguese Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "por": "Portuguese" }
   },
   {
     "name": "Puerto Rico",
@@ -10327,7 +11373,6 @@
     "area": 8870,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Puerto Rico",
     "numericCode": "630",
     "currencies": [
@@ -10361,7 +11406,13 @@
     },
     "flag": "https://restcountries.com/data/pri.svg",
     "regionalBlocs": [],
-    "cioc": "PUR"
+    "cioc": "PUR",
+    "_name": "Puerto Rico",
+    "officialName": "Commonwealth of Puerto Rico",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "spa": "Spanish" }
   },
   {
     "name": "Qatar",
@@ -10416,7 +11467,13 @@
         ]
       }
     ],
-    "cioc": "QAT"
+    "cioc": "QAT",
+    "_name": "Qatar",
+    "officialName": "State of Qatar",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Republic of Kosovo",
@@ -10473,7 +11530,12 @@
         "otherNames": []
       }
     ],
-    "cioc": null
+    "cioc": null,
+    "_name": "Kosovo",
+    "officialName": "Republic of Kosovo",
+    "unMember": false,
+    "landlocked": true,
+    "_languages": { "sqi": "Albanian", "srp": "Serbian" }
   },
   {
     "name": "Réunion",
@@ -10488,10 +11550,9 @@
     "population": 840974,
     "latlng": [-21.15, 55.5],
     "demonym": "French",
-    "area": null,
+    "area": 2511,
     "gini": null,
     "timezones": ["UTC+04:00"],
-    "borders": [],
     "nativeName": "La Réunion",
     "numericCode": "638",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -10530,7 +11591,13 @@
         ]
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Réunion",
+    "officialName": "Réunion Island",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Romania",
@@ -10581,7 +11648,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "ROU"
+    "cioc": "ROU",
+    "_name": "Romania",
+    "officialName": "Romania",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ron": "Romanian" }
   },
   {
     "name": "Russian Federation",
@@ -10602,7 +11675,7 @@
     "population": 145934462,
     "latlng": [60, 100],
     "demonym": "Russian",
-    "area": 17124442,
+    "area": 17098242,
     "gini": 40.1,
     "timezones": [
       "UTC+03:00",
@@ -10663,7 +11736,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "RUS"
+    "cioc": "RUS",
+    "_name": "Russia",
+    "officialName": "Russian Federation",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "rus": "Russian" }
   },
   {
     "name": "Rwanda",
@@ -10737,7 +11816,13 @@
         ]
       }
     ],
-    "cioc": "RWA"
+    "cioc": "RWA",
+    "_name": "Rwanda",
+    "officialName": "Republic of Rwanda",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "eng": "English", "fra": "French", "kin": "Kinyarwanda" }
   },
   {
     "name": "Saint Barthélemy",
@@ -10760,7 +11845,6 @@
     "area": 21,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Saint-Barthélemy",
     "numericCode": "652",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -10786,7 +11870,13 @@
     },
     "flag": "https://restcountries.com/data/blm.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Saint Barthélemy",
+    "officialName": "Collectivity of Saint Barthélemy",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Saint Helena, Ascension and Tristan da Cunha",
@@ -10801,10 +11891,9 @@
     "population": 4255,
     "latlng": [-15.95, -5.7],
     "demonym": "Saint Helenian",
-    "area": null,
+    "area": 394,
     "gini": null,
     "timezones": ["UTC+00:00"],
-    "borders": [],
     "nativeName": "Saint Helena",
     "numericCode": "654",
     "currencies": [
@@ -10845,7 +11934,13 @@
         ]
       }
     ],
-    "cioc": null
+    "cioc": null,
+    "_name": "Saint Helena, Ascension and Tristan da Cunha",
+    "officialName": "Saint Helena, Ascension and Tristan da Cunha",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Saint Kitts and Nevis",
@@ -10863,7 +11958,6 @@
     "area": 261,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Saint Kitts and Nevis",
     "numericCode": "659",
     "currencies": [
@@ -10902,7 +11996,13 @@
         ]
       }
     ],
-    "cioc": "SKN"
+    "cioc": "SKN",
+    "_name": "Saint Kitts and Nevis",
+    "officialName": "Federation of Saint Christopher and Nevis",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Saint Lucia",
@@ -10920,7 +12020,6 @@
     "area": 616,
     "gini": 42.6,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Saint Lucia",
     "numericCode": "662",
     "currencies": [
@@ -10959,7 +12058,13 @@
         ]
       }
     ],
-    "cioc": "LCA"
+    "cioc": "LCA",
+    "_name": "Saint Lucia",
+    "officialName": "Saint Lucia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Saint Martin (French part)",
@@ -10981,7 +12086,7 @@
     "area": 53,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": ["SXM", "NLD"],
+    "borders": ["SXM"],
     "nativeName": "Saint-Martin",
     "numericCode": "663",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -11019,7 +12124,13 @@
     },
     "flag": "https://restcountries.com/data/maf.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Saint Martin",
+    "officialName": "Saint Martin",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Saint Pierre and Miquelon",
@@ -11040,7 +12151,6 @@
     "area": 242,
     "gini": null,
     "timezones": ["UTC-03:00"],
-    "borders": [],
     "nativeName": "Saint-Pierre-et-Miquelon",
     "numericCode": "666",
     "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
@@ -11066,7 +12176,13 @@
     },
     "flag": "https://restcountries.com/data/spm.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Saint Pierre and Miquelon",
+    "officialName": "Saint Pierre and Miquelon",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Saint Vincent and the Grenadines",
@@ -11084,7 +12200,6 @@
     "area": 389,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Saint Vincent and the Grenadines",
     "numericCode": "670",
     "currencies": [
@@ -11123,7 +12238,13 @@
         ]
       }
     ],
-    "cioc": "VIN"
+    "cioc": "VIN",
+    "_name": "Saint Vincent and the Grenadines",
+    "officialName": "Saint Vincent and the Grenadines",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Samoa",
@@ -11145,7 +12266,6 @@
     "area": 2842,
     "gini": null,
     "timezones": ["UTC+13:00"],
-    "borders": [],
     "nativeName": "Samoa",
     "numericCode": "882",
     "currencies": [{ "code": "WST", "name": "Samoan tālā", "symbol": "T" }],
@@ -11177,7 +12297,13 @@
     },
     "flag": "https://restcountries.com/data/wsm.svg",
     "regionalBlocs": [],
-    "cioc": "SAM"
+    "cioc": "SAM",
+    "_name": "Samoa",
+    "officialName": "Independent State of Samoa",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "smo": "Samoan" }
   },
   {
     "name": "San Marino",
@@ -11225,7 +12351,13 @@
     },
     "flag": "https://restcountries.com/data/smr.svg",
     "regionalBlocs": [],
-    "cioc": "SMR"
+    "cioc": "SMR",
+    "_name": "San Marino",
+    "officialName": "Most Serene Republic of San Marino",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "ita": "Italian" }
   },
   {
     "name": "Sao Tome and Principe",
@@ -11247,7 +12379,6 @@
     "area": 964,
     "gini": 50.8,
     "timezones": ["UTC"],
-    "borders": [],
     "nativeName": "São Tomé e Príncipe",
     "numericCode": "678",
     "currencies": [
@@ -11288,7 +12419,13 @@
         ]
       }
     ],
-    "cioc": "STP"
+    "cioc": "STP",
+    "_name": "São Tomé and Príncipe",
+    "officialName": "Democratic Republic of São Tomé and Príncipe",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "por": "Portuguese" }
   },
   {
     "name": "Saudi Arabia",
@@ -11347,7 +12484,13 @@
         ]
       }
     ],
-    "cioc": "KSA"
+    "cioc": "KSA",
+    "_name": "Saudi Arabia",
+    "officialName": "Kingdom of Saudi Arabia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Senegal",
@@ -11406,7 +12549,13 @@
         ]
       }
     ],
-    "cioc": "SEN"
+    "cioc": "SEN",
+    "_name": "Senegal",
+    "officialName": "Republic of Senegal",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Serbia",
@@ -11465,7 +12614,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "SRB"
+    "cioc": "SRB",
+    "_name": "Serbia",
+    "officialName": "Republic of Serbia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "srp": "Serbian" }
   },
   {
     "name": "Seychelles",
@@ -11488,7 +12643,6 @@
     "area": 452,
     "gini": 65.8,
     "timezones": ["UTC+04:00"],
-    "borders": [],
     "nativeName": "Seychelles",
     "numericCode": "690",
     "currencies": [
@@ -11535,7 +12689,17 @@
         ]
       }
     ],
-    "cioc": "SEY"
+    "cioc": "SEY",
+    "_name": "Seychelles",
+    "officialName": "Republic of Seychelles",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": {
+      "crs": "Seychellois Creole",
+      "eng": "English",
+      "fra": "French"
+    }
   },
   {
     "name": "Sierra Leone",
@@ -11594,7 +12758,13 @@
         ]
       }
     ],
-    "cioc": "SLE"
+    "cioc": "SLE",
+    "_name": "Sierra Leone",
+    "officialName": "Republic of Sierra Leone",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Singapore",
@@ -11612,7 +12782,6 @@
     "area": 710,
     "gini": 48.1,
     "timezones": ["UTC+08:00"],
-    "borders": [],
     "nativeName": "Singapore",
     "numericCode": "702",
     "currencies": [
@@ -11666,7 +12835,18 @@
         "otherNames": []
       }
     ],
-    "cioc": "SIN"
+    "cioc": "SIN",
+    "_name": "Singapore",
+    "officialName": "Republic of Singapore",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": {
+      "zho": "Chinese",
+      "eng": "English",
+      "msa": "Malay",
+      "tam": "Tamil"
+    }
   },
   {
     "name": "Sint Maarten (Dutch part)",
@@ -11718,7 +12898,13 @@
     },
     "flag": "https://restcountries.com/data/sxm.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Sint Maarten",
+    "officialName": "Sint Maarten",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "fra": "French", "nld": "Dutch" }
   },
   {
     "name": "Slovakia",
@@ -11769,7 +12955,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "SVK"
+    "cioc": "SVK",
+    "_name": "Slovakia",
+    "officialName": "Slovak Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "slk": "Slovak" }
   },
   {
     "name": "Slovenia",
@@ -11820,7 +13012,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "SLO"
+    "cioc": "SLO",
+    "_name": "Slovenia",
+    "officialName": "Republic of Slovenia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "slv": "Slovene" }
   },
   {
     "name": "Solomon Islands",
@@ -11838,7 +13036,6 @@
     "area": 28896,
     "gini": null,
     "timezones": ["UTC+11:00"],
-    "borders": [],
     "nativeName": "Solomon Islands",
     "numericCode": "090",
     "currencies": [
@@ -11866,7 +13063,13 @@
     },
     "flag": "https://restcountries.com/data/slb.svg",
     "regionalBlocs": [],
-    "cioc": "SOL"
+    "cioc": "SOL",
+    "_name": "Solomon Islands",
+    "officialName": "Solomon Islands",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Somalia",
@@ -11947,7 +13150,13 @@
         ]
       }
     ],
-    "cioc": "SOM"
+    "cioc": "SOM",
+    "_name": "Somalia",
+    "officialName": "Federal Republic of Somalia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic", "som": "Somali" }
   },
   {
     "name": "South Africa",
@@ -12060,7 +13269,25 @@
         ]
       }
     ],
-    "cioc": "RSA"
+    "cioc": "RSA",
+    "_name": "South Africa",
+    "officialName": "Republic of South Africa",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": {
+      "afr": "Afrikaans",
+      "eng": "English",
+      "nbl": "Southern Ndebele",
+      "nso": "Northern Sotho",
+      "sot": "Southern Sotho",
+      "ssw": "Swazi",
+      "tsn": "Tswana",
+      "tso": "Tsonga",
+      "ven": "Venda",
+      "xho": "Xhosa",
+      "zul": "Zulu"
+    }
   },
   {
     "name": "South Georgia and the South Sandwich Islands",
@@ -12075,10 +13302,9 @@
     "population": 30,
     "latlng": [-54.5, -37],
     "demonym": "South Georgia and the South Sandwich Islander",
-    "area": null,
+    "area": 3903,
     "gini": null,
     "timezones": ["UTC-02:00"],
-    "borders": [],
     "nativeName": "South Georgia",
     "numericCode": "239",
     "currencies": [
@@ -12119,7 +13345,13 @@
         ]
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "South Georgia",
+    "officialName": "South Georgia and the South Sandwich Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "South Sudan",
@@ -12178,7 +13410,13 @@
         ]
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "South Sudan",
+    "officialName": "Republic of South Sudan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Spain",
@@ -12229,7 +13467,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "ESP"
+    "cioc": "ESP",
+    "_name": "Spain",
+    "officialName": "Kingdom of Spain",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Sri Lanka",
@@ -12292,7 +13536,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "SRI"
+    "cioc": "SRI",
+    "_name": "Sri Lanka",
+    "officialName": "Democratic Socialist Republic of Sri Lanka",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "sin": "Sinhala", "tam": "Tamil" }
   },
   {
     "name": "Sudan",
@@ -12367,7 +13617,13 @@
         ]
       }
     ],
-    "cioc": "SUD"
+    "cioc": "SUD",
+    "_name": "Sudan",
+    "officialName": "Republic of the Sudan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic", "eng": "English" }
   },
   {
     "name": "Suriname",
@@ -12391,7 +13647,7 @@
     "area": 163820,
     "gini": 52.9,
     "timezones": ["UTC-03:00"],
-    "borders": ["BRA", "GUF", "FRA", "GUY"],
+    "borders": ["BRA", "GUF", "GUY"],
     "nativeName": "Suriname",
     "numericCode": "740",
     "currencies": [
@@ -12441,7 +13697,13 @@
         ]
       }
     ],
-    "cioc": "SUR"
+    "cioc": "SUR",
+    "_name": "Suriname",
+    "officialName": "Republic of Suriname",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "nld": "Dutch" }
   },
   {
     "name": "Svalbard and Jan Mayen",
@@ -12456,10 +13718,9 @@
     "population": 2562,
     "latlng": [78, 20],
     "demonym": "Norwegian",
-    "area": null,
+    "area": -1,
     "gini": null,
     "timezones": ["UTC+01:00"],
-    "borders": [],
     "nativeName": "Svalbard og Jan Mayen",
     "numericCode": "744",
     "currencies": [
@@ -12487,7 +13748,13 @@
     },
     "flag": "https://restcountries.com/data/sjm.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Svalbard and Jan Mayen",
+    "officialName": "Svalbard og Jan Mayen",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "nor": "Norwegian" }
   },
   {
     "name": "Swaziland",
@@ -12557,7 +13824,13 @@
         ]
       }
     ],
-    "cioc": "SWZ"
+    "cioc": "SWZ",
+    "_name": "Eswatini",
+    "officialName": "Kingdom of Eswatini",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "eng": "English", "ssw": "Swazi" }
   },
   {
     "name": "Sweden",
@@ -12608,7 +13881,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "SWE"
+    "cioc": "SWE",
+    "_name": "Sweden",
+    "officialName": "Kingdom of Sweden",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "swe": "Swedish" }
   },
   {
     "name": "Switzerland",
@@ -12678,7 +13957,18 @@
         "otherNames": []
       }
     ],
-    "cioc": "SUI"
+    "cioc": "SUI",
+    "_name": "Switzerland",
+    "officialName": "Swiss Confederation",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": {
+      "fra": "French",
+      "gsw": "Swiss German",
+      "ita": "Italian",
+      "roh": "Romansh"
+    }
   },
   {
     "name": "Syrian Arab Republic",
@@ -12737,7 +14027,13 @@
         ]
       }
     ],
-    "cioc": "SYR"
+    "cioc": "SYR",
+    "_name": "Syria",
+    "officialName": "Syrian Arab Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Taiwan",
@@ -12761,7 +14057,6 @@
     "area": 36193,
     "gini": null,
     "timezones": ["UTC+08:00"],
-    "borders": [],
     "nativeName": "臺灣",
     "numericCode": "158",
     "currencies": [
@@ -12789,7 +14084,13 @@
     },
     "flag": "https://restcountries.com/data/twn.svg",
     "regionalBlocs": [],
-    "cioc": "TPE"
+    "cioc": "TPE",
+    "_name": "Taiwan",
+    "officialName": "Republic of China (Taiwan)",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "zho": "Chinese" }
   },
   {
     "name": "Tajikistan",
@@ -12847,7 +14148,13 @@
     },
     "flag": "https://restcountries.com/data/tjk.svg",
     "regionalBlocs": [],
-    "cioc": "TJK"
+    "cioc": "TJK",
+    "_name": "Tajikistan",
+    "officialName": "Republic of Tajikistan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "rus": "Russian", "tgk": "Tajik" }
   },
   {
     "name": "Tanzania, United Republic of",
@@ -12916,7 +14223,13 @@
         ]
       }
     ],
-    "cioc": "TAN"
+    "cioc": "TAN",
+    "_name": "Tanzania",
+    "officialName": "United Republic of Tanzania",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "swa": "Swahili" }
   },
   {
     "name": "Thailand",
@@ -12974,7 +14287,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "THA"
+    "cioc": "THA",
+    "_name": "Thailand",
+    "officialName": "Kingdom of Thailand",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "tha": "Thai" }
   },
   {
     "name": "Timor-Leste",
@@ -13027,7 +14346,13 @@
     },
     "flag": "https://restcountries.com/data/tls.svg",
     "regionalBlocs": [],
-    "cioc": "TLS"
+    "cioc": "TLS",
+    "_name": "Timor-Leste",
+    "officialName": "Democratic Republic of Timor-Leste",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "por": "Portuguese", "tet": "Tetum" }
   },
   {
     "name": "Togo",
@@ -13091,7 +14416,13 @@
         ]
       }
     ],
-    "cioc": "TOG"
+    "cioc": "TOG",
+    "_name": "Togo",
+    "officialName": "Togolese Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Tokelau",
@@ -13109,7 +14440,6 @@
     "area": 12,
     "gini": null,
     "timezones": ["UTC+13:00"],
-    "borders": [],
     "nativeName": "Tokelau",
     "numericCode": "772",
     "currencies": [
@@ -13137,7 +14467,13 @@
     },
     "flag": "https://restcountries.com/data/tkl.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Tokelau",
+    "officialName": "Tokelau",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English", "smo": "Samoan", "tkl": "Tokelauan" }
   },
   {
     "name": "Tonga",
@@ -13155,7 +14491,6 @@
     "area": 747,
     "gini": null,
     "timezones": ["UTC+13:00"],
-    "borders": [],
     "nativeName": "Tonga",
     "numericCode": "776",
     "currencies": [{ "code": "TOP", "name": "Tongan paʻanga", "symbol": "T$" }],
@@ -13187,7 +14522,13 @@
     },
     "flag": "https://restcountries.com/data/ton.svg",
     "regionalBlocs": [],
-    "cioc": "TGA"
+    "cioc": "TGA",
+    "_name": "Tonga",
+    "officialName": "Kingdom of Tonga",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "ton": "Tongan" }
   },
   {
     "name": "Trinidad and Tobago",
@@ -13205,7 +14546,6 @@
     "area": 5130,
     "gini": 40.3,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Trinidad and Tobago",
     "numericCode": "780",
     "currencies": [
@@ -13244,7 +14584,13 @@
         ]
       }
     ],
-    "cioc": "TTO"
+    "cioc": "TTO",
+    "_name": "Trinidad and Tobago",
+    "officialName": "Republic of Trinidad and Tobago",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Tunisia",
@@ -13317,7 +14663,13 @@
         ]
       }
     ],
-    "cioc": "TUN"
+    "cioc": "TUN",
+    "_name": "Tunisia",
+    "officialName": "Tunisian Republic",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Turkey",
@@ -13366,7 +14718,13 @@
     },
     "flag": "https://restcountries.com/data/tur.svg",
     "regionalBlocs": [],
-    "cioc": "TUR"
+    "cioc": "TUR",
+    "_name": "Turkey",
+    "officialName": "Republic of Turkey",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "tur": "Turkish" }
   },
   {
     "name": "Turkmenistan",
@@ -13418,7 +14776,13 @@
     },
     "flag": "https://restcountries.com/data/tkm.svg",
     "regionalBlocs": [],
-    "cioc": "TKM"
+    "cioc": "TKM",
+    "_name": "Turkmenistan",
+    "officialName": "Turkmenistan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "rus": "Russian", "tuk": "Turkmen" }
   },
   {
     "name": "Turks and Caicos Islands",
@@ -13436,7 +14800,6 @@
     "area": 948,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Turks and Caicos Islands",
     "numericCode": "796",
     "currencies": [
@@ -13464,7 +14827,13 @@
     },
     "flag": "https://restcountries.com/data/tca.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Turks and Caicos Islands",
+    "officialName": "Turks and Caicos Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Tuvalu",
@@ -13482,7 +14851,6 @@
     "area": 26,
     "gini": null,
     "timezones": ["UTC+12:00"],
-    "borders": [],
     "nativeName": "Tuvalu",
     "numericCode": "798",
     "currencies": [
@@ -13511,7 +14879,13 @@
     },
     "flag": "https://restcountries.com/data/tuv.svg",
     "regionalBlocs": [],
-    "cioc": "TUV"
+    "cioc": "TUV",
+    "_name": "Tuvalu",
+    "officialName": "Tuvalu",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English", "tvl": "Tuvaluan" }
   },
   {
     "name": "Uganda",
@@ -13576,7 +14950,13 @@
         ]
       }
     ],
-    "cioc": "UGA"
+    "cioc": "UGA",
+    "_name": "Uganda",
+    "officialName": "Republic of Uganda",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "eng": "English", "swa": "Swahili" }
   },
   {
     "name": "Ukraine",
@@ -13591,7 +14971,7 @@
     "population": 43733762,
     "latlng": [49, 32],
     "demonym": "Ukrainian",
-    "area": 603700,
+    "area": 603500,
     "gini": 26.4,
     "timezones": ["UTC+02:00"],
     "borders": ["BLR", "HUN", "MDA", "POL", "ROU", "RUS", "SVK"],
@@ -13622,7 +15002,13 @@
     },
     "flag": "https://restcountries.com/data/ukr.svg",
     "regionalBlocs": [],
-    "cioc": "UKR"
+    "cioc": "UKR",
+    "_name": "Ukraine",
+    "officialName": "Ukraine",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ukr": "Ukrainian" }
   },
   {
     "name": "United Arab Emirates",
@@ -13679,7 +15065,13 @@
         ]
       }
     ],
-    "cioc": "UAE"
+    "cioc": "UAE",
+    "_name": "United Arab Emirates",
+    "officialName": "United Arab Emirates",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "United Kingdom of Great Britain and Northern Ireland",
@@ -13740,7 +15132,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "GBR"
+    "cioc": "GBR",
+    "_name": "United Kingdom",
+    "officialName": "United Kingdom of Great Britain and Northern Ireland",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "United States Minor Outlying Islands",
@@ -13755,10 +15153,9 @@
     "population": 300,
     "latlng": [],
     "demonym": "American",
-    "area": null,
+    "area": 34.2,
     "gini": null,
     "timezones": ["UTC-11:00", "UTC-10:00", "UTC+12:00"],
-    "borders": [],
     "nativeName": "United States Minor Outlying Islands",
     "numericCode": "581",
     "currencies": [
@@ -13786,7 +15183,13 @@
     },
     "flag": "https://restcountries.com/data/umi.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "United States Minor Outlying Islands",
+    "officialName": "United States Minor Outlying Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "United States of America",
@@ -13801,7 +15204,7 @@
     "population": 331002651,
     "latlng": [38, -97],
     "demonym": "American",
-    "area": 9629091,
+    "area": 9372610,
     "gini": 48,
     "timezones": [
       "UTC-12:00",
@@ -13854,7 +15257,13 @@
         ]
       }
     ],
-    "cioc": "USA"
+    "cioc": "USA",
+    "_name": "United States",
+    "officialName": "United States of America",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Uruguay",
@@ -13914,7 +15323,13 @@
         ]
       }
     ],
-    "cioc": "URU"
+    "cioc": "URU",
+    "_name": "Uruguay",
+    "officialName": "Oriental Republic of Uruguay",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Uzbekistan",
@@ -13971,7 +15386,13 @@
     },
     "flag": "https://restcountries.com/data/uzb.svg",
     "regionalBlocs": [],
-    "cioc": "UZB"
+    "cioc": "UZB",
+    "_name": "Uzbekistan",
+    "officialName": "Republic of Uzbekistan",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "rus": "Russian", "uzb": "Uzbek" }
   },
   {
     "name": "Vanuatu",
@@ -13994,7 +15415,6 @@
     "area": 12189,
     "gini": null,
     "timezones": ["UTC+11:00"],
-    "borders": [],
     "nativeName": "Vanuatu",
     "numericCode": "548",
     "currencies": [{ "code": "VUV", "name": "Vanuatu vatu", "symbol": "Vt" }],
@@ -14032,7 +15452,13 @@
     },
     "flag": "https://restcountries.com/data/vut.svg",
     "regionalBlocs": [],
-    "cioc": "VAN"
+    "cioc": "VAN",
+    "_name": "Vanuatu",
+    "officialName": "Republic of Vanuatu",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "bis": "Bislama", "eng": "English", "fra": "French" }
   },
   {
     "name": "Venezuela (Bolivarian Republic of)",
@@ -14094,7 +15520,13 @@
         ]
       }
     ],
-    "cioc": "VEN"
+    "cioc": "VEN",
+    "_name": "Venezuela",
+    "officialName": "Bolivarian Republic of Venezuela",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "spa": "Spanish" }
   },
   {
     "name": "Viet Nam",
@@ -14149,7 +15581,13 @@
         "otherNames": []
       }
     ],
-    "cioc": "VIE"
+    "cioc": "VIE",
+    "_name": "Vietnam",
+    "officialName": "Socialist Republic of Vietnam",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "vie": "Vietnamese" }
   },
   {
     "name": "Virgin Islands (British)",
@@ -14167,7 +15605,6 @@
     "area": 151,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "British Virgin Islands",
     "numericCode": "092",
     "currencies": [
@@ -14196,7 +15633,13 @@
     },
     "flag": "https://restcountries.com/data/vgb.svg",
     "regionalBlocs": [],
-    "cioc": "IVB"
+    "cioc": "IVB",
+    "_name": "British Virgin Islands",
+    "officialName": "Virgin Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Virgin Islands (U.S.)",
@@ -14216,10 +15659,9 @@
     "population": 114743,
     "latlng": [18.34, -64.93],
     "demonym": "Virgin Islander",
-    "area": 346.36,
+    "area": 347,
     "gini": null,
     "timezones": ["UTC-04:00"],
-    "borders": [],
     "nativeName": "Virgin Islands of the United States",
     "numericCode": "850",
     "currencies": [
@@ -14247,7 +15689,13 @@
     },
     "flag": "https://restcountries.com/data/vir.svg",
     "regionalBlocs": [],
-    "cioc": "ISV"
+    "cioc": "ISV",
+    "_name": "United States Virgin Islands",
+    "officialName": "Virgin Islands of the United States",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Wallis and Futuna",
@@ -14269,7 +15717,6 @@
     "area": 142,
     "gini": null,
     "timezones": ["UTC+12:00"],
-    "borders": [],
     "nativeName": "Wallis et Futuna",
     "numericCode": "876",
     "currencies": [{ "code": "XPF", "name": "CFP franc", "symbol": "Fr" }],
@@ -14295,7 +15742,13 @@
     },
     "flag": "https://restcountries.com/data/wlf.svg",
     "regionalBlocs": [],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Wallis and Futuna",
+    "officialName": "Territory of the Wallis and Futuna Islands",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "fra": "French" }
   },
   {
     "name": "Western Sahara",
@@ -14355,7 +15808,13 @@
         ]
       }
     ],
-    "cioc": ""
+    "cioc": "",
+    "_name": "Western Sahara",
+    "officialName": "Sahrawi Arab Democratic Republic",
+    "unMember": false,
+    "independent": false,
+    "landlocked": false,
+    "_languages": { "ber": "Berber", "mey": "Hassaniya", "spa": "Spanish" }
   },
   {
     "name": "Yemen",
@@ -14410,7 +15869,13 @@
         ]
       }
     ],
-    "cioc": "YEM"
+    "cioc": "YEM",
+    "_name": "Yemen",
+    "officialName": "Republic of Yemen",
+    "unMember": true,
+    "independent": true,
+    "landlocked": false,
+    "_languages": { "ara": "Arabic" }
   },
   {
     "name": "Zambia",
@@ -14467,7 +15932,13 @@
         ]
       }
     ],
-    "cioc": "ZAM"
+    "cioc": "ZAM",
+    "_name": "Zambia",
+    "officialName": "Republic of Zambia",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": { "eng": "English" }
   },
   {
     "name": "Zimbabwe",
@@ -14546,6 +16017,28 @@
         ]
       }
     ],
-    "cioc": "ZIM"
+    "cioc": "ZIM",
+    "_name": "Zimbabwe",
+    "officialName": "Republic of Zimbabwe",
+    "unMember": true,
+    "independent": true,
+    "landlocked": true,
+    "_languages": {
+      "bwg": "Chibarwe",
+      "eng": "English",
+      "kck": "Kalanga",
+      "khi": "Khoisan",
+      "ndc": "Ndau",
+      "nde": "Northern Ndebele",
+      "nya": "Chewa",
+      "sna": "Shona",
+      "sot": "Sotho",
+      "toi": "Tonga",
+      "tsn": "Tswana",
+      "tso": "Tsonga",
+      "ven": "Venda",
+      "xho": "Xhosa",
+      "zib": "Zimbabwean Sign Language"
+    }
   }
 ]

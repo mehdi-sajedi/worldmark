@@ -15,7 +15,7 @@ const Header = () => {
         </Link>
         <div
           className="header__theme-btn"
-          onClick={() => dispatch({ type: 'TOGGLE-DARK' })}
+          onClick={() => dispatch({ type: 'TOGGLE-DARK-MODE' })}
         >
           <i className="header__theme-btn__icon">
             {appState.darkMode ? <HiMoon /> : <HiOutlineMoon />}
