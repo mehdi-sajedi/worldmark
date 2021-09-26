@@ -53,9 +53,9 @@ const Country = ({
                 </li>
               </ul>
             </div>
-            <div className="flag-line-wrapper">
-              <div style={style} className={`flag-line ${alpha3Code}`}></div>
-            </div>
+            {/* <div className="flag-line-wrapper"> */}
+            <div style={style} className={`flag-line ${alpha3Code}`}></div>
+            {/* </div> */}
           </div>
         </Link>
       </LazyLoad>

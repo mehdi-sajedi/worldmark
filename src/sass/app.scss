@@ -12,7 +12,7 @@
 :root {
   --clr-background: #fafafa;
   --clr-elements: #fff;
-  --clr-elements-transparent: rgba(255, 255, 255, 0.96);
+  --clr-elements-transparent: rgba(255, 255, 255, 0.975);
   --clr-elements-inverse: #2b3945;
   --clr-elements-hover: #f0f0f0;
   --clr-text: #111517;
@@ -41,7 +41,7 @@
 
   --clr-background: #192734;
   --clr-elements: #22303c;
-  --clr-elements-transparent: rgba(34, 48, 60, 0.98);
+  --clr-elements-transparent: rgba(34, 48, 60, 0.985);
 
   --clr-elements-inverse: #f9f9f9;
   --clr-elements-hover: #1d2933;
@@ -363,7 +363,6 @@ button {
   transform: translateX(-50%) translateY(330px);
   width: 300px;
   background-color: var(--clr-elements-transparent);
-  backdrop-filter: blur(10px);
   border-radius: 30px 30px 0 0;
   overflow: scroll;
   transition: transform 0.35s var(--bezier), height 0.35s var(--bezier),
@@ -497,11 +496,6 @@ button {
             font-size: 15px;
             display: flex;
             align-items: center;
-            // width: 210px;
-
-            // display: grid;
-            // grid-template-columns: 2fr 2fr 3fr;
-            // grid-template-columns: repeat(3, 1fr);
 
             > * {
               margin: 4px 0;
@@ -637,44 +631,59 @@ button {
     }
   }
 
+  .countries-heading {
+    margin-bottom: 0;
+    margin-bottom: 1rem;
+  }
+
   .countries-per-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1.5rem;
 
     &-value {
-      margin-top: 10px;
-      font-size: 20px;
+      margin-bottom: 1rem;
+      font-size: 22px;
     }
 
     &-input {
       -webkit-appearance: none;
-      width: 160px;
-      height: 7px;
+      // width: 160px;
+      // height: 7px;
       background-color: var(--clr-outline);
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.35s ease;
       width: 200px;
+      height: 10px;
 
       @include media('<=small') {
         width: 250px;
+        height: 12px;
       }
 
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
-        height: 18px;
-        width: 18px;
+        // height: 18px;
+        // width: 18px;
         border-radius: 50%;
         background-color: white;
         cursor: grab;
         box-shadow: 0 0 10px 0px var(--clr-outline);
         transition: all 0.35s ease;
+        height: 22px;
+        width: 22px;
+
+        @include media('<=small') {
+          height: 25px;
+          width: 25px;
+        }
 
         &:hover {
-          width: 22px;
-          height: 22px;
+          width: 25px;
+          height: 25px;
           box-shadow: 0 0 10px 3px var(--clr-outline);
         }
       }
@@ -785,23 +794,27 @@ button {
     }
   }
 
-  .flag-line-wrapper {
-    // overflow: hidden;
-    width: 100%;
-    height: 5px;
-    position: relative;
-  }
+  // .flag-line-wrapper {
+  //   // overflow: hidden;
+  //   width: 100%;
+  //   height: 5px;
+  //   position: relative;
+  // }
 
   .flag-line {
-    width: 0;
+    width: 100%;
     height: 5px;
     position: absolute;
     bottom: 0px;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
     opacity: 0;
     transition: opacity 0.35s;
+    margin: 0 auto;
+
+    @include media('<=small') {
+      height: 7px;
+    }
   }
 
   @media (hover: hover) {
@@ -811,8 +824,6 @@ button {
   }
 
   &:hover {
-    // transform: translateY(-20px);
-
     .flag-line {
       opacity: 1;
     }
@@ -825,10 +836,6 @@ button {
 .footer {
   position: relative;
   margin-bottom: 6rem;
-
-  @include media('<=small') {
-    margin-bottom: 3rem;
-  }
 }
 
 // Countries Shown Text
@@ -923,6 +930,36 @@ button {
         font-size: 30px;
         font-weight: 500;
       }
+    }
+  }
+}
+
+// - *************************************************************
+// - SCROLL BUTTON
+// - *************************************************************
+
+.scroll-btn {
+  display: none;
+
+  @include media('<=small') {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    height: 60px;
+    width: 60px;
+    padding: 8px 0 0 1px;
+    right: 30px;
+    bottom: 30px;
+    z-index: 10;
+    background-color: var(--clr-elements);
+    border-radius: var(--border-radius-circle);
+    box-shadow: var(--box-shadow-btn);
+
+    .arrow-up {
+      color: var(--clr-text);
+      width: 45%;
+      height: 45%;
+      transform: translateY(-2px);
     }
   }
 }

@@ -10,7 +10,6 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const initialAppState = {
-    a3Codes: [],
     countries: [],
     currentCountries: [],
     totalCountries: [],
@@ -394,10 +393,6 @@ export const AppProvider = ({ children }) => {
 
       sortCountries();
       showCurrentPageCountries();
-    }
-
-    if (action.type === 'SET-A3-CODES') {
-      draft.a3Codes = action.payload.map((country) => country.alpha3Code);
     }
   };
 

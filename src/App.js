@@ -13,6 +13,7 @@ import PageNotFound from './components/Utilities/PageNotFound';
 import FilterBtn from './components/Home/FilterBtn';
 import FilterMenu from './components/Home/FilterMenu';
 import Overlay from './components/Utilities/Overlay';
+import ScrollBtn from './components/Utilities/ScrollBtn';
 import countries from './data/countries-updated.json';
 
 const countryCodesToNames = new Map();
@@ -71,6 +72,7 @@ function App() {
           <Switch>
             <Route exact path="/">
               <SearchFilter />
+              <ScrollBtn />
               <FilterBtn />
               <FilterMenu />
               {appState.isLoading && <Loading page="home" />}

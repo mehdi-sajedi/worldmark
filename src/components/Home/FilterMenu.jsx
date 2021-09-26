@@ -77,6 +77,9 @@ const FilterMenu = () => {
       <div className="line"></div>
       <h3 className="countries-heading">Countries / Page</h3>
       <div className="countries-per-page">
+        <h4 className="countries-per-page-value">
+          {appState.countriesPerPage}
+        </h4>
         <input
           type="range"
           className="countries-per-page-input"
@@ -86,9 +89,6 @@ const FilterMenu = () => {
           value={appState.countriesPerPage}
           onChange={(e) => handleCountriesSlider(e)}
         />
-        <h4 className="countries-per-page-value">
-          {appState.countriesPerPage}
-        </h4>
       </div>
     </div>
   );

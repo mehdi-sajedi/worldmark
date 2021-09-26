@@ -16,6 +16,7 @@
   max-width: clamp(50vw, 2200px, 90vw);
   margin: 0 auto;
   padding: 0 1rem;
+  position: relative; // added for scrollbtn 9/25 8:38 P.M.
 }
 
 .btn {
