@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/app-context';
 import useComponentInvisible from '../../hooks/useComponentInvisible';
-// import useComponentDragged from '../../hooks/useComponentDragged';
 import FilterRegion from './FilterRegion';
 
 const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
@@ -30,7 +29,6 @@ const sortCategories = [
 const FilterMenu = () => {
   const { appState, dispatch } = useContext(AppContext);
   const { ref: filterMenuRef } = useComponentInvisible('CLOSE-FILTER-MENU');
-  // const { ref: dragLineRef } = useComponentDragged(null, 50);
 
   const handleSortSelect = (e) => {
     dispatch({
@@ -43,10 +41,6 @@ const FilterMenu = () => {
     dispatch({ type: 'SET-COUNTRIES-PER-PAGE', payload: e.target.value });
   };
 
-  // const handleUnMemberToggle = (status) => {
-  //   dispatch({ type: 'SET-UN-MEMBER', payload: status });
-  // };
-
   return (
     <div
       ref={filterMenuRef}
@@ -54,9 +48,6 @@ const FilterMenu = () => {
         appState.filterMenuExtraHeight && 'extra-height'
       }`}
     >
-      {/* <div ref={dragLineRef} className="drag-line-wrapper">
-        <div className="drag-line"></div>
-      </div> */}
       <h3 className="filter-heading main">Filter | Sort</h3>
       <div className="line"></div>
       <h3 className="region-heading">Regions</h3>
@@ -85,36 +76,6 @@ const FilterMenu = () => {
           );
         })}
       </div>
-      {/* <div className="line no-mb"></div>
-      <div className="other-filters">
-        <h4>UN Member</h4>
-        <div className="un-filter">
-          <input
-            type="radio"
-            name="un-member"
-            id="un-yes"
-            // checked={appState.unMember}
-            onChange={() => handleUnMemberToggle(true)}
-          />
-          <label htmlFor="un-yes">Yes</label>
-          <input
-            type="radio"
-            name="un-member"
-            id="un-no"
-            // checked={appState.unMember}
-            onChange={() => handleUnMemberToggle(false)}
-          />
-          <label htmlFor="un-no">No</label>
-        </div>
-
-        <h4>Landlocked</h4>
-        <div className="landlocked-filter">
-          <input type="radio" name="landlocked" id="landlocked-yes" />
-          <label htmlFor="landlocked-yes">Yes</label>
-          <input type="radio" name="landlocked" id="landlocked-no" />
-          <label htmlFor="landlocked-no">No</label>
-        </div>
-      </div> */}
       <div className="line"></div>
       <h3 className="countries-heading">Countries / Page</h3>
       <div className="countries-per-page">

@@ -42,10 +42,6 @@ const CountryDetails = ({ countryCodesToNames }) => {
     }
   }, [id, appState.countries]);
 
-  // {transition(
-  //   (style, item) =>
-  //     item && (
-
   return (
     <>
       <BackBtn setIsLoading={setIsLoading} />
@@ -82,7 +78,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                           <CountryDetailsItem
                             className="common-name"
                             title="Common Name"
-                            property={country._name}
+                            property={country.name}
                             column="1"
                           />
                           <CountryDetailsItem
@@ -124,7 +120,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                             property={country.subregion}
                             column="2"
                           />
-                          <CountryDetailsItem
+                          {/* <CountryDetailsItem
                             className="languages"
                             title="Languages"
                             property={country.languages.map((lang, idx) => (
@@ -135,6 +131,22 @@ const CountryDetails = ({ countryCodesToNames }) => {
                                   : ', '}
                               </span>
                             ))}
+                            column="1"
+                          /> */}
+                          <CountryDetailsItem
+                            className="languages"
+                            title="Languages"
+                            property={Object.values(country.languages).map(
+                              (lang, idx) => (
+                                <span key={idx}>
+                                  {lang}
+                                  {idx ===
+                                  Object.values(country.languages).length - 1
+                                    ? ''
+                                    : ', '}
+                                </span>
+                              )
+                            )}
                             column="1"
                           />
                         </div>

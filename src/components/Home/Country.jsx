@@ -12,9 +12,7 @@ const variants = {
 const Country = ({
   alpha3Code,
   name,
-  _name,
   flag,
-  flags,
   population,
   region,
   capital,
@@ -30,14 +28,14 @@ const Country = ({
   };
 
   return (
-    <div ref={animatedDiv.ref} className={_name}>
+    <div ref={animatedDiv.ref} className={name}>
       <LazyLoad offsetVertical={3000}>
         <Link to={`/details/${alpha3Code}`}>
           <div className="country">
-            <CountryFlag flag={flag} name={_name} alpha3Code={alpha3Code} />
+            <CountryFlag flag={flag} name={name} alpha3Code={alpha3Code} />
 
             <div className="country__info">
-              <h3 className="country__info__name">{_name}</h3>
+              <h3 className="country__info__name">{name}</h3>
               <ul className="country__info__details">
                 <li className="country__info__details__population">
                   <span>Population: </span>

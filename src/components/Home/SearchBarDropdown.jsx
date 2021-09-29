@@ -21,7 +21,7 @@ const SearchBarDropdown = () => {
       {appState.searchMatches.map((country, idx) => {
         return (
           <SearchBarDropdownCountry
-            name={country._name}
+            name={country.name}
             flag={country.flag}
             alpha3Code={country.alpha3Code}
             key={`Dropdown-${country.name}`}

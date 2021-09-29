@@ -19,7 +19,7 @@ const countryCodesToNames = new Map();
 
 const createCountryKeyPairs = (countries) => {
   countries.forEach((country) => {
-    countryCodesToNames.set(country.alpha3Code, country._name);
+    countryCodesToNames.set(country.alpha3Code, country.name);
   });
 };
 

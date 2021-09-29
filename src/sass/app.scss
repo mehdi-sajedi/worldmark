@@ -5,9 +5,7 @@
 @import 'include-media';
 @import 'utilities';
 
-// Filter menu draggable increase height
 // Sticky searchbar on mobile
-// Change checkboxes into toggle boxes?
 // Keyboard accessibility
 
 :root {
@@ -508,8 +506,8 @@ button {
               content: '';
               position: absolute;
               top: 50%;
-              transform: translateY(-50%);
-              border-radius: 3px;
+              transform: translateY(-52%);
+              border-radius: var(--border-radius);
               background-color: var(--clr-elements);
               border: 1px solid var(--clr-text);
             }
@@ -617,7 +615,7 @@ button {
                 left: -22px;
                 width: 11px;
                 height: 11px;
-                transform: translateY(-51%);
+                transform: translateY(-53%);
               }
             }
 

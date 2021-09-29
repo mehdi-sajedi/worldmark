@@ -17,9 +17,7 @@ export const AppProvider = ({ children }) => {
     activeSubRegions: new Set(),
     searchText: '',
     searchMatches: [],
-    sortBy: 'nameAZ',
-    // unMember: null,
-    // landlocked: null,
+    sortBy: 'popHL',
     countriesPerPage: 36,
     currentPage: 1,
     currentPageFirstPost: 0,
@@ -27,7 +25,6 @@ export const AppProvider = ({ children }) => {
     filterActive: false,
     showSearchDropdown: false,
     menuOpen: false,
-    filterMenuExtraHeight: false,
     darkMode: false,
     regions: {
       africa: {
@@ -268,10 +265,6 @@ export const AppProvider = ({ children }) => {
 
     if (action.type === 'SET-SEARCH-TEXT') {
       draft.searchText = action.payload.inputValue;
-      // if (
-      //   action.payload.inputValue.length > 1 &&
-      //   document.activeElement === action.payload.inputRef
-      // )
       if (action.payload.inputValue.length > 1) draft.showSearchDropdown = true;
       else draft.showSearchDropdown = false;
     }
@@ -381,10 +374,6 @@ export const AppProvider = ({ children }) => {
       showCurrentPageCountries();
     }
 
-    // if (action.type === 'SET-UN-MEMBER') {
-    //   draft.unMember = action.payload;
-    // }
-
     if (action.type === 'SET-COUNTRIES-PER-PAGE') {
       draft.currentPage = 1;
       draft.currentPageFirstPost = 0;
@@ -393,10 +382,6 @@ export const AppProvider = ({ children }) => {
         draft.countriesPerPage,
         draft.allPagesCountries.length
       );
-    }
-
-    if (action.type === 'TOGGLE-MENU-HEIGHT') {
-      draft.filterMenuExtraHeight = !draft.filterMenuExtraHeight;
     }
   };
 
