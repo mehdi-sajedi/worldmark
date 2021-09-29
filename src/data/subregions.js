@@ -1,19 +1,19 @@
 const subRegionData = {
   africa: [
     {
-      name: 'Northern',
+      name: 'North',
       initials: 'af_n',
     },
     {
-      name: 'Southern',
+      name: 'South',
       initials: 'af_s',
     },
     {
-      name: 'Western',
+      name: 'West',
       initials: 'af_w',
     },
     {
-      name: 'Eastern',
+      name: 'East',
       initials: 'af_e',
     },
     {
@@ -24,11 +24,11 @@ const subRegionData = {
 
   americas: [
     {
-      name: 'Northern',
+      name: 'North',
       initials: 'am_n',
     },
     {
-      name: 'Southern',
+      name: 'South',
       initials: 'am_s',
     },
     {
@@ -43,11 +43,11 @@ const subRegionData = {
 
   asia: [
     {
-      name: 'Western',
+      name: 'West',
       initials: 'as_w',
     },
     {
-      name: 'Eastern',
+      name: 'East',
       initials: 'as_e',
     },
     {
@@ -55,37 +55,36 @@ const subRegionData = {
       initials: 'as_c',
     },
     {
-      name: 'Southern',
+      name: 'South',
       initials: 'as_s',
     },
     {
-      name: 'Southeastern',
+      name: 'South-east',
       initials: 'as_se',
     },
   ],
 
   europe: [
     {
-      name: 'Northern',
+      name: 'North',
       initials: 'eu_n',
     },
     {
-      name: 'Southern',
+      name: 'South',
       initials: 'eu_s',
     },
     {
-      name: 'Western',
+      name: 'West',
       initials: 'eu_w',
     },
     {
-      name: 'Eastern',
+      name: 'East',
       initials: 'eu_e',
     },
   ],
 
   oceania: [
     {
-      // name: 'Australia & New Zealand',
       name: 'Australia & NZ',
       initials: 'aus_nz',
     },

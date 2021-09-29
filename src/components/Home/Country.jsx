@@ -45,11 +45,11 @@ const Country = ({
                 </li>
                 <li className="country__info__details__region">
                   <span>Region: </span>
-                  {region}
+                  {region || '-'}
                 </li>
                 <li className="country__info__details__capital">
                   <span>Capital: </span>
-                  {capital}
+                  {capital || '-'}
                 </li>
               </ul>
             </div>

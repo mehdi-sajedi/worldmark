@@ -80,21 +80,21 @@ const CountryDetails = ({ countryCodesToNames }) => {
                       <div className="details__info__facts">
                         <div className="details__info__facts__col-1">
                           <CountryDetailsItem
-                            className="native-name"
+                            className="common-name"
                             title="Common Name"
                             property={country._name}
-                            column="1"
-                          />
-                          <CountryDetailsItem
-                            className="population"
-                            title="Population"
-                            property={country.population.toLocaleString()}
                             column="1"
                           />
                           <CountryDetailsItem
                             className="capital"
                             title="Capital"
                             property={country.capital}
+                            column="1"
+                          />
+                          <CountryDetailsItem
+                            className="population"
+                            title="Population"
+                            property={country.population.toLocaleString()}
                             column="1"
                           />
                           <CountryDetailsItem

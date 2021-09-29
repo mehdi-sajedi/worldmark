@@ -704,12 +704,6 @@
         "iso639_2": "hye",
         "name": "Armenian",
         "nativeName": "Հայերեն"
-      },
-      {
-        "iso639_1": "ru",
-        "iso639_2": "rus",
-        "name": "Russian",
-        "nativeName": "Русский"
       }
     ],
     "translations": {

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import FilterSubRegion from './FilterSubRegion';
 import subRegionData from '../../data/subregions';
 import { RiArrowDownSLine } from 'react-icons/ri';
@@ -7,23 +7,28 @@ import { AppContext } from '../../context/app-context';
 
 const FilterRegion = ({ region, idx }) => {
   const { appState, dispatch } = useContext(AppContext);
+  const myRef = useRef();
 
   const toggleSubRegionsMenu = (region) => {
     dispatch({ type: 'TOGGLE-SUB-REGIONS-MENU', payload: region });
   };
 
-  const toggleRegionCheck = (idx) => {
-    dispatch({ type: 'TOGGLE-REGION-CHECK', payload: idx });
+  const toggleRegionCheck = (region, myRef) => {
+    dispatch({
+      type: 'TOGGLE-REGION-CHECK',
+      payload: { region: region, ref: myRef },
+    });
   };
 
   return (
     <div className="option">
       <div className="top-layer">
         <input
+          ref={myRef}
           type="checkbox"
           id={region}
           checked={appState.regions[region].selected}
-          onChange={() => toggleRegionCheck(region)}
+          onChange={() => toggleRegionCheck(region, myRef)}
           tabIndex="-1"
         />
         <label className="capitalize" htmlFor={region}>

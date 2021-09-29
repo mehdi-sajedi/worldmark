@@ -19,7 +19,7 @@ const FilterSubRegion = ({ region, name, initials }) => {
         }
         tabIndex="-1"
       />
-      <label className="capitalize" htmlFor={initials}>
+      <label htmlFor={initials}>
         {name}
       </label>
     </div>
