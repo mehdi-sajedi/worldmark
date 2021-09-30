@@ -46,7 +46,6 @@ const CountryDetails = ({ countryCodesToNames }) => {
     <>
       <BackBtn setIsLoading={setIsLoading} />
       <section className="details-container">
-        {/* {isLoading && <Loading />} */}
         {isError && appState.countries.length > 0 && (
           <p className="page-not-found">
             Could not fetch country with Alpha-3 Code {id}
@@ -66,6 +65,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                     />
                   )
               )}
+
               {transition(
                 (style, item) =>
                   item && (
@@ -120,19 +120,6 @@ const CountryDetails = ({ countryCodesToNames }) => {
                             property={country.subregion}
                             column="2"
                           />
-                          {/* <CountryDetailsItem
-                            className="languages"
-                            title="Languages"
-                            property={country.languages.map((lang, idx) => (
-                              <span key={idx}>
-                                {lang.name}
-                                {idx === country.languages.length - 1
-                                  ? ''
-                                  : ', '}
-                              </span>
-                            ))}
-                            column="1"
-                          /> */}
                           <CountryDetailsItem
                             className="languages"
                             title="Languages"

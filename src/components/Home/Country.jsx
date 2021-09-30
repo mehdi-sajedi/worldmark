@@ -9,14 +9,7 @@ const variants = {
   opacity: { from: 0, to: 1 },
 };
 
-const Country = ({
-  alpha3Code,
-  name,
-  flag,
-  population,
-  region,
-  capital,
-}) => {
+const Country = ({ alpha3Code, name, flag, population, region, capital }) => {
   const animatedDiv = useAnimatePresence({
     variants,
     initial: 'visible',
@@ -24,7 +17,6 @@ const Country = ({
 
   const style = {
     backgroundImage: `url(https://restcountries.com/data/${alpha3Code.toLowerCase()}.svg)`,
-    fontSize: '40px',
   };
 
   return (

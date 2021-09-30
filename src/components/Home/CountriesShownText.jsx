@@ -8,13 +8,18 @@ const CountriesShownText = ({ location }) => {
     <div className={`countries-shown ${location}`}>
       {(location === 'top' || appState.currentPageCountries.length !== 0) && (
         <p className="countries-shown__text">
-          {appState.allPagesCountries.length > 0
-            ? `Showing ${appState.currentPageFirstPost + 1}-${
-                appState.currentPageLastPost
-              } of ${appState.allPagesCountries.length}
-          countries`
-            : ''}
+          Showing {appState.currentPageFirstPost + 1}-
+          {appState.currentPageLastPost} of {appState.allPagesCountries.length}{' '}
+          countries
         </p>
+        // <p className="countries-shown__text">
+        //   {appState.allPagesCountries.length > 0
+        //     ? `Showing ${appState.currentPageFirstPost + 1}-${
+        //         appState.currentPageLastPost
+        //       } of ${appState.allPagesCountries.length}
+        //   countries`
+        //     : ''}
+        // </p>
       )}
     </div>
   );

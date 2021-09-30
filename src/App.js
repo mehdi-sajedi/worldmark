@@ -75,7 +75,7 @@ function App() {
               <FilterMenu />
               <FilterBtn />
               <ScrollBtn />
-              <Footer />
+              {appState.allPagesCountries.length > 0 && <Footer />}
             </Route>
             <Route exact path="/details/:id">
               <CountryDetails countryCodesToNames={countryCodesToNames} />
