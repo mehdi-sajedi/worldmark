@@ -23,14 +23,13 @@ const useComponentInvisible = (reducerAction) => {
   );
 
   useEffect(() => {
-    if (!appState.menuOpen) return;
     document.addEventListener('mousedown', handleClickOutside, true);
     document.addEventListener('keydown', handleEscapeKeyPress, true);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside, true);
       document.removeEventListener('keydown', handleEscapeKeyPress, true);
     };
-  }, [handleClickOutside, handleEscapeKeyPress, appState.menuOpen]);
+  }, [handleClickOutside, handleEscapeKeyPress]);
 
   return { ref };
 };

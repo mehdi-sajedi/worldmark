@@ -597,7 +597,6 @@ button {
 
             width: 100%;
             width: 60%;
-            // border: 1px solid rgba(200, 200, 200, 0.5);
             border-radius: 10px;
 
             @include media('<=small') {
@@ -606,8 +605,6 @@ button {
 
             label {
               margin-left: 15px;
-              // width: 100px;
-              // text-align: center;
 
               &::before {
                 left: -22px;
@@ -620,11 +617,11 @@ button {
             .sub-option {
               margin: 4px 0;
               display: flex;
-              width: 140px;
+              width: 145px;
               justify-content: flex-start;
               align-items: flex-start;
 
-              margin-left: 20px;
+              margin-left: 25px;
             }
           }
 

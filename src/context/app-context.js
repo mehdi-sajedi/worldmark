@@ -162,20 +162,25 @@ export const AppProvider = ({ children }) => {
         draft.allPagesCountries = draft.allPagesCountries.sort(
           (a, b) => b.population - a.population
         );
-      }
-      if (draft.sortBy === 'popLH') {
+      } else if (draft.sortBy === 'popLH') {
         draft.allPagesCountries = draft.allPagesCountries.sort(
           (a, b) => a.population - b.population
         );
-      }
-      if (draft.sortBy === 'nameAZ') {
+      } else if (draft.sortBy === 'nameAZ') {
         draft.allPagesCountries = draft.allPagesCountries.sort((a, b) =>
           a.name.localeCompare(b.name)
         );
-      }
-      if (draft.sortBy === 'nameZA') {
+      } else if (draft.sortBy === 'nameZA') {
         draft.allPagesCountries = draft.allPagesCountries.sort((a, b) =>
           b.name.localeCompare(a.name)
+        );
+      } else if (draft.sortBy === 'areaHL') {
+        draft.allPagesCountries = draft.allPagesCountries.sort(
+          (a, b) => b.area - a.area
+        );
+      } else if (draft.sortBy === 'areaLH') {
+        draft.allPagesCountries = draft.allPagesCountries.sort(
+          (a, b) => a.area - b.area
         );
       }
     }
@@ -244,32 +249,22 @@ export const AppProvider = ({ children }) => {
 
     if (action.type === 'GET-DARK-STORAGE') {
       draft.darkMode = JSON.parse(localStorage.getItem('darkmode'));
-    }
-
-    if (action.type === 'TOGGLE-DARK-MODE') {
+    } else if (action.type === 'TOGGLE-DARK-MODE') {
       draft.darkMode = !draft.darkMode;
       localStorage.setItem('darkmode', JSON.stringify(draft.darkMode));
-    }
-
-    if (action.type === 'SET-ALL-COUNTRIES') {
+    } else if (action.type === 'SET-ALL-COUNTRIES') {
       draft.countries = action.payload;
       draft.allPagesCountries = action.payload;
-    }
-
-    if (action.type === 'SET-CURRENT-COUNTRIES') {
+    } else if (action.type === 'SET-CURRENT-COUNTRIES') {
       draft.currentPageCountries = draft.allPagesCountries.slice(
         action.payload.idxFirst,
         action.payload.idxLast
       );
-    }
-
-    if (action.type === 'SET-SEARCH-TEXT') {
+    } else if (action.type === 'SET-SEARCH-TEXT') {
       draft.searchText = action.payload.inputValue;
       if (action.payload.inputValue.length > 1) draft.showSearchDropdown = true;
       else draft.showSearchDropdown = false;
-    }
-
-    if (action.type === 'FILTER-BY-SEARCH') {
+    } else if (action.type === 'FILTER-BY-SEARCH') {
       if (draft.filterActive) {
         let activeRegions = [...draft.activeRegions];
         let activeSubRegions = [...draft.activeSubRegions];
@@ -283,9 +278,7 @@ export const AppProvider = ({ children }) => {
         draft.allPagesCountries = action.payload;
       }
       showCurrentPageCountries();
-    }
-
-    if (action.type === 'SET-ONLY-SEARCH-MATCHES') {
+    } else if (action.type === 'SET-ONLY-SEARCH-MATCHES') {
       draft.searchMatches = draft.countries.filter((country) => {
         return (
           country.name
@@ -299,26 +292,16 @@ export const AppProvider = ({ children }) => {
             .includes(draft.searchText.toLowerCase().trim())
         );
       });
-    }
-
-    if (action.type === 'CLEAR-SEARCH') {
+    } else if (action.type === 'CLEAR-SEARCH') {
       draft.searchText = '';
       action.payload.focus();
-    }
-
-    if (action.type === 'CLOSE-SEARCHBAR-DROPDOWN') {
+    } else if (action.type === 'CLOSE-SEARCHBAR-DROPDOWN') {
       draft.showSearchDropdown = false;
-    }
-
-    if (action.type === 'TOGGLE-FILTER-MENU') {
+    } else if (action.type === 'TOGGLE-FILTER-MENU') {
       draft.menuOpen = !draft.menuOpen;
-    }
-
-    if (action.type === 'CLOSE-FILTER-MENU') {
+    } else if (action.type === 'CLOSE-FILTER-MENU') {
       draft.menuOpen = false;
-    }
-
-    if (action.type === 'TOGGLE-REGION-CHECK') {
+    } else if (action.type === 'TOGGLE-REGION-CHECK') {
       draft.regions[action.payload.region].selected =
         !draft.regions[action.payload.region].selected;
 
@@ -329,9 +312,7 @@ export const AppProvider = ({ children }) => {
 
       toggleFilterCheck();
       sortCountries();
-    }
-
-    if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
+    } else if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
       draft.regions[action.payload.region].subRegions[
         action.payload.initials
       ].selected =
@@ -345,36 +326,26 @@ export const AppProvider = ({ children }) => {
 
       toggleFilterCheck();
       sortCountries();
-    }
-
-    if (action.type === 'TOGGLE-SUB-REGIONS-MENU') {
+    } else if (action.type === 'TOGGLE-SUB-REGIONS-MENU') {
       draft.regions[action.payload].expanded =
         !draft.regions[action.payload].expanded;
-    }
-
-    if (action.type === 'SET-CURRENT-PAGE') {
+    } else if (action.type === 'SET-CURRENT-PAGE') {
       draft.currentPage = action.payload.page;
       draft.currentPageFirstPost = action.payload.idxFirst;
       draft.currentPageLastPost = action.payload.idxLast;
-    }
-
-    if (action.type === 'RESET-TO-FIRST-PAGE') {
+    } else if (action.type === 'RESET-TO-FIRST-PAGE') {
       draft.currentPage = 1;
       draft.currentPageFirstPost = 0;
       draft.currentPageLastPost = Math.min(
         draft.countriesPerPage,
         draft.allPagesCountries.length
       );
-    }
-
-    if (action.type === 'SET-SORT-TYPE') {
+    } else if (action.type === 'SET-SORT-TYPE') {
       draft.sortBy = action.payload;
 
       sortCountries();
       showCurrentPageCountries();
-    }
-
-    if (action.type === 'SET-COUNTRIES-PER-PAGE') {
+    } else if (action.type === 'SET-COUNTRIES-PER-PAGE') {
       draft.currentPage = 1;
       draft.currentPageFirstPost = 0;
       draft.countriesPerPage = action.payload;

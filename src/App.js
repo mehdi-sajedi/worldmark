@@ -48,7 +48,7 @@ function App() {
         idxLast: appState.currentPageLastPost,
       },
     });
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, [
     dispatch,
     appState.countries,

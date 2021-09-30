@@ -24,6 +24,16 @@ const sortCategories = [
     text: 'Population: Low to High',
     id: 'popLH',
   },
+
+  {
+    text: 'Area: High to Low',
+    id: 'areaHL',
+  },
+
+  {
+    text: 'Area: Low to High',
+    id: 'areaLH',
+  },
 ];
 
 const FilterMenu = () => {
