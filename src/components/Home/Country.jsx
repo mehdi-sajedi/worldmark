@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAnimatePresence } from 'use-animate-presence';
-import CountryFlag from './CountryFlag';
 import LazyLoad from 'react-lazy-load';
 
 const variants = {
@@ -16,7 +15,7 @@ const Country = ({ alpha3Code, name, flag, population, region, capital }) => {
   });
 
   const style = {
-    backgroundImage: `url(https://restcountries.com/data/${alpha3Code.toLowerCase()}.svg)`,
+    backgroundImage: `url(${flag})`,
   };
 
   return (
@@ -24,8 +23,7 @@ const Country = ({ alpha3Code, name, flag, population, region, capital }) => {
       <LazyLoad offsetVertical={3000}>
         <Link to={`/details/${alpha3Code}`}>
           <div className="country">
-            <CountryFlag flag={flag} name={name} alpha3Code={alpha3Code} />
-
+            <img className="country__flag" src={flag} alt="" />
             <div className="country__info">
               <h3 className="country__info__name">{name}</h3>
               <ul className="country__info__details">
@@ -43,9 +41,7 @@ const Country = ({ alpha3Code, name, flag, population, region, capital }) => {
                 </li>
               </ul>
             </div>
-            {/* <div className="flag-line-wrapper"> */}
             <div style={style} className={`flag-line ${alpha3Code}`}></div>
-            {/* </div> */}
           </div>
         </Link>
       </LazyLoad>

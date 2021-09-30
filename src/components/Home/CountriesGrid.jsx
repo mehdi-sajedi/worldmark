@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/app-context';
 import Country from './Country';
+// import IMAGES from '../../data/imagesIndex';
 
 const CountriesGrid = () => {
   const { appState } = useContext(AppContext);
@@ -13,6 +14,7 @@ const CountriesGrid = () => {
         `}
     >
       {appState.currentPageCountries.map((country) => (
+        // <Country key={country.alpha3Code} {...country} />
         <Country key={country.alpha3Code} {...country} />
       ))}
     </section>

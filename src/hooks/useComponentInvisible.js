@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useCallback } from 'react';
 import { AppContext } from '../context/app-context';
 
 const useComponentInvisible = (reducerAction) => {
-  const { appState, dispatch } = useContext(AppContext);
+  const { dispatch } = useContext(AppContext);
   const ref = useRef(null);
 
   const handleEscapeKeyPress = useCallback(

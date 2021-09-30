@@ -60,7 +60,8 @@ const CountryDetails = ({ countryCodesToNames }) => {
                     <animated.img
                       style={style}
                       className="details__flag"
-                      src={country.flag}
+                      // src={country.flag}
+                      src={`../${country.flag}`}
                       alt="country flag"
                     />
                   )

@@ -5,9 +5,6 @@ enableMapSet();
 
 export const AppContext = createContext();
 
-// Try searching "options" for filter icon in react-icons and google icons
-// If using the API, filter the response to only fetch the data you need.
-
 export const AppProvider = ({ children }) => {
   const initialAppState = {
     countries: [],
