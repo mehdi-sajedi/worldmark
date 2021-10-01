@@ -53,15 +53,18 @@ const FilterMenu = () => {
 
   return (
     <div
-      className={`whole-menu ${appState.menuOpen && 'filter-open'}
+      ref={filterMenuRef}
+      className={`filter-menu ${appState.menuOpen && 'filter-open'}
   }`}
     >
-      <div className="block">
+      <div className="filter-block">
         <h3 className="filter-heading main section-heading">Filter | Sort</h3>
       </div>
-      <div ref={filterMenuRef} className="filter-menu">
-        {/* <h3 className="filter-heading main">Filter | Sort</h3> */}
-        {/* <div className="line"></div> */}
+      <div className="filter-content">
+        <h3 className="mobile-only section-heading filter-heading main">
+          Filter | Sort
+        </h3>
+        <div className="line mobile-only"></div>
         <h3 className="section-heading region-heading">Regions</h3>
         <div className="filter-categories">
           <div className="filter-category region-category">

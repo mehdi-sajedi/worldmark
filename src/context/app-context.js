@@ -244,6 +244,8 @@ export const AppProvider = ({ children }) => {
     // - ACTIONS
     // - *************************************************************
 
+
+
     if (action.type === 'GET-DARK-STORAGE') {
       draft.darkMode = JSON.parse(localStorage.getItem('darkmode'));
     } else if (action.type === 'TOGGLE-DARK-MODE') {

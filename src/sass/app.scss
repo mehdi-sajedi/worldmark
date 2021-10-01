@@ -3,7 +3,8 @@
 @import 'include-media';
 @import 'utilities';
 
-// If using the API, filter the response to only fetch the data you need.
+// Remove un-needed data from JSON file
+// Update population
 // Sticky searchbar on mobile
 // Keyboard accessibility
 
@@ -352,31 +353,31 @@ button {
   }
 }
 
-.whole-menu {
+.filter-menu {
   background-color: var(--clr-elements-transparent);
 
   @include media('<=medium') {
     &.filter-open {
-      .block {
+      .filter-block {
         transform: translateX(-50%) translateY(0);
       }
 
-      .filter-menu {
+      .filter-content {
         transform: translateX(-50%) translateY(0);
       }
     }
   }
 
   &:hover {
-    .block {
+    .filter-block {
       box-shadow: 0px 15px 8px -10px #ffffffbb, 0px -15px 8px -10px #ffffffbb;
     }
-    .filter-menu {
+    .filter-content {
       transform: translateX(-50%) translateY(0);
     }
   }
 
-  .block {
+  .filter-block {
     position: fixed;
     bottom: 0;
     left: 50%;
@@ -409,7 +410,7 @@ button {
     }
   }
 
-  .filter-menu {
+  .filter-content {
     position: fixed;
     bottom: 0;
     left: 50%;
@@ -429,7 +430,7 @@ button {
     @include media('<=medium') {
       width: 100vw;
       height: 350px;
-      transform: translateX(-50%) translateY(430px);
+      transform: translateX(-50%) translateY(400px);
       padding: 1.5rem 0;
     }
 
@@ -440,6 +441,14 @@ button {
 
     &::-webkit-scrollbar {
       display: none; /* for Chrome, Safari, and Opera */
+    }
+
+    .mobile-only {
+      display: none;
+
+      @include media('<=medium') {
+        display: block;
+      }
     }
 
     .section-heading {
@@ -528,13 +537,10 @@ button {
             }
 
             .top-layer {
-              font-size: 15px;
               font-size: 16px;
               display: flex;
               align-items: center;
               justify-content: center;
-              // background-color: orange;
-              // width: 85%;
               margin: 0 auto;
 
               > * {
@@ -570,7 +576,6 @@ button {
             }
 
             .bottom-layer {
-              font-size: 13.5px;
               font-size: 14px;
               display: flex;
               flex-direction: column;
@@ -582,7 +587,7 @@ button {
               opacity: 0;
               visibility: hidden;
               transition: all 0.35s cubic-bezier(0.61, 0.21, 0.19, 0.97);
-              width: 60%;
+              width: 70%;
               border-radius: 10px;
 
               @include media('<=medium') {
@@ -613,10 +618,10 @@ button {
 
             .fade-enter-done {
               max-height: 190px;
-              // padding: 5px 0;
-              // margin: 5px auto;
               opacity: 1;
               visibility: visible;
+              // padding-bottom: 10px;
+              padding: 6px 0;
             }
           }
         }
