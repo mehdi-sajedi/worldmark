@@ -69,14 +69,6 @@ function App() {
         <main className="container">
           <Switch>
             <Route exact path="/">
-              {/* <a
-                href={`data:text/js;charset=utf-8,${encodeURIComponent(
-                  JSON.stringify(appState.temp)
-                )}`}
-                download="filename.js"
-              >
-                {`Download js`}
-              </a> */}
               <SearchFilter />
               <CountriesShownText location="top" />
               <Countries />

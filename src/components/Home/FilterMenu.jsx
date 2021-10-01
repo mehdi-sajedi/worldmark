@@ -53,54 +53,59 @@ const FilterMenu = () => {
 
   return (
     <div
-      ref={filterMenuRef}
-      className={`filter-menu ${appState.menuOpen && 'filter-open'} ${
-        appState.filterMenuExtraHeight && 'extra-height'
-      }`}
+      className={`whole-menu ${appState.menuOpen && 'filter-open'}
+  }`}
     >
-      <h3 className="filter-heading main">Filter | Sort</h3>
-      <div className="line"></div>
-      <h3 className="region-heading">Regions</h3>
-      <div className="filter-categories">
-        <div className="filter-category region-category">
-          <div className="options">
-            {regions.map((region, idx) => {
-              return <FilterRegion region={region} key={region} idx={idx} />;
-            })}
+      <div className="block">
+        <h3 className="filter-heading main section-heading">Filter | Sort</h3>
+      </div>
+      <div ref={filterMenuRef} className="filter-menu">
+        {/* <h3 className="filter-heading main">Filter | Sort</h3> */}
+        {/* <div className="line"></div> */}
+        <h3 className="section-heading region-heading">Regions</h3>
+        <div className="filter-categories">
+          <div className="filter-category region-category">
+            <div className="options">
+              {regions.map((region, idx) => {
+                return <FilterRegion region={region} key={region} idx={idx} />;
+              })}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="line"></div>
-      <h3 className="sort-heading">Sort by</h3>
-      <div className="sort-categories">
-        {sortCategories.map((item) => {
-          return (
-            <p
-              onClick={(e) => handleSortSelect(e)}
-              id={item.id}
-              key={item.id}
-              className={`${appState.sortBy === item.id ? 'sort-active' : ''}`}
-            >
-              {item.text}
-            </p>
-          );
-        })}
-      </div>
-      <div className="line"></div>
-      <h3 className="countries-heading">Countries / Page</h3>
-      <div className="countries-per-page">
-        <h4 className="countries-per-page-value">
-          {appState.countriesPerPage}
-        </h4>
-        <input
-          type="range"
-          className="countries-per-page-input"
-          tabIndex="-1"
-          min="12"
-          max="84"
-          value={appState.countriesPerPage}
-          onChange={(e) => handleCountriesSlider(e)}
-        />
+        <div className="line"></div>
+        <h3 className="section-heading sort-heading">Sort by</h3>
+        <div className="sort-categories">
+          {sortCategories.map((item) => {
+            return (
+              <p
+                onClick={(e) => handleSortSelect(e)}
+                id={item.id}
+                key={item.id}
+                className={`${
+                  appState.sortBy === item.id ? 'sort-active' : ''
+                }`}
+              >
+                {item.text}
+              </p>
+            );
+          })}
+        </div>
+        <div className="line"></div>
+        <h3 className="section-heading countries-heading">Countries / Page</h3>
+        <div className="countries-per-page">
+          <h4 className="countries-per-page-value">
+            {appState.countriesPerPage}
+          </h4>
+          <input
+            type="range"
+            className="countries-per-page-input"
+            tabIndex="-1"
+            min="12"
+            max="84"
+            value={appState.countriesPerPage}
+            onChange={(e) => handleCountriesSlider(e)}
+          />
+        </div>
       </div>
     </div>
   );
