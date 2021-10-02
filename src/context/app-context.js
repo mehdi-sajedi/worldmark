@@ -244,8 +244,6 @@ export const AppProvider = ({ children }) => {
     // - ACTIONS
     // - *************************************************************
 
-
-
     if (action.type === 'GET-DARK-STORAGE') {
       draft.darkMode = JSON.parse(localStorage.getItem('darkmode'));
     } else if (action.type === 'TOGGLE-DARK-MODE') {
@@ -342,8 +340,8 @@ export const AppProvider = ({ children }) => {
     } else if (action.type === 'SET-SORT-TYPE') {
       draft.sortBy = action.payload;
 
-      sortCountries();
       showCurrentPageCountries();
+      sortCountries();
     } else if (action.type === 'SET-COUNTRIES-PER-PAGE') {
       draft.currentPage = 1;
       draft.currentPageFirstPost = 0;
