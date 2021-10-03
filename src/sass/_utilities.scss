@@ -1,13 +1,3 @@
-@mixin extend-background($color) {
-  content: '';
-  background-color: $color;
-  position: absolute;
-  height: 100%;
-  width: 200vw;
-  left: -100vw;
-  z-index: -1;
-}
-
 @mixin font-stack() {
   font-family: 'Urbanist', sans-serif;
 }
@@ -37,16 +27,6 @@
   @include media('<=small') {
     font-size: 12px;
   }
-}
-
-.btn-show-more-container {
-  display: grid;
-  place-items: center;
-  margin-bottom: 1rem;
-}
-
-.btn-show-more {
-  border-radius: var(--border-radius-circle);
 }
 
 .cursor-default {

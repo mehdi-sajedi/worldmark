@@ -12,6 +12,8 @@ export const AppProvider = ({ children }) => {
     allPagesCountries: [],
     activeRegions: new Set(),
     activeSubRegions: new Set(),
+    // activeRegions: new Set(['africa', 'americas', 'oceania']),
+    // activeSubRegions: new Set(['south-eastern asia', 'western europe']),
     searchText: '',
     searchMatches: [],
     sortBy: 'popHL',

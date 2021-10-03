@@ -58,7 +58,7 @@ const SearchBar = () => {
   };
 
   return (
-    <section className="search-bar">
+    <div className="search-bar">
       <div className="search-bar__input">
         <SearchBarDropdown />
         <i className="search-bar__input__icon">
@@ -79,7 +79,7 @@ const SearchBar = () => {
           }`}
         />
       </div>
-    </section>
+    </div>
   );
 };
 

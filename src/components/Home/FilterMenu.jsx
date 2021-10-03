@@ -6,30 +6,25 @@ import FilterRegion from './FilterRegion';
 const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
 const sortCategories = [
   {
-    text: 'Name: A to Z',
-    id: 'nameAZ',
-  },
-
-  {
-    text: 'Name: Z to A',
-    id: 'nameZA',
-  },
-
-  {
     text: 'Population: High to Low',
     id: 'popHL',
   },
-
   {
     text: 'Population: Low to High',
     id: 'popLH',
   },
-
+  {
+    text: 'Name: A to Z',
+    id: 'nameAZ',
+  },
+  {
+    text: 'Name: Z to A',
+    id: 'nameZA',
+  },
   {
     text: 'Area: High to Low',
     id: 'areaHL',
   },
-
   {
     text: 'Area: Low to High',
     id: 'areaLH',
@@ -66,13 +61,11 @@ const FilterMenu = () => {
         </h3>
         <div className="line mobile-only"></div>
         <h3 className="section-heading region-heading">Regions</h3>
-        <div className="filter-categories">
-          <div className="filter-category region-category">
-            <div className="options">
-              {regions.map((region, idx) => {
-                return <FilterRegion region={region} key={region} idx={idx} />;
-              })}
-            </div>
+        <div className="filter-category">
+          <div className="options">
+            {regions.map((region, idx) => {
+              return <FilterRegion region={region} key={region} idx={idx} />;
+            })}
           </div>
         </div>
         <div className="line"></div>

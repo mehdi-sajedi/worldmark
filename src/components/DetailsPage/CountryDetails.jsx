@@ -60,7 +60,6 @@ const CountryDetails = ({ countryCodesToNames }) => {
                     <animated.img
                       style={style}
                       className="details__flag"
-                      // src={country.flag}
                       src={`../${country.flag}`}
                       alt="country flag"
                     />
@@ -160,7 +159,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                               </div>
                             ))
                           ) : (
-                            <div className="details__info__borders__countries__item ">
+                            <div className="details__info__borders__countries__item no-hover">
                               <p className="details__info__borders__countries__item__text cursor-default">
                                 None
                               </p>
