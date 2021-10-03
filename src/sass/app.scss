@@ -9,6 +9,7 @@
 // Sticky searchbar on mobile?
 // Update population
 // Remove un-needed data from JSON file
+// Globe favicon
 // Keyboard accessibility
 
 :root {
@@ -480,7 +481,6 @@ button {
         margin: 0 auto;
 
         &:not(:last-of-type) {
-          margin-bottom: 3px;
           margin-bottom: 10px;
         }
 
@@ -489,8 +489,8 @@ button {
           user-select: none;
           padding: 5px;
           border-radius: var(--border-radius);
-          // background-color: var(--clr-filter-other);
-          // outline: 1px solid var(--clr-outline);
+          cursor: pointer;
+          transition: transform 0.35s ease;
 
           &::before {
             content: '';
