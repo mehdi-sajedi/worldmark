@@ -4,6 +4,7 @@
 @import 'utilities';
 
 // Add number of countries next to region/subregion in filter menu
+// Indicator that at least 1 subregion is checked next to region
 // Reset filters button
 // Sticky searchbar on mobile?
 // Update population
@@ -416,8 +417,11 @@ button {
     max-width: 200px;
     margin: 0 auto 1.5rem;
     user-select: none;
+
     &.main {
-      transform: translateY(-2px);
+      @include media('>medium') {
+        transform: translateY(-2px);
+      }
     }
   }
 

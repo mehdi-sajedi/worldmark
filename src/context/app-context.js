@@ -12,8 +12,6 @@ export const AppProvider = ({ children }) => {
     allPagesCountries: [],
     activeRegions: new Set(),
     activeSubRegions: new Set(),
-    // activeRegions: new Set(['africa', 'americas', 'oceania']),
-    // activeSubRegions: new Set(['south-eastern asia', 'western europe']),
     searchText: '',
     searchMatches: [],
     sortBy: 'popHL',
@@ -204,9 +202,10 @@ export const AppProvider = ({ children }) => {
       } else draft.filterActive = false;
 
       if (draft.filterActive) {
+        let activeRegions = [...draft.activeRegions];
+        let activeSubRegions = [...draft.activeSubRegions];
+
         draft.allPagesCountries = draft.countries.filter((country) => {
-          let activeRegions = [...draft.activeRegions];
-          let activeSubRegions = [...draft.activeSubRegions];
           return (
             (activeRegions.includes(country.region.toLowerCase()) ||
               activeSubRegions.includes(country.subregion.toLowerCase())) &&
@@ -232,7 +231,7 @@ export const AppProvider = ({ children }) => {
         });
       }
 
-      showCurrentPageCountries();
+      // showCurrentPageCountries();
     }
 
     function showCurrentPageCountries() {
@@ -301,12 +300,12 @@ export const AppProvider = ({ children }) => {
     } else if (action.type === 'CLOSE-FILTER-MENU') {
       draft.menuOpen = false;
     } else if (action.type === 'TOGGLE-REGION-CHECK') {
-      draft.regions[action.payload.region].selected =
-        !draft.regions[action.payload.region].selected;
+      draft.regions[action.payload].selected =
+        !draft.regions[action.payload].selected;
 
-      if (draft.regions[action.payload.region].selected) {
-        for (let i in draft.regions[action.payload.region].subRegions)
-          draft.regions[action.payload.region].subRegions[i].selected = false;
+      if (draft.regions[action.payload].selected) {
+        for (let i in draft.regions[action.payload].subRegions)
+          draft.regions[action.payload].subRegions[i].selected = false;
       }
 
       toggleFilterCheck();
