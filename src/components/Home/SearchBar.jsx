@@ -23,7 +23,7 @@ const SearchBar = () => {
   const countriesFilter = (e) => {
     dispatch({
       type: 'SET-SEARCH-TEXT',
-      payload: { inputValue: e.target.value, inputRef: inputRef.current },
+      payload: e.target.value,
     });
 
     const timeout = setTimeout(() => {
@@ -35,25 +35,30 @@ const SearchBar = () => {
           e.target.value
         );
       });
-      dispatch({ type: 'FILTER-BY-SEARCH', payload: matches });
+      // dispatch({ type: 'FILTER-BY-SEARCH', payload: matches });
+      dispatch({ type: 'FILTER-BY-SEARCH' });
     }, 1000);
 
     return () => clearTimeout(timeout);
   };
 
-  const clearSearch = (e) => {
+  const clearSearch = () => {
     dispatch({
       type: 'CLEAR-SEARCH',
       payload: inputRef.current,
     });
     dispatch({
       type: 'SET-SEARCH-TEXT',
-      payload: { inputValue: '', inputRef: inputRef.current },
+      payload: '',
     });
 
+    // dispatch({
+    //   type: 'FILTER-BY-SEARCH',
+    //   payload: appState.countries,
+    // });
     dispatch({
       type: 'FILTER-BY-SEARCH',
-      payload: appState.countries,
+      // payload: appState.countries,
     });
   };
 
@@ -73,7 +78,7 @@ const SearchBar = () => {
           ref={inputRef}
         />
         <RiCloseFill
-          onClick={() => clearSearch()}
+          onClick={clearSearch}
           className={`search-close-icon ${
             appState.searchText.length > 0 ? 'show-close' : ''
           }`}

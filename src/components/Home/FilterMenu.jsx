@@ -117,6 +117,7 @@ const FilterMenu = () => {
                   <DetailtsFilterOption
                     value={option}
                     kind="unMember"
+                    action='SET-UN-MEMBER-FILTER'
                     key={`unMember-${option}`}
                   />
                 );
@@ -137,6 +138,7 @@ const FilterMenu = () => {
                   <DetailtsFilterOption
                     value={option}
                     kind="landlocked"
+                    action='SET-LANDLOCKED-FILTER'
                     key={`landlocked-${option}`}
                   />
                 );

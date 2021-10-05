@@ -39,7 +39,7 @@ function App() {
     dispatch({ type: 'SET-ALL-COUNTRIES', payload: countries });
     createCountryKeyPairs(countries);
   }, [dispatch, appState.countries]);
-
+ 
   useEffect(() => {
     dispatch({
       type: 'SET-CURRENT-COUNTRIES',
