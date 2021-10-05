@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/app-context';
 import useComponentInvisible from '../../hooks/useComponentInvisible';
+import useShowComponent from '../../hooks/useShowComponent';
 import FilterRegion from './FilterRegion';
+import DetailtsFilterOption from './DetailtsFilterOption';
+import { RiArrowDownSLine } from 'react-icons/ri';
 
 const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
 const sortCategories = [
@@ -30,10 +33,21 @@ const sortCategories = [
     id: 'areaLH',
   },
 ];
+const detailsFilterOptions = ['all', 'yes', 'no'];
 
 const FilterMenu = () => {
   const { appState, dispatch } = useContext(AppContext);
   const { ref: filterMenuRef } = useComponentInvisible('CLOSE-FILTER-MENU');
+  const {
+    ref: unMemberMenuRef,
+    showComponent: showUnMemberMenu,
+    setShowComponent: setShowUnMemberMenu,
+  } = useShowComponent('');
+  const {
+    ref: landlockedMenuRef,
+    showComponent: showLandlockedMenu,
+    setShowComponent: setShowLandlockedMenu,
+  } = useShowComponent('');
 
   const handleSortSelect = (e) => {
     dispatch({
@@ -85,6 +99,50 @@ const FilterMenu = () => {
               </p>
             );
           })}
+        </div>
+        <div className="line"></div>
+        <h3 className="section-heading details-heading">Details</h3>
+        <div className="details-category">
+          <div className="un-member details-option" ref={unMemberMenuRef}>
+            <div
+              className="dropdown-heading"
+              onClick={() => setShowUnMemberMenu((prevState) => !prevState)}
+            >
+              <h4 className="text">UN Member</h4>
+              <RiArrowDownSLine className="arrow" />
+            </div>
+            <div className={`choices ${showUnMemberMenu ? 'show' : ''}`}>
+              {detailsFilterOptions.map((option) => {
+                return (
+                  <DetailtsFilterOption
+                    value={option}
+                    kind="unMember"
+                    key={`unMember-${option}`}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className="landlocked details-option" ref={landlockedMenuRef}>
+            <div
+              className="dropdown-heading"
+              onClick={() => setShowLandlockedMenu((prevState) => !prevState)}
+            >
+              <h4 className="text">Landlocked</h4>
+              <RiArrowDownSLine className="arrow" />
+            </div>
+            <div className={`choices ${showLandlockedMenu ? 'show' : ''}`}>
+              {detailsFilterOptions.map((option) => {
+                return (
+                  <DetailtsFilterOption
+                    value={option}
+                    kind="landlocked"
+                    key={`landlocked-${option}`}
+                  />
+                );
+              })}
+            </div>
+          </div>
         </div>
         <div className="line"></div>
         <h3 className="section-heading countries-heading">Countries / Page</h3>

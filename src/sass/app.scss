@@ -7,7 +7,6 @@
 // Indicator that at least 1 subregion is checked next to region
 // Reset filters button
 // Sticky searchbar on mobile?
-// Update population
 // Remove un-needed data from JSON file
 // Globe favicon
 // Keyboard accessibility
@@ -33,6 +32,8 @@
     0px -22px 8px -10px rgba(255, 255, 255, 0.73);
   --box-shadow-5: rgba(200, 200, 200, 0.8) 0px 0px 10px 4px;
   --box-shadow-6: rgba(99, 99, 99, 0.2) 0px 2px 8px;
+  --box-shadow-7: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   --box-shadow-extra: rgba(0, 0, 0, 0.6) 0px 0px 10px -3px;
 
   --border-radius: 3px;
@@ -417,7 +418,6 @@ button {
     letter-spacing: 1px;
     max-width: 200px;
     margin: 0 auto 1.5rem;
-    user-select: none;
 
     &.main {
       @include media('>medium') {
@@ -661,6 +661,83 @@ button {
       }
     }
 
+    .details-category {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .details-option {
+        margin: 5px 0;
+
+        .dropdown-heading {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          user-select: none;
+          background-color: #eee;
+          padding: 12px 16px;
+          border-radius: var(--border-radius);
+          box-shadow: var(--box-shadow-7);
+          cursor: pointer;
+
+          .arrow {
+            width: 18px;
+            height: 18px;
+            // background-color: firebrick;
+            margin-left: 10px;
+          }
+        }
+
+        .choices {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 10px auto;
+          background-color: #eee;
+          overflow: hidden;
+          border-radius: var(--border-radius);
+          box-shadow: var(--box-shadow-7);
+          width: 85%;
+
+          //
+          max-height: 0;
+          visibility: hidden;
+          opacity: 0;
+          transition: max-height 0.25s ease, opacity 0.25s ease,
+            visibility 0.25s ease, padding 0.25s ease;
+
+          &.show {
+            max-height: 120px;
+            opacity: 1;
+            visibility: visible;
+            padding: 10px 0;
+          }
+
+          label {
+            width: 85%;
+            text-align: center;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: var(--border-radius);
+
+            &:hover {
+              background-color: #ddd;
+            }
+          }
+
+          input:checked + label {
+            background-color: #ccc;
+            font-weight: 500;
+          }
+        }
+      }
+
+      input {
+        display: none;
+      }
+    }
+
     .countries-heading {
       margin-bottom: 0.75rem;
     }
@@ -676,7 +753,7 @@ button {
         margin-bottom: 1rem;
         font-size: 24px;
         font-size: 26px;
-        user-select: none;
+        cursor: default;
       }
 
       &-input {

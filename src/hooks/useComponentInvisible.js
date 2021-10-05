@@ -14,7 +14,6 @@ const useComponentInvisible = (reducerAction) => {
 
   const handleClickOutside = useCallback(
     (e) => {
-      console.log('Ran');
       if (ref.current && !ref.current.contains(e.target)) {
         dispatch({ type: reducerAction });
       }

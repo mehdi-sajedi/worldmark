@@ -5,7 +5,7 @@ import countries from './data/countries.json';
 import './sass/app.scss';
 import Header from './components/Utilities/Header';
 import SearchFilter from './components/Home/SearchBar';
-import Countries from './components/Home/CountriesGrid';
+import CountriesGrid from './components/Home/CountriesGrid';
 import CountryDetails from './components/DetailsPage/CountryDetails';
 import CountriesShownText from './components/Home/CountriesShownText';
 import Footer from './components/Home/Footer';
@@ -71,7 +71,7 @@ function App() {
             <Route exact path="/">
               <SearchFilter />
               <CountriesShownText location="top" />
-              <Countries />
+              <CountriesGrid />
               <FilterMenu />
               <FilterBtn />
               <ScrollBtn />

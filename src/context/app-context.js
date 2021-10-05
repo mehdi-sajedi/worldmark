@@ -15,6 +15,8 @@ export const AppProvider = ({ children }) => {
     searchText: '',
     searchMatches: [],
     sortBy: 'popHL',
+    unMember: 'all',
+    landlocked: 'all',
     countriesPerPage: 36,
     currentPage: 1,
     currentPageFirstPost: 0,
@@ -209,29 +211,26 @@ export const AppProvider = ({ children }) => {
           return (
             (activeRegions.includes(country.region.toLowerCase()) ||
               activeSubRegions.includes(country.subregion.toLowerCase())) &&
-            (country.name.toLowerCase().includes(draft.searchText.trim()) ||
-              country.alpha2Code
-                .toLowerCase()
-                .includes(draft.searchText.trim()) ||
-              country.alpha3Code
-                .toLowerCase()
-                .includes(draft.searchText.trim())) &&
+            searchMatches(
+              country.name,
+              country.alpha2Code,
+              country.alpha3Code,
+              draft.searchText
+            ) &&
             country
           );
         });
       } else {
         draft.allPagesCountries = draft.countries.filter((country) => {
-          return (
-            country.name.toLowerCase().includes(draft.searchText.trim()) ||
-            country.alpha2Code
-              .toLowerCase()
-              .includes(draft.searchText.trim()) ||
-            country.alpha3Code.toLowerCase().includes(draft.searchText.trim())
+          return searchMatches(
+            country.name,
+            country.alpha2Code,
+            country.alpha3Code,
+            draft.searchText
           );
         });
       }
 
-      // showCurrentPageCountries();
     }
 
     function showCurrentPageCountries() {
@@ -239,6 +238,18 @@ export const AppProvider = ({ children }) => {
         draft.currentPageFirstPost,
         draft.currentPageLastPost
       );
+    }
+
+    function searchMatches(country, alpha2Code, alpha3Code, val) {
+      return (
+        matchByCountryIdentifier(country, val) ||
+        matchByCountryIdentifier(alpha2Code, val) ||
+        matchByCountryIdentifier(alpha3Code, val)
+      );
+    }
+
+    function matchByCountryIdentifier(countryIdentifier, val) {
+      return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
     }
 
     // - *************************************************************
@@ -278,16 +289,11 @@ export const AppProvider = ({ children }) => {
       showCurrentPageCountries();
     } else if (action.type === 'SET-ONLY-SEARCH-MATCHES') {
       draft.searchMatches = draft.countries.filter((country) => {
-        return (
-          country.name
-            .toLowerCase()
-            .includes(draft.searchText.toLowerCase().trim()) ||
-          country.alpha2Code
-            .toLowerCase()
-            .includes(draft.searchText.toLowerCase().trim()) ||
-          country.alpha3Code
-            .toLowerCase()
-            .includes(draft.searchText.toLowerCase().trim())
+        return searchMatches(
+          country.name,
+          country.alpha2Code,
+          country.alpha3Code,
+          draft.searchText
         );
       });
     } else if (action.type === 'CLEAR-SEARCH') {
@@ -341,6 +347,22 @@ export const AppProvider = ({ children }) => {
     } else if (action.type === 'SET-SORT-TYPE') {
       draft.sortBy = action.payload;
 
+      showCurrentPageCountries();
+      sortCountries();
+    } else if (action.type === 'SET-FILTER-DETAILS-DROPDOWN-SELECTION') {
+      draft[action.payload.kind] = action.payload.value;
+
+      if (action.payload.value === 'yes') {
+        draft.allPagesCountries = draft.countries.filter((country) => {
+          return country[action.payload.kind];
+        });
+      } else if (action.payload.value === 'no') {
+        draft.allPagesCountries = draft.countries.filter((country) => {
+          return !country[action.payload.kind];
+        });
+      } else {
+        draft.allPagesCountries = draft.countries;
+      }
       showCurrentPageCountries();
       sortCountries();
     } else if (action.type === 'SET-COUNTRIES-PER-PAGE') {
