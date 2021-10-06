@@ -8,17 +8,17 @@ const SearchBar = () => {
   const { appState, dispatch } = useContext(AppContext);
   const inputRef = useRef();
 
-  const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
-    return (
-      matchByCountryIdentifier(country, val) ||
-      matchByCountryIdentifier(alpha2Code, val) ||
-      matchByCountryIdentifier(alpha3Code, val)
-    );
-  };
+  // const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
+  //   return (
+  //     matchByCountryIdentifier(country, val) ||
+  //     matchByCountryIdentifier(alpha2Code, val) ||
+  //     matchByCountryIdentifier(alpha3Code, val)
+  //   );
+  // };
 
-  const matchByCountryIdentifier = (countryIdentifier, val) => {
-    return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
-  };
+  // const matchByCountryIdentifier = (countryIdentifier, val) => {
+  //   return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
+  // };
 
   const countriesFilter = (e) => {
     dispatch({
@@ -27,15 +27,14 @@ const SearchBar = () => {
     });
 
     const timeout = setTimeout(() => {
-      const matches = appState.countries.filter((country) => {
-        return matchBySearch(
-          country.name,
-          country.alpha2Code,
-          country.alpha3Code,
-          e.target.value
-        );
-      });
-      // dispatch({ type: 'FILTER-BY-SEARCH', payload: matches });
+      // const matches = appState.countries.filter((country) => {
+      //   return matchBySearch(
+      //     country.name,
+      //     country.alpha2Code,
+      //     country.alpha3Code,
+      //     e.target.value
+      //   );
+      // });
       dispatch({ type: 'FILTER-BY-SEARCH' });
     }, 1000);
 
@@ -52,14 +51,7 @@ const SearchBar = () => {
       payload: '',
     });
 
-    // dispatch({
-    //   type: 'FILTER-BY-SEARCH',
-    //   payload: appState.countries,
-    // });
-    dispatch({
-      type: 'FILTER-BY-SEARCH',
-      // payload: appState.countries,
-    });
+    dispatch({ type: 'FILTER-BY-SEARCH' });
   };
 
   return (

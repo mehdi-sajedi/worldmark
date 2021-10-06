@@ -17,16 +17,6 @@ export const AppProvider = ({ children }) => {
     sortBy: 'popHL',
     unMember: 'all',
     landlocked: 'all',
-
-    unMember1: {
-      active: false,
-      value: null,
-    },
-    landlocked1: {
-      active: false,
-      value: null,
-    },
-
     countriesPerPage: 36,
     currentPage: 1,
     currentPageFirstPost: 0,
@@ -207,43 +197,11 @@ export const AppProvider = ({ children }) => {
         });
       });
 
-      // We could extract this to be a function checkFilterActive with the UN/Landlocked conditions included.
-      if (draft.activeRegions.size > 0 || draft.activeSubRegions.size > 0) {
-        draft.filterActive = true;
-      } else draft.filterActive = false;
+      if (draft.activeRegions.size === 0 && draft.activeSubRegions.size === 0) {
+        populateActiveRegions();
+      }
 
-      // if (draft.filterActive) {
-      //   let activeRegions = [...draft.activeRegions];
-      //   let activeSubRegions = [...draft.activeSubRegions];
-
-      //   draft.allPagesCountries = draft.countries.filter((country) => {
-      //     return (
-      //       (activeRegions.includes(country.region.toLowerCase()) ||
-      //         activeSubRegions.includes(country.subregion.toLowerCase())) &&
-      //       searchMatches(
-      //         country.name,
-      //         country.alpha2Code,
-      //         country.alpha3Code,
-      //         draft.searchText
-      //       ) &&
-      //       country
-      //     );
-      //   });
-      // } else {
-      //   draft.allPagesCountries = draft.countries.filter((country) => {
-      //     return searchMatches(
-      //       country.name,
-      //       country.alpha2Code,
-      //       country.alpha3Code,
-      //       draft.searchText
-      //     );
-      //   });
-      // }
-
-      // if (draft.searchText !== '') setFilteredCountries();
-      // else setFilteredCountries(draft.countries);
-
-      setFilteredCountries();
+      checkFilterActive();
     }
 
     function showCurrentPageCountries() {
@@ -265,44 +223,71 @@ export const AppProvider = ({ children }) => {
       return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
     }
 
-    function setFilteredCountries(arr = draft.searchMatches) {
-      if (draft.searchText === '') arr = draft.countries;
+    function setFilteredCountries(arr = draft.countries) {
+      if (draft.searchText !== '') arr = draft.searchMatches;
 
-      if (draft.filterActive) {
-        let activeRegions = [...draft.activeRegions];
-        let activeSubRegions = [...draft.activeSubRegions];
-        draft.allPagesCountries = arr.filter((country) => {
+      checkFilterActive();
+
+      if (!draft.filterActive) return (draft.allPagesCountries = arr);
+
+      let activeRegions = [...draft.activeRegions];
+      let activeSubRegions = [...draft.activeSubRegions];
+
+      draft.allPagesCountries = arr
+        .filter((country) => {
           return (
             activeRegions.includes(country.region.toLowerCase()) ||
             activeSubRegions.includes(country.subregion.toLowerCase())
           );
+        })
+        .filter((country) => {
+          if (draft.unMember === 'yes') return country.unMember;
+          else if (draft.unMember === 'no') return !country.unMember;
+          else return country;
+        })
+        .filter((country) => {
+          if (draft.landlocked === 'yes') return country.landlocked;
+          else if (draft.landlocked === 'no') return !country.landlocked;
+          else return country;
         });
-      } else {
-        draft.allPagesCountries = arr;
-      }
     }
 
-    // Use state for the different filters. UnMember, Landlocked, Regional, + SearchText, and then use those arrays and string to render out the countries that match all the criteria
-    // OR
-    // Use functions to return all the matches for UnMember, Landlocked, Regional, + SearchText, and then only render out the ones that match all those.
-
-    // Remember, everyone starts somewhere. If you accomplish this, the next time you have to take on a similar task, you will be ready and much more competent in your ability to do so.
-
-    function setDetailsFilter(filterType, selection) {
-      draft[filterType] = selection;
-
-      if (selection === 'yes') {
-        draft.allPagesCountries = draft.countries.filter((country) => {
-          return country[filterType];
-        });
-      } else if (selection === 'no') {
-        draft.allPagesCountries = draft.countries.filter((country) => {
-          return !country[filterType];
-        });
-      } else {
-        draft.allPagesCountries = draft.allPagesCountries;
-      }
+    function populateActiveRegions() {
+      draft.countries.forEach((country) => {
+        draft.activeRegions.add(country.region.toLowerCase());
+      });
+      draft.countries.forEach((country) => {
+        draft.activeSubRegions.add(country.subregion.toLowerCase());
+      });
     }
+
+    function checkFilterActive() {
+      if (
+        draft.activeRegions.size > 0 ||
+        draft.activeSubRegions.size > 0 ||
+        draft.unMember === 'yes' ||
+        draft.unMember === 'no' ||
+        draft.landlocked === 'yes' ||
+        draft.landlocked === 'no'
+      ) {
+        draft.filterActive = true;
+      } else draft.filterActive = false;
+    }
+
+    // function setDetailsFilter(filterType, option) {
+    // draft[filterType] = option;
+    // if (option === 'yes') {
+    //   draft.allPagesCountries = draft.countries.filter((country) => {
+    //     return country[filterType];
+    //   });
+    // } else if (option === 'no') {
+    //   draft.allPagesCountries = draft.countries.filter((country) => {
+    //     return !country[filterType];
+    //   });
+    // } else {
+    //   draft.allPagesCountries = draft.allPagesCountries;
+    // }
+    // }
 
     // - *************************************************************
     // - ACTIONS
@@ -316,6 +301,7 @@ export const AppProvider = ({ children }) => {
     } else if (action.type === 'SET-ALL-COUNTRIES') {
       draft.countries = action.payload;
       draft.allPagesCountries = action.payload;
+      populateActiveRegions();
     } else if (action.type === 'SET-CURRENT-COUNTRIES') {
       draft.currentPageCountries = draft.allPagesCountries.slice(
         action.payload.idxFirst,
@@ -326,19 +312,7 @@ export const AppProvider = ({ children }) => {
       if (action.payload.length > 1) draft.showSearchDropdown = true;
       else draft.showSearchDropdown = false;
     } else if (action.type === 'FILTER-BY-SEARCH') {
-      // if (draft.filterActive) {
-      //   let activeRegions = [...draft.activeRegions];
-      //   let activeSubRegions = [...draft.activeSubRegions];
-      //   draft.allPagesCountries = draft.searchMatches.filter((country) => {
-      //     return (
-      //       activeRegions.includes(country.region.toLowerCase()) ||
-      //       activeSubRegions.includes(country.subregion.toLowerCase())
-      //     );
-      //   });
-      // } else {
-      //   draft.allPagesCountries = draft.searchMatches;
-      // }
-      setFilteredCountries(); // pass searchMatches or all countries
+      setFilteredCountries();
       showCurrentPageCountries();
     } else if (action.type === 'SET-ONLY-SEARCH-MATCHES') {
       draft.searchMatches = draft.countries.filter((country) => {
@@ -368,6 +342,7 @@ export const AppProvider = ({ children }) => {
       }
 
       toggleFilterCheck();
+      setFilteredCountries();
       sortCountries();
     } else if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
       draft.regions[action.payload.region].subRegions[
@@ -382,6 +357,7 @@ export const AppProvider = ({ children }) => {
       }
 
       toggleFilterCheck();
+      setFilteredCountries();
       sortCountries();
     } else if (action.type === 'TOGGLE-SUB-REGIONS-MENU') {
       draft.regions[action.payload].expanded =
@@ -403,20 +379,27 @@ export const AppProvider = ({ children }) => {
       showCurrentPageCountries();
       sortCountries();
     } else if (action.type === 'SET-UN-MEMBER-FILTER') {
-      console.log(action.payload.test ?? 'Here');
-      console.log(action.payload.test && 'Here');
-      console.log(action.payload.test || 'Here');
-      console.log(true ?? 'Here');
-      console.log(false ?? 'Here');
-      console.log(null ?? 'Here');
-      console.log(undefined ?? 'Here');
-      console.log('- - -');
-      setDetailsFilter(action.payload.kind, action.payload.value);
-      showCurrentPageCountries();
+      // if (action.payload.option === 'all') {
+      //   draft[action.payload.dropdown].active = false;
+      // } else {
+      //   draft[action.payload.dropdown].active = true;
+      //   draft[action.payload.dropdown].value = action.payload.bool;
+      // }
+
+      draft.unMember = action.payload.option;
+
+      setFilteredCountries();
       sortCountries();
     } else if (action.type === 'SET-LANDLOCKED-FILTER') {
-      setDetailsFilter(action.payload.kind, action.payload.value);
-      showCurrentPageCountries();
+      // if (action.payload.option === 'all') {
+      //   draft[action.payload.dropdown].active = false;
+      // } else {
+      //   draft[action.payload.dropdown].active = true;
+      //   draft[action.payload.dropdown].value = action.payload.bool;
+      // }
+      draft.landlocked = action.payload.option;
+
+      setFilteredCountries();
       sortCountries();
     } else if (action.type === 'SET-COUNTRIES-PER-PAGE') {
       draft.currentPage = 1;

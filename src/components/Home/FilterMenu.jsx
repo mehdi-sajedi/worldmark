@@ -115,8 +115,8 @@ const FilterMenu = () => {
               {detailsFilterOptions.map((option) => {
                 return (
                   <DetailtsFilterOption
-                    value={option}
-                    kind="unMember"
+                    option={option}
+                    dropdown="unMember"
                     action='SET-UN-MEMBER-FILTER'
                     key={`unMember-${option}`}
                   />
@@ -136,8 +136,8 @@ const FilterMenu = () => {
               {detailsFilterOptions.map((option) => {
                 return (
                   <DetailtsFilterOption
-                    value={option}
-                    kind="landlocked"
+                    option={option}
+                    dropdown="landlocked"
                     action='SET-LANDLOCKED-FILTER'
                     key={`landlocked-${option}`}
                   />

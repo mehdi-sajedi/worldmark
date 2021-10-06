@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/app-context';
 
-const DetailtsFilterOption = ({ kind, value, action }) => {
+const DetailtsFilterOption = ({ dropdown, option, action }) => {
   const { appState, dispatch } = useContext(AppContext);
 
-  const handleDropdownChange = (action, kind, value) => {
+  const handleDropdownChange = (action, dropdown, option) => {
     dispatch({
       type: action,
-      payload: { kind: kind, value: value, test: null },
+      payload: { dropdown: dropdown, option: option },
     });
   };
 
@@ -15,13 +15,13 @@ const DetailtsFilterOption = ({ kind, value, action }) => {
     <>
       <input
         type="radio"
-        id={`${kind}-${value}`}
-        name={kind}
-        onChange={() => handleDropdownChange(action, kind, value)}
-        checked={appState[kind] === value}
+        id={`${dropdown}-${option}`}
+        name={dropdown}
+        onChange={() => handleDropdownChange(action, dropdown, option)}
+        checked={appState[dropdown] === option}
       />
-      <label htmlFor={`${kind}-${value}`} className="capitalize">
-        {value}
+      <label htmlFor={`${dropdown}-${option}`} className="capitalize">
+        {option}
       </label>
     </>
   );
