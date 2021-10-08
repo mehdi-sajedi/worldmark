@@ -1,11 +1,20 @@
-import React, { useContext } from 'react';
-import { AppContext } from '../../context/app-context';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiOutlineMoon } from 'react-icons/hi';
 import { HiMoon } from 'react-icons/hi';
 
-const Header = () => {
-  const { appState, dispatch } = useContext(AppContext);
+const Header = ({ darkMode, setDarkMode }) => {
+  const toggleDarkMode = () => {
+    setDarkMode((prevState) => !prevState);
+
+    if (!darkMode) {
+      document.body.classList.add('darkmode');
+    } else if (darkMode) {
+      document.body.classList.remove('darkmode');
+    }
+
+    localStorage.setItem('darkmode', JSON.stringify(darkMode));
+  };
 
   return (
     <div className="header-container">
@@ -13,15 +22,12 @@ const Header = () => {
         <Link to="/">
           <h2 className="header__text">Where in the world?</h2>
         </Link>
-        <div
-          className="header__theme-btn"
-          onClick={() => dispatch({ type: 'TOGGLE-DARK-MODE' })}
-        >
+        <div className="header__theme-btn" onClick={toggleDarkMode}>
           <i className="header__theme-btn__icon">
-            {appState.darkMode ? <HiMoon /> : <HiOutlineMoon />}
+            {darkMode ? <HiMoon /> : <HiOutlineMoon />}
           </i>
           <p className="header__theme-btn__text">
-            {appState.darkMode ? 'Light Mode' : 'Dark Mode'}
+            {darkMode ? 'Light Mode' : 'Dark Mode'}
           </p>
         </div>
       </header>

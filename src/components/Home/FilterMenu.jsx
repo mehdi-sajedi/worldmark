@@ -5,34 +5,10 @@ import useShowComponent from '../../hooks/useShowComponent';
 import FilterRegion from './FilterRegion';
 import DetailtsFilterOption from './DetailtsFilterOption';
 import { RiArrowDownSLine } from 'react-icons/ri';
+import sortCategories from '../../data/sortCategories';
+import { GrPowerReset } from 'react-icons/gr';
 
 const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
-const sortCategories = [
-  {
-    text: 'Population: High to Low',
-    id: 'popHL',
-  },
-  {
-    text: 'Population: Low to High',
-    id: 'popLH',
-  },
-  {
-    text: 'Name: A to Z',
-    id: 'nameAZ',
-  },
-  {
-    text: 'Name: Z to A',
-    id: 'nameZA',
-  },
-  {
-    text: 'Area: High to Low',
-    id: 'areaHL',
-  },
-  {
-    text: 'Area: Low to High',
-    id: 'areaLH',
-  },
-];
 const detailsFilterOptions = ['all', 'yes', 'no'];
 
 const FilterMenu = () => {
@@ -49,15 +25,21 @@ const FilterMenu = () => {
     setShowComponent: setShowLandlockedMenu,
   } = useShowComponent('');
 
-  const handleSortSelect = (e) => {
+  const handleSortSelect = (item) => {
     dispatch({
       type: 'SET-SORT-TYPE',
-      payload: e.target.id,
+      // payload: { id: item.id, text: item.text },
+      payload: item,
     });
   };
 
   const handleCountriesSlider = (e) => {
     dispatch({ type: 'SET-COUNTRIES-PER-PAGE', payload: e.target.value });
+  };
+
+  const resetFilters = () => {
+    dispatch({ type: 'RESET-FILTERS' });
+    // dispatch({type: 'RESET-TO-FIRST-PAGE'})
   };
 
   return (
@@ -85,14 +67,28 @@ const FilterMenu = () => {
         <div className="line"></div>
         <h3 className="section-heading sort-heading">Sort by</h3>
         <div className="sort-categories">
-          {sortCategories.map((item) => {
+          {/* {sortCategories.entries((key, value) => {
+            console.log(key);
+            console.log(value);
             return (
               <p
                 onClick={(e) => handleSortSelect(e)}
+                id={key}
+                key={key}
+                className={`${appState.sortBy === key ? 'sort-active' : ''}`}
+              >
+                {value}
+              </p>
+            );
+          })} */}
+          {sortCategories.map((item) => {
+            return (
+              <p
+                onClick={() => handleSortSelect(item)}
                 id={item.id}
                 key={item.id}
                 className={`${
-                  appState.sortBy === item.id ? 'sort-active' : ''
+                  appState.sortBy.id === item.id ? 'sort-active' : ''
                 }`}
               >
                 {item.text}
@@ -117,7 +113,7 @@ const FilterMenu = () => {
                   <DetailtsFilterOption
                     option={option}
                     dropdown="unMember"
-                    action='SET-UN-MEMBER-FILTER'
+                    action="SET-UN-MEMBER-FILTER"
                     key={`unMember-${option}`}
                   />
                 );
@@ -138,7 +134,7 @@ const FilterMenu = () => {
                   <DetailtsFilterOption
                     option={option}
                     dropdown="landlocked"
-                    action='SET-LANDLOCKED-FILTER'
+                    action="SET-LANDLOCKED-FILTER"
                     key={`landlocked-${option}`}
                   />
                 );
@@ -161,6 +157,13 @@ const FilterMenu = () => {
             value={appState.countriesPerPage}
             onChange={(e) => handleCountriesSlider(e)}
           />
+        </div>
+        <div className="line"></div>
+        <div className="reset-category">
+          <div className="reset-btn" onClick={resetFilters}>
+            <p className="reset-text">Reset</p>
+            <GrPowerReset className="reset-icon" />
+          </div>
         </div>
       </div>
     </div>

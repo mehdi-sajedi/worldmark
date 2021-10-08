@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { AppContext } from './context/app-context';
 import countries from './data/countries.json';
@@ -25,21 +25,22 @@ const createCountryKeyPairs = (countries) => {
 
 function App() {
   const { appState, dispatch } = useContext(AppContext);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    dispatch({ type: 'GET-DARK-STORAGE' });
-  }, [dispatch]);
-
-  useEffect(() => {
-    appState.darkMode && document.body.classList.add('darkmode');
-    !appState.darkMode && document.body.classList.remove('darkmode');
-  }, [appState.darkMode]);
+    setDarkMode(!JSON.parse(localStorage.getItem('darkmode')));
+    if (!JSON.parse(localStorage.getItem('darkmode'))) {
+      document.body.classList.add('darkmode');
+    } else if (JSON.parse(localStorage.getItem('darkmode'))) {
+      document.body.classList.remove('darkmode');
+    }
+  }, []);
 
   useEffect(() => {
     dispatch({ type: 'SET-ALL-COUNTRIES', payload: countries });
     createCountryKeyPairs(countries);
   }, [dispatch, appState.countries]);
- 
+
   useEffect(() => {
     dispatch({
       type: 'SET-CURRENT-COUNTRIES',
@@ -65,7 +66,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
         <main className="container">
           <Switch>
             <Route exact path="/">

@@ -41,17 +41,18 @@ const SearchBar = () => {
     return () => clearTimeout(timeout);
   };
 
-  const clearSearch = () => {
-    dispatch({
-      type: 'CLEAR-SEARCH',
-      payload: inputRef.current,
-    });
-    dispatch({
-      type: 'SET-SEARCH-TEXT',
-      payload: '',
-    });
-
-    dispatch({ type: 'FILTER-BY-SEARCH' });
+  const clearSearch = (e) => {
+    if (e.type === 'click' || e.code === 'Enter') {
+      dispatch({
+        type: 'CLEAR-SEARCH',
+        payload: inputRef.current,
+      });
+      dispatch({
+        type: 'SET-SEARCH-TEXT',
+        payload: '',
+      });
+      dispatch({ type: 'FILTER-BY-SEARCH' });
+    }
   };
 
   return (
@@ -71,6 +72,8 @@ const SearchBar = () => {
         />
         <RiCloseFill
           onClick={clearSearch}
+          onKeyPress={(e) => clearSearch(e)}
+          tabIndex={0}
           className={`search-close-icon ${
             appState.searchText.length > 0 ? 'show-close' : ''
           }`}

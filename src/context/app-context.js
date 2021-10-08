@@ -14,7 +14,10 @@ export const AppProvider = ({ children }) => {
     activeSubRegions: new Set(),
     searchText: '',
     searchMatches: [],
-    sortBy: 'popHL',
+    sortBy: {
+      id: 'popHL',
+      text: 'Population: High to Low',
+    },
     unMember: 'all',
     landlocked: 'all',
     countriesPerPage: 36,
@@ -157,27 +160,27 @@ export const AppProvider = ({ children }) => {
     // - FUNCTIONS
     // - *************************************************************
     function sortCountries() {
-      if (draft.sortBy === 'popHL') {
+      if (draft.sortBy.id === 'popHL') {
         draft.allPagesCountries = draft.allPagesCountries.sort(
           (a, b) => b.population - a.population
         );
-      } else if (draft.sortBy === 'popLH') {
+      } else if (draft.sortBy.id === 'popLH') {
         draft.allPagesCountries = draft.allPagesCountries.sort(
           (a, b) => a.population - b.population
         );
-      } else if (draft.sortBy === 'nameAZ') {
+      } else if (draft.sortBy.id === 'nameAZ') {
         draft.allPagesCountries = draft.allPagesCountries.sort((a, b) =>
           a.name.localeCompare(b.name)
         );
-      } else if (draft.sortBy === 'nameZA') {
+      } else if (draft.sortBy.id === 'nameZA') {
         draft.allPagesCountries = draft.allPagesCountries.sort((a, b) =>
           b.name.localeCompare(a.name)
         );
-      } else if (draft.sortBy === 'areaHL') {
+      } else if (draft.sortBy.id === 'areaHL') {
         draft.allPagesCountries = draft.allPagesCountries.sort(
           (a, b) => b.area - a.area
         );
-      } else if (draft.sortBy === 'areaLH') {
+      } else if (draft.sortBy.id === 'areaLH') {
         draft.allPagesCountries = draft.allPagesCountries.sort(
           (a, b) => a.area - b.area
         );
@@ -374,6 +377,8 @@ export const AppProvider = ({ children }) => {
         draft.allPagesCountries.length
       );
     } else if (action.type === 'SET-SORT-TYPE') {
+      // draft.sortBy.id = action.payload.id;
+      // draft.sortBy.text = action.payload.text;
       draft.sortBy = action.payload;
 
       showCurrentPageCountries();
@@ -409,6 +414,8 @@ export const AppProvider = ({ children }) => {
         draft.countriesPerPage,
         draft.allPagesCountries.length
       );
+    } else if (action.type === 'RESET-FILTERS') {
+      return initialAppState;
     }
   };
 

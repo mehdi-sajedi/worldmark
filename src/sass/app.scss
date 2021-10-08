@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&family=Urbanist:wght@300;500;600;700;800&display=swap');
-//
+
+@import 'box-shadows';
 @import 'include-media';
 @import 'utilities';
 
 // Add number of countries next to region/subregion in filter menu
 // Indicator that at least 1 subregion is checked next to region
 // Reset filters button
+// Text showing what the active sort is
 // Sticky searchbar on mobile?
 // Remove un-needed data from JSON file
 // Globe favicon
@@ -17,24 +19,14 @@
   --clr-elements: #fff;
   --clr-elements-inverse: #22303c;
   --clr-elements-transparent: rgba(255, 255, 255, 0.96);
+  --clr-element-stacked: #eee;
+  --clr-element-stacked-hover: #e4e4e4;
+  --clr-element-stacked-active: #ddd;
   --clr-hover: #e6e6e6;
   --clr-search-placeholder: #858585;
   --clr-outline: #b8b8b8;
   --clr-filter-line: #ddd;
   --clr-dropdown-arrow: #333;
-
-  --box-shadow-main: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  --box-shadow-1: rgba(99, 99, 99, 0.2) 0px 4px 16px;
-  // --box-shadow-2: rgba(200, 200, 200, 0.8) 0px 0px 2px 1px;
-  --box-shadow-2: rgba(200, 200, 200, 0.8) 0px 0px 5px 1px;
-  --box-shadow-3: 0 0 3px rgba(204, 204, 204, 0.6);
-  --box-shadow-4: 0px 22px 8px -10px rgba(255, 255, 255, 0.73),
-    0px -22px 8px -10px rgba(255, 255, 255, 0.73);
-  --box-shadow-5: rgba(200, 200, 200, 0.8) 0px 0px 10px 4px;
-  --box-shadow-6: rgba(99, 99, 99, 0.2) 0px 2px 8px;
-  --box-shadow-7: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  --box-shadow-extra: rgba(0, 0, 0, 0.6) 0px 0px 10px -3px;
 
   --border-radius: 3px;
   --border-radius-circle: 1000px;
@@ -48,39 +40,17 @@
   --clr-elements: #22303c;
   --clr-elements-inverse: #fff;
   --clr-elements-transparent: rgba(34, 48, 60, 0.99);
+  --clr-element-stacked: #22303c;
+  --clr-element-stacked-hover: #465464;
+  --clr-element-stacked-active: #465464;
   --clr-hover: #465464;
   --clr-search-placeholder: #f9f9f9;
   --clr-outline: #7e8a97;
   --clr-filter-line: #7e8a97;
   --clr-dropdown-arrow: #ddd;
 
-  --box-shadow-main: rgba(0, 0, 0, 0.24) 0 1px 4px;
-  --box-shadow-1: rgba(0, 0, 0, 0.24) 0px 4px 16px;
-  // --box-shadow-2: rgba(0, 0, 0, 0.4) 0px 0px 5px 1px;
-  --box-shadow-2: rgb(91, 107, 133) 0px 0px 5px 1px;
-  --box-shadow-3: none;
-  --box-shadow-4: 0px 22px 8px -10px rgba(34, 48, 60, 0.985),
-    0px -22px 8px -10px rgba(34, 48, 60, 0.985);
-  --box-shadow-5: rgb(91, 107, 133) 0px 0px 10px 4px;
-  --box-shadow-6: rgba(0, 0, 0, 0.24) 3px 3px 8px;
-
   --checkmark: url('/checkmarks/check-black.svg');
 }
-
-// ::-webkit-scrollbar.darkmode {
-//   width: 14px;
-// }
-
-// ::-webkit-scrollbar-track.darkmode {
-//   background: purple;
-// }
-
-// ::-webkit-scrollbar-thumb.darkmode {
-//   background: orange;
-//   border: 3px solid turquoise;
-//   background-clip: padding-box;
-//   border-radius: 8px;
-// }
 
 * {
   margin: 0;
@@ -383,7 +353,8 @@ button {
 
   &:hover {
     .filter-block {
-      box-shadow: var(--box-shadow-4);
+      box-shadow: var(--box-shadow-fade);
+      // box-shadow: 0 0 10px 5px firebrick;
     }
     .filter-content {
       transform: translateX(-50%) translateY(0);
@@ -551,7 +522,7 @@ button {
             width: 28px;
             cursor: pointer;
             transition: transform 0.35s ease;
-            color: var(-clr-dropdown-arrow);
+            color: var(--clr-dropdown-arrow);
           }
 
           .turn-enter-done {
@@ -652,7 +623,7 @@ button {
         &.sort-active {
           background-color: var(--clr-hover);
           font-weight: 600;
-          box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: var(--box-shadow-inset);
         }
 
         &:hover {
@@ -675,7 +646,7 @@ button {
           align-items: center;
           justify-content: space-between;
           user-select: none;
-          background-color: #eee;
+          background-color: var(--clr-element-stacked);
           padding: 12px 16px;
           border-radius: var(--border-radius);
           box-shadow: var(--box-shadow-7);
@@ -694,7 +665,7 @@ button {
           flex-direction: column;
           align-items: center;
           margin: 10px auto;
-          background-color: #eee;
+          background-color: var(--clr-element-stacked);
           overflow: hidden;
           border-radius: var(--border-radius);
           box-shadow: var(--box-shadow-7);
@@ -722,13 +693,14 @@ button {
             border-radius: var(--border-radius);
 
             &:hover {
-              background-color: #ddd;
+              background-color: var(--clr-element-stacked-hover);
             }
           }
 
           input:checked + label {
-            background-color: #ccc;
-            font-weight: 500;
+            background-color: var(--clr-element-stacked-active);
+            font-weight: 600;
+            box-shadow: var(--box-shadow-inset-light);
           }
         }
       }
@@ -789,6 +761,42 @@ button {
             height: 25px;
             box-shadow: 0 0 10px 3px var(--clr-outline);
           }
+        }
+      }
+    }
+
+    .reset-category {
+      display: flex;
+      color: var(--clr-text);
+
+      .reset-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        margin: 0 auto;
+        background-color: var(--clr-element-stacked);
+        cursor: pointer;
+        transition: background-color 0.35s ease;
+        user-select: none;
+        text-transform: uppercase;
+        font-weight: 800;
+        box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+        color: var(--clr-text);
+
+        .reset-icon {
+          margin-left: 7px;
+          width: 18px;
+          height: 18px;
+          transform: scaleX(-1);
+
+          path {
+            stroke: var(--clr-text);
+          }
+        }
+
+        &:hover {
+          background-color: var(--clr-element-stacked-hover);
         }
       }
     }
@@ -858,10 +866,6 @@ button {
     // height: 100%;
     object-fit: cover;
     box-shadow: var(--box-shadow-main);
-
-    // border-radius: var(--border-radius) var(--border-radius) 0 0;
-    //
-    //
   }
 
   &__info {
