@@ -28,7 +28,6 @@ const FilterMenu = () => {
   const handleSortSelect = (item) => {
     dispatch({
       type: 'SET-SORT-TYPE',
-      // payload: { id: item.id, text: item.text },
       payload: item,
     });
   };
@@ -39,7 +38,6 @@ const FilterMenu = () => {
 
   const resetFilters = () => {
     dispatch({ type: 'RESET-FILTERS' });
-    // dispatch({type: 'RESET-TO-FIRST-PAGE'})
   };
 
   return (

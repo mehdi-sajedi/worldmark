@@ -27,12 +27,12 @@ export const AppProvider = ({ children }) => {
     filterActive: false,
     showSearchDropdown: false,
     menuOpen: false,
-    darkMode: false,
     regions: {
       africa: {
         id: 'africa',
         expanded: false,
         selected: false,
+        atleastOneSubRegionActive: false,
         subRegions: {
           af_n: {
             id: 'northern africa',
@@ -60,6 +60,7 @@ export const AppProvider = ({ children }) => {
         id: 'americas',
         expanded: false,
         selected: false,
+        atleastOneSubRegionActive: false,
         subRegions: {
           am_n: {
             id: 'northern america',
@@ -83,6 +84,7 @@ export const AppProvider = ({ children }) => {
         id: 'asia',
         expanded: false,
         selected: false,
+        atleastOneSubRegionActive: false,
         subRegions: {
           as_w: {
             id: 'western asia',
@@ -110,6 +112,7 @@ export const AppProvider = ({ children }) => {
         id: 'europe',
         expanded: false,
         selected: false,
+        atleastOneSubRegionActive: false,
         subRegions: {
           eu_n: {
             id: 'northern europe',
@@ -133,6 +136,7 @@ export const AppProvider = ({ children }) => {
         id: 'oceania',
         expanded: false,
         selected: false,
+        atleastOneSubRegionActive: false,
         subRegions: {
           aus_nz: {
             id: 'australia and new zealand',
@@ -277,21 +281,6 @@ export const AppProvider = ({ children }) => {
       } else draft.filterActive = false;
     }
 
-    // function setDetailsFilter(filterType, option) {
-    // draft[filterType] = option;
-    // if (option === 'yes') {
-    //   draft.allPagesCountries = draft.countries.filter((country) => {
-    //     return country[filterType];
-    //   });
-    // } else if (option === 'no') {
-    //   draft.allPagesCountries = draft.countries.filter((country) => {
-    //     return !country[filterType];
-    //   });
-    // } else {
-    //   draft.allPagesCountries = draft.allPagesCountries;
-    // }
-    // }
-
     // - *************************************************************
     // - ACTIONS
     // - *************************************************************
@@ -307,8 +296,8 @@ export const AppProvider = ({ children }) => {
       populateActiveRegions();
     } else if (action.type === 'SET-CURRENT-COUNTRIES') {
       draft.currentPageCountries = draft.allPagesCountries.slice(
-        action.payload.idxFirst,
-        action.payload.idxLast
+        draft.currentPageFirstPost,
+        draft.currentPageLastPost
       );
     } else if (action.type === 'SET-SEARCH-TEXT') {
       draft.searchText = action.payload;
@@ -336,28 +325,33 @@ export const AppProvider = ({ children }) => {
     } else if (action.type === 'CLOSE-FILTER-MENU') {
       draft.menuOpen = false;
     } else if (action.type === 'TOGGLE-REGION-CHECK') {
-      draft.regions[action.payload].selected =
-        !draft.regions[action.payload].selected;
+      const region = draft.regions[action.payload];
 
-      if (draft.regions[action.payload].selected) {
-        for (let i in draft.regions[action.payload].subRegions)
-          draft.regions[action.payload].subRegions[i].selected = false;
+      region.selected = !region.selected;
+
+      if (region.selected) {
+        for (let i in region.subRegions) region.subRegions[i].selected = false;
       }
+
+      region.atleastOneSubRegionActive = false;
 
       toggleFilterCheck();
       setFilteredCountries();
       sortCountries();
     } else if (action.type === 'TOGGLE-SUB-REGION-CHECK') {
-      draft.regions[action.payload.region].subRegions[
-        action.payload.initials
-      ].selected =
-        !draft.regions[action.payload.region].subRegions[
-          action.payload.initials
-        ].selected;
+      const parentRegion = draft.regions[action.payload.region];
 
-      if (draft.regions[action.payload.region].selected) {
-        draft.regions[action.payload.region].selected = false;
-      }
+      parentRegion.subRegions[action.payload.initials].selected =
+        !parentRegion.subRegions[action.payload.initials].selected;
+
+      parentRegion.selected = false;
+
+      const subRegions = parentRegion.subRegions;
+      parentRegion.atleastOneSubRegionActive = Object.values(subRegions).some(
+        (sub) => {
+          return sub.selected;
+        }
+      );
 
       toggleFilterCheck();
       setFilteredCountries();
@@ -377,33 +371,15 @@ export const AppProvider = ({ children }) => {
         draft.allPagesCountries.length
       );
     } else if (action.type === 'SET-SORT-TYPE') {
-      // draft.sortBy.id = action.payload.id;
-      // draft.sortBy.text = action.payload.text;
       draft.sortBy = action.payload;
-
       showCurrentPageCountries();
       sortCountries();
     } else if (action.type === 'SET-UN-MEMBER-FILTER') {
-      // if (action.payload.option === 'all') {
-      //   draft[action.payload.dropdown].active = false;
-      // } else {
-      //   draft[action.payload.dropdown].active = true;
-      //   draft[action.payload.dropdown].value = action.payload.bool;
-      // }
-
       draft.unMember = action.payload.option;
-
       setFilteredCountries();
       sortCountries();
     } else if (action.type === 'SET-LANDLOCKED-FILTER') {
-      // if (action.payload.option === 'all') {
-      //   draft[action.payload.dropdown].active = false;
-      // } else {
-      //   draft[action.payload.dropdown].active = true;
-      //   draft[action.payload.dropdown].value = action.payload.bool;
-      // }
       draft.landlocked = action.payload.option;
-
       setFilteredCountries();
       sortCountries();
     } else if (action.type === 'SET-COUNTRIES-PER-PAGE') {

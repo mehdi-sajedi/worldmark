@@ -6,9 +6,8 @@
 
 // Add number of countries next to region/subregion in filter menu
 // Indicator that at least 1 subregion is checked next to region
-// Reset filters button
-// Text showing what the active sort is
 // Sticky searchbar on mobile?
+// Text showing what the active sort is
 // Remove un-needed data from JSON file
 // Globe favicon
 // Keyboard accessibility
@@ -354,7 +353,6 @@ button {
   &:hover {
     .filter-block {
       box-shadow: var(--box-shadow-fade);
-      // box-shadow: 0 0 10px 5px firebrick;
     }
     .filter-content {
       transform: translateX(-50%) translateY(0);
@@ -374,6 +372,9 @@ button {
     padding: 1.5rem 0;
     transition: box-shadow 0.35s var(--bezier);
     backdrop-filter: blur(5px);
+
+    //
+    box-shadow: var(--box-shadow-fade);
 
     @include media('<=medium') {
       display: none;
@@ -414,6 +415,9 @@ button {
       width 0.35s var(--bezier);
     backdrop-filter: blur(5px);
 
+    //
+    transform: translateX(-50%) translateY(0);
+
     @include media('<=medium') {
       width: 100vw;
       height: 350px;
@@ -447,9 +451,15 @@ button {
       .options {
         width: 100%;
       }
+
       .option {
         width: 75%;
+        width: 250px;
         margin: 0 auto;
+
+        // @include media('<=medium') {
+        //   width: 250px;
+        // }
 
         &:not(:last-of-type) {
           margin-bottom: 10px;
@@ -476,18 +486,16 @@ button {
 
         input {
           visibility: hidden;
-          // display: none;
-        }
 
-        input:checked + label {
-          font-weight: 500;
-          // background-color: var(--clr-filter-other-active);
-        }
+          &:checked + label {
+            font-weight: 500;
 
-        input:checked + label::before {
-          content: '';
-          background: var(--checkmark) no-repeat center center/cover;
-          background-color: var(--clr-elements-inverse);
+            &::before {
+              content: '';
+              background: var(--checkmark) no-repeat center center/cover;
+              background-color: var(--clr-elements-inverse);
+            }
+          }
         }
 
         .top-layer {
@@ -495,16 +503,16 @@ button {
           display: flex;
           align-items: center;
           justify-content: center;
-          // justify-content: space-between;
           margin: 0 auto;
-          // width: 90%;
+          position: relative;
 
           > * {
             margin: 4px 8px;
           }
 
           label {
-            width: 70px;
+            width: 71px;
+            position: relative;
 
             &::before {
               left: -26px;
@@ -527,6 +535,25 @@ button {
 
           .turn-enter-done {
             transform: rotate(180deg);
+          }
+
+          .subregion-active-marker {
+            width: 10px;
+            height: 3px;
+            background-color: var(--clr-text);
+            position: absolute;
+            // left: 43px;
+            // top: 13px;
+            border-radius: var(--border-radius-circle);
+            // transform: translateX(-61px);
+            opacity: 0;
+            top: 13px;
+            left: -23px;
+            pointer-events: none;
+
+            &.active {
+              opacity: 1;
+            }
           }
         }
 
@@ -655,7 +682,6 @@ button {
           .arrow {
             width: 18px;
             height: 18px;
-            // background-color: firebrick;
             margin-left: 10px;
           }
         }
@@ -822,19 +848,15 @@ button {
     margin: 0 auto 3rem;
   }
 
-  &.snapper > * {
-    width: clamp(256px, 100%, 315px);
+  &.snapper {
+    > * {
+      width: clamp(256px, 100%, 315px);
 
-    @include media('<=small') {
-      margin: 0 auto;
+      @include media('<=small') {
+        margin: 0 auto;
+      }
     }
   }
-
-  // img {
-  //   text-align: center;
-  //   font-size: 1.5rem;
-  //   padding-top: 3rem;
-  // }
 }
 
 // - *************************************************************

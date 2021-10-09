@@ -8,11 +8,11 @@ import { AppContext } from '../../context/app-context';
 const FilterRegion = ({ region, idx }) => {
   const { appState, dispatch } = useContext(AppContext);
 
-  const toggleSubRegionsMenu = (region) => {
+  const toggleSubRegionsMenu = () => {
     dispatch({ type: 'TOGGLE-SUB-REGIONS-MENU', payload: region });
   };
 
-  const toggleRegionCheck = (region) => {
+  const toggleRegionCheck = () => {
     dispatch({
       type: 'TOGGLE-REGION-CHECK',
       payload: region,
@@ -26,10 +26,15 @@ const FilterRegion = ({ region, idx }) => {
           type="checkbox"
           id={region}
           checked={appState.regions[region].selected}
-          onChange={() => toggleRegionCheck(region)}
+          onChange={toggleRegionCheck}
           tabIndex="-1"
         />
         <label className="capitalize" htmlFor={region}>
+          <div
+            className={`subregion-active-marker ${
+              appState.regions[region].atleastOneSubRegionActive && 'active'
+            }`}
+          ></div>
           {region}
         </label>
         <CSSTransition
@@ -39,7 +44,7 @@ const FilterRegion = ({ region, idx }) => {
         >
           <RiArrowDownSLine
             className="dropdown"
-            onClick={() => toggleSubRegionsMenu(region)}
+            onClick={toggleSubRegionsMenu}
           />
         </CSSTransition>
       </div>

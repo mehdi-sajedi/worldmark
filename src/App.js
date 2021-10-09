@@ -44,10 +44,6 @@ function App() {
   useEffect(() => {
     dispatch({
       type: 'SET-CURRENT-COUNTRIES',
-      payload: {
-        idxFirst: appState.currentPageFirstPost,
-        idxLast: appState.currentPageLastPost,
-      },
     });
     window.scrollTo(0, 0);
   }, [
@@ -55,9 +51,11 @@ function App() {
     appState.countries,
     appState.allPagesCountries,
     appState.currentPage,
-    appState.currentPageFirstPost,
-    appState.currentPageLastPost,
   ]);
+
+  useEffect(() => {
+    dispatch({ type: 'SET-CURRENT-COUNTRIES' });
+  }, [dispatch, appState.currentPageFirstPost, appState.currentPageLastPost]);
 
   useEffect(() => {
     dispatch({ type: 'RESET-TO-FIRST-PAGE' });
