@@ -4,10 +4,9 @@
 @import 'include-media';
 @import 'utilities';
 
-// Add number of countries next to region/subregion in filter menu
-// Indicator that at least 1 subregion is checked next to region
 // Sticky searchbar on mobile?
 // Text showing what the active sort is
+// Reset btn removing overlay on mobile
 // Remove un-needed data from JSON file
 // Globe favicon
 // Keyboard accessibility
@@ -668,6 +667,10 @@ button {
       .details-option {
         margin: 5px 0;
 
+        &:first-of-type {
+          margin-bottom: 10px;
+        }
+
         .dropdown-heading {
           display: flex;
           align-items: center;
@@ -690,14 +693,12 @@ button {
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin: 10px auto;
+          margin: 10px auto 0;
           background-color: var(--clr-element-stacked);
           overflow: hidden;
           border-radius: var(--border-radius);
           box-shadow: var(--box-shadow-7);
           width: 85%;
-
-          //
           max-height: 0;
           visibility: hidden;
           opacity: 0;
@@ -745,7 +746,7 @@ button {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2.25rem;
 
       &-value {
         margin-bottom: 1rem;
@@ -756,6 +757,7 @@ button {
 
       &-input {
         -webkit-appearance: none;
+
         background-color: var(--clr-outline);
         border-radius: 5px;
         cursor: pointer;
@@ -776,6 +778,29 @@ button {
           transition: height 0.35s ease, width 0.35s ease, box-shadow 0.35s ease;
           height: 22px;
           width: 22px;
+          border: none;
+
+          @include media('<=medium') {
+            height: 25px;
+            width: 25px;
+          }
+
+          &:hover {
+            width: 25px;
+            height: 25px;
+            box-shadow: 0 0 10px 3px var(--clr-outline);
+          }
+        }
+
+        &::-moz-range-thumb {
+          border-radius: 50%;
+          background-color: white;
+          cursor: grab;
+          box-shadow: 0 0 10px 0px var(--clr-outline);
+          transition: height 0.35s ease, width 0.35s ease, box-shadow 0.35s ease;
+          height: 22px;
+          width: 22px;
+          border: none;
 
           @include media('<=medium') {
             height: 25px;
@@ -994,6 +1019,11 @@ button {
     &.arrow-forward {
       margin-left: 12px;
     }
+
+    // &.inactive {
+    //   opacity: 0.5;
+    //   cursor: default;
+    // }
   }
 
   .country-pages {

@@ -36,8 +36,10 @@ const Pagination = () => {
   return (
     <div className="pagination">
       <IoIosArrowBack
-        onClick={() => handlePaginate(appState.currentPage - 1, 'back')}
-        className="arrow arrow-back"
+        onClick={() => handlePaginate(appState.currentPage - 1)}
+        className={`arrow arrow-back ${
+          appState.currentPage === 1 ? 'inactive' : ''
+        }`}
       />
       <div className="country-pages">
         <ul>
@@ -96,8 +98,10 @@ const Pagination = () => {
         </ul>
       </div>
       <IoIosArrowForward
-        onClick={() => handlePaginate(appState.currentPage + 1, 'forward')}
-        className="arrow arrow-forward"
+        onClick={() => handlePaginate(appState.currentPage + 1)}
+        className={`arrow arrow-forward ${
+          appState.currentPage === maxPages ? 'inactive' : ''
+        }`}
       />
     </div>
   );

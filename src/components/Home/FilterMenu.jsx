@@ -65,20 +65,6 @@ const FilterMenu = () => {
         <div className="line"></div>
         <h3 className="section-heading sort-heading">Sort by</h3>
         <div className="sort-categories">
-          {/* {sortCategories.entries((key, value) => {
-            console.log(key);
-            console.log(value);
-            return (
-              <p
-                onClick={(e) => handleSortSelect(e)}
-                id={key}
-                key={key}
-                className={`${appState.sortBy === key ? 'sort-active' : ''}`}
-              >
-                {value}
-              </p>
-            );
-          })} */}
           {sortCategories.map((item) => {
             return (
               <p
