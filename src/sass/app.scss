@@ -11,6 +11,16 @@
 // Globe favicon
 // Keyboard accessibility
 
+#mapid {
+  height: 500px;
+  width: 90vw;
+
+  .fff {
+    height: 500px;
+    width: 90vw;
+  }
+}
+
 :root {
   --clr-body-background: #fafafa;
   --clr-text: #111517;
@@ -372,8 +382,8 @@ button {
     transition: box-shadow 0.35s var(--bezier);
     backdrop-filter: blur(5px);
 
-    //
-    box-shadow: var(--box-shadow-fade);
+    // //
+    // box-shadow: var(--box-shadow-fade);
 
     @include media('<=medium') {
       display: none;
@@ -414,8 +424,8 @@ button {
       width 0.35s var(--bezier);
     backdrop-filter: blur(5px);
 
-    //
-    transform: translateX(-50%) translateY(0);
+    // //
+    // transform: translateX(-50%) translateY(0);
 
     @include media('<=medium') {
       width: 100vw;
