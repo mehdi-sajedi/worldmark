@@ -11,16 +11,6 @@
 // Globe favicon
 // Keyboard accessibility
 
-#mapid {
-  height: 500px;
-  width: 90vw;
-
-  .fff {
-    height: 500px;
-    width: 90vw;
-  }
-}
-
 :root {
   --clr-body-background: #fafafa;
   --clr-text: #111517;
@@ -691,6 +681,7 @@ button {
           border-radius: var(--border-radius);
           box-shadow: var(--box-shadow-7);
           cursor: pointer;
+          width: 150px;
 
           .arrow {
             width: 18px;

@@ -20,6 +20,7 @@ export const AppProvider = ({ children }) => {
     },
     unMember: 'all',
     landlocked: 'all',
+    driveSide: 'all',
     countriesPerPage: 36,
     currentPage: 1,
     currentPageFirstPost: 0,
@@ -235,7 +236,7 @@ export const AppProvider = ({ children }) => {
 
       checkFilterActive();
 
-      if (!draft.filterActive) return (draft.allPagesCountries = arr);
+      // if (!draft.filterActive) return (draft.allPagesCountries = arr);
 
       let activeRegions = [...draft.activeRegions];
       let activeSubRegions = [...draft.activeSubRegions];
@@ -256,6 +257,10 @@ export const AppProvider = ({ children }) => {
           if (draft.landlocked === 'yes') return country.landlocked;
           else if (draft.landlocked === 'no') return !country.landlocked;
           else return country;
+        })
+        .filter((country) => {
+          if (draft.driveSide === 'all') return country;
+          else return country.driveSide === draft.driveSide;
         });
     }
 
@@ -275,7 +280,9 @@ export const AppProvider = ({ children }) => {
         draft.unMember === 'yes' ||
         draft.unMember === 'no' ||
         draft.landlocked === 'yes' ||
-        draft.landlocked === 'no'
+        draft.landlocked === 'no' ||
+        draft.driveSide === 'left' ||
+        draft.driveSide === 'right'
       ) {
         draft.filterActive = true;
       } else draft.filterActive = false;
@@ -380,6 +387,10 @@ export const AppProvider = ({ children }) => {
       sortCountries();
     } else if (action.type === 'SET-LANDLOCKED-FILTER') {
       draft.landlocked = action.payload.option;
+      setFilteredCountries();
+      sortCountries();
+    } else if (action.type === 'SET-DRIVE-SIDE-FILTER') {
+      draft.driveSide = action.payload.option;
       setFilteredCountries();
       sortCountries();
     } else if (action.type === 'SET-COUNTRIES-PER-PAGE') {

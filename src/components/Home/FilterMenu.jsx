@@ -10,6 +10,7 @@ import { GrPowerReset } from 'react-icons/gr';
 
 const regions = ['africa', 'americas', 'asia', 'europe', 'oceania'];
 const detailsFilterOptions = ['all', 'yes', 'no'];
+const driveSideOptions = ['all', 'left', 'right'];
 
 const FilterMenu = () => {
   const { appState, dispatch } = useContext(AppContext);
@@ -23,6 +24,11 @@ const FilterMenu = () => {
     ref: landlockedMenuRef,
     showComponent: showLandlockedMenu,
     setShowComponent: setShowLandlockedMenu,
+  } = useShowComponent('');
+  const {
+    ref: driveSideMenuRef,
+    showComponent: showDriveSideMenu,
+    setShowComponent: setShowDriveSideMenu,
   } = useShowComponent('');
 
   const handleSortSelect = (item) => {
@@ -86,7 +92,7 @@ const FilterMenu = () => {
           <div className="un-member details-option" ref={unMemberMenuRef}>
             <div
               className="dropdown-heading"
-              onClick={() => setShowUnMemberMenu((prevState) => !prevState)}
+              onMouseDown={() => setShowUnMemberMenu((prevState) => !prevState)}
             >
               <h4 className="text">UN Member</h4>
               <RiArrowDownSLine className="arrow" />
@@ -107,7 +113,9 @@ const FilterMenu = () => {
           <div className="landlocked details-option" ref={landlockedMenuRef}>
             <div
               className="dropdown-heading"
-              onClick={() => setShowLandlockedMenu((prevState) => !prevState)}
+              onMouseDown={() =>
+                setShowLandlockedMenu((prevState) => !prevState)
+              }
             >
               <h4 className="text">Landlocked</h4>
               <RiArrowDownSLine className="arrow" />
@@ -120,6 +128,29 @@ const FilterMenu = () => {
                     dropdown="landlocked"
                     action="SET-LANDLOCKED-FILTER"
                     key={`landlocked-${option}`}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <div className="drive-side details-option" ref={driveSideMenuRef}>
+            <div
+              className="dropdown-heading"
+              onMouseDown={() =>
+                setShowDriveSideMenu((prevState) => !prevState)
+              }
+            >
+              <h4 className="text">Driving Side</h4>
+              <RiArrowDownSLine className="arrow" />
+            </div>
+            <div className={`choices ${showDriveSideMenu ? 'show' : ''}`}>
+              {driveSideOptions.map((option) => {
+                return (
+                  <DetailtsFilterOption
+                    option={option}
+                    dropdown="driveSide"
+                    action="SET-DRIVE-SIDE-FILTER"
+                    key={`drive-side-${option}`}
                   />
                 );
               })}
