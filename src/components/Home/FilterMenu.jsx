@@ -19,17 +19,17 @@ const FilterMenu = () => {
     ref: unMemberMenuRef,
     showComponent: showUnMemberMenu,
     setShowComponent: setShowUnMemberMenu,
-  } = useShowComponent('');
+  } = useShowComponent();
   const {
     ref: landlockedMenuRef,
     showComponent: showLandlockedMenu,
     setShowComponent: setShowLandlockedMenu,
-  } = useShowComponent('');
+  } = useShowComponent();
   const {
     ref: driveSideMenuRef,
     showComponent: showDriveSideMenu,
     setShowComponent: setShowDriveSideMenu,
-  } = useShowComponent('');
+  } = useShowComponent();
 
   const handleSortSelect = (item) => {
     dispatch({
@@ -103,7 +103,6 @@ const FilterMenu = () => {
                   <DetailtsFilterOption
                     option={option}
                     dropdown="unMember"
-                    action="SET-UN-MEMBER-FILTER"
                     key={`unMember-${option}`}
                   />
                 );
@@ -126,7 +125,6 @@ const FilterMenu = () => {
                   <DetailtsFilterOption
                     option={option}
                     dropdown="landlocked"
-                    action="SET-LANDLOCKED-FILTER"
                     key={`landlocked-${option}`}
                   />
                 );
@@ -149,7 +147,6 @@ const FilterMenu = () => {
                   <DetailtsFilterOption
                     option={option}
                     dropdown="driveSide"
-                    action="SET-DRIVE-SIDE-FILTER"
                     key={`drive-side-${option}`}
                   />
                 );

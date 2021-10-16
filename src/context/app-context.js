@@ -25,7 +25,6 @@ export const AppProvider = ({ children }) => {
     currentPage: 1,
     currentPageFirstPost: 0,
     currentPageLastPost: 36,
-    filterActive: false,
     showSearchDropdown: false,
     menuOpen: false,
     regions: {
@@ -208,8 +207,6 @@ export const AppProvider = ({ children }) => {
       if (draft.activeRegions.size === 0 && draft.activeSubRegions.size === 0) {
         populateActiveRegions();
       }
-
-      checkFilterActive();
     }
 
     function showCurrentPageCountries() {
@@ -233,10 +230,6 @@ export const AppProvider = ({ children }) => {
 
     function setFilteredCountries(arr = draft.countries) {
       if (draft.searchText !== '') arr = draft.searchMatches;
-
-      checkFilterActive();
-
-      // if (!draft.filterActive) return (draft.allPagesCountries = arr);
 
       let activeRegions = [...draft.activeRegions];
       let activeSubRegions = [...draft.activeSubRegions];
@@ -271,21 +264,6 @@ export const AppProvider = ({ children }) => {
       draft.countries.forEach((country) => {
         draft.activeSubRegions.add(country.subregion.toLowerCase());
       });
-    }
-
-    function checkFilterActive() {
-      if (
-        draft.activeRegions.size > 0 ||
-        draft.activeSubRegions.size > 0 ||
-        draft.unMember === 'yes' ||
-        draft.unMember === 'no' ||
-        draft.landlocked === 'yes' ||
-        draft.landlocked === 'no' ||
-        draft.driveSide === 'left' ||
-        draft.driveSide === 'right'
-      ) {
-        draft.filterActive = true;
-      } else draft.filterActive = false;
     }
 
     // - *************************************************************
@@ -381,16 +359,8 @@ export const AppProvider = ({ children }) => {
       draft.sortBy = action.payload;
       showCurrentPageCountries();
       sortCountries();
-    } else if (action.type === 'SET-UN-MEMBER-FILTER') {
-      draft.unMember = action.payload.option;
-      setFilteredCountries();
-      sortCountries();
-    } else if (action.type === 'SET-LANDLOCKED-FILTER') {
-      draft.landlocked = action.payload.option;
-      setFilteredCountries();
-      sortCountries();
-    } else if (action.type === 'SET-DRIVE-SIDE-FILTER') {
-      draft.driveSide = action.payload.option;
+    } else if (action.type === 'SET-DETAILS-FILTER') {
+      draft[action.payload.filterType] = action.payload.option;
       setFilteredCountries();
       sortCountries();
     } else if (action.type === 'SET-COUNTRIES-PER-PAGE') {
