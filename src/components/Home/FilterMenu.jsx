@@ -70,22 +70,20 @@ const FilterMenu = () => {
         </div>
         <div className="line"></div>
         <h3 className="section-heading sort-heading">Sort by</h3>
-        <div className="sort-categories">
+        <ul className="sort-categories">
           {sortCategories.map((item) => {
             return (
-              <p
+              <li
                 onClick={() => handleSortSelect(item)}
                 id={item.id}
                 key={item.id}
-                className={`${
-                  appState.sortBy.id === item.id ? 'sort-active' : ''
-                }`}
+                className={appState.sortBy.id === item.id ? 'sort-active' : ''}
               >
                 {item.text}
-              </p>
+              </li>
             );
           })}
-        </div>
+        </ul>
         <div className="line"></div>
         <h3 className="section-heading details-heading">Details</h3>
         <div className="details-category">

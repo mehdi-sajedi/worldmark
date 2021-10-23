@@ -4,13 +4,6 @@
 @import 'include-media';
 @import 'utilities';
 
-// Sticky searchbar on mobile?
-// Text showing what the active sort is
-// Reset btn removing overlay on mobile
-// Remove un-needed data from JSON file
-// Globe favicon
-// Keyboard accessibility
-
 :root {
   --clr-body-background: #fafafa;
   --clr-text: #111517;
@@ -25,10 +18,8 @@
   --clr-outline: #b8b8b8;
   --clr-filter-line: #ddd;
   --clr-dropdown-arrow: #333;
-
   --border-radius: 3px;
   --border-radius-circle: 1000px;
-
   --checkmark: url('/checkmarks/check-white.svg');
 }
 
@@ -46,7 +37,6 @@
   --clr-outline: #7e8a97;
   --clr-filter-line: #7e8a97;
   --clr-dropdown-arrow: #ddd;
-
   --checkmark: url('/checkmarks/check-black.svg');
 }
 
@@ -61,9 +51,6 @@ html {
   overflow-y: scroll;
   height: 100%;
   scrollbar-color: var(--scrollbar-color);
-
-  // margin-left: calc(100vw - 100%);
-  // margin-right: 0;
 }
 
 body {
@@ -98,7 +85,6 @@ button {
 .header {
   max-width: clamp(50vw, 2200px, 90vw);
   margin: 0 auto;
-
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -202,7 +188,6 @@ button {
       &.show-dropdown {
         opacity: 1;
         visibility: visible;
-        // max-height: 200px;
         max-height: 250px;
       }
 
@@ -372,9 +357,6 @@ button {
     transition: box-shadow 0.35s var(--bezier);
     backdrop-filter: blur(5px);
 
-    // //
-    // box-shadow: var(--box-shadow-fade);
-
     @include media('<=medium') {
       display: none;
     }
@@ -414,9 +396,6 @@ button {
       width 0.35s var(--bezier);
     backdrop-filter: blur(5px);
 
-    // //
-    // transform: translateX(-50%) translateY(0);
-
     @include media('<=medium') {
       width: 100vw;
       height: 350px;
@@ -455,10 +434,6 @@ button {
         width: 75%;
         width: 250px;
         margin: 0 auto;
-
-        // @include media('<=medium') {
-        //   width: 250px;
-        // }
 
         &:not(:last-of-type) {
           margin-bottom: 10px;
@@ -541,10 +516,7 @@ button {
             height: 3px;
             background-color: var(--clr-text);
             position: absolute;
-            // left: 43px;
-            // top: 13px;
             border-radius: var(--border-radius-circle);
-            // transform: translateX(-61px);
             opacity: 0;
             top: 13px;
             left: -23px;
@@ -635,12 +607,13 @@ button {
       justify-content: center;
       user-select: none;
 
-      p {
+      li {
         border-radius: var(--border-radius-circle);
         padding: 8px 20px;
         cursor: pointer;
         transition: background-color 0.25s ease, font-weight 0.25s ease,
           box-shadow 0.25s ease;
+        list-style: none;
 
         &:not(:last-of-type) {
           margin-bottom: 10px;
@@ -865,7 +838,6 @@ button {
   margin-bottom: 5rem;
   position: relative;
   z-index: 5;
-  // overflow: hidden; ///
 
   @include media('<=small') {
     grid-template-columns: 1fr;
@@ -911,7 +883,6 @@ button {
   &__flag {
     width: 100%;
     height: 50%;
-    // height: 100%;
     object-fit: cover;
     box-shadow: var(--box-shadow-main);
   }
@@ -928,10 +899,7 @@ button {
     &__name {
       font-family: 'Ubuntu';
       font-weight: 500;
-
-      //
       font-size: 19px;
-      // font-size: 20px;
     }
 
     &__details {
@@ -1020,11 +988,6 @@ button {
     &.arrow-forward {
       margin-left: 12px;
     }
-
-    // &.inactive {
-    //   opacity: 0.5;
-    //   cursor: default;
-    // }
   }
 
   .country-pages {
@@ -1150,8 +1113,6 @@ button {
     }
 
     &__name {
-      font-size: 28px;
-      //
       font-size: 30px;
       font-family: 'Ubuntu';
 

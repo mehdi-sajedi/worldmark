@@ -17,6 +17,7 @@ export const AppProvider = ({ children }) => {
     sortBy: {
       id: 'popHL',
       text: 'Population: High to Low',
+      property: 'population',
     },
     unMember: 'all',
     landlocked: 'all',
@@ -357,7 +358,7 @@ export const AppProvider = ({ children }) => {
       );
     } else if (action.type === 'SET-SORT-TYPE') {
       draft.sortBy = action.payload;
-      showCurrentPageCountries();
+      // showCurrentPageCountries();
       sortCountries();
     } else if (action.type === 'SET-DETAILS-FILTER') {
       draft[action.payload.filterType] = action.payload.option;
