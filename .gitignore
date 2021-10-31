@@ -42,3 +42,5 @@ yarn-error.log*
 /starter
 Notes.txt
 src/code-bits
+default-preview.png
+preview-dark.png
