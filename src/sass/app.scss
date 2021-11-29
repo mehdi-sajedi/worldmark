@@ -193,6 +193,10 @@ ul {
         opacity: 1;
         visibility: visible;
         max-height: 350px;
+
+        @include media('<=small') {
+          max-height: 362px;
+        }
       }
 
       /* hide scrollbar but allow scrolling */
@@ -295,8 +299,8 @@ ul {
   @include media('<=medium') {
     display: grid;
     place-items: center;
-    height: 60px;
-    width: 60px;
+    height: 65px;
+    width: 65px;
     position: fixed;
     left: 30px;
     bottom: 30px;
@@ -308,15 +312,25 @@ ul {
     transform: rotate(270deg);
   }
 
+  @include media('<=small') {
+    height: 60px;
+    width: 60px;
+  }
+
   .filter-icon {
     width: 100%;
     height: 100%;
     color: var(--clr-text);
 
     @include media('<=medium') {
+      position: relative;
       width: 40%;
       height: 40%;
-      position: relative;
+    }
+
+    @include media('<=small') {
+      width: 40%;
+      height: 40%;
     }
   }
 }
@@ -1064,8 +1078,8 @@ ul {
     position: fixed;
     display: grid;
     place-items: center;
-    height: 60px;
-    width: 60px;
+    height: 65px;
+    width: 65px;
     padding: 8px 0 0 1px;
     right: 30px;
     bottom: 30px;
@@ -1080,6 +1094,11 @@ ul {
       height: 45%;
       transform: translateY(-2px);
     }
+  }
+
+  @include media('<=small') {
+    height: 60px;
+    width: 60px;
   }
 }
 
