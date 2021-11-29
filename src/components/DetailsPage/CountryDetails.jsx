@@ -45,7 +45,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
   return (
     <>
       <BackBtn setIsLoading={setIsLoading} />
-      <section className="details-container">
+      <div className="details-container">
         {isError && appState.countries.length > 0 && (
           <p className="page-not-found">
             Could not fetch country with Alpha-3 Code {id}
@@ -53,7 +53,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
         )}
         {!isError && !isLoading && (
           <>
-            <div className="details">
+            <section className="details">
               {transitionFlag(
                 (style, item) =>
                   item && (
@@ -74,7 +74,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                         {country.officialName}
                       </h1>
                       <div className="details__info__facts">
-                        <div className="details__info__facts__col-1">
+                        <ul className="details__info__facts__col-1">
                           <CountryDetailsItem
                             className="common-name"
                             title="Common Name"
@@ -106,8 +106,8 @@ const CountryDetails = ({ countryCodesToNames }) => {
                             property={country.alpha3Code}
                             column="1"
                           />
-                        </div>
-                        <div className="details__info__facts__col-2">
+                        </ul>
+                        <ul className="details__info__facts__col-2">
                           <CountryDetailsItem
                             className="region"
                             title="Region"
@@ -136,16 +136,16 @@ const CountryDetails = ({ countryCodesToNames }) => {
                             )}
                             column="1"
                           />
-                        </div>
+                        </ul>
                       </div>
                       <div className="details__info__borders">
                         <span className="details__info__borders__title">
                           Border Countries:
                         </span>
-                        <div className="details__info__borders__countries">
+                        <ul className="details__info__borders__countries">
                           {country?.borders ? (
                             country.borders.map((item, idx) => (
-                              <div
+                              <li
                                 className="details__info__borders__countries__item"
                                 key={idx}
                               >
@@ -156,7 +156,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                                 >
                                   {countryCodesToNames.get(item)}
                                 </Link>
-                              </div>
+                              </li>
                             ))
                           ) : (
                             <div className="details__info__borders__countries__item no-hover">
@@ -165,15 +165,15 @@ const CountryDetails = ({ countryCodesToNames }) => {
                               </p>
                             </div>
                           )}
-                        </div>
+                        </ul>
                       </div>
                     </animated.div>
                   )
               )}
-            </div>
+            </section>
           </>
         )}
-      </section>
+      </div>
     </>
   );
 };

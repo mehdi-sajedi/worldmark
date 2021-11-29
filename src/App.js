@@ -65,7 +65,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-        <main className="container">
+        <div className="container">
           <Switch>
             <Route exact path="/">
               <SearchFilter />
@@ -81,7 +81,7 @@ function App() {
             </Route>
             <Route>{PageNotFound}</Route>
           </Switch>
-        </main>
+        </div>
       </BrowserRouter>
       <Overlay />
     </>

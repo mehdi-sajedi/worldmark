@@ -6,7 +6,7 @@ const CountriesGrid = () => {
   const { appState } = useContext(AppContext);
 
   return (
-    <section
+    <main
       className={`countries ${
         appState.currentPageCountries.length <= 5 ? 'snapper' : ''
       }
@@ -15,7 +15,7 @@ const CountriesGrid = () => {
       {appState.currentPageCountries.map((country) => (
         <Country key={country.alpha3Code} {...country} />
       ))}
-    </section>
+    </main>
   );
 };
 

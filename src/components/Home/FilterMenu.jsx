@@ -49,8 +49,8 @@ const FilterMenu = () => {
   return (
     <div
       ref={filterMenuRef}
-      className={`filter-menu ${appState.menuOpen && 'filter-open'}
-  }`}
+      className={`filter-menu ${appState.menuOpen ? 'filter-open' : ''}
+  `}
     >
       <div className="filter-block">
         <h3 className="filter-heading main section-heading">Filter | Sort</h3>
