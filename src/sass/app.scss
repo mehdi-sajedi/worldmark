@@ -945,7 +945,7 @@ ul {
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0;
-    transition: opacity 0.35s var(--bezier);
+    transition: opacity 0.35s ease-in-out;
     margin: 0 auto;
     box-shadow: var(--box-shadow-3);
     border-radius: 0 0 10px 10px;
