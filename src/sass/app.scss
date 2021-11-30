@@ -18,6 +18,7 @@
   --clr-outline: #b8b8b8;
   --clr-filter-line: #ddd;
   --clr-dropdown-arrow: #333;
+  --clr-track: #bfc6c8;
   --border-radius: 3px;
   --border-radius-circle: 1000px;
   --checkmark: url('/checkmarks/check-white.svg');
@@ -37,6 +38,7 @@
   --clr-outline: #7e8a97;
   --clr-filter-line: #7e8a97;
   --clr-dropdown-arrow: #ddd;
+  --clr-track: #b3bdc1;
   --checkmark: url('/checkmarks/check-black.svg');
 }
 
@@ -754,8 +756,7 @@ ul {
 
       &-input {
         -webkit-appearance: none;
-
-        background-color: var(--clr-outline);
+        background-color: var(--clr-track);
         border-radius: 5px;
         cursor: pointer;
         width: 200px;
@@ -771,7 +772,7 @@ ul {
           border-radius: 50%;
           background-color: white;
           cursor: grab;
-          box-shadow: 0 0 10px 0px var(--clr-outline);
+          box-shadow: 0 0 10px 0px var(--clr-track);
           transition: height 0.35s ease, width 0.35s ease, box-shadow 0.35s ease;
           height: 22px;
           width: 22px;
@@ -785,7 +786,7 @@ ul {
           &:hover {
             width: 25px;
             height: 25px;
-            box-shadow: 0 0 10px 3px var(--clr-outline);
+            box-shadow: 0 0 10px 3px var(--clr-track);
           }
         }
 
@@ -793,7 +794,7 @@ ul {
           border-radius: 50%;
           background-color: white;
           cursor: grab;
-          box-shadow: 0 0 10px 0px var(--clr-outline);
+          box-shadow: 0 0 10px 0px var(--clr-track);
           transition: height 0.35s ease, width 0.35s ease, box-shadow 0.35s ease;
           height: 22px;
           width: 22px;
@@ -807,7 +808,7 @@ ul {
           &:hover {
             width: 25px;
             height: 25px;
-            box-shadow: 0 0 10px 3px var(--clr-outline);
+            box-shadow: 0 0 10px 3px var(--clr-track);
           }
         }
       }
