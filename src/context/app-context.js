@@ -22,10 +22,10 @@ export const AppProvider = ({ children }) => {
     unMember: 'all',
     landlocked: 'all',
     driveSide: 'all',
-    countriesPerPage: 36,
+    countriesPerPage: 24,
     currentPage: 1,
     currentPageFirstPost: 0,
-    currentPageLastPost: 36,
+    currentPageLastPost: 24,
     showSearchDropdown: false,
     menuOpen: false,
     regions: {
