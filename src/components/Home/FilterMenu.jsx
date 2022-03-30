@@ -85,7 +85,7 @@ const FilterMenu = () => {
           })}
         </ul>
         <div className="line"></div>
-        <h3 className="section-heading details-heading">Details</h3>
+        <h3 className="section-heading details-heading">Advanced</h3>
         <div className="details-category">
           <div className="un-member details-option" ref={unMemberMenuRef}>
             <div
