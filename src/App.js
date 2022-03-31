@@ -27,6 +27,7 @@ function App() {
   const { appState, dispatch } = useContext(AppContext);
   const [darkMode, setDarkMode] = useState(false);
 
+  // Persist darkmode in local storage
   useEffect(() => {
     setDarkMode(!JSON.parse(localStorage.getItem('darkmode')));
     if (!JSON.parse(localStorage.getItem('darkmode'))) {
@@ -36,11 +37,13 @@ function App() {
     }
   }, []);
 
+  // Get all the countries and put them in state
   useEffect(() => {
     dispatch({ type: 'SET-ALL-COUNTRIES', payload: countries });
     createCountryKeyPairs(countries);
   }, [dispatch, appState.countries]);
 
+  // Set the current countries when the page is changed
   useEffect(() => {
     dispatch({
       type: 'SET-CURRENT-COUNTRIES',
@@ -53,10 +56,12 @@ function App() {
     appState.currentPage,
   ]);
 
+  // Set the current countries when the countries/page slider is adjusted
   useEffect(() => {
     dispatch({ type: 'SET-CURRENT-COUNTRIES' });
   }, [dispatch, appState.currentPageFirstPost, appState.currentPageLastPost]);
 
+  // When the sorting is changed, reset to first page
   useEffect(() => {
     dispatch({ type: 'RESET-TO-FIRST-PAGE' });
   }, [dispatch, appState.allPagesCountries, appState.sortBy]);

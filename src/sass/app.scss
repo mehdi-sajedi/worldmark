@@ -131,8 +131,6 @@ ul {
 // - SEARCH BAR
 // - *************************************************************
 .search-bar {
-  // display: flex;
-  // justify-content: space-between;
   margin: 3rem 0 1.5rem;
   position: relative;
   z-index: 6;
@@ -160,7 +158,6 @@ ul {
     box-shadow: var(--box-shadow-6);
     border-radius: var(--border-radius-circle);
     border: 2px solid transparent;
-    // transition: border 0.25s ease;
     transition: border 0.25s ease;
 
     @include media('<=small') {
@@ -339,8 +336,8 @@ ul {
 
 .filter-menu {
   background-color: var(--clr-elements-transparent);
-  // --bezier: cubic-bezier(0.61, 0.21, 0.19, 0.97);
-  --bezier: cubic-bezier(0.4, 0.29, 0.19, 0.97);
+  --bezier: cubic-bezier(0.61, 0.21, 0.19, 0.97);
+  // --bezier: cubic-bezier(0.4, 0.29, 0.19, 0.97);
 
   @include media('<=tablet-lg') {
     &.filter-open {
@@ -870,7 +867,7 @@ ul {
     margin: 0 auto 3rem;
   }
 
-  &.snapper {
+  &.snap {
     > * {
       width: clamp(256px, 100%, 315px);
 
@@ -882,7 +879,7 @@ ul {
 }
 
 // - *************************************************************
-// - COUNTRIES ITEM
+// - COUNTRY CARD
 // - *************************************************************
 .country {
   display: flex;
@@ -894,7 +891,6 @@ ul {
   border-radius: 5px;
   position: relative;
   transition: transform 0.35s;
-  // overflow: hidden;
 
   .lazyload-wrapper {
     width: 100%;
@@ -972,7 +968,6 @@ ul {
   margin-bottom: 6rem;
 }
 
-// Countries Shown Text
 .countries-shown.top {
   text-align: left;
   margin-bottom: 1.5rem;
@@ -1071,7 +1066,6 @@ ul {
 // - *************************************************************
 // - SCROLL BUTTON
 // - *************************************************************
-
 .scroll-btn {
   display: none;
 

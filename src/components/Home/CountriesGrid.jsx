@@ -8,7 +8,7 @@ const CountriesGrid = () => {
   return (
     <main
       className={`countries ${
-        appState.currentPageCountries.length <= 5 ? 'snapper' : ''
+        appState.currentPageCountries.length <= 5 ? 'snap' : ''
       }
         `}
     >
