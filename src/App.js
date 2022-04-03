@@ -4,7 +4,7 @@ import { AppContext } from './context/app-context';
 import countries from './data/countries.json';
 import './sass/app.scss';
 import Header from './components/Utilities/Header';
-import SearchFilter from './components/Home/SearchBar';
+import SearchBar from './components/Home/SearchBar';
 import CountriesGrid from './components/Home/CountriesGrid';
 import CountryDetails from './components/DetailsPage/CountryDetails';
 import CountriesShownText from './components/Home/CountriesShownText';
@@ -14,14 +14,6 @@ import FilterBtn from './components/Home/FilterBtn';
 import FilterMenu from './components/Home/FilterMenu';
 import Overlay from './components/Utilities/Overlay';
 import ScrollBtn from './components/Utilities/ScrollBtn';
-
-const countryCodesToNames = new Map();
-
-const createCountryKeyPairs = (countries) => {
-  countries.forEach((country) => {
-    countryCodesToNames.set(country.alpha3Code, country.name);
-  });
-};
 
 function App() {
   const { appState, dispatch } = useContext(AppContext);
@@ -40,7 +32,6 @@ function App() {
   // Get all the countries and put them in state
   useEffect(() => {
     dispatch({ type: 'SET-ALL-COUNTRIES', payload: countries });
-    createCountryKeyPairs(countries);
   }, [dispatch, appState.countries]);
 
   // Set the current countries when the page is changed
@@ -73,7 +64,7 @@ function App() {
         <div className="container">
           <Switch>
             <Route exact path="/">
-              <SearchFilter />
+              <SearchBar />
               <CountriesShownText location="top" />
               <CountriesGrid />
               <FilterMenu />
@@ -82,7 +73,7 @@ function App() {
               {appState.allPagesCountries.length > 0 && <Footer />}
             </Route>
             <Route exact path="/details/:id">
-              <CountryDetails countryCodesToNames={countryCodesToNames} />
+              <CountryDetails />
             </Route>
             <Route>{PageNotFound}</Route>
           </Switch>

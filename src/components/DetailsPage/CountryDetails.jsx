@@ -2,11 +2,12 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/app-context';
+import { countryCodesMap } from '../../data/countryCodesMap';
 import BackBtn from './BackBtn';
 import CountryDetailsItem from './CountryDetailsItem';
 import { useTransition, animated } from 'react-spring';
 
-const CountryDetails = ({ countryCodesToNames }) => {
+const CountryDetails = () => {
   const { appState } = useContext(AppContext);
   const { id } = useParams();
   const [country, setCountry] = useState([]);
@@ -154,7 +155,7 @@ const CountryDetails = ({ countryCodesToNames }) => {
                                   className="details__info__borders__countries__item__text"
                                   onClick={() => setIsLoading((prev) => !prev)}
                                 >
-                                  {countryCodesToNames.get(item)}
+                                  {countryCodesMap.get(item)}
                                 </Link>
                               </li>
                             ))
