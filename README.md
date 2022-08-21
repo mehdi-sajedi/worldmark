@@ -2,7 +2,7 @@
 
 ![Design preview for the REST Countries API with color theme switcher coding challenge](./preview.png)
 
-Live Site URL: https://restcountries-api-frontend.netlify.app/
+Live Site URL: https://countries-v3.netlify.app/
 
 ## Overview
 
