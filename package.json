@@ -1,6 +1,12 @@
 {
   "name": "rest-countries",
+  "description": "Showcase information about the countries of the world using the restcountries.com API",
   "version": "0.1.0",
+  "author": "Mehdi Sajedi <mehdiisajedi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mehdi-sajedi/rest-countries"
+  },
   "private": true,
   "dependencies": {
     "@agney/react-loading": "^0.1.2",
