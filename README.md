@@ -2,7 +2,7 @@
 
 ![Design preview for the REST Countries API with color theme switcher coding challenge](./preview.png)
 
-Live Site URL: https://countries-v3.netlify.app/
+Live Site URL: [worldmark.netlify.app](https://worldmark.netlify.app/)
 
 ## Overview
 
@@ -46,4 +46,4 @@ The next major thing I wanted to incorporate had to do with optimizing performan
 
 ## Author
 
-- Website - [Mehdi Sajedi](https://mehdi-sajedi.github.io/)
+- Website - [Mehdi Sajedi](https://mehdisajedi.com/)

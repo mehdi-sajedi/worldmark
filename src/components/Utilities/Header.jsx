@@ -20,7 +20,7 @@ const Header = ({ darkMode, setDarkMode }) => {
     <div className="header-container">
       <header className="header">
         <Link to="/">
-          <h2 className="header__text">Where in the world?</h2>
+          <h2 className="header__text">Worldmark</h2>
         </Link>
         <div className="header__theme-btn" onClick={toggleDarkMode}>
           <i className="header__theme-btn__icon">

@@ -1,11 +1,11 @@
 {
-  "name": "rest-countries",
+  "name": "worldmark",
   "description": "Showcase information about the countries of the world using the restcountries.com API",
   "version": "0.1.0",
   "author": "Mehdi Sajedi <mehdiisajedi@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mehdi-sajedi/rest-countries"
+    "url": "https://github.com/mehdi-sajedi/worldmark"
   },
   "private": true,
   "dependencies": {
