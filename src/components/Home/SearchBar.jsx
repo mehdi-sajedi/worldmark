@@ -1,5 +1,4 @@
-import React, { useContext, useRef } from 'react';
-import SearchBarDropdown from './SearchBarDropdown';
+import React, { useContext, useRef, useEffect } from 'react';
 import { HiSearch } from 'react-icons/hi';
 import { AppContext } from '../../context/app-context';
 import { RiCloseFill } from 'react-icons/ri';
@@ -8,17 +7,9 @@ const SearchBar = () => {
   const { appState, dispatch } = useContext(AppContext);
   const inputRef = useRef();
 
-  // const matchBySearch = (country, alpha2Code, alpha3Code, val) => {
-  //   return (
-  //     matchByCountryIdentifier(country, val) ||
-  //     matchByCountryIdentifier(alpha2Code, val) ||
-  //     matchByCountryIdentifier(alpha3Code, val)
-  //   );
-  // };
-
-  // const matchByCountryIdentifier = (countryIdentifier, val) => {
-  //   return countryIdentifier.toLowerCase().includes(val.toLowerCase().trim());
-  // };
+  useEffect(() => {
+    dispatch({ type: 'SET-ONLY-SEARCH-MATCHES' });
+  }, [dispatch, appState.searchText]);
 
   const countriesFilter = (e) => {
     dispatch({
@@ -27,14 +18,6 @@ const SearchBar = () => {
     });
 
     const timeout = setTimeout(() => {
-      // const matches = appState.countries.filter((country) => {
-      //   return matchBySearch(
-      //     country.name,
-      //     country.alpha2Code,
-      //     country.alpha3Code,
-      //     e.target.value
-      //   );
-      // });
       dispatch({ type: 'FILTER-BY-SEARCH' });
     }, 1000);
 
@@ -56,16 +39,15 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search-bar">
-      <div className="search-bar__input">
-        <SearchBarDropdown />
-        <i className="search-bar__input__icon">
+    <div className='search-bar'>
+      <div className='search-bar__input'>
+        <i className='search-bar__input__icon'>
           <HiSearch />
         </i>
         <input
-          className="search-bar__input__text"
-          type="text"
-          placeholder="Search for a country"
+          className='search-bar__input__text'
+          type='text'
+          placeholder='Search for a country'
           onChange={(e) => countriesFilter(e)}
           value={appState.searchText}
           ref={inputRef}
