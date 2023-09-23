@@ -972,6 +972,10 @@ ul {
 .footer {
   position: relative;
   margin-bottom: 6rem;
+
+  @include media('<=small') {
+    margin-bottom: 7rem;
+  }
 }
 
 .countries-shown.top {
@@ -986,10 +990,6 @@ ul {
 .countries-shown.bottom {
   text-align: center;
   margin-bottom: 2rem;
-
-  @include media('<=small') {
-    font-size: 12px;
-  }
 }
 
 .pagination {
