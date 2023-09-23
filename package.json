@@ -23,7 +23,6 @@
     "react-scripts": "4.0.3",
     "react-spring": "^9.2.4",
     "react-transition-group": "^4.4.2",
-    "use-animate-presence": "^0.5.2",
     "use-immer": "^0.6.0",
     "web-vitals": "^1.1.2"
   },

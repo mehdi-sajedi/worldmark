@@ -881,6 +881,15 @@ ul {
 // - *************************************************************
 // - COUNTRY CARD
 // - *************************************************************
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .country {
   display: flex;
   flex-direction: column;
@@ -891,6 +900,7 @@ ul {
   border-radius: 5px;
   position: relative;
   transition: transform 0.35s;
+  animation: 250ms fadeIn ease-out;
 
   &__flag {
     width: 100%;
