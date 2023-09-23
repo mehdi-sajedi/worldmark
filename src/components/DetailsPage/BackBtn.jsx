@@ -5,13 +5,13 @@ import { BsArrowLeft } from 'react-icons/bs';
 const BackBtn = ({ setIsLoading }) => {
   const history = useHistory();
 
-  const runn = () => {
+  const goBack = () => {
     setIsLoading((prev) => !prev);
     history.goBack();
   };
 
   return (
-    <button onClick={runn} className="btn btn-back">
+    <button onClick={goBack} className="btn btn-back">
       <BsArrowLeft className="btn-back__arrow" />
       <span className="btn-back__text">Back</span>
     </button>

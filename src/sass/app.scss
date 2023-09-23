@@ -73,6 +73,7 @@ a {
 }
 
 button {
+  @include font-stack;
   color: var(--clr-text);
 }
 
@@ -111,6 +112,10 @@ ul {
     align-items: center;
     cursor: pointer;
     user-select: none;
+    background-color: transparent;
+    border: none;
+    letter-spacing: 0.8px;
+    font-size: 14px;
 
     &__icon,
     &__text {
@@ -137,9 +142,7 @@ ul {
 
   @include media('<=small') {
     position: initial;
-    margin: 0;
     margin: 2rem 0 0.5rem;
-
     position: -webkit-sticky;
     position: sticky;
     top: 10px;
@@ -976,7 +979,6 @@ ul {
   margin-bottom: 1.5rem;
 
   @include media('<=small') {
-    font-size: 12px;
     text-align: center;
   }
 }

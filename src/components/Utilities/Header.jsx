@@ -22,14 +22,14 @@ const Header = ({ darkMode, setDarkMode }) => {
         <Link to="/">
           <h2 className="header__text">Worldmark</h2>
         </Link>
-        <div className="header__theme-btn" onClick={toggleDarkMode}>
+        <button className="header__theme-btn" onClick={toggleDarkMode}>
           <i className="header__theme-btn__icon">
             {darkMode ? <HiMoon /> : <HiOutlineMoon />}
           </i>
           <p className="header__theme-btn__text">
             {darkMode ? 'Light Mode' : 'Dark Mode'}
           </p>
-        </div>
+        </button>
       </header>
     </div>
   );
